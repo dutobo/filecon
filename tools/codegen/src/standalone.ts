@@ -31,5 +31,25 @@ export function standalonePackages(pack: Pack): StandalonePackage[] {
         },
       },
     },
+    {
+      dirName: "electron",
+      parts: {
+        description:
+          "Filecon helpers for Electron: iconForPath() in the main process, IPC handlers and a typed preload bridge.",
+        keywords: ["electron", "ipc", "preload", "contextBridge"],
+        entries: ["index", "main", "preload", "renderer"],
+        dependencies: { "@filecon/js": "workspace:^", "@filecon/shared": "workspace:^" },
+        peerDependencies: { electron: ">=28" },
+        peerDependenciesMeta: { electron: { optional: true } },
+        devDependencies: {
+          "@filecon/testkit": "workspace:*",
+          "@types/node": VERSIONS.nodeTypes,
+          electron: "^45.3.2",
+          tsup: VERSIONS.tsup,
+          vitest: VERSIONS.vitest,
+        },
+        scripts: { build: "tsup", typecheck: "tsc --noEmit", test: "vitest run" },
+      },
+    },
   ];
 }

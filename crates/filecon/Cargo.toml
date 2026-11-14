@@ -1,0 +1,37 @@
+[package]
+name = "filecon"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.80"
+description = "File-type icons for 703 formats in three styles (embedded SVGs) plus a file-type resolver."
+license = "Apache-2.0"
+authors = ["dutobo (https://github.com/dutobo)", "rafaelk-f (https://github.com/rafaelk-f)"]
+homepage = "https://filecon.dev"
+# TODO(ISSUES.md): placeholder repository URL
+repository = "https://github.com/dutobo/filecon"
+documentation = "https://docs.rs/filecon"
+readme = "README.md"
+keywords = ["icons", "svg", "file-type", "mime", "file-icons"]
+categories = ["multimedia::images", "filesystem", "gui"]
+# The generated files (icons/, src/generated.rs, LICENSE, NOTICE, test data) are gitignored and written by
+# `pnpm codegen`; `include` makes sure `cargo package` still ships them.
+include = [
+  "Cargo.toml",
+  "README.md",
+  "LICENSE",
+  "NOTICE",
+  "src/**/*.rs",
+  "icons/**/*.svg",
+  "tests/**/*.rs",
+  "tests/data/*.json",
+]
+
+[features]
+default = ["style-default", "style-gray", "style-solid"]
+style-default = []
+style-gray = []
+style-solid = []
+
+[dependencies]
+
+[dev-dependencies]

@@ -17,4 +17,4 @@ crates/filecon/icons/
 crates/filecon/src/generated.rs
 crates/filecon/LICENSE
 crates/filecon/NOTICE
-crates/filecon/resolve-cases.json
+crates/filecon/tests/data/

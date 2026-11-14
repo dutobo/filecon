@@ -1,0 +1,167 @@
+{
+  "name": "@filecon/electron",
+  "version": "0.1.0",
+  "description": "Filecon helpers for Electron: iconForPath() in the main process, IPC handlers and a typed preload bridge.",
+  "keywords": [
+    "filecon",
+    "file-icons",
+    "icons",
+    "svg",
+    "file-type",
+    "electron",
+    "ipc",
+    "preload",
+    "contextBridge"
+  ],
+  "homepage": "https://filecon.dev",
+  "bugs": {
+    "url": "https://github.com/dutobo/filecon/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dutobo/filecon.git",
+    "directory": "packages/electron"
+  },
+  "license": "Apache-2.0",
+  "author": {
+    "name": "dutobo",
+    "url": "https://github.com/dutobo"
+  },
+  "contributors": [
+    {
+      "name": "rafaelk-f",
+      "url": "https://github.com/rafaelk-f"
+    }
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "@filecon/source": "./src/index.ts",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./main": {
+      "@filecon/source": "./src/main.ts",
+      "import": {
+        "types": "./dist/main.d.ts",
+        "default": "./dist/main.js"
+      },
+      "require": {
+        "types": "./dist/main.d.cts",
+        "default": "./dist/main.cjs"
+      }
+    },
+    "./preload": {
+      "@filecon/source": "./src/preload.ts",
+      "import": {
+        "types": "./dist/preload.d.ts",
+        "default": "./dist/preload.js"
+      },
+      "require": {
+        "types": "./dist/preload.d.cts",
+        "default": "./dist/preload.cjs"
+      }
+    },
+    "./renderer": {
+      "@filecon/source": "./src/renderer.ts",
+      "import": {
+        "types": "./dist/renderer.d.ts",
+        "default": "./dist/renderer.js"
+      },
+      "require": {
+        "types": "./dist/renderer.d.cts",
+        "default": "./dist/renderer.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "NOTICE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@filecon/js": "workspace:^",
+    "@filecon/shared": "workspace:^"
+  },
+  "peerDependencies": {
+    "electron": ">=28"
+  },
+  "peerDependenciesMeta": {
+    "electron": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@filecon/testkit": "workspace:*",
+    "@types/node": "^24.19.2",
+    "electron": "^45.3.2",
+    "tsup": "^9.0.0",
+    "typescript": "~6.0.3",
+    "vitest": "^5.1.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true,
+    "exports": {
+      ".": {
+        "import": {
+          "types": "./dist/index.d.ts",
+          "default": "./dist/index.js"
+        },
+        "require": {
+          "types": "./dist/index.d.cts",
+          "default": "./dist/index.cjs"
+        }
+      },
+      "./main": {
+        "import": {
+          "types": "./dist/main.d.ts",
+          "default": "./dist/main.js"
+        },
+        "require": {
+          "types": "./dist/main.d.cts",
+          "default": "./dist/main.cjs"
+        }
+      },
+      "./preload": {
+        "import": {
+          "types": "./dist/preload.d.ts",
+          "default": "./dist/preload.js"
+        },
+        "require": {
+          "types": "./dist/preload.d.cts",
+          "default": "./dist/preload.cjs"
+        }
+      },
+      "./renderer": {
+        "import": {
+          "types": "./dist/renderer.d.ts",
+          "default": "./dist/renderer.js"
+        },
+        "require": {
+          "types": "./dist/renderer.d.cts",
+          "default": "./dist/renderer.cjs"
+        }
+      },
+      "./package.json": "./package.json"
+    }
+  }
+}

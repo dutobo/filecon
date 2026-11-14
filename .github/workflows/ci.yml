@@ -27,6 +27,12 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           cache: pnpm
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: crates/filecon
       - name: Install
         run: pnpm install --frozen-lockfile
       - name: Lint
@@ -37,5 +43,14 @@ jobs:
         run: pnpm build
       - name: Scaffolded files are up to date
         run: git diff --exit-code -- packages tools
-      - name: Test
+      - name: Test (JS, tarballs, Rust)
         run: pnpm test
+      - name: Rust lint
+        run: pnpm lint:rust
+      - name: Rust feature matrix
+        run: |
+          for feature in style-default style-gray style-solid; do
+            cargo test --manifest-path crates/filecon/Cargo.toml --no-default-features --features "$feature"
+          done
+      - name: Crate packages
+        run: cargo package --manifest-path crates/filecon/Cargo.toml --allow-dirty --no-verify

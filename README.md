@@ -24,6 +24,8 @@ File-type icons for **703 formats** in three styles – for every framework. [fi
 | [`@filecon/solid`](packages/solid) | SolidJS components |
 | [`@filecon/angular`](packages/angular) | Angular standalone component `<filecon-icon>` |
 | [`@filecon/astro`](packages/astro) | Astro components (zero client JS) |
+| [`@filecon/electron`](packages/electron) | Electron: `iconForPath()` in main, IPC handlers, typed preload bridge |
+| [`filecon`](crates/filecon) (crates.io) | Rust crate: embedded SVGs (`svg()`), `resolve()`, `names()` |
 
 Every framework package exists in four flavors: `@filecon/<fw>` (all styles, `style` prop) and
 `@filecon/<fw>-default`, `-gray`, `-solid` (one style each, same API without `style`).
@@ -43,6 +45,13 @@ import { PdfIcon } from "@filecon/react/icons";
 <FileIcon name="db-sqlite" style="solid" theme="dark" size={48} />
 <FileIcon name="png" theme="auto" title="PNG image" />
 <PdfIcon size={24} />
+```
+
+Rust:
+
+```rust
+let name = filecon::resolve("app.db", Some(&head));      // "db-sqlite"
+let svg = filecon::svg(name, filecon::Style::Solid, filecon::Theme::Dark);
 ```
 
 Without a framework:

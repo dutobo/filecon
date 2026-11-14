@@ -14,12 +14,13 @@
     "format": "biome format --write .",
     "typecheck": "pnpm codegen && pnpm -r --workspace-concurrency=4 typecheck",
     "build": "pnpm codegen && pnpm -r --workspace-concurrency=4 build",
-    "test": "pnpm -r --workspace-concurrency=2 test && pnpm pack:check",
-    "test:rust": "cargo test --manifest-path crates/filecon/Cargo.toml --all-features",
+    "test": "pnpm -r --workspace-concurrency=2 test && pnpm pack:check && pnpm test:rust",
+    "test:rust": "cargo test --manifest-path crates/filecon/Cargo.toml",
     "pack:check": "tsx tools/codegen/src/pack-check.ts",
     "sizes": "tsx tools/codegen/src/sizes.ts",
     "changeset": "changeset",
-    "version-packages": "changeset version"
+    "version-packages": "changeset version",
+    "lint:rust": "cargo fmt --manifest-path crates/filecon/Cargo.toml --check && cargo clippy --manifest-path crates/filecon/Cargo.toml --all-targets --all-features -- -D warnings"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.6.7",

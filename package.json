@@ -1,0 +1,33 @@
+{
+  "name": "filecon-monorepo",
+  "private": true,
+  "description": "Filecon – file type icons for 703 formats, for every framework.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "packageManager": "pnpm@11.8.0",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "codegen": "tsx tools/codegen/src/cli.ts",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "typecheck": "pnpm codegen && pnpm -r --workspace-concurrency=4 typecheck",
+    "build": "pnpm codegen && pnpm -r --workspace-concurrency=4 build",
+    "test": "pnpm -r --workspace-concurrency=2 test && pnpm pack:check",
+    "test:rust": "cargo test --manifest-path crates/filecon/Cargo.toml --all-features",
+    "pack:check": "tsx tools/codegen/src/pack-check.ts",
+    "sizes": "tsx tools/codegen/src/sizes.ts",
+    "changeset": "changeset",
+    "version-packages": "changeset version"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.7",
+    "@changesets/cli": "^3.0.3",
+    "@types/node": "^24.19.2",
+    "tsup": "^9.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.3",
+    "vitest": "^5.1.0"
+  }
+}

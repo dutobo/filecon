@@ -1,0 +1,12 @@
+{
+  "name": "@filecon/codegen",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Generates the Filecon packages from the icon pack and the framework templates.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  }
+}

@@ -1,0 +1,7 @@
+packages:
+  - packages/*
+  - tools/*
+  - "!tools/templates"
+
+allowBuilds:
+  esbuild: true

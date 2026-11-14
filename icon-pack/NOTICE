@@ -1,0 +1,12 @@
+Filecon
+Copyright 2026 Filecon contributors
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Third-party notices:
+- The label letters inside the SVG files are converted to outlines from the typeface
+  Inter Bold, licensed under the SIL Open Font License 1.1 (https://rsms.me/inter/).
+- All paths and glyphs were drawn for this project. Page proportions, stroke weight and
+  fold position are modelled on the look of the Untitled UI file icons.
+  This project is not affiliated with Untitled UI.
+- This package contains no third-party brand logos.

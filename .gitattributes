@@ -1,0 +1,4 @@
+* text=auto eol=lf
+# The icon pack is the read-only source of truth: never touch its bytes.
+icon-pack/** -text
+*.png binary

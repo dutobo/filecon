@@ -1,0 +1,4939 @@
+{
+ "audio": {
+  "type": "generic",
+  "color": "#DD2590"
+ },
+ "code": {
+  "type": "generic",
+  "color": "#444CE7"
+ },
+ "document": {
+  "type": "generic",
+  "color": "#1570EF"
+ },
+ "empty": {
+  "type": "generic",
+  "color": "#7F56D9"
+ },
+ "folder": {
+  "type": "generic",
+  "color": "#7F56D9"
+ },
+ "image": {
+  "type": "generic",
+  "color": "#7F56D9"
+ },
+ "spreadsheet": {
+  "type": "generic",
+  "color": "#079455"
+ },
+ "video": {
+  "type": "generic",
+  "color": "#444CE7"
+ },
+ "video-play": {
+  "type": "generic",
+  "color": "#444CE7"
+ },
+ "archive": {
+  "type": "generic",
+  "color": "#B54708"
+ },
+ "database": {
+  "type": "generic",
+  "color": "#079455"
+ },
+ "config": {
+  "type": "generic",
+  "color": "#0E9384"
+ },
+ "terminal": {
+  "type": "generic",
+  "color": "#475467"
+ },
+ "font": {
+  "type": "generic",
+  "color": "#6172F3"
+ },
+ "secret-key": {
+  "type": "generic",
+  "color": "#DC6803"
+ },
+ "3d": {
+  "type": "generic",
+  "color": "#0BA5EC"
+ },
+ "binary": {
+  "type": "generic",
+  "color": "#475467"
+ },
+ "mail": {
+  "type": "generic",
+  "color": "#1570EF"
+ },
+ "package": {
+  "type": "generic",
+  "color": "#B54708"
+ },
+ "disc": {
+  "type": "generic",
+  "color": "#667085"
+ },
+ "map-pin": {
+  "type": "generic",
+  "color": "#12B76A"
+ },
+ "cad": {
+  "type": "generic",
+  "color": "#0086C9"
+ },
+ "book": {
+  "type": "generic",
+  "color": "#B54708"
+ },
+ "presentation": {
+  "type": "generic",
+  "color": "#E04F16"
+ },
+ "network": {
+  "type": "generic",
+  "color": "#444CE7"
+ },
+ "neural": {
+  "type": "generic",
+  "color": "#7A5AF8"
+ },
+ "game": {
+  "type": "generic",
+  "color": "#7F56D9"
+ },
+ "v": {
+  "type": "generic-ext",
+  "category": "lang",
+  "label": "V",
+  "color": "#7F56D9",
+  "family": "code",
+  "ambiguous": [
+   "v-verilog",
+   "v-vlang",
+   "v-coq"
+  ]
+ },
+ "m": {
+  "type": "generic-ext",
+  "category": "lang",
+  "label": "M",
+  "color": "#7F56D9",
+  "family": "code",
+  "ambiguous": [
+   "m-objc",
+   "m-matlab"
+  ]
+ },
+ "pl": {
+  "type": "generic-ext",
+  "category": "lang",
+  "label": "PL",
+  "color": "#7F56D9",
+  "family": "code",
+  "ambiguous": [
+   "pl-perl",
+   "pl-prolog"
+  ]
+ },
+ "pb": {
+  "type": "generic-ext",
+  "category": "ml",
+  "label": "PB",
+  "color": "#7A5AF8",
+  "family": "neural",
+  "ambiguous": [
+   "pb-protobuf",
+   "pb-tf"
+  ]
+ },
+ "db": {
+  "type": "generic-ext",
+  "category": "db",
+  "label": null,
+  "color": "#099250",
+  "family": "database",
+  "ambiguous": [
+   "db-sqlite",
+   "db-thumbs",
+   "db-bdb",
+   "db-paradox"
+  ]
+ },
+ "key": {
+  "type": "generic-ext",
+  "category": "cert",
+  "label": null,
+  "color": "#DC6803",
+  "family": "secret-key",
+  "ambiguous": [
+   "key-keynote",
+   "key-private"
+  ]
+ },
+ "js": {
+  "type": "ext",
+  "category": "lang",
+  "label": "JS",
+  "color": "#B7791F",
+  "family": "code"
+ },
+ "mjs": {
+  "type": "ext",
+  "category": "lang",
+  "label": "MJS",
+  "color": "#B7791F",
+  "family": "code"
+ },
+ "cjs": {
+  "type": "ext",
+  "category": "lang",
+  "label": "CJS",
+  "color": "#B7791F",
+  "family": "code"
+ },
+ "jsx": {
+  "type": "ext",
+  "category": "lang",
+  "label": "JSX",
+  "color": "#0891B2",
+  "family": "code"
+ },
+ "ts": {
+  "type": "ext",
+  "category": "lang",
+  "label": "TS",
+  "color": "#3178C6",
+  "family": "code",
+  "ambiguous": [
+   "ts-stream"
+  ]
+ },
+ "mts": {
+  "type": "ext",
+  "category": "lang",
+  "label": "MTS",
+  "color": "#3178C6",
+  "family": "code",
+  "ambiguous": [
+   "mts-video"
+  ]
+ },
+ "cts": {
+  "type": "ext",
+  "category": "lang",
+  "label": "CTS",
+  "color": "#3178C6",
+  "family": "code"
+ },
+ "tsx": {
+  "type": "ext",
+  "category": "lang",
+  "label": "TSX",
+  "color": "#3178C6",
+  "family": "code"
+ },
+ "vue": {
+  "type": "ext",
+  "category": "lang",
+  "label": "VUE",
+  "color": "#2F9E6F",
+  "family": "code"
+ },
+ "svelte": {
+  "type": "ext",
+  "category": "lang",
+  "label": "SVLT",
+  "color": "#E8431C",
+  "family": "code"
+ },
+ "astro": {
+  "type": "ext",
+  "category": "lang",
+  "label": "ASTRO",
+  "color": "#6D28D9",
+  "family": "code"
+ },
+ "coffee": {
+  "type": "ext",
+  "category": "lang",
+  "label": "COFFE",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "ejs": {
+  "type": "ext",
+  "category": "lang",
+  "label": "EJS",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "hbs": {
+  "type": "ext",
+  "category": "lang",
+  "label": "HBS",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "pug": {
+  "type": "ext",
+  "category": "lang",
+  "label": "PUG",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "njk": {
+  "type": "ext",
+  "category": "lang",
+  "label": "NJK",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "py": {
+  "type": "ext",
+  "category": "lang",
+  "label": "PY",
+  "color": "#3B7BBF",
+  "family": "code"
+ },
+ "pyw": {
+  "type": "ext",
+  "category": "lang",
+  "label": "PYW",
+  "color": "#3B7BBF",
+  "family": "code"
+ },
+ "ipynb": {
+  "type": "ext",
+  "category": "lang",
+  "label": "IPYNB",
+  "color": "#E8831C",
+  "family": "code"
+ },
+ "pyi": {
+  "type": "ext",
+  "category": "lang",
+  "label": "PYI",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "pyx": {
+  "type": "ext",
+  "category": "lang",
+  "label": "PYX",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "pyc": {
+  "type": "ext",
+  "category": "lang",
+  "label": "PYC",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "pyd": {
+  "type": "ext",
+  "category": "lang",
+  "label": "PYD",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "java": {
+  "type": "ext",
+  "category": "lang",
+  "label": "JAVA",
+  "color": "#D96C00",
+  "family": "code"
+ },
+ "kt": {
+  "type": "ext",
+  "category": "lang",
+  "label": "KT",
+  "color": "#7F52FF",
+  "family": "code"
+ },
+ "kts": {
+  "type": "ext",
+  "category": "lang",
+  "label": "KTS",
+  "color": "#7F52FF",
+  "family": "code"
+ },
+ "scala": {
+  "type": "ext",
+  "category": "lang",
+  "label": "SCALA",
+  "color": "#DC322F",
+  "family": "code"
+ },
+ "groovy": {
+  "type": "ext",
+  "category": "lang",
+  "label": "GRVY",
+  "color": "#4298B8",
+  "family": "code"
+ },
+ "gradle": {
+  "type": "ext",
+  "category": "lang",
+  "label": "GRDL",
+  "color": "#0B7285",
+  "family": "code"
+ },
+ "c": {
+  "type": "ext",
+  "category": "lang",
+  "label": "C",
+  "color": "#00599C",
+  "family": "code"
+ },
+ "h": {
+  "type": "ext",
+  "category": "lang",
+  "label": "H",
+  "color": "#00599C",
+  "family": "code"
+ },
+ "cpp": {
+  "type": "ext",
+  "category": "lang",
+  "label": "CPP",
+  "color": "#0A6CB8",
+  "family": "code"
+ },
+ "hpp": {
+  "type": "ext",
+  "category": "lang",
+  "label": "HPP",
+  "color": "#0A6CB8",
+  "family": "code"
+ },
+ "cc": {
+  "type": "ext",
+  "category": "lang",
+  "label": "CC",
+  "color": "#0A6CB8",
+  "family": "code"
+ },
+ "cxx": {
+  "type": "ext",
+  "category": "lang",
+  "label": "CXX",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "hxx": {
+  "type": "ext",
+  "category": "lang",
+  "label": "HXX",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "hh": {
+  "type": "ext",
+  "category": "lang",
+  "label": "HH",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "cs": {
+  "type": "ext",
+  "category": "lang",
+  "label": "CS",
+  "color": "#68217A",
+  "family": "code"
+ },
+ "csx": {
+  "type": "ext",
+  "category": "lang",
+  "label": "CSX",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "cu": {
+  "type": "ext",
+  "category": "lang",
+  "label": "CU",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "cuh": {
+  "type": "ext",
+  "category": "lang",
+  "label": "CUH",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "mm": {
+  "type": "ext",
+  "category": "lang",
+  "label": "MM",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "rs": {
+  "type": "ext",
+  "category": "lang",
+  "label": "RS",
+  "color": "#B7410E",
+  "family": "code"
+ },
+ "go": {
+  "type": "ext",
+  "category": "lang",
+  "label": "GO",
+  "color": "#0A9CC4",
+  "family": "code"
+ },
+ "zig": {
+  "type": "ext",
+  "category": "lang",
+  "label": "ZIG",
+  "color": "#E8830C",
+  "family": "code"
+ },
+ "d": {
+  "type": "ext",
+  "category": "lang",
+  "label": "D",
+  "color": "#B03931",
+  "family": "code"
+ },
+ "nim": {
+  "type": "ext",
+  "category": "lang",
+  "label": "NIM",
+  "color": "#C99F00",
+  "family": "code"
+ },
+ "cr": {
+  "type": "ext",
+  "category": "lang",
+  "label": "CR",
+  "color": "#4B5563",
+  "family": "code"
+ },
+ "asm": {
+  "type": "ext",
+  "category": "lang",
+  "label": "ASM",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "s": {
+  "type": "ext",
+  "category": "lang",
+  "label": "S",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "odin": {
+  "type": "ext",
+  "category": "lang",
+  "label": "ODIN",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "ada": {
+  "type": "ext",
+  "category": "lang",
+  "label": "ADA",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "adb": {
+  "type": "ext",
+  "category": "lang",
+  "label": "ADB",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "ads": {
+  "type": "ext",
+  "category": "lang",
+  "label": "ADS",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "hs": {
+  "type": "ext",
+  "category": "lang",
+  "label": "HS",
+  "color": "#5E5086",
+  "family": "code"
+ },
+ "lhs": {
+  "type": "ext",
+  "category": "lang",
+  "label": "LHS",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "ml": {
+  "type": "ext",
+  "category": "lang",
+  "label": "ML",
+  "color": "#E98407",
+  "family": "code"
+ },
+ "mli": {
+  "type": "ext",
+  "category": "lang",
+  "label": "MLI",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "fs": {
+  "type": "ext",
+  "category": "lang",
+  "label": "FS",
+  "color": "#378BBA",
+  "family": "code"
+ },
+ "fsx": {
+  "type": "ext",
+  "category": "lang",
+  "label": "FSX",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "fsi": {
+  "type": "ext",
+  "category": "lang",
+  "label": "FSI",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "ex": {
+  "type": "ext",
+  "category": "lang",
+  "label": "EX",
+  "color": "#6E4A7E",
+  "family": "code"
+ },
+ "exs": {
+  "type": "ext",
+  "category": "lang",
+  "label": "EXS",
+  "color": "#6E4A7E",
+  "family": "code"
+ },
+ "erl": {
+  "type": "ext",
+  "category": "lang",
+  "label": "ERL",
+  "color": "#A90533",
+  "family": "code"
+ },
+ "hrl": {
+  "type": "ext",
+  "category": "lang",
+  "label": "HRL",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "clj": {
+  "type": "ext",
+  "category": "lang",
+  "label": "CLJ",
+  "color": "#5881D8",
+  "family": "code"
+ },
+ "cljs": {
+  "type": "ext",
+  "category": "lang",
+  "label": "CLJS",
+  "color": "#5881D8",
+  "family": "code"
+ },
+ "cljc": {
+  "type": "ext",
+  "category": "lang",
+  "label": "CLJC",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "edn": {
+  "type": "ext",
+  "category": "lang",
+  "label": "EDN",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "elm": {
+  "type": "ext",
+  "category": "lang",
+  "label": "ELM",
+  "color": "#1293D8",
+  "family": "code"
+ },
+ "purs": {
+  "type": "ext",
+  "category": "lang",
+  "label": "PURS",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "gleam": {
+  "type": "ext",
+  "category": "lang",
+  "label": "GLEAM",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "scm": {
+  "type": "ext",
+  "category": "lang",
+  "label": "SCM",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "rkt": {
+  "type": "ext",
+  "category": "lang",
+  "label": "RKT",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "lisp": {
+  "type": "ext",
+  "category": "lang",
+  "label": "LISP",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "el": {
+  "type": "ext",
+  "category": "lang",
+  "label": "EL",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "lean": {
+  "type": "ext",
+  "category": "lang",
+  "label": "LEAN",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "agda": {
+  "type": "ext",
+  "category": "lang",
+  "label": "AGDA",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "idr": {
+  "type": "ext",
+  "category": "lang",
+  "label": "IDR",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "rb": {
+  "type": "ext",
+  "category": "lang",
+  "label": "RB",
+  "color": "#CC342D",
+  "family": "code"
+ },
+ "rake": {
+  "type": "ext",
+  "category": "lang",
+  "label": "RAKE",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "gemspec": {
+  "type": "ext",
+  "category": "lang",
+  "label": "GEMSP",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "php": {
+  "type": "ext",
+  "category": "lang",
+  "label": "PHP",
+  "color": "#6C71B5",
+  "family": "code"
+ },
+ "pm": {
+  "type": "ext",
+  "category": "lang",
+  "label": "PM",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "lua": {
+  "type": "ext",
+  "category": "lang",
+  "label": "LUA",
+  "color": "#3F40A3",
+  "family": "code"
+ },
+ "r": {
+  "type": "ext",
+  "category": "lang",
+  "label": "R",
+  "color": "#276DC3",
+  "family": "code"
+ },
+ "rmd": {
+  "type": "ext",
+  "category": "lang",
+  "label": "RMD",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "jl": {
+  "type": "ext",
+  "category": "lang",
+  "label": "JL",
+  "color": "#9558B2",
+  "family": "code"
+ },
+ "tcl": {
+  "type": "ext",
+  "category": "lang",
+  "label": "TCL",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "awk": {
+  "type": "ext",
+  "category": "lang",
+  "label": "AWK",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "ahk": {
+  "type": "ext",
+  "category": "lang",
+  "label": "AHK",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "applescript": {
+  "type": "ext",
+  "category": "lang",
+  "label": "ASCPT",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "scpt": {
+  "type": "ext",
+  "category": "lang",
+  "label": "SCPT",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "swift": {
+  "type": "ext",
+  "category": "lang",
+  "label": "SWIFT",
+  "color": "#F05138",
+  "family": "code"
+ },
+ "dart": {
+  "type": "ext",
+  "category": "lang",
+  "label": "DART",
+  "color": "#0175C2",
+  "family": "code"
+ },
+ "mojo": {
+  "type": "ext",
+  "category": "lang",
+  "label": "MOJO",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "vb": {
+  "type": "ext",
+  "category": "lang",
+  "label": "VB",
+  "color": "#68217A",
+  "family": "code"
+ },
+ "vbs": {
+  "type": "ext",
+  "category": "lang",
+  "label": "VBS",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "bas": {
+  "type": "ext",
+  "category": "lang",
+  "label": "BAS",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "cob": {
+  "type": "ext",
+  "category": "lang",
+  "label": "COB",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "cbl": {
+  "type": "ext",
+  "category": "lang",
+  "label": "CBL",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "pas": {
+  "type": "ext",
+  "category": "lang",
+  "label": "PAS",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "dpr": {
+  "type": "ext",
+  "category": "lang",
+  "label": "DPR",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "f90": {
+  "type": "ext",
+  "category": "lang",
+  "label": "F90",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "f": {
+  "type": "ext",
+  "category": "lang",
+  "label": "F",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "f95": {
+  "type": "ext",
+  "category": "lang",
+  "label": "F95",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "for": {
+  "type": "ext",
+  "category": "lang",
+  "label": "FOR",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "sas": {
+  "type": "ext",
+  "category": "lang",
+  "label": "SAS",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "sol": {
+  "type": "ext",
+  "category": "lang",
+  "label": "SOL",
+  "color": "#4B5563",
+  "family": "code"
+ },
+ "vy": {
+  "type": "ext",
+  "category": "lang",
+  "label": "VY",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "move": {
+  "type": "ext",
+  "category": "lang",
+  "label": "MOVE",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "vhdl": {
+  "type": "ext",
+  "category": "lang",
+  "label": "VHDL",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "sv": {
+  "type": "ext",
+  "category": "lang",
+  "label": "SV",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "svh": {
+  "type": "ext",
+  "category": "lang",
+  "label": "SVH",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "glsl": {
+  "type": "ext",
+  "category": "lang",
+  "label": "GLSL",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "vert": {
+  "type": "ext",
+  "category": "lang",
+  "label": "VERT",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "frag": {
+  "type": "ext",
+  "category": "lang",
+  "label": "FRAG",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "hlsl": {
+  "type": "ext",
+  "category": "lang",
+  "label": "HLSL",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "wgsl": {
+  "type": "ext",
+  "category": "lang",
+  "label": "WGSL",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "metal": {
+  "type": "ext",
+  "category": "lang",
+  "label": "METAL",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "gdshader": {
+  "type": "ext",
+  "category": "lang",
+  "label": "GDSH",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "ino": {
+  "type": "ext",
+  "category": "lang",
+  "label": "INO",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "gd": {
+  "type": "ext",
+  "category": "lang",
+  "label": "GD",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "proto": {
+  "type": "ext",
+  "category": "lang",
+  "label": "PROTO",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "graphql": {
+  "type": "ext",
+  "category": "lang",
+  "label": "GQL",
+  "color": "#E10098",
+  "family": "code"
+ },
+ "gql": {
+  "type": "ext",
+  "category": "lang",
+  "label": "GQL",
+  "color": "#E10098",
+  "family": "code"
+ },
+ "prisma": {
+  "type": "ext",
+  "category": "lang",
+  "label": "PRSM",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "tf": {
+  "type": "ext",
+  "category": "lang",
+  "label": "TF",
+  "color": "#7B42BC",
+  "family": "code"
+ },
+ "tfvars": {
+  "type": "ext",
+  "category": "lang",
+  "label": "TFVAR",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "hcl": {
+  "type": "ext",
+  "category": "lang",
+  "label": "HCL",
+  "color": "#7B42BC",
+  "family": "code"
+ },
+ "nix": {
+  "type": "ext",
+  "category": "lang",
+  "label": "NIX",
+  "color": "#5277C3",
+  "family": "code"
+ },
+ "cmake": {
+  "type": "ext",
+  "category": "lang",
+  "label": "CMAKE",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "dockerfile": {
+  "type": "ext",
+  "category": "lang",
+  "label": "DOCK",
+  "color": "#1D63ED",
+  "family": "code"
+ },
+ "mk": {
+  "type": "ext",
+  "category": "lang",
+  "label": "MK",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "bzl": {
+  "type": "ext",
+  "category": "lang",
+  "label": "BZL",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "ninja": {
+  "type": "ext",
+  "category": "lang",
+  "label": "NINJA",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "rego": {
+  "type": "ext",
+  "category": "lang",
+  "label": "REGO",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "cue": {
+  "type": "ext",
+  "category": "lang",
+  "label": "CUE",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "dhall": {
+  "type": "ext",
+  "category": "lang",
+  "label": "DHALL",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "jsonnet": {
+  "type": "ext",
+  "category": "lang",
+  "label": "JSNNT",
+  "color": "#7F56D9",
+  "family": "code"
+ },
+ "wasm": {
+  "type": "ext",
+  "category": "lang",
+  "label": "WASM",
+  "color": "#654FF0",
+  "family": "code"
+ },
+ "wat": {
+  "type": "ext",
+  "category": "lang",
+  "label": "WAT",
+  "color": "#654FF0",
+  "family": "code"
+ },
+ "sh": {
+  "type": "ext",
+  "category": "shell",
+  "label": "SH",
+  "color": "#2F9E44",
+  "family": "terminal"
+ },
+ "bash": {
+  "type": "ext",
+  "category": "shell",
+  "label": "BASH",
+  "color": "#2F9E44",
+  "family": "terminal"
+ },
+ "zsh": {
+  "type": "ext",
+  "category": "shell",
+  "label": "ZSH",
+  "color": "#2F9E44",
+  "family": "terminal"
+ },
+ "fish": {
+  "type": "ext",
+  "category": "shell",
+  "label": "FISH",
+  "color": "#2F9E44",
+  "family": "terminal"
+ },
+ "ps1": {
+  "type": "ext",
+  "category": "shell",
+  "label": "PS1",
+  "color": "#2671BE",
+  "family": "terminal"
+ },
+ "psm1": {
+  "type": "ext",
+  "category": "shell",
+  "label": "PSM1",
+  "color": "#475467",
+  "family": "terminal"
+ },
+ "bat": {
+  "type": "ext",
+  "category": "shell",
+  "label": "BAT",
+  "color": "#475467",
+  "family": "terminal"
+ },
+ "cmd": {
+  "type": "ext",
+  "category": "shell",
+  "label": "CMD",
+  "color": "#475467",
+  "family": "terminal"
+ },
+ "csh": {
+  "type": "ext",
+  "category": "shell",
+  "label": "CSH",
+  "color": "#475467",
+  "family": "terminal"
+ },
+ "ksh": {
+  "type": "ext",
+  "category": "shell",
+  "label": "KSH",
+  "color": "#475467",
+  "family": "terminal"
+ },
+ "nu": {
+  "type": "ext",
+  "category": "shell",
+  "label": "NU",
+  "color": "#475467",
+  "family": "terminal"
+ },
+ "html": {
+  "type": "ext",
+  "category": "web",
+  "label": "HTML",
+  "color": "#E34F26",
+  "family": "code"
+ },
+ "htm": {
+  "type": "ext",
+  "category": "web",
+  "label": "HTM",
+  "color": "#E34F26",
+  "family": "code"
+ },
+ "xhtml": {
+  "type": "ext",
+  "category": "web",
+  "label": "XHTML",
+  "color": "#E04F16",
+  "family": "code"
+ },
+ "css": {
+  "type": "ext",
+  "category": "web",
+  "label": "CSS",
+  "color": "#1572B6",
+  "family": "code"
+ },
+ "scss": {
+  "type": "ext",
+  "category": "web",
+  "label": "SCSS",
+  "color": "#CC6699",
+  "family": "code"
+ },
+ "sass": {
+  "type": "ext",
+  "category": "web",
+  "label": "SASS",
+  "color": "#CC6699",
+  "family": "code"
+ },
+ "less": {
+  "type": "ext",
+  "category": "web",
+  "label": "LESS",
+  "color": "#2B5CA8",
+  "family": "code"
+ },
+ "styl": {
+  "type": "ext",
+  "category": "web",
+  "label": "STYL",
+  "color": "#2F8F4E",
+  "family": "code"
+ },
+ "pcss": {
+  "type": "ext",
+  "category": "web",
+  "label": "PCSS",
+  "color": "#E04F16",
+  "family": "code"
+ },
+ "xml": {
+  "type": "ext",
+  "category": "web",
+  "label": "XML",
+  "color": "#E8830C",
+  "family": "code"
+ },
+ "xsl": {
+  "type": "ext",
+  "category": "web",
+  "label": "XSL",
+  "color": "#E8830C",
+  "family": "code"
+ },
+ "xslt": {
+  "type": "ext",
+  "category": "web",
+  "label": "XSLT",
+  "color": "#E04F16",
+  "family": "code"
+ },
+ "xsd": {
+  "type": "ext",
+  "category": "web",
+  "label": "XSD",
+  "color": "#E04F16",
+  "family": "code"
+ },
+ "dtd": {
+  "type": "ext",
+  "category": "web",
+  "label": "DTD",
+  "color": "#E04F16",
+  "family": "code"
+ },
+ "wsdl": {
+  "type": "ext",
+  "category": "web",
+  "label": "WSDL",
+  "color": "#E04F16",
+  "family": "code"
+ },
+ "rss": {
+  "type": "ext",
+  "category": "web",
+  "label": "RSS",
+  "color": "#E04F16",
+  "family": "code"
+ },
+ "atom": {
+  "type": "ext",
+  "category": "web",
+  "label": "ATOM",
+  "color": "#E04F16",
+  "family": "code"
+ },
+ "mhtml": {
+  "type": "ext",
+  "category": "web",
+  "label": "MHTML",
+  "color": "#E04F16",
+  "family": "code"
+ },
+ "json": {
+  "type": "ext",
+  "category": "data",
+  "label": "JSON",
+  "color": "#475467",
+  "family": "config"
+ },
+ "jsonc": {
+  "type": "ext",
+  "category": "data",
+  "label": "JSONC",
+  "color": "#475467",
+  "family": "config"
+ },
+ "jsonl": {
+  "type": "ext",
+  "category": "data",
+  "label": "JSONL",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "json5": {
+  "type": "ext",
+  "category": "data",
+  "label": "JSON5",
+  "color": "#475467",
+  "family": "config"
+ },
+ "ndjson": {
+  "type": "ext",
+  "category": "data",
+  "label": "NDJSO",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "jsonld": {
+  "type": "ext",
+  "category": "data",
+  "label": "JSNLD",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "har": {
+  "type": "ext",
+  "category": "data",
+  "label": "HAR",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "map": {
+  "type": "ext",
+  "category": "data",
+  "label": "MAP",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "yaml": {
+  "type": "ext",
+  "category": "data",
+  "label": "YAML",
+  "color": "#B42318",
+  "family": "config"
+ },
+ "yml": {
+  "type": "ext",
+  "category": "data",
+  "label": "YML",
+  "color": "#B42318",
+  "family": "config"
+ },
+ "toml": {
+  "type": "ext",
+  "category": "data",
+  "label": "TOML",
+  "color": "#9C4221",
+  "family": "config"
+ },
+ "csv": {
+  "type": "ext",
+  "category": "data",
+  "label": "CSV",
+  "color": "#079455",
+  "family": "config"
+ },
+ "tsv": {
+  "type": "ext",
+  "category": "data",
+  "label": "TSV",
+  "color": "#079455",
+  "family": "config"
+ },
+ "avro": {
+  "type": "ext",
+  "category": "data",
+  "label": "AVRO",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "msgpack": {
+  "type": "ext",
+  "category": "data",
+  "label": "MSGPK",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "cbor": {
+  "type": "ext",
+  "category": "data",
+  "label": "CBOR",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "bson": {
+  "type": "ext",
+  "category": "data",
+  "label": "BSON",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "thrift": {
+  "type": "ext",
+  "category": "data",
+  "label": "THRFT",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "capnp": {
+  "type": "ext",
+  "category": "data",
+  "label": "CAPNP",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "fbs": {
+  "type": "ext",
+  "category": "data",
+  "label": "FBS",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "ini": {
+  "type": "ext",
+  "category": "data",
+  "label": "INI",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "cfg": {
+  "type": "ext",
+  "category": "data",
+  "label": "CFG",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "conf": {
+  "type": "ext",
+  "category": "data",
+  "label": "CONF",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "env": {
+  "type": "ext",
+  "category": "data",
+  "label": "ENV",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "properties": {
+  "type": "ext",
+  "category": "data",
+  "label": "PROP",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "plist": {
+  "type": "ext",
+  "category": "data",
+  "label": "PLIST",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "lock": {
+  "type": "ext",
+  "category": "data",
+  "label": "LOCK",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "log": {
+  "type": "ext",
+  "category": "data",
+  "label": "LOG",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "gitignore": {
+  "type": "ext",
+  "category": "data",
+  "label": "GIT",
+  "color": "#E64A19",
+  "family": "config"
+ },
+ "editorconfig": {
+  "type": "ext",
+  "category": "data",
+  "label": "EDCFG",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "reg": {
+  "type": "ext",
+  "category": "data",
+  "label": "REG",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "inf": {
+  "type": "ext",
+  "category": "data",
+  "label": "INF",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "gitattributes": {
+  "type": "ext",
+  "category": "data",
+  "label": "GITAT",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "gitmodules": {
+  "type": "ext",
+  "category": "data",
+  "label": "GITMD",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "dockerignore": {
+  "type": "ext",
+  "category": "data",
+  "label": "DIGN",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "npmrc": {
+  "type": "ext",
+  "category": "data",
+  "label": "NPMRC",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "diff": {
+  "type": "ext",
+  "category": "data",
+  "label": "DIFF",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "patch": {
+  "type": "ext",
+  "category": "data",
+  "label": "PATCH",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "tfstate": {
+  "type": "ext",
+  "category": "data",
+  "label": "TFSTA",
+  "color": "#0E9384",
+  "family": "config"
+ },
+ "sql": {
+  "type": "ext",
+  "category": "db",
+  "label": "SQL",
+  "color": "#0086C9",
+  "family": "database"
+ },
+ "dump": {
+  "type": "ext",
+  "category": "db",
+  "label": "DUMP",
+  "color": "#099250",
+  "family": "database"
+ },
+ "bak": {
+  "type": "ext",
+  "category": "db",
+  "label": "BAK",
+  "color": "#099250",
+  "family": "database"
+ },
+ "sqlite": {
+  "type": "ext",
+  "category": "db",
+  "label": "SQLT",
+  "color": "#0F80CC",
+  "family": "database"
+ },
+ "sqlite3": {
+  "type": "ext",
+  "category": "db",
+  "label": "SQLT",
+  "color": "#0F80CC",
+  "family": "database"
+ },
+ "db3": {
+  "type": "ext",
+  "category": "db",
+  "label": "DB3",
+  "color": "#099250",
+  "family": "database"
+ },
+ "s3db": {
+  "type": "ext",
+  "category": "db",
+  "label": "S3DB",
+  "color": "#099250",
+  "family": "database"
+ },
+ "mdb": {
+  "type": "ext",
+  "category": "db",
+  "label": "MDB",
+  "color": "#099250",
+  "family": "database",
+  "ambiguous": [
+   "mdb-lmdb"
+  ]
+ },
+ "accdb": {
+  "type": "ext",
+  "category": "db",
+  "label": "ACCDB",
+  "color": "#099250",
+  "family": "database"
+ },
+ "laccdb": {
+  "type": "ext",
+  "category": "db",
+  "label": "LACDB",
+  "color": "#099250",
+  "family": "database"
+ },
+ "mdf": {
+  "type": "ext",
+  "category": "db",
+  "label": "MDF",
+  "color": "#099250",
+  "family": "database"
+ },
+ "ndf": {
+  "type": "ext",
+  "category": "db",
+  "label": "NDF",
+  "color": "#099250",
+  "family": "database"
+ },
+ "ldf": {
+  "type": "ext",
+  "category": "db",
+  "label": "LDF",
+  "color": "#099250",
+  "family": "database"
+ },
+ "dbf": {
+  "type": "ext",
+  "category": "db",
+  "label": "DBF",
+  "color": "#099250",
+  "family": "database",
+  "ambiguous": [
+   "dbf-oracle"
+  ]
+ },
+ "dmp": {
+  "type": "ext",
+  "category": "db",
+  "label": "DMP",
+  "color": "#099250",
+  "family": "database"
+ },
+ "frm": {
+  "type": "ext",
+  "category": "db",
+  "label": "FRM",
+  "color": "#099250",
+  "family": "database"
+ },
+ "ibd": {
+  "type": "ext",
+  "category": "db",
+  "label": "IBD",
+  "color": "#099250",
+  "family": "database"
+ },
+ "myd": {
+  "type": "ext",
+  "category": "db",
+  "label": "MYD",
+  "color": "#099250",
+  "family": "database"
+ },
+ "myi": {
+  "type": "ext",
+  "category": "db",
+  "label": "MYI",
+  "color": "#099250",
+  "family": "database"
+ },
+ "ldb": {
+  "type": "ext",
+  "category": "db",
+  "label": "LDB",
+  "color": "#099250",
+  "family": "database"
+ },
+ "sst": {
+  "type": "ext",
+  "category": "db",
+  "label": "SST",
+  "color": "#099250",
+  "family": "database"
+ },
+ "dbm": {
+  "type": "ext",
+  "category": "db",
+  "label": "DBM",
+  "color": "#099250",
+  "family": "database"
+ },
+ "duckdb": {
+  "type": "ext",
+  "category": "db",
+  "label": "DUCK",
+  "color": "#099250",
+  "family": "database"
+ },
+ "fdb": {
+  "type": "ext",
+  "category": "db",
+  "label": "FDB",
+  "color": "#099250",
+  "family": "database"
+ },
+ "gdb": {
+  "type": "ext",
+  "category": "db",
+  "label": "GDB",
+  "color": "#099250",
+  "family": "database"
+ },
+ "realm": {
+  "type": "ext",
+  "category": "db",
+  "label": "REALM",
+  "color": "#099250",
+  "family": "database"
+ },
+ "rdb": {
+  "type": "ext",
+  "category": "db",
+  "label": "RDB",
+  "color": "#099250",
+  "family": "database"
+ },
+ "aof": {
+  "type": "ext",
+  "category": "db",
+  "label": "AOF",
+  "color": "#099250",
+  "family": "database"
+ },
+ "wt": {
+  "type": "ext",
+  "category": "db",
+  "label": "WT",
+  "color": "#099250",
+  "family": "database"
+ },
+ "parquet": {
+  "type": "ext",
+  "category": "db",
+  "label": "PRQT",
+  "color": "#099250",
+  "family": "database"
+ },
+ "orc": {
+  "type": "ext",
+  "category": "db",
+  "label": "ORC",
+  "color": "#099250",
+  "family": "database"
+ },
+ "arrow": {
+  "type": "ext",
+  "category": "db",
+  "label": "ARROW",
+  "color": "#099250",
+  "family": "database"
+ },
+ "feather": {
+  "type": "ext",
+  "category": "db",
+  "label": "FTHR",
+  "color": "#099250",
+  "family": "database"
+ },
+ "h5": {
+  "type": "ext",
+  "category": "db",
+  "label": "H5",
+  "color": "#099250",
+  "family": "database"
+ },
+ "hdf5": {
+  "type": "ext",
+  "category": "db",
+  "label": "HDF5",
+  "color": "#099250",
+  "family": "database"
+ },
+ "nc": {
+  "type": "ext",
+  "category": "db",
+  "label": "NC",
+  "color": "#099250",
+  "family": "database"
+ },
+ "zarr": {
+  "type": "ext",
+  "category": "db",
+  "label": "ZARR",
+  "color": "#099250",
+  "family": "database"
+ },
+ "mat": {
+  "type": "ext",
+  "category": "db",
+  "label": "MAT",
+  "color": "#099250",
+  "family": "database"
+ },
+ "rds": {
+  "type": "ext",
+  "category": "db",
+  "label": "RDS",
+  "color": "#099250",
+  "family": "database"
+ },
+ "rdata": {
+  "type": "ext",
+  "category": "db",
+  "label": "RDATA",
+  "color": "#099250",
+  "family": "database"
+ },
+ "rda": {
+  "type": "ext",
+  "category": "db",
+  "label": "RDA",
+  "color": "#099250",
+  "family": "database"
+ },
+ "sav": {
+  "type": "ext",
+  "category": "db",
+  "label": "SAV",
+  "color": "#099250",
+  "family": "database"
+ },
+ "dta": {
+  "type": "ext",
+  "category": "db",
+  "label": "DTA",
+  "color": "#099250",
+  "family": "database"
+ },
+ "sas7bdat": {
+  "type": "ext",
+  "category": "db",
+  "label": "SAS7",
+  "color": "#099250",
+  "family": "database"
+ },
+ "xpt": {
+  "type": "ext",
+  "category": "db",
+  "label": "XPT",
+  "color": "#099250",
+  "family": "database"
+ },
+ "npy": {
+  "type": "ext",
+  "category": "db",
+  "label": "NPY",
+  "color": "#099250",
+  "family": "database"
+ },
+ "npz": {
+  "type": "ext",
+  "category": "db",
+  "label": "NPZ",
+  "color": "#099250",
+  "family": "database"
+ },
+ "pkl": {
+  "type": "ext",
+  "category": "db",
+  "label": "PKL",
+  "color": "#099250",
+  "family": "database"
+ },
+ "pickle": {
+  "type": "ext",
+  "category": "db",
+  "label": "PKL",
+  "color": "#099250",
+  "family": "database"
+ },
+ "joblib": {
+  "type": "ext",
+  "category": "db",
+  "label": "JBLIB",
+  "color": "#099250",
+  "family": "database"
+ },
+ "graphml": {
+  "type": "ext",
+  "category": "db",
+  "label": "GRAPH",
+  "color": "#099250",
+  "family": "database"
+ },
+ "gexf": {
+  "type": "ext",
+  "category": "db",
+  "label": "GEXF",
+  "color": "#099250",
+  "family": "database"
+ },
+ "gml": {
+  "type": "ext",
+  "category": "db",
+  "label": "GML",
+  "color": "#099250",
+  "family": "database"
+ },
+ "ttl": {
+  "type": "ext",
+  "category": "db",
+  "label": "TTL",
+  "color": "#099250",
+  "family": "database"
+ },
+ "rdf": {
+  "type": "ext",
+  "category": "db",
+  "label": "RDF",
+  "color": "#099250",
+  "family": "database"
+ },
+ "owl": {
+  "type": "ext",
+  "category": "db",
+  "label": "OWL",
+  "color": "#099250",
+  "family": "database"
+ },
+ "nt": {
+  "type": "ext",
+  "category": "db",
+  "label": "NT",
+  "color": "#099250",
+  "family": "database"
+ },
+ "nq": {
+  "type": "ext",
+  "category": "db",
+  "label": "NQ",
+  "color": "#099250",
+  "family": "database"
+ },
+ "trig": {
+  "type": "ext",
+  "category": "db",
+  "label": "TRIG",
+  "color": "#099250",
+  "family": "database"
+ },
+ "kdbx": {
+  "type": "ext",
+  "category": "db",
+  "label": "KDBX",
+  "color": "#2F9E44",
+  "family": "database"
+ },
+ "kdb": {
+  "type": "ext",
+  "category": "db",
+  "label": "KDB",
+  "color": "#099250",
+  "family": "database"
+ },
+ "dbt": {
+  "type": "ext",
+  "category": "db",
+  "label": "DBT",
+  "color": "#099250",
+  "family": "database"
+ },
+ "fpt": {
+  "type": "ext",
+  "category": "db",
+  "label": "FPT",
+  "color": "#099250",
+  "family": "database"
+ },
+ "cdx": {
+  "type": "ext",
+  "category": "db",
+  "label": "CDX",
+  "color": "#099250",
+  "family": "database"
+ },
+ "pt": {
+  "type": "ext",
+  "category": "ml",
+  "label": "PT",
+  "color": "#EE4C2C",
+  "family": "neural"
+ },
+ "pth": {
+  "type": "ext",
+  "category": "ml",
+  "label": "PTH",
+  "color": "#EE4C2C",
+  "family": "neural"
+ },
+ "ckpt": {
+  "type": "ext",
+  "category": "ml",
+  "label": "CKPT",
+  "color": "#7A5AF8",
+  "family": "neural"
+ },
+ "safetensors": {
+  "type": "ext",
+  "category": "ml",
+  "label": "SAFE",
+  "color": "#7A5AF8",
+  "family": "neural"
+ },
+ "onnx": {
+  "type": "ext",
+  "category": "ml",
+  "label": "ONNX",
+  "color": "#4B5563",
+  "family": "neural"
+ },
+ "gguf": {
+  "type": "ext",
+  "category": "ml",
+  "label": "GGUF",
+  "color": "#7A5AF8",
+  "family": "neural"
+ },
+ "tflite": {
+  "type": "ext",
+  "category": "ml",
+  "label": "TFLIT",
+  "color": "#E8831C",
+  "family": "neural"
+ },
+ "keras": {
+  "type": "ext",
+  "category": "ml",
+  "label": "KERAS",
+  "color": "#C62828",
+  "family": "neural"
+ },
+ "mlmodel": {
+  "type": "ext",
+  "category": "ml",
+  "label": "MLMDL",
+  "color": "#7A5AF8",
+  "family": "neural"
+ },
+ "tfrecord": {
+  "type": "ext",
+  "category": "ml",
+  "label": "TFREC",
+  "color": "#7A5AF8",
+  "family": "neural"
+ },
+ "txt": {
+  "type": "ext",
+  "category": "text",
+  "label": "TXT",
+  "color": "#667085",
+  "family": "document"
+ },
+ "text": {
+  "type": "ext",
+  "category": "text",
+  "label": "TEXT",
+  "color": "#667085",
+  "family": "document"
+ },
+ "md": {
+  "type": "ext",
+  "category": "text",
+  "label": "MD",
+  "color": "#344054",
+  "family": "document"
+ },
+ "markdown": {
+  "type": "ext",
+  "category": "text",
+  "label": "MD",
+  "color": "#667085",
+  "family": "document"
+ },
+ "mdx": {
+  "type": "ext",
+  "category": "text",
+  "label": "MDX",
+  "color": "#F59E0B",
+  "family": "document"
+ },
+ "rst": {
+  "type": "ext",
+  "category": "text",
+  "label": "RST",
+  "color": "#667085",
+  "family": "document"
+ },
+ "adoc": {
+  "type": "ext",
+  "category": "text",
+  "label": "ADOC",
+  "color": "#667085",
+  "family": "document"
+ },
+ "org": {
+  "type": "ext",
+  "category": "text",
+  "label": "ORG",
+  "color": "#667085",
+  "family": "document"
+ },
+ "rtf": {
+  "type": "ext",
+  "category": "text",
+  "label": "RTF",
+  "color": "#667085",
+  "family": "document"
+ },
+ "tex": {
+  "type": "ext",
+  "category": "text",
+  "label": "TEX",
+  "color": "#667085",
+  "family": "document"
+ },
+ "bib": {
+  "type": "ext",
+  "category": "text",
+  "label": "BIB",
+  "color": "#667085",
+  "family": "document"
+ },
+ "cls": {
+  "type": "ext",
+  "category": "text",
+  "label": "CLS",
+  "color": "#667085",
+  "family": "document"
+ },
+ "sty": {
+  "type": "ext",
+  "category": "text",
+  "label": "STY",
+  "color": "#667085",
+  "family": "document"
+ },
+ "srt": {
+  "type": "ext",
+  "category": "text",
+  "label": "SRT",
+  "color": "#667085",
+  "family": "document"
+ },
+ "vtt": {
+  "type": "ext",
+  "category": "text",
+  "label": "VTT",
+  "color": "#667085",
+  "family": "document"
+ },
+ "ass": {
+  "type": "ext",
+  "category": "text",
+  "label": "ASS",
+  "color": "#667085",
+  "family": "document"
+ },
+ "ssa": {
+  "type": "ext",
+  "category": "text",
+  "label": "SSA",
+  "color": "#667085",
+  "family": "document"
+ },
+ "sub": {
+  "type": "ext",
+  "category": "text",
+  "label": "SUB",
+  "color": "#667085",
+  "family": "document"
+ },
+ "doc": {
+  "type": "ext",
+  "category": "docs",
+  "label": "DOC",
+  "color": "#1570EF",
+  "family": "document"
+ },
+ "docx": {
+  "type": "ext",
+  "category": "docs",
+  "label": "DOCX",
+  "color": "#1570EF",
+  "family": "document"
+ },
+ "docm": {
+  "type": "ext",
+  "category": "docs",
+  "label": "DOCM",
+  "color": "#1570EF",
+  "family": "document"
+ },
+ "dot": {
+  "type": "ext",
+  "category": "docs",
+  "label": "DOT",
+  "color": "#1570EF",
+  "family": "document"
+ },
+ "dotx": {
+  "type": "ext",
+  "category": "docs",
+  "label": "DOTX",
+  "color": "#1570EF",
+  "family": "document"
+ },
+ "odt": {
+  "type": "ext",
+  "category": "docs",
+  "label": "ODT",
+  "color": "#1570EF",
+  "family": "document"
+ },
+ "ott": {
+  "type": "ext",
+  "category": "docs",
+  "label": "OTT",
+  "color": "#1570EF",
+  "family": "document"
+ },
+ "wpd": {
+  "type": "ext",
+  "category": "docs",
+  "label": "WPD",
+  "color": "#1570EF",
+  "family": "document"
+ },
+ "pdf": {
+  "type": "ext",
+  "category": "docs",
+  "label": "PDF",
+  "color": "#D92D20",
+  "family": "document"
+ },
+ "pages": {
+  "type": "ext",
+  "category": "docs",
+  "label": "PAGES",
+  "color": "#1570EF",
+  "family": "document"
+ },
+ "xps": {
+  "type": "ext",
+  "category": "docs",
+  "label": "XPS",
+  "color": "#1570EF",
+  "family": "document"
+ },
+ "oxps": {
+  "type": "ext",
+  "category": "docs",
+  "label": "OXPS",
+  "color": "#1570EF",
+  "family": "document"
+ },
+ "djvu": {
+  "type": "ext",
+  "category": "docs",
+  "label": "DJVU",
+  "color": "#1570EF",
+  "family": "document"
+ },
+ "vsd": {
+  "type": "ext",
+  "category": "docs",
+  "label": "VSD",
+  "color": "#1570EF",
+  "family": "document"
+ },
+ "vsdx": {
+  "type": "ext",
+  "category": "docs",
+  "label": "VSDX",
+  "color": "#1570EF",
+  "family": "document"
+ },
+ "one": {
+  "type": "ext",
+  "category": "docs",
+  "label": "ONE",
+  "color": "#1570EF",
+  "family": "document"
+ },
+ "pub": {
+  "type": "ext",
+  "category": "docs",
+  "label": "PUB",
+  "color": "#1570EF",
+  "family": "document",
+  "ambiguous": [
+   "pub-key"
+  ]
+ },
+ "mpp": {
+  "type": "ext",
+  "category": "docs",
+  "label": "MPP",
+  "color": "#1570EF",
+  "family": "document"
+ },
+ "xls": {
+  "type": "ext",
+  "category": "sheet",
+  "label": "XLS",
+  "color": "#079455",
+  "family": "spreadsheet"
+ },
+ "xlsx": {
+  "type": "ext",
+  "category": "sheet",
+  "label": "XLSX",
+  "color": "#079455",
+  "family": "spreadsheet"
+ },
+ "xlsm": {
+  "type": "ext",
+  "category": "sheet",
+  "label": "XLSM",
+  "color": "#079455",
+  "family": "spreadsheet"
+ },
+ "xlsb": {
+  "type": "ext",
+  "category": "sheet",
+  "label": "XLSB",
+  "color": "#079455",
+  "family": "spreadsheet"
+ },
+ "xltx": {
+  "type": "ext",
+  "category": "sheet",
+  "label": "XLTX",
+  "color": "#079455",
+  "family": "spreadsheet"
+ },
+ "ods": {
+  "type": "ext",
+  "category": "sheet",
+  "label": "ODS",
+  "color": "#079455",
+  "family": "spreadsheet"
+ },
+ "numbers": {
+  "type": "ext",
+  "category": "sheet",
+  "label": "NUMB",
+  "color": "#079455",
+  "family": "spreadsheet"
+ },
+ "ppt": {
+  "type": "ext",
+  "category": "slides",
+  "label": "PPT",
+  "color": "#E04F16",
+  "family": "presentation"
+ },
+ "pptx": {
+  "type": "ext",
+  "category": "slides",
+  "label": "PPTX",
+  "color": "#E04F16",
+  "family": "presentation"
+ },
+ "pptm": {
+  "type": "ext",
+  "category": "slides",
+  "label": "PPTM",
+  "color": "#E04F16",
+  "family": "presentation"
+ },
+ "pps": {
+  "type": "ext",
+  "category": "slides",
+  "label": "PPS",
+  "color": "#E04F16",
+  "family": "presentation"
+ },
+ "ppsx": {
+  "type": "ext",
+  "category": "slides",
+  "label": "PPSX",
+  "color": "#E04F16",
+  "family": "presentation"
+ },
+ "potx": {
+  "type": "ext",
+  "category": "slides",
+  "label": "POTX",
+  "color": "#E04F16",
+  "family": "presentation"
+ },
+ "odp": {
+  "type": "ext",
+  "category": "slides",
+  "label": "ODP",
+  "color": "#E04F16",
+  "family": "presentation"
+ },
+ "epub": {
+  "type": "ext",
+  "category": "book",
+  "label": "EPUB",
+  "color": "#B54708",
+  "family": "book"
+ },
+ "mobi": {
+  "type": "ext",
+  "category": "book",
+  "label": "MOBI",
+  "color": "#B54708",
+  "family": "book"
+ },
+ "azw3": {
+  "type": "ext",
+  "category": "book",
+  "label": "AZW3",
+  "color": "#B54708",
+  "family": "book"
+ },
+ "fb2": {
+  "type": "ext",
+  "category": "book",
+  "label": "FB2",
+  "color": "#B54708",
+  "family": "book"
+ },
+ "cbz": {
+  "type": "ext",
+  "category": "book",
+  "label": "CBZ",
+  "color": "#B54708",
+  "family": "book"
+ },
+ "cbr": {
+  "type": "ext",
+  "category": "book",
+  "label": "CBR",
+  "color": "#B54708",
+  "family": "book"
+ },
+ "ics": {
+  "type": "ext",
+  "category": "mail",
+  "label": "ICS",
+  "color": "#1570EF",
+  "family": "mail"
+ },
+ "vcf": {
+  "type": "ext",
+  "category": "mail",
+  "label": "VCF",
+  "color": "#1570EF",
+  "family": "mail"
+ },
+ "eml": {
+  "type": "ext",
+  "category": "mail",
+  "label": "EML",
+  "color": "#1570EF",
+  "family": "mail"
+ },
+ "msg": {
+  "type": "ext",
+  "category": "mail",
+  "label": "MSG",
+  "color": "#1570EF",
+  "family": "mail"
+ },
+ "mbox": {
+  "type": "ext",
+  "category": "mail",
+  "label": "MBOX",
+  "color": "#1570EF",
+  "family": "mail"
+ },
+ "pst": {
+  "type": "ext",
+  "category": "mail",
+  "label": "PST",
+  "color": "#1570EF",
+  "family": "mail"
+ },
+ "ost": {
+  "type": "ext",
+  "category": "mail",
+  "label": "OST",
+  "color": "#1570EF",
+  "family": "mail"
+ },
+ "emlx": {
+  "type": "ext",
+  "category": "mail",
+  "label": "EMLX",
+  "color": "#1570EF",
+  "family": "mail"
+ },
+ "png": {
+  "type": "ext",
+  "category": "img",
+  "label": "PNG",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "jpg": {
+  "type": "ext",
+  "category": "img",
+  "label": "JPG",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "jpeg": {
+  "type": "ext",
+  "category": "img",
+  "label": "JPEG",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "gif": {
+  "type": "ext",
+  "category": "img",
+  "label": "GIF",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "webp": {
+  "type": "ext",
+  "category": "img",
+  "label": "WEBP",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "bmp": {
+  "type": "ext",
+  "category": "img",
+  "label": "BMP",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "ico": {
+  "type": "ext",
+  "category": "img",
+  "label": "ICO",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "icns": {
+  "type": "ext",
+  "category": "img",
+  "label": "ICNS",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "cur": {
+  "type": "ext",
+  "category": "img",
+  "label": "CUR",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "tiff": {
+  "type": "ext",
+  "category": "img",
+  "label": "TIFF",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "tif": {
+  "type": "ext",
+  "category": "img",
+  "label": "TIF",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "heic": {
+  "type": "ext",
+  "category": "img",
+  "label": "HEIC",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "heif": {
+  "type": "ext",
+  "category": "img",
+  "label": "HEIF",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "avif": {
+  "type": "ext",
+  "category": "img",
+  "label": "AVIF",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "jxl": {
+  "type": "ext",
+  "category": "img",
+  "label": "JXL",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "jp2": {
+  "type": "ext",
+  "category": "img",
+  "label": "JP2",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "tga": {
+  "type": "ext",
+  "category": "img",
+  "label": "TGA",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "pcx": {
+  "type": "ext",
+  "category": "img",
+  "label": "PCX",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "pbm": {
+  "type": "ext",
+  "category": "img",
+  "label": "PBM",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "pgm": {
+  "type": "ext",
+  "category": "img",
+  "label": "PGM",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "ppm": {
+  "type": "ext",
+  "category": "img",
+  "label": "PPM",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "dds": {
+  "type": "ext",
+  "category": "img",
+  "label": "DDS",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "ktx": {
+  "type": "ext",
+  "category": "img",
+  "label": "KTX",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "ktx2": {
+  "type": "ext",
+  "category": "img",
+  "label": "KTX2",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "exr": {
+  "type": "ext",
+  "category": "img",
+  "label": "EXR",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "hdr": {
+  "type": "ext",
+  "category": "img",
+  "label": "HDR",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "raw": {
+  "type": "ext",
+  "category": "img",
+  "label": "RAW",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "cr2": {
+  "type": "ext",
+  "category": "img",
+  "label": "CR2",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "cr3": {
+  "type": "ext",
+  "category": "img",
+  "label": "CR3",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "nef": {
+  "type": "ext",
+  "category": "img",
+  "label": "NEF",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "arw": {
+  "type": "ext",
+  "category": "img",
+  "label": "ARW",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "dng": {
+  "type": "ext",
+  "category": "img",
+  "label": "DNG",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "orf": {
+  "type": "ext",
+  "category": "img",
+  "label": "ORF",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "raf": {
+  "type": "ext",
+  "category": "img",
+  "label": "RAF",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "rw2": {
+  "type": "ext",
+  "category": "img",
+  "label": "RW2",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "svg": {
+  "type": "ext",
+  "category": "img",
+  "label": "SVG",
+  "color": "#F79009",
+  "family": "image"
+ },
+ "svgz": {
+  "type": "ext",
+  "category": "img",
+  "label": "SVGZ",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "img": {
+  "type": "ext",
+  "category": "img",
+  "label": "IMG",
+  "color": "#7F56D9",
+  "family": "image",
+  "ambiguous": [
+   "img-disk"
+  ]
+ },
+ "wmf": {
+  "type": "ext",
+  "category": "img",
+  "label": "WMF",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "emf": {
+  "type": "ext",
+  "category": "img",
+  "label": "EMF",
+  "color": "#7F56D9",
+  "family": "image"
+ },
+ "psd": {
+  "type": "ext",
+  "category": "design",
+  "label": "PSD",
+  "color": "#1570EF",
+  "family": "image"
+ },
+ "psb": {
+  "type": "ext",
+  "category": "design",
+  "label": "PSB",
+  "color": "#E62E05",
+  "family": "image"
+ },
+ "xcf": {
+  "type": "ext",
+  "category": "design",
+  "label": "XCF",
+  "color": "#E62E05",
+  "family": "image"
+ },
+ "kra": {
+  "type": "ext",
+  "category": "design",
+  "label": "KRA",
+  "color": "#E62E05",
+  "family": "image"
+ },
+ "ora": {
+  "type": "ext",
+  "category": "design",
+  "label": "ORA",
+  "color": "#E62E05",
+  "family": "image"
+ },
+ "clip": {
+  "type": "ext",
+  "category": "design",
+  "label": "CLIP",
+  "color": "#E62E05",
+  "family": "image"
+ },
+ "ai": {
+  "type": "ext",
+  "category": "design",
+  "label": "AI",
+  "color": "#E62E05",
+  "family": "image"
+ },
+ "eps": {
+  "type": "ext",
+  "category": "design",
+  "label": "EPS",
+  "color": "#E62E05",
+  "family": "image"
+ },
+ "cdr": {
+  "type": "ext",
+  "category": "design",
+  "label": "CDR",
+  "color": "#E62E05",
+  "family": "image"
+ },
+ "indd": {
+  "type": "ext",
+  "category": "design",
+  "label": "INDD",
+  "color": "#C11574",
+  "family": "image"
+ },
+ "fig": {
+  "type": "ext",
+  "category": "design",
+  "label": "FIG",
+  "color": "#7A5AF8",
+  "family": "image"
+ },
+ "sketch": {
+  "type": "ext",
+  "category": "design",
+  "label": "SKTCH",
+  "color": "#F79009",
+  "family": "image"
+ },
+ "xd": {
+  "type": "ext",
+  "category": "design",
+  "label": "XD",
+  "color": "#C11574",
+  "family": "image"
+ },
+ "afdesign": {
+  "type": "ext",
+  "category": "design",
+  "label": "AFDES",
+  "color": "#E62E05",
+  "family": "image"
+ },
+ "afphoto": {
+  "type": "ext",
+  "category": "design",
+  "label": "AFPHO",
+  "color": "#E62E05",
+  "family": "image"
+ },
+ "aep": {
+  "type": "ext",
+  "category": "design",
+  "label": "AEP",
+  "color": "#6938EF",
+  "family": "image"
+ },
+ "prproj": {
+  "type": "ext",
+  "category": "design",
+  "label": "PRPRJ",
+  "color": "#6938EF",
+  "family": "image"
+ },
+ "drp": {
+  "type": "ext",
+  "category": "design",
+  "label": "DRP",
+  "color": "#E62E05",
+  "family": "image"
+ },
+ "fcpxml": {
+  "type": "ext",
+  "category": "design",
+  "label": "FCPXM",
+  "color": "#E62E05",
+  "family": "image"
+ },
+ "veg": {
+  "type": "ext",
+  "category": "design",
+  "label": "VEG",
+  "color": "#E62E05",
+  "family": "image"
+ },
+ "mp3": {
+  "type": "ext",
+  "category": "audio",
+  "label": "MP3",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "wav": {
+  "type": "ext",
+  "category": "audio",
+  "label": "WAV",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "flac": {
+  "type": "ext",
+  "category": "audio",
+  "label": "FLAC",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "aac": {
+  "type": "ext",
+  "category": "audio",
+  "label": "AAC",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "ogg": {
+  "type": "ext",
+  "category": "audio",
+  "label": "OGG",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "m4a": {
+  "type": "ext",
+  "category": "audio",
+  "label": "M4A",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "wma": {
+  "type": "ext",
+  "category": "audio",
+  "label": "WMA",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "aiff": {
+  "type": "ext",
+  "category": "audio",
+  "label": "AIFF",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "aif": {
+  "type": "ext",
+  "category": "audio",
+  "label": "AIF",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "mid": {
+  "type": "ext",
+  "category": "audio",
+  "label": "MID",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "midi": {
+  "type": "ext",
+  "category": "audio",
+  "label": "MIDI",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "opus": {
+  "type": "ext",
+  "category": "audio",
+  "label": "OPUS",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "amr": {
+  "type": "ext",
+  "category": "audio",
+  "label": "AMR",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "ape": {
+  "type": "ext",
+  "category": "audio",
+  "label": "APE",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "alac": {
+  "type": "ext",
+  "category": "audio",
+  "label": "ALAC",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "wv": {
+  "type": "ext",
+  "category": "audio",
+  "label": "WV",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "mka": {
+  "type": "ext",
+  "category": "audio",
+  "label": "MKA",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "ac3": {
+  "type": "ext",
+  "category": "audio",
+  "label": "AC3",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "dts": {
+  "type": "ext",
+  "category": "audio",
+  "label": "DTS",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "caf": {
+  "type": "ext",
+  "category": "audio",
+  "label": "CAF",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "au": {
+  "type": "ext",
+  "category": "audio",
+  "label": "AU",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "m3u": {
+  "type": "ext",
+  "category": "audio",
+  "label": "M3U",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "m3u8": {
+  "type": "ext",
+  "category": "audio",
+  "label": "M3U8",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "pls": {
+  "type": "ext",
+  "category": "audio",
+  "label": "PLS",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "sf2": {
+  "type": "ext",
+  "category": "audio",
+  "label": "SF2",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "sfz": {
+  "type": "ext",
+  "category": "audio",
+  "label": "SFZ",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "als": {
+  "type": "ext",
+  "category": "audio",
+  "label": "ALS",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "flp": {
+  "type": "ext",
+  "category": "audio",
+  "label": "FLP",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "logicx": {
+  "type": "ext",
+  "category": "audio",
+  "label": "LOGIC",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "ptx": {
+  "type": "ext",
+  "category": "audio",
+  "label": "PTX",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "cpr": {
+  "type": "ext",
+  "category": "audio",
+  "label": "CPR",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "rpp": {
+  "type": "ext",
+  "category": "audio",
+  "label": "RPP",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "aup3": {
+  "type": "ext",
+  "category": "audio",
+  "label": "AUP3",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "band": {
+  "type": "ext",
+  "category": "audio",
+  "label": "BAND",
+  "color": "#DD2590",
+  "family": "audio"
+ },
+ "mp4": {
+  "type": "ext",
+  "category": "video",
+  "label": "MP4",
+  "color": "#444CE7",
+  "family": "video"
+ },
+ "mov": {
+  "type": "ext",
+  "category": "video",
+  "label": "MOV",
+  "color": "#444CE7",
+  "family": "video"
+ },
+ "avi": {
+  "type": "ext",
+  "category": "video",
+  "label": "AVI",
+  "color": "#1570EF",
+  "family": "video"
+ },
+ "mkv": {
+  "type": "ext",
+  "category": "video",
+  "label": "MKV",
+  "color": "#444CE7",
+  "family": "video"
+ },
+ "webm": {
+  "type": "ext",
+  "category": "video",
+  "label": "WEBM",
+  "color": "#444CE7",
+  "family": "video"
+ },
+ "flv": {
+  "type": "ext",
+  "category": "video",
+  "label": "FLV",
+  "color": "#444CE7",
+  "family": "video"
+ },
+ "wmv": {
+  "type": "ext",
+  "category": "video",
+  "label": "WMV",
+  "color": "#444CE7",
+  "family": "video"
+ },
+ "mpeg": {
+  "type": "ext",
+  "category": "video",
+  "label": "MPEG",
+  "color": "#444CE7",
+  "family": "video"
+ },
+ "mpg": {
+  "type": "ext",
+  "category": "video",
+  "label": "MPG",
+  "color": "#444CE7",
+  "family": "video"
+ },
+ "m4v": {
+  "type": "ext",
+  "category": "video",
+  "label": "M4V",
+  "color": "#444CE7",
+  "family": "video"
+ },
+ "3gp": {
+  "type": "ext",
+  "category": "video",
+  "label": "3GP",
+  "color": "#444CE7",
+  "family": "video"
+ },
+ "m2ts": {
+  "type": "ext",
+  "category": "video",
+  "label": "M2TS",
+  "color": "#444CE7",
+  "family": "video"
+ },
+ "ogv": {
+  "type": "ext",
+  "category": "video",
+  "label": "OGV",
+  "color": "#444CE7",
+  "family": "video"
+ },
+ "vob": {
+  "type": "ext",
+  "category": "video",
+  "label": "VOB",
+  "color": "#444CE7",
+  "family": "video"
+ },
+ "divx": {
+  "type": "ext",
+  "category": "video",
+  "label": "DIVX",
+  "color": "#444CE7",
+  "family": "video"
+ },
+ "asf": {
+  "type": "ext",
+  "category": "video",
+  "label": "ASF",
+  "color": "#444CE7",
+  "family": "video"
+ },
+ "rm": {
+  "type": "ext",
+  "category": "video",
+  "label": "RM",
+  "color": "#444CE7",
+  "family": "video"
+ },
+ "rmvb": {
+  "type": "ext",
+  "category": "video",
+  "label": "RMVB",
+  "color": "#444CE7",
+  "family": "video"
+ },
+ "mpd": {
+  "type": "ext",
+  "category": "video",
+  "label": "MPD",
+  "color": "#444CE7",
+  "family": "video"
+ },
+ "zip": {
+  "type": "ext",
+  "category": "archive",
+  "label": "ZIP",
+  "color": "#B54708",
+  "family": "archive"
+ },
+ "rar": {
+  "type": "ext",
+  "category": "archive",
+  "label": "RAR",
+  "color": "#B54708",
+  "family": "archive"
+ },
+ "7z": {
+  "type": "ext",
+  "category": "archive",
+  "label": "7Z",
+  "color": "#B54708",
+  "family": "archive"
+ },
+ "tar": {
+  "type": "ext",
+  "category": "archive",
+  "label": "TAR",
+  "color": "#B54708",
+  "family": "archive"
+ },
+ "gz": {
+  "type": "ext",
+  "category": "archive",
+  "label": "GZ",
+  "color": "#B54708",
+  "family": "archive"
+ },
+ "bz2": {
+  "type": "ext",
+  "category": "archive",
+  "label": "BZ2",
+  "color": "#B54708",
+  "family": "archive"
+ },
+ "xz": {
+  "type": "ext",
+  "category": "archive",
+  "label": "XZ",
+  "color": "#B54708",
+  "family": "archive"
+ },
+ "tgz": {
+  "type": "ext",
+  "category": "archive",
+  "label": "TGZ",
+  "color": "#B54708",
+  "family": "archive"
+ },
+ "tbz2": {
+  "type": "ext",
+  "category": "archive",
+  "label": "TBZ2",
+  "color": "#B54708",
+  "family": "archive"
+ },
+ "txz": {
+  "type": "ext",
+  "category": "archive",
+  "label": "TXZ",
+  "color": "#B54708",
+  "family": "archive"
+ },
+ "zst": {
+  "type": "ext",
+  "category": "archive",
+  "label": "ZST",
+  "color": "#B54708",
+  "family": "archive"
+ },
+ "lz4": {
+  "type": "ext",
+  "category": "archive",
+  "label": "LZ4",
+  "color": "#B54708",
+  "family": "archive"
+ },
+ "lzma": {
+  "type": "ext",
+  "category": "archive",
+  "label": "LZMA",
+  "color": "#B54708",
+  "family": "archive"
+ },
+ "cab": {
+  "type": "ext",
+  "category": "archive",
+  "label": "CAB",
+  "color": "#B54708",
+  "family": "archive"
+ },
+ "arj": {
+  "type": "ext",
+  "category": "archive",
+  "label": "ARJ",
+  "color": "#B54708",
+  "family": "archive"
+ },
+ "lzh": {
+  "type": "ext",
+  "category": "archive",
+  "label": "LZH",
+  "color": "#B54708",
+  "family": "archive"
+ },
+ "zipx": {
+  "type": "ext",
+  "category": "archive",
+  "label": "ZIPX",
+  "color": "#B54708",
+  "family": "archive"
+ },
+ "z": {
+  "type": "ext",
+  "category": "archive",
+  "label": "Z",
+  "color": "#B54708",
+  "family": "archive"
+ },
+ "iso": {
+  "type": "ext",
+  "category": "disk",
+  "label": "ISO",
+  "color": "#667085",
+  "family": "disc"
+ },
+ "dmg": {
+  "type": "ext",
+  "category": "disk",
+  "label": "DMG",
+  "color": "#667085",
+  "family": "disc"
+ },
+ "vhd": {
+  "type": "ext",
+  "category": "disk",
+  "label": "VHD",
+  "color": "#667085",
+  "family": "disc",
+  "ambiguous": [
+   "vhd-vhdl"
+  ]
+ },
+ "vhdx": {
+  "type": "ext",
+  "category": "disk",
+  "label": "VHDX",
+  "color": "#667085",
+  "family": "disc"
+ },
+ "vmdk": {
+  "type": "ext",
+  "category": "disk",
+  "label": "VMDK",
+  "color": "#667085",
+  "family": "disc"
+ },
+ "vdi": {
+  "type": "ext",
+  "category": "disk",
+  "label": "VDI",
+  "color": "#667085",
+  "family": "disc"
+ },
+ "qcow2": {
+  "type": "ext",
+  "category": "disk",
+  "label": "QCOW2",
+  "color": "#667085",
+  "family": "disc"
+ },
+ "ova": {
+  "type": "ext",
+  "category": "disk",
+  "label": "OVA",
+  "color": "#667085",
+  "family": "disc"
+ },
+ "ovf": {
+  "type": "ext",
+  "category": "disk",
+  "label": "OVF",
+  "color": "#667085",
+  "family": "disc"
+ },
+ "wim": {
+  "type": "ext",
+  "category": "disk",
+  "label": "WIM",
+  "color": "#667085",
+  "family": "disc"
+ },
+ "squashfs": {
+  "type": "ext",
+  "category": "disk",
+  "label": "SQFS",
+  "color": "#667085",
+  "family": "disc"
+ },
+ "cpio": {
+  "type": "ext",
+  "category": "disk",
+  "label": "CPIO",
+  "color": "#667085",
+  "family": "disc"
+ },
+ "vmx": {
+  "type": "ext",
+  "category": "disk",
+  "label": "VMX",
+  "color": "#667085",
+  "family": "disc"
+ },
+ "vbox": {
+  "type": "ext",
+  "category": "disk",
+  "label": "VBOX",
+  "color": "#667085",
+  "family": "disc"
+ },
+ "deb": {
+  "type": "ext",
+  "category": "pkg",
+  "label": "DEB",
+  "color": "#B54708",
+  "family": "package"
+ },
+ "rpm": {
+  "type": "ext",
+  "category": "pkg",
+  "label": "RPM",
+  "color": "#B54708",
+  "family": "package"
+ },
+ "apk": {
+  "type": "ext",
+  "category": "pkg",
+  "label": "APK",
+  "color": "#B54708",
+  "family": "package"
+ },
+ "ipa": {
+  "type": "ext",
+  "category": "pkg",
+  "label": "IPA",
+  "color": "#B54708",
+  "family": "package"
+ },
+ "msi": {
+  "type": "ext",
+  "category": "pkg",
+  "label": "MSI",
+  "color": "#B54708",
+  "family": "package"
+ },
+ "pkg": {
+  "type": "ext",
+  "category": "pkg",
+  "label": "PKG",
+  "color": "#B54708",
+  "family": "package"
+ },
+ "jar": {
+  "type": "ext",
+  "category": "pkg",
+  "label": "JAR",
+  "color": "#D96C00",
+  "family": "package"
+ },
+ "war": {
+  "type": "ext",
+  "category": "pkg",
+  "label": "WAR",
+  "color": "#B54708",
+  "family": "package"
+ },
+ "ear": {
+  "type": "ext",
+  "category": "pkg",
+  "label": "EAR",
+  "color": "#B54708",
+  "family": "package"
+ },
+ "whl": {
+  "type": "ext",
+  "category": "pkg",
+  "label": "WHL",
+  "color": "#B54708",
+  "family": "package"
+ },
+ "egg": {
+  "type": "ext",
+  "category": "pkg",
+  "label": "EGG",
+  "color": "#B54708",
+  "family": "package"
+ },
+ "gem": {
+  "type": "ext",
+  "category": "pkg",
+  "label": "GEM",
+  "color": "#B54708",
+  "family": "package"
+ },
+ "nupkg": {
+  "type": "ext",
+  "category": "pkg",
+  "label": "NUPKG",
+  "color": "#B54708",
+  "family": "package"
+ },
+ "aab": {
+  "type": "ext",
+  "category": "pkg",
+  "label": "AAB",
+  "color": "#B54708",
+  "family": "package"
+ },
+ "xapk": {
+  "type": "ext",
+  "category": "pkg",
+  "label": "XAPK",
+  "color": "#B54708",
+  "family": "package"
+ },
+ "msix": {
+  "type": "ext",
+  "category": "pkg",
+  "label": "MSIX",
+  "color": "#B54708",
+  "family": "package"
+ },
+ "appx": {
+  "type": "ext",
+  "category": "pkg",
+  "label": "APPX",
+  "color": "#B54708",
+  "family": "package"
+ },
+ "snap": {
+  "type": "ext",
+  "category": "pkg",
+  "label": "SNAP",
+  "color": "#B54708",
+  "family": "package"
+ },
+ "appimage": {
+  "type": "ext",
+  "category": "pkg",
+  "label": "APPIM",
+  "color": "#B54708",
+  "family": "package"
+ },
+ "xpi": {
+  "type": "ext",
+  "category": "pkg",
+  "label": "XPI",
+  "color": "#B54708",
+  "family": "package"
+ },
+ "crx": {
+  "type": "ext",
+  "category": "pkg",
+  "label": "CRX",
+  "color": "#B54708",
+  "family": "package"
+ },
+ "vsix": {
+  "type": "ext",
+  "category": "pkg",
+  "label": "VSIX",
+  "color": "#B54708",
+  "family": "package"
+ },
+ "unitypackage": {
+  "type": "ext",
+  "category": "pkg",
+  "label": "UNITY",
+  "color": "#B54708",
+  "family": "package"
+ },
+ "exe": {
+  "type": "ext",
+  "category": "exec",
+  "label": "EXE",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "dll": {
+  "type": "ext",
+  "category": "exec",
+  "label": "DLL",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "so": {
+  "type": "ext",
+  "category": "exec",
+  "label": "SO",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "dylib": {
+  "type": "ext",
+  "category": "exec",
+  "label": "DYLIB",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "bin": {
+  "type": "ext",
+  "category": "exec",
+  "label": "BIN",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "class": {
+  "type": "ext",
+  "category": "exec",
+  "label": "CLASS",
+  "color": "#D96C00",
+  "family": "binary"
+ },
+ "o": {
+  "type": "ext",
+  "category": "exec",
+  "label": "O",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "a": {
+  "type": "ext",
+  "category": "exec",
+  "label": "A",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "lib": {
+  "type": "ext",
+  "category": "exec",
+  "label": "LIB",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "ko": {
+  "type": "ext",
+  "category": "exec",
+  "label": "KO",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "elf": {
+  "type": "ext",
+  "category": "exec",
+  "label": "ELF",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "out": {
+  "type": "ext",
+  "category": "exec",
+  "label": "OUT",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "com": {
+  "type": "ext",
+  "category": "exec",
+  "label": "COM",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "sys": {
+  "type": "ext",
+  "category": "exec",
+  "label": "SYS",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "scr": {
+  "type": "ext",
+  "category": "exec",
+  "label": "SCR",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "ocx": {
+  "type": "ext",
+  "category": "exec",
+  "label": "OCX",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "drv": {
+  "type": "ext",
+  "category": "exec",
+  "label": "DRV",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "efi": {
+  "type": "ext",
+  "category": "exec",
+  "label": "EFI",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "dex": {
+  "type": "ext",
+  "category": "exec",
+  "label": "DEX",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "rom": {
+  "type": "ext",
+  "category": "exec",
+  "label": "ROM",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "hex": {
+  "type": "ext",
+  "category": "exec",
+  "label": "HEX",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "uf2": {
+  "type": "ext",
+  "category": "exec",
+  "label": "UF2",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "axf": {
+  "type": "ext",
+  "category": "exec",
+  "label": "AXF",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "bit": {
+  "type": "ext",
+  "category": "exec",
+  "label": "BIT",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "pdb": {
+  "type": "ext",
+  "category": "exec",
+  "label": "PDB",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "mdmp": {
+  "type": "ext",
+  "category": "exec",
+  "label": "MDMP",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "core": {
+  "type": "ext",
+  "category": "exec",
+  "label": "CORE",
+  "color": "#475467",
+  "family": "binary"
+ },
+ "ttf": {
+  "type": "ext",
+  "category": "font",
+  "label": "TTF",
+  "color": "#6172F3",
+  "family": "font"
+ },
+ "otf": {
+  "type": "ext",
+  "category": "font",
+  "label": "OTF",
+  "color": "#6172F3",
+  "family": "font"
+ },
+ "woff": {
+  "type": "ext",
+  "category": "font",
+  "label": "WOFF",
+  "color": "#6172F3",
+  "family": "font"
+ },
+ "woff2": {
+  "type": "ext",
+  "category": "font",
+  "label": "WOFF2",
+  "color": "#6172F3",
+  "family": "font"
+ },
+ "eot": {
+  "type": "ext",
+  "category": "font",
+  "label": "EOT",
+  "color": "#6172F3",
+  "family": "font"
+ },
+ "ttc": {
+  "type": "ext",
+  "category": "font",
+  "label": "TTC",
+  "color": "#6172F3",
+  "family": "font"
+ },
+ "otc": {
+  "type": "ext",
+  "category": "font",
+  "label": "OTC",
+  "color": "#6172F3",
+  "family": "font"
+ },
+ "fon": {
+  "type": "ext",
+  "category": "font",
+  "label": "FON",
+  "color": "#6172F3",
+  "family": "font"
+ },
+ "pfb": {
+  "type": "ext",
+  "category": "font",
+  "label": "PFB",
+  "color": "#6172F3",
+  "family": "font"
+ },
+ "bdf": {
+  "type": "ext",
+  "category": "font",
+  "label": "BDF",
+  "color": "#6172F3",
+  "family": "font"
+ },
+ "pcf": {
+  "type": "ext",
+  "category": "font",
+  "label": "PCF",
+  "color": "#6172F3",
+  "family": "font"
+ },
+ "obj": {
+  "type": "ext",
+  "category": "3d",
+  "label": "OBJ",
+  "color": "#0BA5EC",
+  "family": "3d",
+  "ambiguous": [
+   "obj-object"
+  ]
+ },
+ "fbx": {
+  "type": "ext",
+  "category": "3d",
+  "label": "FBX",
+  "color": "#0BA5EC",
+  "family": "3d"
+ },
+ "stl": {
+  "type": "ext",
+  "category": "3d",
+  "label": "STL",
+  "color": "#0BA5EC",
+  "family": "3d"
+ },
+ "gltf": {
+  "type": "ext",
+  "category": "3d",
+  "label": "GLTF",
+  "color": "#0BA5EC",
+  "family": "3d"
+ },
+ "glb": {
+  "type": "ext",
+  "category": "3d",
+  "label": "GLB",
+  "color": "#0BA5EC",
+  "family": "3d"
+ },
+ "blend": {
+  "type": "ext",
+  "category": "3d",
+  "label": "BLEND",
+  "color": "#0BA5EC",
+  "family": "3d"
+ },
+ "3ds": {
+  "type": "ext",
+  "category": "3d",
+  "label": "3DS",
+  "color": "#0BA5EC",
+  "family": "3d"
+ },
+ "dae": {
+  "type": "ext",
+  "category": "3d",
+  "label": "DAE",
+  "color": "#0BA5EC",
+  "family": "3d"
+ },
+ "ply": {
+  "type": "ext",
+  "category": "3d",
+  "label": "PLY",
+  "color": "#0BA5EC",
+  "family": "3d"
+ },
+ "3mf": {
+  "type": "ext",
+  "category": "3d",
+  "label": "3MF",
+  "color": "#0BA5EC",
+  "family": "3d"
+ },
+ "amf": {
+  "type": "ext",
+  "category": "3d",
+  "label": "AMF",
+  "color": "#0BA5EC",
+  "family": "3d"
+ },
+ "usd": {
+  "type": "ext",
+  "category": "3d",
+  "label": "USD",
+  "color": "#0BA5EC",
+  "family": "3d"
+ },
+ "usda": {
+  "type": "ext",
+  "category": "3d",
+  "label": "USDA",
+  "color": "#0BA5EC",
+  "family": "3d"
+ },
+ "usdc": {
+  "type": "ext",
+  "category": "3d",
+  "label": "USDC",
+  "color": "#0BA5EC",
+  "family": "3d"
+ },
+ "usdz": {
+  "type": "ext",
+  "category": "3d",
+  "label": "USDZ",
+  "color": "#0BA5EC",
+  "family": "3d"
+ },
+ "abc": {
+  "type": "ext",
+  "category": "3d",
+  "label": "ABC",
+  "color": "#0BA5EC",
+  "family": "3d"
+ },
+ "max": {
+  "type": "ext",
+  "category": "3d",
+  "label": "MAX",
+  "color": "#0BA5EC",
+  "family": "3d"
+ },
+ "ma": {
+  "type": "ext",
+  "category": "3d",
+  "label": "MA",
+  "color": "#0BA5EC",
+  "family": "3d"
+ },
+ "mb": {
+  "type": "ext",
+  "category": "3d",
+  "label": "MB",
+  "color": "#0BA5EC",
+  "family": "3d"
+ },
+ "c4d": {
+  "type": "ext",
+  "category": "3d",
+  "label": "C4D",
+  "color": "#0BA5EC",
+  "family": "3d"
+ },
+ "x3d": {
+  "type": "ext",
+  "category": "3d",
+  "label": "X3D",
+  "color": "#0BA5EC",
+  "family": "3d"
+ },
+ "wrl": {
+  "type": "ext",
+  "category": "3d",
+  "label": "WRL",
+  "color": "#0BA5EC",
+  "family": "3d"
+ },
+ "mtl": {
+  "type": "ext",
+  "category": "3d",
+  "label": "MTL",
+  "color": "#0BA5EC",
+  "family": "3d"
+ },
+ "dwg": {
+  "type": "ext",
+  "category": "cad",
+  "label": "DWG",
+  "color": "#0086C9",
+  "family": "cad"
+ },
+ "dxf": {
+  "type": "ext",
+  "category": "cad",
+  "label": "DXF",
+  "color": "#0086C9",
+  "family": "cad"
+ },
+ "step": {
+  "type": "ext",
+  "category": "cad",
+  "label": "STEP",
+  "color": "#0086C9",
+  "family": "cad"
+ },
+ "stp": {
+  "type": "ext",
+  "category": "cad",
+  "label": "STP",
+  "color": "#0086C9",
+  "family": "cad"
+ },
+ "iges": {
+  "type": "ext",
+  "category": "cad",
+  "label": "IGES",
+  "color": "#0086C9",
+  "family": "cad"
+ },
+ "igs": {
+  "type": "ext",
+  "category": "cad",
+  "label": "IGS",
+  "color": "#0086C9",
+  "family": "cad"
+ },
+ "sldprt": {
+  "type": "ext",
+  "category": "cad",
+  "label": "SLDPT",
+  "color": "#0086C9",
+  "family": "cad"
+ },
+ "sldasm": {
+  "type": "ext",
+  "category": "cad",
+  "label": "SLDAS",
+  "color": "#0086C9",
+  "family": "cad"
+ },
+ "ipt": {
+  "type": "ext",
+  "category": "cad",
+  "label": "IPT",
+  "color": "#0086C9",
+  "family": "cad"
+ },
+ "f3d": {
+  "type": "ext",
+  "category": "cad",
+  "label": "F3D",
+  "color": "#0086C9",
+  "family": "cad"
+ },
+ "catpart": {
+  "type": "ext",
+  "category": "cad",
+  "label": "CATP",
+  "color": "#0086C9",
+  "family": "cad"
+ },
+ "fcstd": {
+  "type": "ext",
+  "category": "cad",
+  "label": "FCSTD",
+  "color": "#0086C9",
+  "family": "cad"
+ },
+ "scad": {
+  "type": "ext",
+  "category": "cad",
+  "label": "SCAD",
+  "color": "#0086C9",
+  "family": "cad"
+ },
+ "rvt": {
+  "type": "ext",
+  "category": "cad",
+  "label": "RVT",
+  "color": "#0086C9",
+  "family": "cad"
+ },
+ "ifc": {
+  "type": "ext",
+  "category": "cad",
+  "label": "IFC",
+  "color": "#0086C9",
+  "family": "cad"
+ },
+ "3dm": {
+  "type": "ext",
+  "category": "cad",
+  "label": "3DM",
+  "color": "#0086C9",
+  "family": "cad"
+ },
+ "gcode": {
+  "type": "ext",
+  "category": "cad",
+  "label": "GCODE",
+  "color": "#0086C9",
+  "family": "cad"
+ },
+ "skp": {
+  "type": "ext",
+  "category": "cad",
+  "label": "SKP",
+  "color": "#0086C9",
+  "family": "cad"
+ },
+ "shp": {
+  "type": "ext",
+  "category": "gis",
+  "label": "SHP",
+  "color": "#12B76A",
+  "family": "map-pin"
+ },
+ "shx": {
+  "type": "ext",
+  "category": "gis",
+  "label": "SHX",
+  "color": "#12B76A",
+  "family": "map-pin"
+ },
+ "prj": {
+  "type": "ext",
+  "category": "gis",
+  "label": "PRJ",
+  "color": "#12B76A",
+  "family": "map-pin"
+ },
+ "gpkg": {
+  "type": "ext",
+  "category": "gis",
+  "label": "GPKG",
+  "color": "#12B76A",
+  "family": "map-pin"
+ },
+ "kml": {
+  "type": "ext",
+  "category": "gis",
+  "label": "KML",
+  "color": "#12B76A",
+  "family": "map-pin"
+ },
+ "kmz": {
+  "type": "ext",
+  "category": "gis",
+  "label": "KMZ",
+  "color": "#12B76A",
+  "family": "map-pin"
+ },
+ "gpx": {
+  "type": "ext",
+  "category": "gis",
+  "label": "GPX",
+  "color": "#12B76A",
+  "family": "map-pin"
+ },
+ "osm": {
+  "type": "ext",
+  "category": "gis",
+  "label": "OSM",
+  "color": "#12B76A",
+  "family": "map-pin"
+ },
+ "pbf": {
+  "type": "ext",
+  "category": "gis",
+  "label": "PBF",
+  "color": "#12B76A",
+  "family": "map-pin"
+ },
+ "mbtiles": {
+  "type": "ext",
+  "category": "gis",
+  "label": "MBTIL",
+  "color": "#12B76A",
+  "family": "map-pin"
+ },
+ "topojson": {
+  "type": "ext",
+  "category": "gis",
+  "label": "TOPO",
+  "color": "#12B76A",
+  "family": "map-pin"
+ },
+ "geojson": {
+  "type": "ext",
+  "category": "gis",
+  "label": "GEOJS",
+  "color": "#12B76A",
+  "family": "map-pin"
+ },
+ "pem": {
+  "type": "ext",
+  "category": "cert",
+  "label": "PEM",
+  "color": "#DC6803",
+  "family": "secret-key"
+ },
+ "crt": {
+  "type": "ext",
+  "category": "cert",
+  "label": "CRT",
+  "color": "#DC6803",
+  "family": "secret-key"
+ },
+ "cer": {
+  "type": "ext",
+  "category": "cert",
+  "label": "CER",
+  "color": "#DC6803",
+  "family": "secret-key"
+ },
+ "p12": {
+  "type": "ext",
+  "category": "cert",
+  "label": "P12",
+  "color": "#DC6803",
+  "family": "secret-key"
+ },
+ "pfx": {
+  "type": "ext",
+  "category": "cert",
+  "label": "PFX",
+  "color": "#DC6803",
+  "family": "secret-key"
+ },
+ "jks": {
+  "type": "ext",
+  "category": "cert",
+  "label": "JKS",
+  "color": "#DC6803",
+  "family": "secret-key"
+ },
+ "keystore": {
+  "type": "ext",
+  "category": "cert",
+  "label": "KEYST",
+  "color": "#DC6803",
+  "family": "secret-key"
+ },
+ "der": {
+  "type": "ext",
+  "category": "cert",
+  "label": "DER",
+  "color": "#DC6803",
+  "family": "secret-key"
+ },
+ "csr": {
+  "type": "ext",
+  "category": "cert",
+  "label": "CSR",
+  "color": "#DC6803",
+  "family": "secret-key"
+ },
+ "sig": {
+  "type": "ext",
+  "category": "cert",
+  "label": "SIG",
+  "color": "#DC6803",
+  "family": "secret-key"
+ },
+ "ppk": {
+  "type": "ext",
+  "category": "cert",
+  "label": "PPK",
+  "color": "#DC6803",
+  "family": "secret-key"
+ },
+ "gpg": {
+  "type": "ext",
+  "category": "cert",
+  "label": "GPG",
+  "color": "#DC6803",
+  "family": "secret-key"
+ },
+ "asc": {
+  "type": "ext",
+  "category": "cert",
+  "label": "ASC",
+  "color": "#DC6803",
+  "family": "secret-key"
+ },
+ "ovpn": {
+  "type": "ext",
+  "category": "net",
+  "label": "OVPN",
+  "color": "#444CE7",
+  "family": "network"
+ },
+ "wg": {
+  "type": "ext",
+  "category": "net",
+  "label": "WG",
+  "color": "#444CE7",
+  "family": "network"
+ },
+ "pcap": {
+  "type": "ext",
+  "category": "net",
+  "label": "PCAP",
+  "color": "#444CE7",
+  "family": "network"
+ },
+ "pcapng": {
+  "type": "ext",
+  "category": "net",
+  "label": "PCAPN",
+  "color": "#444CE7",
+  "family": "network"
+ },
+ "evtx": {
+  "type": "ext",
+  "category": "net",
+  "label": "EVTX",
+  "color": "#444CE7",
+  "family": "network"
+ },
+ "etl": {
+  "type": "ext",
+  "category": "net",
+  "label": "ETL",
+  "color": "#444CE7",
+  "family": "network"
+ },
+ "unity": {
+  "type": "ext",
+  "category": "game",
+  "label": "UNITY",
+  "color": "#7F56D9",
+  "family": "game"
+ },
+ "prefab": {
+  "type": "ext",
+  "category": "game",
+  "label": "PREFA",
+  "color": "#7F56D9",
+  "family": "game"
+ },
+ "uasset": {
+  "type": "ext",
+  "category": "game",
+  "label": "UASST",
+  "color": "#7F56D9",
+  "family": "game"
+ },
+ "umap": {
+  "type": "ext",
+  "category": "game",
+  "label": "UMAP",
+  "color": "#7F56D9",
+  "family": "game"
+ },
+ "pak": {
+  "type": "ext",
+  "category": "game",
+  "label": "PAK",
+  "color": "#7F56D9",
+  "family": "game"
+ },
+ "tscn": {
+  "type": "ext",
+  "category": "game",
+  "label": "TSCN",
+  "color": "#7F56D9",
+  "family": "game"
+ },
+ "tres": {
+  "type": "ext",
+  "category": "game",
+  "label": "TRES",
+  "color": "#7F56D9",
+  "family": "game"
+ },
+ "vpk": {
+  "type": "ext",
+  "category": "game",
+  "label": "VPK",
+  "color": "#7F56D9",
+  "family": "game"
+ },
+ "wad": {
+  "type": "ext",
+  "category": "game",
+  "label": "WAD",
+  "color": "#7F56D9",
+  "family": "game"
+ },
+ "nbt": {
+  "type": "ext",
+  "category": "game",
+  "label": "NBT",
+  "color": "#7F56D9",
+  "family": "game"
+ },
+ "tmx": {
+  "type": "ext",
+  "category": "game",
+  "label": "TMX",
+  "color": "#7F56D9",
+  "family": "game"
+ },
+ "ldtk": {
+  "type": "ext",
+  "category": "game",
+  "label": "LDTK",
+  "color": "#7F56D9",
+  "family": "game"
+ },
+ "aseprite": {
+  "type": "ext",
+  "category": "game",
+  "label": "ASEPR",
+  "color": "#7F56D9",
+  "family": "game"
+ },
+ "torrent": {
+  "type": "ext",
+  "category": "misc",
+  "label": "TORR",
+  "color": "#667085",
+  "family": "empty"
+ },
+ "lnk": {
+  "type": "ext",
+  "category": "misc",
+  "label": "LNK",
+  "color": "#667085",
+  "family": "empty"
+ },
+ "url": {
+  "type": "ext",
+  "category": "misc",
+  "label": "URL",
+  "color": "#667085",
+  "family": "empty"
+ },
+ "desktop": {
+  "type": "ext",
+  "category": "misc",
+  "label": "DESKT",
+  "color": "#667085",
+  "family": "empty"
+ },
+ "tmp": {
+  "type": "ext",
+  "category": "misc",
+  "label": "TMP",
+  "color": "#667085",
+  "family": "empty"
+ },
+ "swp": {
+  "type": "ext",
+  "category": "misc",
+  "label": "SWP",
+  "color": "#667085",
+  "family": "empty"
+ },
+ "pid": {
+  "type": "ext",
+  "category": "misc",
+  "label": "PID",
+  "color": "#667085",
+  "family": "empty"
+ },
+ "dat": {
+  "type": "ext",
+  "category": "misc",
+  "label": "DAT",
+  "color": "#667085",
+  "family": "empty"
+ },
+ "ts-stream": {
+  "type": "variant",
+  "of": "ts",
+  "category": "video",
+  "label": "TS",
+  "color": "#444CE7",
+  "family": "video",
+  "meaning": "MPEG Transport Stream"
+ },
+ "mts-video": {
+  "type": "variant",
+  "of": "mts",
+  "category": "video",
+  "label": "MTS",
+  "color": "#444CE7",
+  "family": "video",
+  "meaning": "AVCHD-Video"
+ },
+ "v-verilog": {
+  "type": "variant",
+  "of": "v",
+  "category": "lang",
+  "label": "VLOG",
+  "color": "#7F56D9",
+  "family": "code",
+  "meaning": "Verilog"
+ },
+ "v-vlang": {
+  "type": "variant",
+  "of": "v",
+  "category": "lang",
+  "label": "V",
+  "color": "#7F56D9",
+  "family": "code",
+  "meaning": "V (Programmiersprache)"
+ },
+ "v-coq": {
+  "type": "variant",
+  "of": "v",
+  "category": "lang",
+  "label": "COQ",
+  "color": "#7F56D9",
+  "family": "code",
+  "meaning": "Coq"
+ },
+ "m-objc": {
+  "type": "variant",
+  "of": "m",
+  "category": "lang",
+  "label": "OBJC",
+  "color": "#7F56D9",
+  "family": "code",
+  "meaning": "Objective-C"
+ },
+ "m-matlab": {
+  "type": "variant",
+  "of": "m",
+  "category": "lang",
+  "label": "MAT",
+  "color": "#7F56D9",
+  "family": "code",
+  "meaning": "MATLAB/Octave"
+ },
+ "pl-perl": {
+  "type": "variant",
+  "of": "pl",
+  "category": "lang",
+  "label": "PERL",
+  "color": "#7F56D9",
+  "family": "code",
+  "meaning": "Perl"
+ },
+ "pl-prolog": {
+  "type": "variant",
+  "of": "pl",
+  "category": "lang",
+  "label": "PLOG",
+  "color": "#7F56D9",
+  "family": "code",
+  "meaning": "Prolog"
+ },
+ "obj-object": {
+  "type": "variant",
+  "of": "obj",
+  "category": "exec",
+  "label": "OBJ",
+  "color": "#475467",
+  "family": "binary",
+  "meaning": "kompilierte Objektdatei"
+ },
+ "key-keynote": {
+  "type": "variant",
+  "of": "key",
+  "category": "slides",
+  "label": "KEY",
+  "color": "#E04F16",
+  "family": "presentation",
+  "meaning": "Apple Keynote"
+ },
+ "key-private": {
+  "type": "variant",
+  "of": "key",
+  "category": "cert",
+  "label": null,
+  "color": "#DC6803",
+  "family": "secret-key",
+  "meaning": "privater Schlüssel"
+ },
+ "pub-key": {
+  "type": "variant",
+  "of": "pub",
+  "category": "cert",
+  "label": null,
+  "color": "#DC6803",
+  "family": "secret-key",
+  "meaning": "öffentlicher Schlüssel"
+ },
+ "db-sqlite": {
+  "type": "variant",
+  "of": "db",
+  "category": "db",
+  "label": "SQLT",
+  "color": "#0F80CC",
+  "family": "database",
+  "meaning": "SQLite"
+ },
+ "db-thumbs": {
+  "type": "variant",
+  "of": "db",
+  "category": "db",
+  "label": "THUMB",
+  "color": "#099250",
+  "family": "database",
+  "meaning": "Windows Thumbs.db"
+ },
+ "db-bdb": {
+  "type": "variant",
+  "of": "db",
+  "category": "db",
+  "label": "BDB",
+  "color": "#099250",
+  "family": "database",
+  "meaning": "Berkeley DB"
+ },
+ "db-paradox": {
+  "type": "variant",
+  "of": "db",
+  "category": "db",
+  "label": "PDOX",
+  "color": "#099250",
+  "family": "database",
+  "meaning": "Paradox"
+ },
+ "mdb-lmdb": {
+  "type": "variant",
+  "of": "mdb",
+  "category": "db",
+  "label": "LMDB",
+  "color": "#099250",
+  "family": "database",
+  "meaning": "LMDB"
+ },
+ "dbf-oracle": {
+  "type": "variant",
+  "of": "dbf",
+  "category": "db",
+  "label": "ORA",
+  "color": "#099250",
+  "family": "database",
+  "meaning": "Oracle-Datendatei"
+ },
+ "pb-protobuf": {
+  "type": "variant",
+  "of": "pb",
+  "category": "lang",
+  "label": "PB",
+  "color": "#7F56D9",
+  "family": "code",
+  "meaning": "Protocol Buffers (binär)"
+ },
+ "pb-tf": {
+  "type": "variant",
+  "of": "pb",
+  "category": "ml",
+  "label": "TFPB",
+  "color": "#7A5AF8",
+  "family": "neural",
+  "meaning": "TensorFlow-Graph"
+ },
+ "img-disk": {
+  "type": "variant",
+  "of": "img",
+  "category": "disk",
+  "label": "IMG",
+  "color": "#667085",
+  "family": "disc",
+  "meaning": "Disk-Image"
+ },
+ "vhd-vhdl": {
+  "type": "variant",
+  "of": "vhd",
+  "category": "lang",
+  "label": "VHDL",
+  "color": "#7F56D9",
+  "family": "code",
+  "meaning": "VHDL-Quelltext"
+ }
+}

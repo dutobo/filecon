@@ -7,7 +7,6 @@ description = "File-type icons for 703 formats in three styles (embedded SVGs) p
 license = "Apache-2.0"
 authors = ["dutobo (https://github.com/dutobo)", "rafaelk-f (https://github.com/rafaelk-f)"]
 homepage = "https://filecon.dev"
-# TODO(ISSUES.md): placeholder repository URL
 repository = "https://github.com/dutobo/filecon"
 documentation = "https://docs.rs/filecon"
 readme = "README.md"

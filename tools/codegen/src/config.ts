@@ -11,7 +11,7 @@ export const CRATE_DIR = join(ROOT, "crates", "filecon");
 export const SCOPE = "@filecon";
 export const INITIAL_VERSION = "0.1.0";
 export const HOMEPAGE = "https://filecon.dev";
-/** TODO(ISSUES.md): placeholder until the final repository location is known. */
+/** GitHub repository (owner: dutobo). */
 export const REPOSITORY = "https://github.com/dutobo/filecon";
 export const AUTHOR = { name: "dutobo", url: "https://github.com/dutobo" } as const;
 export const CONTRIBUTORS = [{ name: "rafaelk-f", url: "https://github.com/rafaelk-f" }] as const;

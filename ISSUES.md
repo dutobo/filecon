@@ -5,9 +5,6 @@ of truth and is **never modified** here – pack issues are only recorded.
 
 ## Open TODOs
 
-- [ ] **Repository URL is a placeholder.** All `package.json` files, the crate and the docs point to
-  `https://github.com/dutobo/filecon`. Change `REPOSITORY` in `tools/codegen/src/config.ts` and `repository` in
-  `crates/filecon/Cargo.toml` once the final location is known, then run `pnpm codegen`.
 - [ ] **Rust mobile: Tauri Mobile and Dioxus (planned, not built).** Both were confirmed as targets.
   - *Tauri 2 (desktop + iOS/Android)*: a plugin `tauri-plugin-filecon` with a Rust command
     `icon_for_path(path, style, theme)` (reads ≤ 1 KB, uses `filecon::resolve` + `filecon::svg`) and a small JS

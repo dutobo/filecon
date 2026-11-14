@@ -1,0 +1,14 @@
+---
+// <FileIcon name="pdf" /> or <FileIcon file="report.final.pdf" />
+import { resolveIcon, toIconName } from "@filecon/shared";
+import { iconData } from "./generated/variant.js";
+import Icon from "./Icon.astro";
+import type { FileIconProps } from "./types.js";
+
+type Props = FileIconProps;
+
+const { name, file, ...rest } = Astro.props;
+const data = iconData[name === undefined ? resolveIcon(file ?? "") : toIconName(name)];
+---
+
+<Icon data={data} {...rest} />

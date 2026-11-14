@@ -1,10 +1,13 @@
 import { readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 export type TestStyle = "default" | "gray" | "solid";
 export type TestTheme = "light" | "dark" | "auto";
 
-export const PACK_DIR = fileURLToPath(new URL("../../../icon-pack/", import.meta.url));
+// import.meta.dirname: under the jsdom environment import.meta.url is not a file: URL.
+const here = import.meta.dirname ?? dirname(fileURLToPath(import.meta.url));
+export const PACK_DIR = `${join(here, "..", "..", "..", "icon-pack")}/`;
 
 export const manifest = JSON.parse(readFileSync(`${PACK_DIR}manifest.json`, "utf8")) as Record<
   string,

@@ -36,6 +36,14 @@ export interface ConformanceOptions {
   classOnSvg?: boolean;
 }
 
+const decodeEntities = (text: string): string =>
+  text
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&amp;/g, "&");
+
 async function mismatches(
   names: readonly string[],
   expected: (name: string) => string,
@@ -52,7 +60,9 @@ async function mismatches(
 export function conformanceSuite(options: ConformanceOptions): void {
   const { styles } = options;
   const firstStyle = styles[0] as TestStyle;
-  const singleExportNames = Object.keys(options.singleExports).filter((key) => /^(Icon\w+|\w+Icon)$/.test(key));
+  const singleExportNames = Object.keys(options.singleExports).filter((key) =>
+    /^(Icon[0-9A-Z]\w*|[A-Z]\w*Icon)$/.test(key),
+  );
 
   describe(`${options.packageName} – conformance`, () => {
     it("has one single-icon export per manifest entry", () => {
@@ -144,12 +154,15 @@ export function conformanceSuite(options: ConformanceOptions): void {
       const attrs = rootAttributes(svg);
       expect(attrs.role).toBe("img");
       expect(attrs["aria-hidden"]).toBeUndefined();
-      expect(svg).toContain("<title>Report &lt;&quot;final&quot;&gt;</title>");
+      const title = /<title>([\s\S]*?)<\/title>/.exec(svg)?.[1] ?? "";
+      expect(title).not.toContain("<");
+      expect(decodeEntities(title)).toBe('Report <"final">');
     });
 
     if (options.classOnSvg !== false) {
       it("passes className through", async () => {
-        expect(rootAttributes(await options.render({ name: "pdf", className: "icon big" })).class).toBe("icon big");
+        const cls = rootAttributes(await options.render({ name: "pdf", className: "icon big" })).class ?? "";
+        expect(cls.trim().split(/\s+/)).toEqual(["icon", "big"]);
       });
     }
   });

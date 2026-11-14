@@ -4,4 +4,5 @@ packages:
   - "!tools/templates"
 
 allowBuilds:
+  "@parcel/watcher": false
   esbuild: true

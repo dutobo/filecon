@@ -16,7 +16,14 @@ File-type icons for **703 formats** in three styles – for every framework. [fi
 |---|---|
 | [`@filecon/shared`](packages/shared) | SVG files, manifest, types, resolver |
 | [`@filecon/js`](packages/js) | framework-free: `getIcon()` → SVG string |
-| [`@filecon/react`](packages/react) | React components |
+| [`@filecon/react`](packages/react) | React components (SSR/RSC-safe) |
+| [`@filecon/preact`](packages/preact) | Preact components |
+| [`@filecon/react-native`](packages/react-native) | React Native / Expo via `react-native-svg` |
+| [`@filecon/vue`](packages/vue) | Vue 3 components (render functions, no SFC build) |
+| [`@filecon/svelte`](packages/svelte) | Svelte 5 components |
+| [`@filecon/solid`](packages/solid) | SolidJS components |
+| [`@filecon/angular`](packages/angular) | Angular standalone component `<filecon-icon>` |
+| [`@filecon/astro`](packages/astro) | Astro components (zero client JS) |
 
 Every framework package exists in four flavors: `@filecon/<fw>` (all styles, `style` prop) and
 `@filecon/<fw>-default`, `-gray`, `-solid` (one style each, same API without `style`).

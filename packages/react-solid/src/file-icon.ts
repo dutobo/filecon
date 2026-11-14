@@ -59,7 +59,11 @@ function renderIcon(data: IconData, props: IconProps, ref: Ref<SVGSVGElement>) {
 }
 
 /** Renders the icon for `name` (icon name / extension) or `file` (file name, via the resolver). */
-export const FileIcon = forwardRef<SVGSVGElement, FileIconProps>(function FileIcon({ name, file, ...props }, ref) {
+// PURE: lets bundlers drop FileIcon (and with it the full icon map) when only single icons are imported.
+export const FileIcon = /*#__PURE__*/ forwardRef<SVGSVGElement, FileIconProps>(function FileIcon(
+  { name, file, ...props },
+  ref,
+) {
   const icon = name === undefined ? resolveIcon(file ?? "") : toIconName(name);
   return renderIcon(iconData[icon], props, ref);
 });

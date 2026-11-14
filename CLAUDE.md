@@ -37,10 +37,10 @@ pnpm codegen       # idempotent: scaffold packages from templates + write src/ge
 pnpm lint          # biome check .
 pnpm typecheck     # codegen + tsc/svelte-check per package (dev sources via "@filecon/source" condition)
 pnpm build         # codegen + build all packages (topological)
-pnpm test          # vitest in every package + tarball check + cargo test
+pnpm test          # vitest in every package + tarball check + tree-shaking check + cargo test
 pnpm lint:rust     # cargo fmt --check + clippy -D warnings
 pnpm pack:check    # pnpm pack every package, verify LICENSE/NOTICE/README/dist and no sources/tests
-pnpm sizes         # gzip size report -> docs/sizes.md
+pnpm sizes         # size report -> docs/sizes.md (--check: fail if one icon import > 16 kB)
 ```
 
 Order for a full check: `pnpm lint && pnpm typecheck && pnpm build && pnpm test`.
@@ -70,3 +70,6 @@ Order for a full check: `pnpm lint && pnpm typecheck && pnpm build && pnpm test`
 - Workspace packages resolve each other's sources during typecheck through the custom export condition
   `@filecon/source`; it is stripped from the published `exports` (`publishConfig.exports`).
 - The repository must live on a file system with symlink support (not exFAT).
+- Module-level component definitions that reference the icon map (`FileIcon`) must be `/*#__PURE__*/` and must not
+  contain spreads in the call arguments, otherwise a single-icon import pulls in all icons (`pnpm sizes --check`).
+- When writing files from Python on Windows use `newline=""` (LF only).

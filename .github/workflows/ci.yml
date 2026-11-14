@@ -43,7 +43,7 @@ jobs:
         run: pnpm build
       - name: Scaffolded files are up to date
         run: git diff --exit-code -- packages tools
-      - name: Test (JS, tarballs, Rust)
+      - name: Test (JS, tarballs, tree-shaking, Rust)
         run: pnpm test
       - name: Rust lint
         run: pnpm lint:rust

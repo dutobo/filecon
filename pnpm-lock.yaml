@@ -1264,7 +1264,11 @@ importers:
         specifier: ^3.5.45
         version: 3.5.45(typescript@6.0.3)
 
-  tools/codegen: {}
+  tools/codegen:
+    devDependencies:
+      esbuild:
+        specifier: ^0.28.2
+        version: 0.28.2
 
   tools/testkit:
     dependencies:

@@ -62,7 +62,11 @@ function useIcon(data: IconData, props: IconProps, ref: Ref<unknown>) {
 }
 
 /** Renders the icon for `name` (icon name / extension) or `file` (file name, via the resolver). */
-export const FileIcon = forwardRef<unknown, FileIconProps>(function FileIcon({ name, file, ...props }, ref) {
+// PURE: lets bundlers drop FileIcon (and with it the full icon map) when only single icons are imported.
+export const FileIcon = /*#__PURE__*/ forwardRef<unknown, FileIconProps>(function FileIcon(
+  { name, file, ...props },
+  ref,
+) {
   const icon = name === undefined ? resolveIcon(file ?? "") : toIconName(name);
   return useIcon(iconData[icon], props, ref);
 });

@@ -36,20 +36,24 @@ function renderIcon(data: IconData, props: RenderProps) {
   return h("svg", { ...svgAttributes({ size, title }), innerHTML: iconContent(data, { style, theme, title }) });
 }
 
+const fileIconProps = {
+  /** Icon name or extension, e.g. `pdf`, `db-sqlite` (exclusive with `file`). */
+  // Typed as string: the 703-member IconName union is too complex for Vue's prop inference.
+  name: { type: String, default: undefined },
+  /** File name; the icon is picked by the resolver (exclusive with `name`). */
+  file: { type: String, default: undefined },
+  ...iconProps,
+} as const;
+
+// PURE + no spread inside the call: lets bundlers drop FileIcon (and with it the full icon map) when only
+// single icons are imported.
 /**
  * `<FileIcon name="pdf" />` or `<FileIcon file="report.final.pdf" />`.
  * Attributes such as `class` fall through to the `<svg>`.
  */
-export const FileIcon = defineComponent({
+export const FileIcon = /*#__PURE__*/ defineComponent({
   name: "FileIcon",
-  props: {
-    /** Icon name or extension, e.g. `pdf`, `db-sqlite` (exclusive with `file`). */
-    // Typed as string: the 703-member IconName union is too complex for Vue's prop inference.
-    name: { type: String, default: undefined },
-    /** File name; the icon is picked by the resolver (exclusive with `name`). */
-    file: { type: String, default: undefined },
-    ...iconProps,
-  },
+  props: fileIconProps,
   setup(props) {
     return () => {
       const icon = props.name === undefined ? resolveIcon(props.file ?? "") : toIconName(props.name);

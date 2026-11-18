@@ -1,9 +1,9 @@
 # @filecon/solid
 
-[Filecon](https://filecon.dev) file icons for SolidJS – 703 file types, all three styles (default, gray, solid).
+[Filecon](https://filecon.dev) file icons for SolidJS – 703 file types, all eight styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk).
 Works with client rendering, SSR (SolidStart) and hydration; tree-shakable.
 
-Part of the Filecon family: `@filecon/solid`, `@filecon/solid-default`, `@filecon/solid-gray`, `@filecon/solid-solid`.
+Part of the Filecon family: `@filecon/solid`, `@filecon/solid-default`, `@filecon/solid-gray`, `@filecon/solid-solid`, `@filecon/solid-papered`, `@filecon/solid-papered-flat`, `@filecon/solid-papered-craft`, `@filecon/solid-scratch`, `@filecon/solid-chalk`.
 
 
 ```sh
@@ -29,7 +29,7 @@ import { PdfIcon, TsStreamIcon, Icon7z } from "@filecon/solid/icons";
 |---|---|---|---|
 | `name` | `IconName \| string` | – | icon name or extension (exclusive with `file`) |
 | `file` | `string` | – | file name, resolved with `resolveIcon` (exclusive with `name`) |
-| `style` | `"default" \| "gray" \| "solid"` | `"default"` | icon style (not inline CSS) |
+| `style` | `Style`: `"default"`, `"gray"`, `"solid"`, `"papered"`, `"papered-flat"`, `"papered-craft"`, `"scratch"`, `"chalk"` | `"default"` | icon style (not inline CSS) |
 | `theme` | `"light" \| "dark" \| "auto"` | `"light"` | `auto` embeds a `prefers-color-scheme` stylesheet – no hydration mismatch |
 | `size` | `number \| string` | `40` | width and height |
 | `title` | `string` | – | adds `<title>` and `role="img"`; without it the SVG is `aria-hidden="true"` |

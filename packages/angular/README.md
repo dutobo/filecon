@@ -1,9 +1,9 @@
 # @filecon/angular
 
-[Filecon](https://filecon.dev) file icons for Angular – 703 file types, all three styles (default, gray, solid).
+[Filecon](https://filecon.dev) file icons for Angular – 703 file types, all eight styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk).
 Standalone component `<filecon-icon>`, signal inputs, OnPush, SSR-safe.
 
-Part of the Filecon family: `@filecon/angular`, `@filecon/angular-default`, `@filecon/angular-gray`, `@filecon/angular-solid`.
+Part of the Filecon family: `@filecon/angular`, `@filecon/angular-default`, `@filecon/angular-gray`, `@filecon/angular-solid`, `@filecon/angular-papered`, `@filecon/angular-papered-flat`, `@filecon/angular-papered-craft`, `@filecon/angular-scratch`, `@filecon/angular-chalk`.
 
 
 ```sh
@@ -39,7 +39,7 @@ export class FilesComponent {
 | `name` | `IconName \| string` | – | icon name or extension |
 | `file` | `string` | – | file name, resolved with `resolveIcon` |
 | `icon` | `FileconIcon` | – | single icon such as `PdfIcon` (tree-shakable) |
-| `iconStyle` | `"default" \| "gray" \| "solid"` | `"default"` | icon style |
+| `iconStyle` | `Style`: `"default"`, `"gray"`, `"solid"`, `"papered"`, `"papered-flat"`, `"papered-craft"`, `"scratch"`, `"chalk"` | `"default"` | icon style |
 | `theme` | `"light" \| "dark" \| "auto"` | `"light"` | `auto` embeds a `prefers-color-scheme` stylesheet – no hydration mismatch |
 | `size` | `number \| string` | `40` | width and height |
 | `title` | `string` | – | adds `<title>` and `role="img"`; without it the SVG is `aria-hidden="true"` |

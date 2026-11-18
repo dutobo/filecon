@@ -9,8 +9,8 @@ import {
   toDarkMarkup,
   toLightMarkup,
 } from "../../../packages/shared/src/theme-core";
-import type { IconData, Style } from "../../../packages/shared/src/types";
-import { PACK_DIR } from "./config";
+import { type IconData, isThemedStyle, type Style } from "../../../packages/shared/src/types";
+import { PACK_DIR, PACK_STYLES, STYLES, STYLES_DIR } from "./config";
 
 export interface ManifestEntry {
   type: "ext" | "generic" | "generic-ext" | "variant";
@@ -30,7 +30,7 @@ export interface PackIcon {
   /** Identifier of the data constant, e.g. `d_ts_stream`. */
   dataId: string;
   meta: ManifestEntry;
-  /** Inner markup per style; `default`/`gray` are themed (light colors + `fc-t*` classes). */
+  /** Inner markup per style; themed styles carry light colors + `fc-t*` classes. */
   data: Required<IconData>;
 }
 
@@ -46,8 +46,10 @@ const SVG_PATTERN =
 const TAG = /<[^<>]+>/g;
 const ATTR = / ([\w:-]+)="([^"]*)"/g;
 
+/** Source SVG of an icon: the icon pack for its own styles, icon-styles/ for the generated ones. */
 export function svgPath(style: Style, theme: "light" | "dark", name: string): string {
-  return style === "solid" ? join(PACK_DIR, "solid", `${name}.svg`) : join(PACK_DIR, style, theme, `${name}.svg`);
+  if (!isThemedStyle(style)) return join(PACK_DIR, style, `${name}.svg`);
+  return join(PACK_STYLES.includes(style) ? PACK_DIR : STYLES_DIR, style, theme, `${name}.svg`);
 }
 
 /** Inner markup of a pack SVG (without the outer `<svg>` and the `<title>`). */
@@ -89,6 +91,9 @@ function diffTags(light: string, dark: string, label: string): Map<number, Theme
 
 const ruleKey = (rule: ThemeRule): string => rule.join("\u0000");
 
+/** Styles with a light and a dark variant (stored themed). */
+const THEMED = STYLES.filter(isThemedStyle);
+
 export function loadPack(): Pack {
   const manifest = JSON.parse(readFileSync(join(PACK_DIR, "manifest.json"), "utf8")) as Record<string, ManifestEntry>;
   const names = Object.keys(manifest).sort();
@@ -98,7 +103,7 @@ export function loadPack(): Pack {
   const allRules = new Map<string, ThemeRule>();
   for (const name of names) {
     const perStyle: Record<string, { light: string; dark: string; diffs: Map<number, ThemeRule[]> }> = {};
-    for (const style of ["default", "gray"] as const) {
+    for (const style of THEMED) {
       const light = innerMarkup(style, "light", name);
       const dark = innerMarkup(style, "dark", name);
       const diffs = diffTags(light, dark, `${style}/${name}`);
@@ -123,7 +128,7 @@ export function loadPack(): Pack {
       string,
       { light: string; dark: string; diffs: Map<number, ThemeRule[]> }
     >;
-    const themed = (style: "default" | "gray"): string => {
+    const themed = (style: Style): string => {
       const { light, dark, diffs } = perStyle[style] as {
         light: string;
         dark: string;
@@ -140,7 +145,7 @@ export function loadPack(): Pack {
       if (toDarkMarkup(markup, themeTable) !== dark) throw new Error(`Dark round-trip failed: ${style}/${name}`);
       return markup;
     };
-    const solidLight = innerMarkup("solid", "light", name);
+
     const componentName = iconComponentName(name);
     const clash = componentNames.get(componentName);
     if (clash) throw new Error(`Component name collision: ${clash} and ${name} -> ${componentName}`);
@@ -150,7 +155,9 @@ export function loadPack(): Pack {
       componentName,
       dataId: `d_${name.replace(/[^a-z0-9]/g, "_")}`,
       meta: manifest[name] as ManifestEntry,
-      data: { default: themed("default"), gray: themed("gray"), solid: solidLight },
+      data: Object.fromEntries(
+        STYLES.map((style) => [style, isThemedStyle(style) ? themed(style) : innerMarkup(style, "light", name)]),
+      ) as Required<IconData>,
     };
   });
   return { manifest, icons, themeTable };

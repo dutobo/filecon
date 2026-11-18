@@ -6,7 +6,7 @@ import { tmpdir } from "node:os";
 import { join, relative } from "node:path";
 import { gzipSync } from "node:zlib";
 import { build } from "esbuild";
-import { PACKAGES_DIR, ROOT } from "./config";
+import { PACKAGES_DIR, ROOT, STYLES } from "./config";
 import { listFiles, writeIfChanged } from "./fsutil";
 
 const FRAMEWORK_EXTERNALS = [
@@ -37,7 +37,7 @@ interface Row {
 
 /** Entry code for the bundle measurements, or `undefined` for packages compiled by the consumer (Svelte, Astro). */
 function bundleEntries(dir: string, name: string): { single: string; all: string } | undefined {
-  const fw = dir.replace(/-(default|gray|solid)$/, "");
+  const fw = dir.replace(new RegExp(`-(${STYLES.join("|")})$`), "");
   if (["svelte", "astro", "shared", "electron", "iconify", "css", "tauri"].includes(fw)) return undefined;
   if (fw === "angular") {
     return {

@@ -1,9 +1,9 @@
 [package]
 name = "filecon"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 rust-version = "1.80"
-description = "File-type icons for 703 formats in three styles (embedded SVGs) plus a file-type resolver."
+description = "File-type icons for 703 formats in eight styles (embedded SVGs) plus a file-type resolver."
 license = "Apache-2.0"
 authors = ["dutobo (https://github.com/dutobo)", "rafaelk-f (https://github.com/rafaelk-f)"]
 homepage = "https://filecon.dev"
@@ -26,10 +26,15 @@ include = [
 ]
 
 [features]
-default = ["style-default", "style-gray", "style-solid"]
+default = ["style-default", "style-gray", "style-solid", "style-papered", "style-papered-flat", "style-papered-craft", "style-scratch", "style-chalk"]
 style-default = []
 style-gray = []
 style-solid = []
+style-papered = []
+style-papered-flat = []
+style-papered-craft = []
+style-scratch = []
+style-chalk = []
 
 [dependencies]
 

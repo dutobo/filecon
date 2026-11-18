@@ -1,17 +1,29 @@
 import { readFileSync } from "node:fs";
 import { createRequire } from "node:module";
 import { join } from "node:path";
-import { ICON_NAMES, normalizeSvg, sourceSvg } from "@filecon/testkit";
+import { ICON_NAMES, normalizeSvg, sourceSvg, TEST_STYLES, type TestStyle } from "@filecon/testkit";
 import { getIconData, iconToHTML, iconToSVG, validateIconSet } from "@iconify/utils";
 import { describe, expect, it } from "vitest";
 
-const SETS = [
-  { id: "filecon", style: "default", theme: "light" },
-  { id: "filecon-dark", style: "default", theme: "dark" },
-  { id: "filecon-gray", style: "gray", theme: "light" },
-  { id: "filecon-gray-dark", style: "gray", theme: "dark" },
-  { id: "filecon-solid", style: "solid", theme: "light" },
-] as const;
+interface IconSet {
+  id: string;
+  style: TestStyle;
+  theme: "light" | "dark";
+}
+
+// One set per style and theme; `solid` looks the same in both themes and has a single set.
+const SETS: IconSet[] = TEST_STYLES.flatMap((style): IconSet[] => {
+  const id = style === "default" ? "filecon" : `filecon-${style}`;
+  if (style === "solid") return [{ id, style, theme: "light" }];
+  return [
+    { id, style, theme: "light" },
+    { id: `${id}-dark`, style, theme: "dark" },
+  ];
+});
+
+it("has a set for every style and theme", () => {
+  expect(SETS).toHaveLength(15);
+});
 
 const dist = join(import.meta.dirname, "..", "dist");
 const load = (id: string) => JSON.parse(readFileSync(join(dist, `${id}.json`), "utf8"));
@@ -50,5 +62,6 @@ describe("@filecon/iconify", () => {
     const cjs = createRequire(import.meta.url)(join(dist, "index.cjs"));
     expect((await cjs.collections["filecon-solid"]()).prefix).toBe("filecon-solid");
     expect(createRequire(import.meta.url)(join(dist, "filecon-gray.cjs")).prefix).toBe("filecon-gray");
+    expect((await esm.collections["filecon-papered-flat-dark"]()).prefix).toBe("filecon-papered-flat-dark");
   });
 });

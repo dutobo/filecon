@@ -15,44 +15,101 @@ Angular numbers are for the partially compiled FESM bundle before the Angular li
 
 | Package | Tarball | dist (gzip) | 1 icon | All icons |
 |---|---:|---:|---:|---:|
-| `@filecon/angular` | 35.6 kB | 12.4 kB | 246.5 kB | 246.5 kB |
-| `@filecon/angular-default` | 35.4 kB | 12.4 kB | 126.8 kB | 126.8 kB |
-| `@filecon/angular-gray` | 35.4 kB | 12.4 kB | 121.4 kB | 121.4 kB |
-| `@filecon/angular-solid` | 35.4 kB | 12.4 kB | 122.5 kB | 122.4 kB |
-| `@filecon/astro` | 34.2 kB | 133.3 kB | – | – |
-| `@filecon/astro-default` | 34.3 kB | 137.0 kB | – | – |
-| `@filecon/astro-gray` | 34.2 kB | 135.7 kB | – | – |
-| `@filecon/astro-solid` | 34.2 kB | 135.8 kB | – | – |
-| `@filecon/electron` | 9.2 kB | 1.6 kB | – | – |
-| `@filecon/js` | 546.1 kB | 252.8 kB | 4.3 kB | 243.3 kB |
-| `@filecon/js-default` | 304.1 kB | 132.9 kB | 4.0 kB | 124.1 kB |
-| `@filecon/js-gray` | 292.2 kB | 127.7 kB | 3.9 kB | 118.6 kB |
-| `@filecon/js-solid` | 295.3 kB | 128.8 kB | 3.9 kB | 119.7 kB |
-| `@filecon/preact` | 45.2 kB | 11.5 kB | 4.4 kB | 244.1 kB |
-| `@filecon/preact-default` | 45.2 kB | 11.5 kB | 4.1 kB | 124.9 kB |
-| `@filecon/preact-gray` | 45.2 kB | 11.5 kB | 4.0 kB | 119.4 kB |
-| `@filecon/preact-solid` | 45.2 kB | 11.5 kB | 4.0 kB | 120.5 kB |
-| `@filecon/react` | 45.1 kB | 11.5 kB | 4.4 kB | 244.1 kB |
-| `@filecon/react-default` | 45.1 kB | 11.5 kB | 4.1 kB | 125.0 kB |
-| `@filecon/react-gray` | 45.1 kB | 11.5 kB | 4.1 kB | 119.4 kB |
-| `@filecon/react-native` | 45.5 kB | 11.7 kB | 4.6 kB | 244.3 kB |
-| `@filecon/react-native-default` | 45.5 kB | 11.7 kB | 4.3 kB | 125.2 kB |
-| `@filecon/react-native-gray` | 45.5 kB | 11.7 kB | 4.3 kB | 119.7 kB |
-| `@filecon/react-native-solid` | 45.5 kB | 11.7 kB | 4.3 kB | 120.7 kB |
-| `@filecon/react-solid` | 45.1 kB | 11.5 kB | 4.1 kB | 120.5 kB |
-| `@filecon/shared` | 388.0 kB | 12.9 kB | – | – |
-| `@filecon/solid` | 45.4 kB | 11.7 kB | 4.3 kB | 244.2 kB |
-| `@filecon/solid-default` | 45.5 kB | 11.7 kB | 4.0 kB | 125.0 kB |
-| `@filecon/solid-gray` | 45.5 kB | 11.7 kB | 4.0 kB | 119.5 kB |
-| `@filecon/solid-solid` | 45.5 kB | 11.7 kB | 4.0 kB | 120.6 kB |
-| `@filecon/svelte` | 55.4 kB | 152.1 kB | – | – |
-| `@filecon/svelte-default` | 55.5 kB | 156.4 kB | – | – |
-| `@filecon/svelte-gray` | 55.5 kB | 155.1 kB | – | – |
-| `@filecon/svelte-solid` | 55.5 kB | 155.2 kB | – | – |
-| `@filecon/vue` | 46.0 kB | 11.9 kB | 4.5 kB | 244.2 kB |
-| `@filecon/vue-default` | 45.9 kB | 11.8 kB | 4.1 kB | 125.0 kB |
-| `@filecon/vue-gray` | 45.9 kB | 11.8 kB | 4.1 kB | 119.5 kB |
-| `@filecon/vue-solid` | 45.9 kB | 11.8 kB | 4.1 kB | 120.6 kB |
+| `@filecon/angular` | 35.9 kB | 12.5 kB | 1.80 MB | 1.80 MB |
+| `@filecon/angular-chalk` | 35.6 kB | 12.4 kB | 591.3 kB | 591.3 kB |
+| `@filecon/angular-default` | 35.6 kB | 12.4 kB | 130.8 kB | 130.8 kB |
+| `@filecon/angular-gray` | 35.6 kB | 12.4 kB | 126.6 kB | 126.6 kB |
+| `@filecon/angular-papered` | 35.6 kB | 12.4 kB | 190.2 kB | 190.2 kB |
+| `@filecon/angular-papered-craft` | 35.6 kB | 12.4 kB | 166.6 kB | 166.6 kB |
+| `@filecon/angular-papered-flat` | 35.6 kB | 12.4 kB | 161.1 kB | 161.1 kB |
+| `@filecon/angular-scratch` | 35.6 kB | 12.4 kB | 824.8 kB | 824.8 kB |
+| `@filecon/angular-solid` | 35.6 kB | 12.4 kB | 127.2 kB | 127.2 kB |
+| `@filecon/astro` | 34.4 kB | 133.3 kB | – | – |
+| `@filecon/astro-chalk` | 34.4 kB | 136.4 kB | – | – |
+| `@filecon/astro-default` | 34.4 kB | 137.0 kB | – | – |
+| `@filecon/astro-gray` | 34.4 kB | 135.7 kB | – | – |
+| `@filecon/astro-papered` | 34.4 kB | 136.4 kB | – | – |
+| `@filecon/astro-papered-craft` | 34.4 kB | 138.6 kB | – | – |
+| `@filecon/astro-papered-flat` | 34.4 kB | 138.2 kB | – | – |
+| `@filecon/astro-scratch` | 34.5 kB | 136.8 kB | – | – |
+| `@filecon/astro-solid` | 34.4 kB | 135.8 kB | – | – |
+| `@filecon/css` | 8.46 MB | 0.0 kB | – | – |
+| `@filecon/electron` | 9.4 kB | 1.6 kB | – | – |
+| `@filecon/elements` | 49.8 kB | 13.0 kB | 13.2 kB | 1.80 MB |
+| `@filecon/elements-chalk` | 49.7 kB | 12.9 kB | 10.6 kB | 589.7 kB |
+| `@filecon/elements-default` | 49.7 kB | 12.9 kB | 9.5 kB | 130.2 kB |
+| `@filecon/elements-gray` | 49.7 kB | 12.9 kB | 9.4 kB | 125.2 kB |
+| `@filecon/elements-papered` | 49.7 kB | 12.9 kB | 9.7 kB | 189.3 kB |
+| `@filecon/elements-papered-craft` | 49.8 kB | 13.0 kB | 9.6 kB | 165.4 kB |
+| `@filecon/elements-papered-flat` | 49.7 kB | 12.9 kB | 9.6 kB | 160.5 kB |
+| `@filecon/elements-scratch` | 49.7 kB | 12.9 kB | 11.0 kB | 824.0 kB |
+| `@filecon/elements-solid` | 49.7 kB | 12.9 kB | 9.4 kB | 126.0 kB |
+| `@filecon/iconify` | 4.27 MB | 4.24 MB | – | – |
+| `@filecon/js` | 3.67 MB | 1.80 MB | 12.8 kB | 1.80 MB |
+| `@filecon/js-chalk` | 1.20 MB | 592.8 kB | 10.2 kB | 588.5 kB |
+| `@filecon/js-default` | 304.3 kB | 132.9 kB | 9.0 kB | 129.1 kB |
+| `@filecon/js-gray` | 292.5 kB | 127.7 kB | 9.0 kB | 124.0 kB |
+| `@filecon/js-papered` | 421.6 kB | 192.3 kB | 9.3 kB | 188.1 kB |
+| `@filecon/js-papered-craft` | 375.5 kB | 168.2 kB | 9.1 kB | 164.3 kB |
+| `@filecon/js-papered-flat` | 363.9 kB | 163.4 kB | 9.2 kB | 159.4 kB |
+| `@filecon/js-scratch` | 1.66 MB | 827.1 kB | 10.5 kB | 822.9 kB |
+| `@filecon/js-solid` | 295.5 kB | 128.8 kB | 8.9 kB | 124.8 kB |
+| `@filecon/preact` | 45.5 kB | 11.5 kB | 12.9 kB | 1.80 MB |
+| `@filecon/preact-chalk` | 45.4 kB | 11.5 kB | 10.3 kB | 589.3 kB |
+| `@filecon/preact-default` | 45.4 kB | 11.5 kB | 9.2 kB | 129.8 kB |
+| `@filecon/preact-gray` | 45.4 kB | 11.5 kB | 9.1 kB | 124.8 kB |
+| `@filecon/preact-papered` | 45.4 kB | 11.5 kB | 9.4 kB | 188.9 kB |
+| `@filecon/preact-papered-craft` | 45.4 kB | 11.5 kB | 9.3 kB | 165.1 kB |
+| `@filecon/preact-papered-flat` | 45.4 kB | 11.5 kB | 9.3 kB | 160.1 kB |
+| `@filecon/preact-scratch` | 45.4 kB | 11.5 kB | 10.7 kB | 823.7 kB |
+| `@filecon/preact-solid` | 45.4 kB | 11.5 kB | 9.1 kB | 125.6 kB |
+| `@filecon/react` | 45.3 kB | 11.6 kB | 13.0 kB | 1.80 MB |
+| `@filecon/react-chalk` | 45.3 kB | 11.5 kB | 10.4 kB | 589.3 kB |
+| `@filecon/react-default` | 45.3 kB | 11.5 kB | 9.2 kB | 129.8 kB |
+| `@filecon/react-gray` | 45.3 kB | 11.5 kB | 9.1 kB | 124.8 kB |
+| `@filecon/react-native` | 45.7 kB | 11.7 kB | 13.2 kB | 1.80 MB |
+| `@filecon/react-native-chalk` | 45.7 kB | 11.7 kB | 10.6 kB | 589.5 kB |
+| `@filecon/react-native-default` | 45.7 kB | 11.7 kB | 9.4 kB | 130.0 kB |
+| `@filecon/react-native-gray` | 45.7 kB | 11.7 kB | 9.3 kB | 125.1 kB |
+| `@filecon/react-native-papered` | 45.7 kB | 11.7 kB | 9.7 kB | 189.1 kB |
+| `@filecon/react-native-papered-craft` | 45.7 kB | 11.7 kB | 9.5 kB | 165.3 kB |
+| `@filecon/react-native-papered-flat` | 45.7 kB | 11.7 kB | 9.6 kB | 160.4 kB |
+| `@filecon/react-native-scratch` | 45.7 kB | 11.7 kB | 10.9 kB | 823.9 kB |
+| `@filecon/react-native-solid` | 45.7 kB | 11.7 kB | 9.3 kB | 125.9 kB |
+| `@filecon/react-papered` | 45.3 kB | 11.5 kB | 9.5 kB | 188.9 kB |
+| `@filecon/react-papered-craft` | 45.3 kB | 11.5 kB | 9.3 kB | 165.1 kB |
+| `@filecon/react-papered-flat` | 45.3 kB | 11.5 kB | 9.3 kB | 160.2 kB |
+| `@filecon/react-scratch` | 45.3 kB | 11.5 kB | 10.7 kB | 823.7 kB |
+| `@filecon/react-solid` | 45.3 kB | 11.5 kB | 9.1 kB | 125.6 kB |
+| `@filecon/shared` | 405.6 kB | 18.3 kB | – | – |
+| `@filecon/solid` | 45.7 kB | 11.7 kB | 12.8 kB | 1.80 MB |
+| `@filecon/solid-chalk` | 45.7 kB | 11.7 kB | 10.2 kB | 589.4 kB |
+| `@filecon/solid-default` | 45.7 kB | 11.7 kB | 9.1 kB | 129.9 kB |
+| `@filecon/solid-gray` | 45.7 kB | 11.7 kB | 9.0 kB | 124.9 kB |
+| `@filecon/solid-papered` | 45.7 kB | 11.7 kB | 9.3 kB | 189.0 kB |
+| `@filecon/solid-papered-craft` | 45.7 kB | 11.7 kB | 9.2 kB | 165.1 kB |
+| `@filecon/solid-papered-flat` | 45.7 kB | 11.7 kB | 9.2 kB | 160.2 kB |
+| `@filecon/solid-scratch` | 45.7 kB | 11.7 kB | 10.6 kB | 823.7 kB |
+| `@filecon/solid-solid` | 45.7 kB | 11.7 kB | 9.0 kB | 125.7 kB |
+| `@filecon/svelte` | 55.7 kB | 152.2 kB | – | – |
+| `@filecon/svelte-chalk` | 55.7 kB | 155.9 kB | – | – |
+| `@filecon/svelte-default` | 55.7 kB | 156.4 kB | – | – |
+| `@filecon/svelte-gray` | 55.7 kB | 155.1 kB | – | – |
+| `@filecon/svelte-papered` | 55.7 kB | 156.0 kB | – | – |
+| `@filecon/svelte-papered-craft` | 55.4 kB | 158.6 kB | – | – |
+| `@filecon/svelte-papered-flat` | 55.5 kB | 158.1 kB | – | – |
+| `@filecon/svelte-scratch` | 55.7 kB | 156.4 kB | – | – |
+| `@filecon/svelte-solid` | 55.7 kB | 155.2 kB | – | – |
+| `@filecon/tauri` | 7.1 kB | 0.3 kB | – | – |
+| `@filecon/vue` | 46.5 kB | 11.9 kB | 13.0 kB | 1.80 MB |
+| `@filecon/vue-chalk` | 46.1 kB | 11.8 kB | 10.4 kB | 589.4 kB |
+| `@filecon/vue-default` | 46.1 kB | 11.8 kB | 9.2 kB | 129.9 kB |
+| `@filecon/vue-gray` | 46.1 kB | 11.8 kB | 9.1 kB | 124.9 kB |
+| `@filecon/vue-papered` | 46.1 kB | 11.8 kB | 9.5 kB | 189.0 kB |
+| `@filecon/vue-papered-craft` | 46.1 kB | 11.9 kB | 9.3 kB | 165.1 kB |
+| `@filecon/vue-papered-flat` | 46.1 kB | 11.9 kB | 9.3 kB | 160.2 kB |
+| `@filecon/vue-scratch` | 46.1 kB | 11.8 kB | 10.7 kB | 823.7 kB |
+| `@filecon/vue-solid` | 46.1 kB | 11.8 kB | 9.1 kB | 125.7 kB |
 
 ## Rust crate
 

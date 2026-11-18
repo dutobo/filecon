@@ -39,7 +39,7 @@ export class FilesComponent {
 | `name` | `IconName \| string` | – | icon name or extension |
 | `file` | `string` | – | file name, resolved with `resolveIcon` |
 | `icon` | `FileconIcon` | – | single icon such as `PdfIcon` (tree-shakable) |
-{{#isAll}}| `iconStyle` | `"default" \| "gray" \| "solid"` | `"default"` | icon style |
+{{#isAll}}| `iconStyle` | `Style`: `"default"`, `"gray"`, `"solid"`, `"papered"`, `"papered-flat"`, `"papered-craft"`, `"scratch"`, `"chalk"` | `"default"` | icon style |
 {{/isAll}}| `theme` | `"light" \| "dark" \| "auto"` | `"light"` | `auto` embeds a `prefers-color-scheme` stylesheet – no hydration mismatch |
 | `size` | `number \| string` | `40` | width and height |
 | `title` | `string` | – | adds `<title>` and `role="img"`; without it the SVG is `aria-hidden="true"` |

@@ -3,7 +3,7 @@
 [Filecon](https://filecon.dev) file icons for SolidJS – 703 file types, the default style (outline, colored label).
 Works with client rendering, SSR (SolidStart) and hydration; tree-shakable.
 
-Part of the Filecon family: `@filecon/solid`, `@filecon/solid-default`, `@filecon/solid-gray`, `@filecon/solid-solid`.
+Part of the Filecon family: `@filecon/solid`, `@filecon/solid-default`, `@filecon/solid-gray`, `@filecon/solid-solid`, `@filecon/solid-papered`, `@filecon/solid-papered-flat`, `@filecon/solid-papered-craft`, `@filecon/solid-scratch`, `@filecon/solid-chalk`.
 This package only contains the `default` style, so it is smaller than `@filecon/solid`; the API is identical except that there is no `style` prop (`style` is the regular inline-CSS prop here).
 
 ```sh

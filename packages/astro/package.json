@@ -1,7 +1,7 @@
 {
   "name": "@filecon/astro",
-  "version": "0.1.0",
-  "description": "Filecon file icons for Astro – all three styles (default, gray, solid). Zero client JS.",
+  "version": "0.2.0",
+  "description": "Filecon file icons for Astro – all eight styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk). Zero client JS.",
   "keywords": [
     "filecon",
     "file-icons",

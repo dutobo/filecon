@@ -2,13 +2,14 @@
 //
 // Scaffolded (committed):  packages/<pkg>/{package.json, README.md, configs, src/*.ts, test/*}
 // Generated (gitignored):  packages/<pkg>/src/generated/**, packages/<pkg>/{LICENSE,NOTICE}, crate assets
-import { copyFileSync, existsSync, readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join, relative } from "node:path";
 import { pathToFileURL } from "node:url";
 import { generateCss, generateIconify } from "./assets";
-import { PACK_DIR, PACKAGES_DIR, ROOT, SCOPE, STYLES, TEMPLATES_DIR, VARIANTS, type Variant } from "./config";
+import { PACKAGES_DIR, ROOT, SCOPE, STYLES, TEMPLATES_DIR, VARIANTS, type Variant } from "./config";
 import { variantModule } from "./data-module";
 import { listFiles, stats, syncDirectory, toPosix, writeIfChanged } from "./fsutil";
+import { LEGAL_FILES, legalFile } from "./legal";
 import { renderTemplate } from "./mustache";
 import { loadPack, type Pack } from "./pack";
 import { composePackageJson } from "./package-json";
@@ -20,10 +21,15 @@ import { GENERATED_HEADER } from "./template-api";
 import { generateVscode } from "./vscode";
 
 const STYLE_LABEL: Record<Variant, string> = {
-  all: "all three styles (default, gray, solid)",
+  all: "all eight styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk)",
   default: "the default style (outline, colored label)",
   gray: "the gray style (filled gray page)",
   solid: "the solid style (filled colored page)",
+  papered: "the papered style (realistic sheet of paper)",
+  "papered-flat": "the papered-flat style (flat, warm paper)",
+  "papered-craft": "the papered-craft style (cut paper layers)",
+  scratch: "the scratch style (pencil sketch on a note sheet)",
+  chalk: "the chalk style (chalk on a blackboard, marker on a whiteboard)",
 };
 
 /** Template order: `js` first because every other package takes its data from the js packages. */
@@ -95,11 +101,7 @@ function scaffold(templateDir: string, packageDir: string, ctx: TemplateContext)
 }
 
 function copyLegalFiles(packageDir: string): void {
-  for (const file of ["LICENSE", "NOTICE"]) {
-    const target = join(packageDir, file);
-    const content = readFileSync(join(PACK_DIR, file));
-    if (!existsSync(target) || !readFileSync(target).equals(content)) copyFileSync(join(PACK_DIR, file), target);
-  }
+  for (const file of LEGAL_FILES) writeIfChanged(join(packageDir, file), legalFile(file));
 }
 
 function generateShared(pack: Pack): void {

@@ -1,0 +1,95 @@
+{
+  "name": "@filecon/astro-papered-craft",
+  "version": "0.2.0",
+  "description": "Filecon file icons for Astro – the papered-craft style (cut paper layers). Zero client JS.",
+  "keywords": [
+    "filecon",
+    "file-icons",
+    "icons",
+    "svg",
+    "file-type",
+    "astro",
+    "astro-component",
+    "withastro"
+  ],
+  "homepage": "https://filecon.dev",
+  "bugs": {
+    "url": "https://github.com/dutobo/filecon/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dutobo/filecon.git",
+    "directory": "packages/astro-papered-craft"
+  },
+  "license": "Apache-2.0",
+  "author": {
+    "name": "dutobo",
+    "url": "https://github.com/dutobo"
+  },
+  "contributors": [
+    {
+      "name": "rafaelk-f",
+      "url": "https://github.com/rafaelk-f"
+    }
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./icons": {
+      "types": "./dist/icons.d.ts",
+      "default": "./dist/icons.js"
+    },
+    "./FileIcon.astro": "./dist/FileIcon.astro",
+    "./Icon.astro": "./dist/Icon.astro",
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "NOTICE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "typecheck": "astro check",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@filecon/js-papered-craft": "workspace:^",
+    "@filecon/shared": "workspace:^"
+  },
+  "peerDependencies": {
+    "astro": ">=5.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@filecon/testkit": "workspace:*",
+    "@types/node": "^24.19.2",
+    "astro": "^7.4.12",
+    "typescript": "~6.0.3",
+    "vitest": "^5.1.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true,
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "./icons": {
+        "types": "./dist/icons.d.ts",
+        "default": "./dist/icons.js"
+      },
+      "./FileIcon.astro": "./dist/FileIcon.astro",
+      "./Icon.astro": "./dist/Icon.astro",
+      "./package.json": "./package.json"
+    }
+  }
+}

@@ -1,5 +1,26 @@
+/**
+ * All icon styles. `default`, `gray` and `solid` come from the icon pack; the others are drawn by the Filecon
+ * style generator (tools/stylegen) on top of it.
+ */
+export const STYLES = [
+  "default",
+  "gray",
+  "solid",
+  "papered",
+  "papered-flat",
+  "papered-craft",
+  "scratch",
+  "chalk",
+] as const;
+
 /** Visual style of an icon. */
-export type Style = "default" | "gray" | "solid";
+export type Style = (typeof STYLES)[number];
+
+/** Styles that look the same in every theme (they have no dark variant). */
+export const THEMELESS_STYLES: readonly Style[] = ["solid"];
+
+/** `true` if the style has separate light and dark variants. */
+export const isThemedStyle = (style: Style): boolean => !THEMELESS_STYLES.includes(style);
 
 /**
  * Color theme. `auto` follows `prefers-color-scheme` via an embedded `<style>` (SSR-safe).
@@ -9,13 +30,8 @@ export type Theme = "light" | "dark" | "auto";
 
 /**
  * Icon markup per style: only the inner SVG markup (no outer `<svg>`, no `<title>`).
- * `default` and `gray` are stored "themed" (light colors plus `fc-t*` classes that describe the dark colors).
+ * Themed styles are stored "themed" (light colors plus `fc-t*` classes that describe the dark colors).
  */
-export interface IconData {
-  readonly default?: string;
-  readonly gray?: string;
-  readonly solid?: string;
-}
+export type IconData = { readonly [S in Style]?: string };
 
-export const STYLES: readonly Style[] = ["default", "gray", "solid"];
 export const THEMES: readonly Theme[] = ["light", "dark", "auto"];

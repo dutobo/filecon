@@ -1,6 +1,6 @@
 {
   "name": "@filecon/svelte-default",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Filecon file icons for Svelte 5 – the default style (outline, colored label). SSR-safe, tree-shakable.",
   "keywords": [
     "filecon",

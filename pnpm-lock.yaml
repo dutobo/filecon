@@ -79,6 +79,55 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
+  packages/angular-chalk:
+    dependencies:
+      '@filecon/js-chalk':
+        specifier: workspace:^
+        version: link:../js-chalk
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+      tslib:
+        specifier: ^2.9.1
+        version: 2.9.1
+    devDependencies:
+      '@angular/common':
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/core@22.2.6(@angular/compiler@22.2.6)(rxjs@7.8.2))(rxjs@7.8.2)
+      '@angular/compiler':
+        specifier: ^22.2.6
+        version: 22.2.6
+      '@angular/compiler-cli':
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/compiler@22.2.6)(typescript@6.0.3)
+      '@angular/core':
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/compiler@22.2.6)(rxjs@7.8.2)
+      '@angular/platform-browser':
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/common@22.2.6(@angular/core@22.2.6(@angular/compiler@22.2.6)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.2.6(@angular/compiler@22.2.6)(rxjs@7.8.2))
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      jsdom:
+        specifier: ^31.0.1
+        version: 31.0.1
+      ng-packagr:
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/compiler-cli@22.2.6(@angular/compiler@22.2.6)(typescript@6.0.3))(@volar/typescript@2.4.31(typescript@6.0.3))(tslib@2.9.1)(typescript@6.0.3)
+      rxjs:
+        specifier: ^7.8.2
+        version: 7.8.2
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
   packages/angular-default:
     dependencies:
       '@filecon/js-default':
@@ -133,6 +182,202 @@ importers:
       '@filecon/js-gray':
         specifier: workspace:^
         version: link:../js-gray
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+      tslib:
+        specifier: ^2.9.1
+        version: 2.9.1
+    devDependencies:
+      '@angular/common':
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/core@22.2.6(@angular/compiler@22.2.6)(rxjs@7.8.2))(rxjs@7.8.2)
+      '@angular/compiler':
+        specifier: ^22.2.6
+        version: 22.2.6
+      '@angular/compiler-cli':
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/compiler@22.2.6)(typescript@6.0.3)
+      '@angular/core':
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/compiler@22.2.6)(rxjs@7.8.2)
+      '@angular/platform-browser':
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/common@22.2.6(@angular/core@22.2.6(@angular/compiler@22.2.6)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.2.6(@angular/compiler@22.2.6)(rxjs@7.8.2))
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      jsdom:
+        specifier: ^31.0.1
+        version: 31.0.1
+      ng-packagr:
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/compiler-cli@22.2.6(@angular/compiler@22.2.6)(typescript@6.0.3))(@volar/typescript@2.4.31(typescript@6.0.3))(tslib@2.9.1)(typescript@6.0.3)
+      rxjs:
+        specifier: ^7.8.2
+        version: 7.8.2
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/angular-papered:
+    dependencies:
+      '@filecon/js-papered':
+        specifier: workspace:^
+        version: link:../js-papered
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+      tslib:
+        specifier: ^2.9.1
+        version: 2.9.1
+    devDependencies:
+      '@angular/common':
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/core@22.2.6(@angular/compiler@22.2.6)(rxjs@7.8.2))(rxjs@7.8.2)
+      '@angular/compiler':
+        specifier: ^22.2.6
+        version: 22.2.6
+      '@angular/compiler-cli':
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/compiler@22.2.6)(typescript@6.0.3)
+      '@angular/core':
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/compiler@22.2.6)(rxjs@7.8.2)
+      '@angular/platform-browser':
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/common@22.2.6(@angular/core@22.2.6(@angular/compiler@22.2.6)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.2.6(@angular/compiler@22.2.6)(rxjs@7.8.2))
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      jsdom:
+        specifier: ^31.0.1
+        version: 31.0.1
+      ng-packagr:
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/compiler-cli@22.2.6(@angular/compiler@22.2.6)(typescript@6.0.3))(@volar/typescript@2.4.31(typescript@6.0.3))(tslib@2.9.1)(typescript@6.0.3)
+      rxjs:
+        specifier: ^7.8.2
+        version: 7.8.2
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/angular-papered-craft:
+    dependencies:
+      '@filecon/js-papered-craft':
+        specifier: workspace:^
+        version: link:../js-papered-craft
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+      tslib:
+        specifier: ^2.9.1
+        version: 2.9.1
+    devDependencies:
+      '@angular/common':
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/core@22.2.6(@angular/compiler@22.2.6)(rxjs@7.8.2))(rxjs@7.8.2)
+      '@angular/compiler':
+        specifier: ^22.2.6
+        version: 22.2.6
+      '@angular/compiler-cli':
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/compiler@22.2.6)(typescript@6.0.3)
+      '@angular/core':
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/compiler@22.2.6)(rxjs@7.8.2)
+      '@angular/platform-browser':
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/common@22.2.6(@angular/core@22.2.6(@angular/compiler@22.2.6)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.2.6(@angular/compiler@22.2.6)(rxjs@7.8.2))
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      jsdom:
+        specifier: ^31.0.1
+        version: 31.0.1
+      ng-packagr:
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/compiler-cli@22.2.6(@angular/compiler@22.2.6)(typescript@6.0.3))(@volar/typescript@2.4.31(typescript@6.0.3))(tslib@2.9.1)(typescript@6.0.3)
+      rxjs:
+        specifier: ^7.8.2
+        version: 7.8.2
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/angular-papered-flat:
+    dependencies:
+      '@filecon/js-papered-flat':
+        specifier: workspace:^
+        version: link:../js-papered-flat
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+      tslib:
+        specifier: ^2.9.1
+        version: 2.9.1
+    devDependencies:
+      '@angular/common':
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/core@22.2.6(@angular/compiler@22.2.6)(rxjs@7.8.2))(rxjs@7.8.2)
+      '@angular/compiler':
+        specifier: ^22.2.6
+        version: 22.2.6
+      '@angular/compiler-cli':
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/compiler@22.2.6)(typescript@6.0.3)
+      '@angular/core':
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/compiler@22.2.6)(rxjs@7.8.2)
+      '@angular/platform-browser':
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/common@22.2.6(@angular/core@22.2.6(@angular/compiler@22.2.6)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.2.6(@angular/compiler@22.2.6)(rxjs@7.8.2))
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      jsdom:
+        specifier: ^31.0.1
+        version: 31.0.1
+      ng-packagr:
+        specifier: ^22.2.6
+        version: 22.2.6(@angular/compiler-cli@22.2.6(@angular/compiler@22.2.6)(typescript@6.0.3))(@volar/typescript@2.4.31(typescript@6.0.3))(tslib@2.9.1)(typescript@6.0.3)
+      rxjs:
+        specifier: ^7.8.2
+        version: 7.8.2
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/angular-scratch:
+    dependencies:
+      '@filecon/js-scratch':
+        specifier: workspace:^
+        version: link:../js-scratch
       '@filecon/shared':
         specifier: workspace:^
         version: link:../shared
@@ -254,6 +499,34 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
+  packages/astro-chalk:
+    dependencies:
+      '@filecon/js-chalk':
+        specifier: workspace:^
+        version: link:../js-chalk
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@astrojs/check':
+        specifier: ^0.9.12
+        version: 0.9.12(prettier@3.10.1)(typescript@6.0.3)
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      astro:
+        specifier: ^7.4.12
+        version: 7.4.12(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
   packages/astro-default:
     dependencies:
       '@filecon/js-default':
@@ -287,6 +560,118 @@ importers:
       '@filecon/js-gray':
         specifier: workspace:^
         version: link:../js-gray
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@astrojs/check':
+        specifier: ^0.9.12
+        version: 0.9.12(prettier@3.10.1)(typescript@6.0.3)
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      astro:
+        specifier: ^7.4.12
+        version: 7.4.12(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/astro-papered:
+    dependencies:
+      '@filecon/js-papered':
+        specifier: workspace:^
+        version: link:../js-papered
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@astrojs/check':
+        specifier: ^0.9.12
+        version: 0.9.12(prettier@3.10.1)(typescript@6.0.3)
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      astro:
+        specifier: ^7.4.12
+        version: 7.4.12(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/astro-papered-craft:
+    dependencies:
+      '@filecon/js-papered-craft':
+        specifier: workspace:^
+        version: link:../js-papered-craft
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@astrojs/check':
+        specifier: ^0.9.12
+        version: 0.9.12(prettier@3.10.1)(typescript@6.0.3)
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      astro:
+        specifier: ^7.4.12
+        version: 7.4.12(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/astro-papered-flat:
+    dependencies:
+      '@filecon/js-papered-flat':
+        specifier: workspace:^
+        version: link:../js-papered-flat
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@astrojs/check':
+        specifier: ^0.9.12
+        version: 0.9.12(prettier@3.10.1)(typescript@6.0.3)
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      astro:
+        specifier: ^7.4.12
+        version: 7.4.12(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/astro-scratch:
+    dependencies:
+      '@filecon/js-scratch':
+        specifier: workspace:^
+        version: link:../js-scratch
       '@filecon/shared':
         specifier: workspace:^
         version: link:../shared
@@ -409,6 +794,34 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
+  packages/elements-chalk:
+    dependencies:
+      '@filecon/js-chalk':
+        specifier: workspace:^
+        version: link:../js-chalk
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      jsdom:
+        specifier: ^31.0.1
+        version: 31.0.1
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
   packages/elements-default:
     dependencies:
       '@filecon/js-default':
@@ -442,6 +855,118 @@ importers:
       '@filecon/js-gray':
         specifier: workspace:^
         version: link:../js-gray
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      jsdom:
+        specifier: ^31.0.1
+        version: 31.0.1
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/elements-papered:
+    dependencies:
+      '@filecon/js-papered':
+        specifier: workspace:^
+        version: link:../js-papered
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      jsdom:
+        specifier: ^31.0.1
+        version: 31.0.1
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/elements-papered-craft:
+    dependencies:
+      '@filecon/js-papered-craft':
+        specifier: workspace:^
+        version: link:../js-papered-craft
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      jsdom:
+        specifier: ^31.0.1
+        version: 31.0.1
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/elements-papered-flat:
+    dependencies:
+      '@filecon/js-papered-flat':
+        specifier: workspace:^
+        version: link:../js-papered-flat
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      jsdom:
+        specifier: ^31.0.1
+        version: 31.0.1
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/elements-scratch:
+    dependencies:
+      '@filecon/js-scratch':
+        specifier: workspace:^
+        version: link:../js-scratch
       '@filecon/shared':
         specifier: workspace:^
         version: link:../shared
@@ -533,6 +1058,28 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
+  packages/js-chalk:
+    dependencies:
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
   packages/js-default:
     dependencies:
       '@filecon/shared':
@@ -556,6 +1103,94 @@ importers:
         version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
   packages/js-gray:
+    dependencies:
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/js-papered:
+    dependencies:
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/js-papered-craft:
+    dependencies:
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/js-papered-flat:
+    dependencies:
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/js-scratch:
     dependencies:
       '@filecon/shared':
         specifier: workspace:^
@@ -604,6 +1239,37 @@ importers:
       '@filecon/js':
         specifier: workspace:^
         version: link:../js
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      preact:
+        specifier: ^11.2.0
+        version: 11.2.0(preact-render-to-string@6.8.3)
+      preact-render-to-string:
+        specifier: ^6.8.3
+        version: 6.8.3(preact@11.2.0)
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/preact-chalk:
+    dependencies:
+      '@filecon/js-chalk':
+        specifier: workspace:^
+        version: link:../js-chalk
       '@filecon/shared':
         specifier: workspace:^
         version: link:../shared
@@ -692,6 +1358,130 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
+  packages/preact-papered:
+    dependencies:
+      '@filecon/js-papered':
+        specifier: workspace:^
+        version: link:../js-papered
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      preact:
+        specifier: ^11.2.0
+        version: 11.2.0(preact-render-to-string@6.8.3)
+      preact-render-to-string:
+        specifier: ^6.8.3
+        version: 6.8.3(preact@11.2.0)
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/preact-papered-craft:
+    dependencies:
+      '@filecon/js-papered-craft':
+        specifier: workspace:^
+        version: link:../js-papered-craft
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      preact:
+        specifier: ^11.2.0
+        version: 11.2.0(preact-render-to-string@6.8.3)
+      preact-render-to-string:
+        specifier: ^6.8.3
+        version: 6.8.3(preact@11.2.0)
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/preact-papered-flat:
+    dependencies:
+      '@filecon/js-papered-flat':
+        specifier: workspace:^
+        version: link:../js-papered-flat
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      preact:
+        specifier: ^11.2.0
+        version: 11.2.0(preact-render-to-string@6.8.3)
+      preact-render-to-string:
+        specifier: ^6.8.3
+        version: 6.8.3(preact@11.2.0)
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/preact-scratch:
+    dependencies:
+      '@filecon/js-scratch':
+        specifier: workspace:^
+        version: link:../js-scratch
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      preact:
+        specifier: ^11.2.0
+        version: 11.2.0(preact-render-to-string@6.8.3)
+      preact-render-to-string:
+        specifier: ^6.8.3
+        version: 6.8.3(preact@11.2.0)
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
   packages/preact-solid:
     dependencies:
       '@filecon/js-solid':
@@ -728,6 +1518,43 @@ importers:
       '@filecon/js':
         specifier: workspace:^
         version: link:../js
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      '@types/react':
+        specifier: ^19.3.0
+        version: 19.3.0
+      '@types/react-dom':
+        specifier: ^19.3.0
+        version: 19.3.0(@types/react@19.3.0)
+      react:
+        specifier: ^19.3.1
+        version: 19.3.1
+      react-dom:
+        specifier: ^19.3.1
+        version: 19.3.1(react@19.3.1)
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/react-chalk:
+    dependencies:
+      '@filecon/js-chalk':
+        specifier: workspace:^
+        version: link:../js-chalk
       '@filecon/shared':
         specifier: workspace:^
         version: link:../shared
@@ -871,6 +1698,43 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
+  packages/react-native-chalk:
+    dependencies:
+      '@filecon/js-chalk':
+        specifier: workspace:^
+        version: link:../js-chalk
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      '@types/react':
+        specifier: ^19.3.0
+        version: 19.3.0
+      react:
+        specifier: ^19.3.1
+        version: 19.3.1
+      react-native:
+        specifier: ^0.88.1
+        version: 0.88.1(@babel/core@8.0.1)(@types/react@19.3.0)(react@19.3.1)
+      react-native-svg:
+        specifier: ^15.16.1
+        version: 15.16.1(react-native@0.88.1(@babel/core@8.0.1)(@types/react@19.3.0)(react@19.3.1))(react@19.3.1)
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
   packages/react-native-default:
     dependencies:
       '@filecon/js-default':
@@ -945,6 +1809,154 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
+  packages/react-native-papered:
+    dependencies:
+      '@filecon/js-papered':
+        specifier: workspace:^
+        version: link:../js-papered
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      '@types/react':
+        specifier: ^19.3.0
+        version: 19.3.0
+      react:
+        specifier: ^19.3.1
+        version: 19.3.1
+      react-native:
+        specifier: ^0.88.1
+        version: 0.88.1(@babel/core@8.0.1)(@types/react@19.3.0)(react@19.3.1)
+      react-native-svg:
+        specifier: ^15.16.1
+        version: 15.16.1(react-native@0.88.1(@babel/core@8.0.1)(@types/react@19.3.0)(react@19.3.1))(react@19.3.1)
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/react-native-papered-craft:
+    dependencies:
+      '@filecon/js-papered-craft':
+        specifier: workspace:^
+        version: link:../js-papered-craft
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      '@types/react':
+        specifier: ^19.3.0
+        version: 19.3.0
+      react:
+        specifier: ^19.3.1
+        version: 19.3.1
+      react-native:
+        specifier: ^0.88.1
+        version: 0.88.1(@babel/core@8.0.1)(@types/react@19.3.0)(react@19.3.1)
+      react-native-svg:
+        specifier: ^15.16.1
+        version: 15.16.1(react-native@0.88.1(@babel/core@8.0.1)(@types/react@19.3.0)(react@19.3.1))(react@19.3.1)
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/react-native-papered-flat:
+    dependencies:
+      '@filecon/js-papered-flat':
+        specifier: workspace:^
+        version: link:../js-papered-flat
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      '@types/react':
+        specifier: ^19.3.0
+        version: 19.3.0
+      react:
+        specifier: ^19.3.1
+        version: 19.3.1
+      react-native:
+        specifier: ^0.88.1
+        version: 0.88.1(@babel/core@8.0.1)(@types/react@19.3.0)(react@19.3.1)
+      react-native-svg:
+        specifier: ^15.16.1
+        version: 15.16.1(react-native@0.88.1(@babel/core@8.0.1)(@types/react@19.3.0)(react@19.3.1))(react@19.3.1)
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/react-native-scratch:
+    dependencies:
+      '@filecon/js-scratch':
+        specifier: workspace:^
+        version: link:../js-scratch
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      '@types/react':
+        specifier: ^19.3.0
+        version: 19.3.0
+      react:
+        specifier: ^19.3.1
+        version: 19.3.1
+      react-native:
+        specifier: ^0.88.1
+        version: 0.88.1(@babel/core@8.0.1)(@types/react@19.3.0)(react@19.3.1)
+      react-native-svg:
+        specifier: ^15.16.1
+        version: 15.16.1(react-native@0.88.1(@babel/core@8.0.1)(@types/react@19.3.0)(react@19.3.1))(react@19.3.1)
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
   packages/react-native-solid:
     dependencies:
       '@filecon/js-solid':
@@ -972,6 +1984,154 @@ importers:
       react-native-svg:
         specifier: ^15.16.1
         version: 15.16.1(react-native@0.88.1(@babel/core@8.0.1)(@types/react@19.3.0)(react@19.3.1))(react@19.3.1)
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/react-papered:
+    dependencies:
+      '@filecon/js-papered':
+        specifier: workspace:^
+        version: link:../js-papered
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      '@types/react':
+        specifier: ^19.3.0
+        version: 19.3.0
+      '@types/react-dom':
+        specifier: ^19.3.0
+        version: 19.3.0(@types/react@19.3.0)
+      react:
+        specifier: ^19.3.1
+        version: 19.3.1
+      react-dom:
+        specifier: ^19.3.1
+        version: 19.3.1(react@19.3.1)
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/react-papered-craft:
+    dependencies:
+      '@filecon/js-papered-craft':
+        specifier: workspace:^
+        version: link:../js-papered-craft
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      '@types/react':
+        specifier: ^19.3.0
+        version: 19.3.0
+      '@types/react-dom':
+        specifier: ^19.3.0
+        version: 19.3.0(@types/react@19.3.0)
+      react:
+        specifier: ^19.3.1
+        version: 19.3.1
+      react-dom:
+        specifier: ^19.3.1
+        version: 19.3.1(react@19.3.1)
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/react-papered-flat:
+    dependencies:
+      '@filecon/js-papered-flat':
+        specifier: workspace:^
+        version: link:../js-papered-flat
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      '@types/react':
+        specifier: ^19.3.0
+        version: 19.3.0
+      '@types/react-dom':
+        specifier: ^19.3.0
+        version: 19.3.0(@types/react@19.3.0)
+      react:
+        specifier: ^19.3.1
+        version: 19.3.1
+      react-dom:
+        specifier: ^19.3.1
+        version: 19.3.1(react@19.3.1)
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/react-scratch:
+    dependencies:
+      '@filecon/js-scratch':
+        specifier: workspace:^
+        version: link:../js-scratch
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      '@types/react':
+        specifier: ^19.3.0
+        version: 19.3.0
+      '@types/react-dom':
+        specifier: ^19.3.0
+        version: 19.3.0(@types/react@19.3.0)
+      react:
+        specifier: ^19.3.1
+        version: 19.3.1
+      react-dom:
+        specifier: ^19.3.1
+        version: 19.3.1(react@19.3.1)
       tsup:
         specifier: ^9.0.0
         version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
@@ -1065,6 +2225,34 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
+  packages/solid-chalk:
+    dependencies:
+      '@filecon/js-chalk':
+        specifier: workspace:^
+        version: link:../js-chalk
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      solid-js:
+        specifier: ^1.9.19
+        version: 1.9.19
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
   packages/solid-default:
     dependencies:
       '@filecon/js-default':
@@ -1098,6 +2286,118 @@ importers:
       '@filecon/js-gray':
         specifier: workspace:^
         version: link:../js-gray
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      solid-js:
+        specifier: ^1.9.19
+        version: 1.9.19
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/solid-papered:
+    dependencies:
+      '@filecon/js-papered':
+        specifier: workspace:^
+        version: link:../js-papered
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      solid-js:
+        specifier: ^1.9.19
+        version: 1.9.19
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/solid-papered-craft:
+    dependencies:
+      '@filecon/js-papered-craft':
+        specifier: workspace:^
+        version: link:../js-papered-craft
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      solid-js:
+        specifier: ^1.9.19
+        version: 1.9.19
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/solid-papered-flat:
+    dependencies:
+      '@filecon/js-papered-flat':
+        specifier: workspace:^
+        version: link:../js-papered-flat
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      solid-js:
+        specifier: ^1.9.19
+        version: 1.9.19
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/solid-scratch:
+    dependencies:
+      '@filecon/js-scratch':
+        specifier: workspace:^
+        version: link:../js-scratch
       '@filecon/shared':
         specifier: workspace:^
         version: link:../shared
@@ -1186,6 +2486,43 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
+  packages/svelte-chalk:
+    dependencies:
+      '@filecon/js-chalk':
+        specifier: workspace:^
+        version: link:../js-chalk
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@sveltejs/package':
+        specifier: ^3.0.2
+        version: 3.0.2(svelte@5.57.3)(typescript@6.0.3)
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^7.3.1
+        version: 7.3.1(svelte@5.57.3)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      svelte:
+        specifier: ^5.57.3
+        version: 5.57.3
+      svelte-check:
+        specifier: ^4.7.8
+        version: 4.7.8(picomatch@4.0.7)(svelte@5.57.3)(typescript@6.0.3)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vite:
+        specifier: ^8.3.8
+        version: 8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
   packages/svelte-default:
     dependencies:
       '@filecon/js-default':
@@ -1228,6 +2565,154 @@ importers:
       '@filecon/js-gray':
         specifier: workspace:^
         version: link:../js-gray
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@sveltejs/package':
+        specifier: ^3.0.2
+        version: 3.0.2(svelte@5.57.3)(typescript@6.0.3)
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^7.3.1
+        version: 7.3.1(svelte@5.57.3)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      svelte:
+        specifier: ^5.57.3
+        version: 5.57.3
+      svelte-check:
+        specifier: ^4.7.8
+        version: 4.7.8(picomatch@4.0.7)(svelte@5.57.3)(typescript@6.0.3)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vite:
+        specifier: ^8.3.8
+        version: 8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/svelte-papered:
+    dependencies:
+      '@filecon/js-papered':
+        specifier: workspace:^
+        version: link:../js-papered
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@sveltejs/package':
+        specifier: ^3.0.2
+        version: 3.0.2(svelte@5.57.3)(typescript@6.0.3)
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^7.3.1
+        version: 7.3.1(svelte@5.57.3)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      svelte:
+        specifier: ^5.57.3
+        version: 5.57.3
+      svelte-check:
+        specifier: ^4.7.8
+        version: 4.7.8(picomatch@4.0.7)(svelte@5.57.3)(typescript@6.0.3)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vite:
+        specifier: ^8.3.8
+        version: 8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/svelte-papered-craft:
+    dependencies:
+      '@filecon/js-papered-craft':
+        specifier: workspace:^
+        version: link:../js-papered-craft
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@sveltejs/package':
+        specifier: ^3.0.2
+        version: 3.0.2(svelte@5.57.3)(typescript@6.0.3)
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^7.3.1
+        version: 7.3.1(svelte@5.57.3)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      svelte:
+        specifier: ^5.57.3
+        version: 5.57.3
+      svelte-check:
+        specifier: ^4.7.8
+        version: 4.7.8(picomatch@4.0.7)(svelte@5.57.3)(typescript@6.0.3)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vite:
+        specifier: ^8.3.8
+        version: 8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/svelte-papered-flat:
+    dependencies:
+      '@filecon/js-papered-flat':
+        specifier: workspace:^
+        version: link:../js-papered-flat
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@sveltejs/package':
+        specifier: ^3.0.2
+        version: 3.0.2(svelte@5.57.3)(typescript@6.0.3)
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^7.3.1
+        version: 7.3.1(svelte@5.57.3)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      svelte:
+        specifier: ^5.57.3
+        version: 5.57.3
+      svelte-check:
+        specifier: ^4.7.8
+        version: 4.7.8(picomatch@4.0.7)(svelte@5.57.3)(typescript@6.0.3)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vite:
+        specifier: ^8.3.8
+        version: 8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/svelte-scratch:
+    dependencies:
+      '@filecon/js-scratch':
+        specifier: workspace:^
+        version: link:../js-scratch
       '@filecon/shared':
         specifier: workspace:^
         version: link:../shared
@@ -1346,6 +2831,34 @@ importers:
         specifier: ^3.5.45
         version: 3.5.45(typescript@6.0.3)
 
+  packages/vue-chalk:
+    dependencies:
+      '@filecon/js-chalk':
+        specifier: workspace:^
+        version: link:../js-chalk
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+      vue:
+        specifier: ^3.5.45
+        version: 3.5.45(typescript@6.0.3)
+
   packages/vue-default:
     dependencies:
       '@filecon/js-default':
@@ -1379,6 +2892,118 @@ importers:
       '@filecon/js-gray':
         specifier: workspace:^
         version: link:../js-gray
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+      vue:
+        specifier: ^3.5.45
+        version: 3.5.45(typescript@6.0.3)
+
+  packages/vue-papered:
+    dependencies:
+      '@filecon/js-papered':
+        specifier: workspace:^
+        version: link:../js-papered
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+      vue:
+        specifier: ^3.5.45
+        version: 3.5.45(typescript@6.0.3)
+
+  packages/vue-papered-craft:
+    dependencies:
+      '@filecon/js-papered-craft':
+        specifier: workspace:^
+        version: link:../js-papered-craft
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+      vue:
+        specifier: ^3.5.45
+        version: 3.5.45(typescript@6.0.3)
+
+  packages/vue-papered-flat:
+    dependencies:
+      '@filecon/js-papered-flat':
+        specifier: workspace:^
+        version: link:../js-papered-flat
+      '@filecon/shared':
+        specifier: workspace:^
+        version: link:../shared
+    devDependencies:
+      '@filecon/testkit':
+        specifier: workspace:*
+        version: link:../../tools/testkit
+      '@types/node':
+        specifier: ^24.19.2
+        version: 24.19.2
+      tsup:
+        specifier: ^9.0.0
+        version: 9.0.0(postcss@8.5.32)(tsx@4.23.15)(typescript@6.0.3)(yaml@2.9.1)
+      typescript:
+        specifier: ~6.0.3
+        version: 6.0.3
+      vitest:
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@24.19.2)(jsdom@31.0.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(less@4.9.1)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+      vue:
+        specifier: ^3.5.45
+        version: 3.5.45(typescript@6.0.3)
+
+  packages/vue-scratch:
+    dependencies:
+      '@filecon/js-scratch':
+        specifier: workspace:^
+        version: link:../js-scratch
       '@filecon/shared':
         specifier: workspace:^
         version: link:../shared

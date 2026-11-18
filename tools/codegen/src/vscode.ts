@@ -15,20 +15,22 @@
 // - `variant` icons other than `db-thumbs` need content sniffing and are not mapped.
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import type { Style } from "../../../packages/shared/src/types";
-import { PACK_DIR, ROOT } from "./config";
+import { isThemedStyle, type Style } from "../../../packages/shared/src/types";
+import { ROOT, STYLE_TITLES, STYLES } from "./config";
 import { syncDirectory, writeIfChanged } from "./fsutil";
+import { LEGAL_FILES, legalFile } from "./legal";
 import type { Pack } from "./pack";
 import { svgPath } from "./pack";
 
 export const VSCODE_DIR = join(ROOT, "extensions", "vscode");
 
 /** Theme id, label and JSON file per style; must match `contributes.iconThemes` in extensions/vscode/package.json. */
-export const VSCODE_THEMES = [
-  { id: "filecon", label: "Filecon", style: "default", file: "filecon-default.json" },
-  { id: "filecon-gray", label: "Filecon Gray", style: "gray", file: "filecon-gray.json" },
-  { id: "filecon-solid", label: "Filecon Solid", style: "solid", file: "filecon-solid.json" },
-] as const satisfies readonly { id: string; label: string; style: Style; file: string }[];
+export const VSCODE_THEMES = STYLES.map((style) => ({
+  id: style === "default" ? "filecon" : `filecon-${style}`,
+  label: style === "default" ? "Filecon" : `Filecon ${STYLE_TITLES[style]}`,
+  style,
+  file: `filecon-${style}.json`,
+}));
 
 export const VSCODE_FALLBACK = "empty";
 
@@ -209,7 +211,7 @@ const usedIcons = (mapping: VscodeMapping): string[] =>
   ].sort();
 
 /** Icon directory below `icons/` for a style and theme. */
-const iconDir = (style: Style, theme: "light" | "dark"): string => (style === "solid" ? "solid" : `${style}/${theme}`);
+const iconDir = (style: Style, theme: "light" | "dark"): string => (isThemedStyle(style) ? `${style}/${theme}` : style);
 
 function associations(mapping: VscodeMapping, suffix: string) {
   const id = (name: string): string => `${name}${suffix}`;
@@ -237,7 +239,7 @@ function themeJson(style: Style, mapping: VscodeMapping, icons: readonly string[
   // Base definitions (dark SVGs) are used by dark and high-contrast dark color themes.
   define("dark", "");
   const theme: Record<string, unknown> = { iconDefinitions, ...associations(mapping, "") };
-  if (style !== "solid") {
+  if (isThemedStyle(style)) {
     // Light and high-contrast light color themes use the light SVGs; solid looks the same in both themes.
     define("light", "_light");
     const light = associations(mapping, "_light");
@@ -265,7 +267,7 @@ export function generateVscode(pack: Pack): void {
 
   const svgs: Record<string, Buffer> = {};
   for (const { style } of VSCODE_THEMES) {
-    for (const theme of style === "solid" ? (["light"] as const) : (["light", "dark"] as const)) {
+    for (const theme of isThemedStyle(style) ? (["light", "dark"] as const) : (["light"] as const)) {
       for (const name of icons)
         svgs[`${iconDir(style, theme)}/${name}.svg`] = readFileSync(svgPath(style, theme, name));
     }
@@ -276,5 +278,5 @@ export function generateVscode(pack: Pack): void {
   for (const { style, file } of VSCODE_THEMES) themes[file] = themeJson(style, mapping, icons);
   syncDirectory(join(VSCODE_DIR, "themes"), themes);
 
-  for (const file of ["LICENSE", "NOTICE"]) writeIfChanged(join(VSCODE_DIR, file), readFileSync(join(PACK_DIR, file)));
+  for (const file of LEGAL_FILES) writeIfChanged(join(VSCODE_DIR, file), legalFile(file));
 }

@@ -1,6 +1,6 @@
 {
   "name": "@filecon/react-gray",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Filecon file icons for React – the gray style (filled gray page). SSR-safe, tree-shakable.",
   "keywords": [
     "filecon",

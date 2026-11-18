@@ -1,7 +1,7 @@
 # tauri-plugin-filecon
 
 [Tauri 2](https://v2.tauri.app) plugin for the [Filecon](https://filecon.dev) file-type icons: **703 formats** in
-three styles, picked by file name, extension or magic bytes. The SVGs are embedded in the binary through the
+eight styles, picked by file name, extension or magic bytes. The SVGs are embedded in the binary through the
 [`filecon`](https://crates.io/crates/filecon) crate.
 
 Pure Rust, no native code: works on Windows, macOS, Linux, iOS and Android.
@@ -18,9 +18,9 @@ npm install @filecon/tauri
 ```toml
 # src-tauri/Cargo.toml
 [dependencies]
-tauri-plugin-filecon = "0.1"
+tauri-plugin-filecon = "0.2"
 # only one style (smaller binary):
-# tauri-plugin-filecon = { version = "0.1", default-features = false, features = ["style-solid"] }
+# tauri-plugin-filecon = { version = "0.2", default-features = false, features = ["style-solid"] }
 ```
 
 Register the plugin:
@@ -116,6 +116,11 @@ The command logic is also available as plain functions in `tauri_plugin_filecon:
 | `style-default` | yes | `default/light`, `default/dark` |
 | `style-gray` | yes | `gray/light`, `gray/dark` |
 | `style-solid` | yes | `solid` |
+| `style-papered` | yes | `papered/light`, `papered/dark` |
+| `style-papered-flat` | yes | `papered-flat/light`, `papered-flat/dark` |
+| `style-papered-craft` | yes | `papered-craft/light`, `papered-craft/dark` |
+| `style-scratch` | yes | `scratch/light`, `scratch/dark` |
+| `style-chalk` | yes | `chalk/light`, `chalk/dark` |
 
 If a requested style is disabled, the first enabled style is returned instead.
 

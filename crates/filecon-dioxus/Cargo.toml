@@ -1,9 +1,9 @@
 [package]
 name = "filecon-dioxus"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 rust-version = "1.85"
-description = "Dioxus component for the Filecon file-type icons: 703 formats in three styles (web, desktop, mobile)."
+description = "Dioxus component for the Filecon file-type icons: 703 formats in eight styles (web, desktop, mobile)."
 license = "Apache-2.0"
 authors = ["dutobo (https://github.com/dutobo)", "rafaelk-f (https://github.com/rafaelk-f)"]
 homepage = "https://filecon.dev"
@@ -16,13 +16,18 @@ categories = ["gui", "web-programming", "multimedia::images"]
 include = ["Cargo.toml", "README.md", "LICENSE", "NOTICE", "src/**/*.rs", "tests/**/*.rs"]
 
 [features]
-default = ["style-default", "style-gray", "style-solid"]
+default = ["style-default", "style-gray", "style-solid", "style-papered", "style-papered-flat", "style-papered-craft", "style-scratch", "style-chalk"]
 style-default = ["filecon/style-default"]
 style-gray = ["filecon/style-gray"]
 style-solid = ["filecon/style-solid"]
+style-papered = ["filecon/style-papered"]
+style-papered-flat = ["filecon/style-papered-flat"]
+style-papered-craft = ["filecon/style-papered-craft"]
+style-scratch = ["filecon/style-scratch"]
+style-chalk = ["filecon/style-chalk"]
 
 [dependencies]
-filecon = { version = "0.1.0", path = "../filecon", default-features = false }
+filecon = { version = "0.2.0", path = "../filecon", default-features = false }
 dioxus = { version = "0.7.10", default-features = false, features = ["macro", "html", "signals"] }
 
 [dev-dependencies]

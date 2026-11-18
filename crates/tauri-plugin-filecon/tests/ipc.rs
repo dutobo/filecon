@@ -2,7 +2,7 @@
 //! camelCase JSON arguments the JavaScript binding sends, and the permission files of this crate are enforced
 //! (`filecon:default` does not include `icon_for_path`).
 
-// The expected values below use all three styles.
+// The expected values below use the three pack styles (and `papered-flat` if enabled).
 #![cfg(all(
     feature = "style-default",
     feature = "style-gray",
@@ -120,6 +120,20 @@ fn default_permissions_allow_resolve_and_icon() {
         ),
         Ok(svg("zip", filecon::Style::Gray, filecon::Theme::Dark))
     );
+    if cfg!(feature = "style-papered-flat") {
+        assert_eq!(
+            invoke(
+                &window,
+                "plugin:filecon|icon",
+                json!({ "name": "zip", "style": "papered-flat", "theme": "dark" })
+            ),
+            Ok(svg(
+                "zip",
+                filecon::Style::PaperedFlat,
+                filecon::Theme::Dark
+            ))
+        );
+    }
     assert_eq!(
         invoke(
             &window,

@@ -16,6 +16,7 @@ HERE = Path(__file__).resolve().parent
 CASES = json.loads((HERE / "data" / "resolve-cases.json").read_text(encoding="utf-8"))
 # The icon pack of the monorepo (source of truth); absent when testing from an sdist.
 PACK_DIR = HERE.parents[2] / "icon-pack"
+STYLES_DIR = HERE.parents[2] / "icon-styles"
 needs_pack = pytest.mark.skipif(not (PACK_DIR / "manifest.json").is_file(), reason="icon-pack/ not available")
 
 COMBINATIONS = [
@@ -25,6 +26,16 @@ COMBINATIONS = [
     ("gray", "dark", "gray/dark"),
     ("solid", "light", "solid"),
     ("solid", "dark", "solid"),
+    ("papered", "light", "papered/light"),
+    ("papered", "dark", "papered/dark"),
+    ("papered-flat", "light", "papered-flat/light"),
+    ("papered-flat", "dark", "papered-flat/dark"),
+    ("papered-craft", "light", "papered-craft/light"),
+    ("papered-craft", "dark", "papered-craft/dark"),
+    ("scratch", "light", "scratch/light"),
+    ("scratch", "dark", "scratch/dark"),
+    ("chalk", "light", "chalk/light"),
+    ("chalk", "dark", "chalk/dark"),
 ]
 
 
@@ -47,7 +58,8 @@ def test_names_match_manifest() -> None:
 @pytest.mark.parametrize(("style", "theme", "folder"), COMBINATIONS)
 def test_svgs_equal_pack_files(style: filecon.Style, theme: filecon.Theme, folder: str) -> None:
     for name in filecon.names():
-        expected = (PACK_DIR / folder / f"{name}.svg").read_bytes()
+        base = PACK_DIR if style in ("default", "gray", "solid") else STYLES_DIR
+        expected = (base / folder / f"{name}.svg").read_bytes()
         assert filecon.svg(name, style, theme).encode("utf-8") == expected, f"{folder}/{name}"
 
 
@@ -149,6 +161,6 @@ def test_package_data_is_complete() -> None:
     root = Path(filecon.__file__).parent / "icons"
     if not root.is_dir():  # e.g. zipped install; covered by the svg tests
         pytest.skip("icons not on the file system")
-    for folder in ("default/light", "default/dark", "gray/light", "gray/dark", "solid"):
+    for folder in sorted({folder for _, _, folder in COMBINATIONS}):
         files = sorted(entry[:-4] for entry in os.listdir(root / folder) if entry.endswith(".svg"))
         assert tuple(files) == filecon.names(), folder

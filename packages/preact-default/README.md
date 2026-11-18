@@ -3,7 +3,7 @@
 [Filecon](https://filecon.dev) file icons for Preact – 703 file types, the default style (outline, colored label).
 SSR-safe (preact-render-to-string), tree-shakable, no runtime dependencies besides Preact.
 
-Part of the Filecon family: `@filecon/preact`, `@filecon/preact-default`, `@filecon/preact-gray`, `@filecon/preact-solid`.
+Part of the Filecon family: `@filecon/preact`, `@filecon/preact-default`, `@filecon/preact-gray`, `@filecon/preact-solid`, `@filecon/preact-papered`, `@filecon/preact-papered-flat`, `@filecon/preact-papered-craft`, `@filecon/preact-scratch`, `@filecon/preact-chalk`.
 This package only contains the `default` style, so it is smaller than `@filecon/preact`; the API is identical except that there is no `style` prop (`style` is the regular inline-CSS prop here).
 
 ```sh

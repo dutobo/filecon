@@ -25,11 +25,21 @@ npm install @filecon/css
 | `@filecon/css/gray.css` | gray (filled gray page) | auto |
 | `@filecon/css/gray-light.css`, `gray-dark.css` | gray | fixed |
 | `@filecon/css/solid.css` | solid (filled colored page) | light and dark |
+| `@filecon/css/papered.css` | papered (realistic paper sheet) | auto |
+| `@filecon/css/papered-light.css`, `papered-dark.css` | papered | fixed |
+| `@filecon/css/papered-flat.css` | papered-flat (flat warm paper) | auto |
+| `@filecon/css/papered-flat-light.css`, `papered-flat-dark.css` | papered-flat | fixed |
+| `@filecon/css/papered-craft.css` | papered-craft (cut paper) | auto |
+| `@filecon/css/papered-craft-light.css`, `papered-craft-dark.css` | papered-craft | fixed |
+| `@filecon/css/scratch.css` | scratch (pencil sketch on a note, handwritten) | auto |
+| `@filecon/css/scratch-light.css`, `scratch-dark.css` | scratch | fixed |
+| `@filecon/css/chalk.css` | chalk (whiteboard marker / blackboard chalk) | auto |
+| `@filecon/css/chalk-light.css`, `chalk-dark.css` | chalk | fixed |
 
 Without a bundler, link the file from a CDN:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@filecon/css@0.1/dist/default.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@filecon/css@0.2/dist/default.css" />
 ```
 
 ## Classes

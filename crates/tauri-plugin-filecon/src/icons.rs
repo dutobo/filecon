@@ -7,9 +7,10 @@ use std::path::Path;
 /// Number of bytes read from the start of a file for magic-byte detection.
 pub const HEAD_LIMIT: u64 = 1024;
 
-/// Visual style of an icon; serialized as `"default"`, `"gray"` or `"solid"`.
+/// Visual style of an icon; serialized in kebab case: `"default"`, `"gray"`, `"solid"`, `"papered"`,
+/// `"papered-flat"`, `"papered-craft"`, `"scratch"` or `"chalk"`.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Default, Serialize, Deserialize)]
-#[serde(rename_all = "lowercase")]
+#[serde(rename_all = "kebab-case")]
 pub enum Style {
     /// Outline with a colored label.
     #[default]
@@ -18,6 +19,16 @@ pub enum Style {
     Gray,
     /// Filled colored page with white label, identical in light and dark.
     Solid,
+    /// Realistic paper sheet with a soft shadow and a shaded dog-ear.
+    Papered,
+    /// Flat warm paper sheet with fine grain and a subtle offset shadow.
+    PaperedFlat,
+    /// Cut paper: colored back sheet, tinted front sheet, label as a cut strip.
+    PaperedCraft,
+    /// Pencil sketch on a note, handwritten label.
+    Scratch,
+    /// Colored marker on a whiteboard (light) or chalk on a blackboard (dark), handwritten label.
+    Chalk,
 }
 
 /// Color theme; serialized as `"light"` or `"dark"`. [`Style::Solid`] ignores it.
@@ -37,6 +48,11 @@ impl From<Style> for filecon::Style {
             Style::Default => filecon::Style::Default,
             Style::Gray => filecon::Style::Gray,
             Style::Solid => filecon::Style::Solid,
+            Style::Papered => filecon::Style::Papered,
+            Style::PaperedFlat => filecon::Style::PaperedFlat,
+            Style::PaperedCraft => filecon::Style::PaperedCraft,
+            Style::Scratch => filecon::Style::Scratch,
+            Style::Chalk => filecon::Style::Chalk,
         }
     }
 }
@@ -47,6 +63,11 @@ impl From<filecon::Style> for Style {
             filecon::Style::Default => Style::Default,
             filecon::Style::Gray => Style::Gray,
             filecon::Style::Solid => Style::Solid,
+            filecon::Style::Papered => Style::Papered,
+            filecon::Style::PaperedFlat => Style::PaperedFlat,
+            filecon::Style::PaperedCraft => Style::PaperedCraft,
+            filecon::Style::Scratch => Style::Scratch,
+            filecon::Style::Chalk => Style::Chalk,
         }
     }
 }
@@ -103,15 +124,10 @@ pub fn resolve(file_name: &str) -> &'static str {
 pub fn icon(name: &str, style: Option<Style>, theme: Option<Theme>) -> &'static str {
     let name = to_icon_name(name);
     let theme = theme.unwrap_or_default().into();
-    [
-        style.unwrap_or_default().into(),
-        filecon::Style::Default,
-        filecon::Style::Gray,
-        filecon::Style::Solid,
-    ]
-    .into_iter()
-    .find_map(|style| filecon::svg(name, style, theme))
-    .unwrap_or("")
+    std::iter::once(style.unwrap_or_default().into())
+        .chain(filecon::Style::ALL)
+        .find_map(|style| filecon::svg(name, style, theme))
+        .unwrap_or("")
 }
 
 /// Reads at most [`HEAD_LIMIT`] bytes from the start of a file.
@@ -210,7 +226,12 @@ mod tests {
     #[cfg(any(
         feature = "style-default",
         feature = "style-gray",
-        feature = "style-solid"
+        feature = "style-solid",
+        feature = "style-papered",
+        feature = "style-papered-flat",
+        feature = "style-papered-craft",
+        feature = "style-scratch",
+        feature = "style-chalk",
     ))]
     fn icon_normalizes_names_and_falls_back_to_empty() {
         assert_eq!(icon(".PDF", None, None), icon("pdf", None, None));
@@ -279,6 +300,11 @@ mod tests {
             ("\"default\"", Style::Default),
             ("\"gray\"", Style::Gray),
             ("\"solid\"", Style::Solid),
+            ("\"papered\"", Style::Papered),
+            ("\"papered-flat\"", Style::PaperedFlat),
+            ("\"papered-craft\"", Style::PaperedCraft),
+            ("\"scratch\"", Style::Scratch),
+            ("\"chalk\"", Style::Chalk),
         ] {
             assert_eq!(serde_json::from_str::<Style>(json).unwrap(), style);
             assert_eq!(serde_json::to_string(&style).unwrap(), json);
@@ -303,7 +329,16 @@ mod tests {
 
     #[test]
     fn enum_conversions_round_trip() {
-        for style in [Style::Default, Style::Gray, Style::Solid] {
+        for style in [
+            Style::Default,
+            Style::Gray,
+            Style::Solid,
+            Style::Papered,
+            Style::PaperedFlat,
+            Style::PaperedCraft,
+            Style::Scratch,
+            Style::Chalk,
+        ] {
             assert_eq!(Style::from(filecon::Style::from(style)), style);
         }
         for theme in [Theme::Light, Theme::Dark] {

@@ -1,6 +1,6 @@
 {
   "name": "@filecon/vue-gray",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Filecon file icons for Vue 3 – the gray style (filled gray page). SSR-safe, tree-shakable, no SFC build step.",
   "keywords": [
     "filecon",

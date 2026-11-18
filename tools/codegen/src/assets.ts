@@ -3,35 +3,38 @@
 // (gitignored); the package build (scripts/build.mjs) copies/wraps it into dist/.
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { HOMEPAGE, PACKAGES_DIR, REPOSITORY } from "./config";
+import { isThemedStyle, type Style } from "../../../packages/shared/src/types";
+import { HOMEPAGE, PACKAGES_DIR, REPOSITORY, STYLE_TITLES, STYLES } from "./config";
 import { syncDirectory } from "./fsutil";
 import { innerMarkup, type Pack, svgPath } from "./pack";
 
-type PackStyle = "default" | "gray" | "solid";
 type PackTheme = "light" | "dark";
 
 interface Variant {
   /** File / set id, e.g. `filecon-gray-dark`. */
   id: string;
-  style: PackStyle;
+  style: Style;
   theme: PackTheme;
   label: string;
 }
 
-/** Every distinct look of the pack: default + gray in light/dark, solid once. */
-export const ASSET_VARIANTS: readonly Variant[] = [
-  { id: "filecon", style: "default", theme: "light", label: "Filecon" },
-  { id: "filecon-dark", style: "default", theme: "dark", label: "Filecon Dark" },
-  { id: "filecon-gray", style: "gray", theme: "light", label: "Filecon Gray" },
-  { id: "filecon-gray-dark", style: "gray", theme: "dark", label: "Filecon Gray Dark" },
-  { id: "filecon-solid", style: "solid", theme: "light", label: "Filecon Solid" },
-];
+/** Every distinct look: themed styles in light and dark, themeless styles once. */
+export const ASSET_VARIANTS: readonly Variant[] = STYLES.flatMap((style): Variant[] => {
+  const id = style === "default" ? "filecon" : `filecon-${style}`;
+  const label = style === "default" ? "Filecon" : `Filecon ${STYLE_TITLES[style]}`;
+  if (!isThemedStyle(style)) return [{ id, style, theme: "light", label }];
+  return [
+    { id, style, theme: "light", label },
+    { id: `${id}-dark`, style, theme: "dark", label: `${label} Dark` },
+  ];
+});
 
 const SAMPLES = ["pdf", "zip", "ts"];
+const ICONIFY_VERSION: string = JSON.parse(readFileSync(join(PACKAGES_DIR, "iconify", "package.json"), "utf8")).version;
 const TITLE = /<title>[^<]*<\/title>/;
 
 /** The pack SVG without its `<title>` (and without the trailing newline). */
-export function packSvgWithoutTitle(style: PackStyle, theme: PackTheme, name: string): string {
+export function packSvgWithoutTitle(style: Style, theme: PackTheme, name: string): string {
   return readFileSync(svgPath(style, theme, name), "utf8")
     .replace(TITLE, "")
     .trimEnd();
@@ -52,7 +55,7 @@ function iconifySet(pack: Pack, variant: Variant): Record<string, unknown> {
     info: {
       name: variant.label,
       total: pack.icons.length,
-      version: "0.1.0",
+      version: ICONIFY_VERSION,
       author: { name: "Filecon", url: HOMEPAGE },
       license: { title: "Apache 2.0", spdx: "Apache-2.0", url: `${REPOSITORY}/blob/main/LICENSE` },
       samples: SAMPLES,
@@ -86,7 +89,7 @@ const BASE_RULE =
   ".filecon{display:inline-block;width:40px;height:40px;flex:none;vertical-align:middle;" +
   "background:no-repeat center/contain}";
 
-const rules = (pack: Pack, style: PackStyle, theme: PackTheme, indent = ""): string[] =>
+const rules = (pack: Pack, style: Style, theme: PackTheme, indent = ""): string[] =>
   pack.icons.map(
     (icon) =>
       `${indent}.filecon-${icon.name}{background-image:url("${cssDataUri(packSvgWithoutTitle(style, theme, icon.name))}")}`,
@@ -97,7 +100,11 @@ const header = (description: string): string =>
 
 export function generateCss(pack: Pack): void {
   const files: Record<string, string> = {};
-  for (const style of ["default", "gray"] as const) {
+  for (const style of STYLES) {
+    if (!isThemedStyle(style)) {
+      files[`${style}.css`] = [header(`${style} style`), BASE_RULE, ...rules(pack, style, "light"), ""].join("\n");
+      continue;
+    }
     for (const theme of ["light", "dark"] as const) {
       files[`${style}-${theme}.css`] = [
         header(`${style} style, ${theme} theme`),
@@ -116,6 +123,5 @@ export function generateCss(pack: Pack): void {
       "",
     ].join("\n");
   }
-  files["solid.css"] = [header("solid style"), BASE_RULE, ...rules(pack, "solid", "light"), ""].join("\n");
   syncDirectory(join(PACKAGES_DIR, "css", "src", "generated"), files);
 }

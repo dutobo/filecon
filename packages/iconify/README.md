@@ -15,6 +15,16 @@ npm install -D @filecon/iconify
 | `filecon-gray` | gray (filled gray page) | light |
 | `filecon-gray-dark` | gray | dark |
 | `filecon-solid` | solid (filled colored page) | light and dark |
+| `filecon-papered` | realistic paper sheet | light |
+| `filecon-papered-dark` | papered | dark |
+| `filecon-papered-flat` | flat warm paper | light |
+| `filecon-papered-flat-dark` | papered-flat | dark |
+| `filecon-papered-craft` | cut paper | light |
+| `filecon-papered-craft-dark` | papered-craft | dark |
+| `filecon-scratch` | pencil sketch on a note, handwritten | light |
+| `filecon-scratch-dark` | scratch | dark |
+| `filecon-chalk` | whiteboard marker / blackboard chalk | light |
+| `filecon-chalk-dark` | chalk | dark |
 
 Icons are multicolor (`palette: true`), 40×40. Icon names are the Filecon names (`pdf`, `db-sqlite`, `7z`, …).
 

@@ -2,7 +2,7 @@
 
 Framework-free [Filecon](https://filecon.dev) file icons as SVG strings – 703 file types, the gray style (filled gray page).
 
-Part of the Filecon family: `@filecon/js`, `@filecon/js-default`, `@filecon/js-gray`, `@filecon/js-solid`.
+Part of the Filecon family: `@filecon/js`, `@filecon/js-default`, `@filecon/js-gray`, `@filecon/js-solid`, `@filecon/js-papered`, `@filecon/js-papered-flat`, `@filecon/js-papered-craft`, `@filecon/js-scratch`, `@filecon/js-chalk`.
 This package only contains the `gray` style, so it is smaller than `@filecon/js`; the API is identical except that there is no `style` option.
 
 ```sh

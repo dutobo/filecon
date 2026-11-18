@@ -35,7 +35,7 @@ document.body.innerHTML = PdfIcon({ theme: "auto", title: "PDF" });
 
 | Option | Type | Default | |
 |---|---|---|---|
-{{#isAll}}| `style` | `"default" \| "gray" \| "solid"` | `"default"` | |
+{{#isAll}}| `style` | `Style`: `"default"`, `"gray"`, `"solid"`, `"papered"`, `"papered-flat"`, `"papered-craft"`, `"scratch"`, `"chalk"` | `"default"` | |
 {{/isAll}}| `theme` | `"light" \| "dark" \| "auto"` | `"light"` | `auto` embeds a `prefers-color-scheme` stylesheet (SSR-safe). {{#isAll}}`solid` ignores the theme.{{/isAll}}{{#isSingle}}{{/isSingle}} |
 | `size` | `number \| string` | `40` | width and height |
 | `title` | `string` | – | adds `<title>` and `role="img"`; without it the SVG is `aria-hidden="true"` |

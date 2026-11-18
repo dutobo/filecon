@@ -1,9 +1,9 @@
 # @filecon/elements
 
-[Filecon](https://filecon.dev) file icons as Web Components – 703 file types, all three styles (default, gray, solid).
+[Filecon](https://filecon.dev) file icons as Web Components – 703 file types, all eight styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk).
 Works in plain HTML and with any framework (Lit, Qwik, Ember, HTMX, Rails/Django templates, …).
 
-Part of the Filecon family: `@filecon/elements`, `@filecon/elements-default`, `@filecon/elements-gray`, `@filecon/elements-solid`.
+Part of the Filecon family: `@filecon/elements`, `@filecon/elements-default`, `@filecon/elements-gray`, `@filecon/elements-solid`, `@filecon/elements-papered`, `@filecon/elements-papered-flat`, `@filecon/elements-papered-craft`, `@filecon/elements-scratch`, `@filecon/elements-chalk`.
 
 
 ```sh
@@ -37,7 +37,7 @@ defineFileconIcon("file-icon");   // <file-icon>
 |---|---|---|---|
 | `name` | `name` | – | icon name or extension (`pdf`, `.PDF`, `db-sqlite`); unknown names render `empty` |
 | `file` | `file` | – | file name, resolved via the Filecon resolver (ignored when `name` is set) |
-| `icon-style` | – | `default` | `default`, `gray` or `solid` |
+| `icon-style` | – | `default` | `default`, `gray`, `solid`, `papered`, `papered-flat`, `papered-craft`, `scratch` or `chalk` |
 | `theme` | `theme` | `light` | `light`, `dark` or `auto` (embedded `prefers-color-scheme` stylesheet) |
 | `size` | `size` | `40` | width and height of the `<svg>` |
 | `label` | `label` | – | accessible name: adds `<title>` and `role="img"`; without it the SVG is `aria-hidden="true"` |

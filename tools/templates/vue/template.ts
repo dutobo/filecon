@@ -27,7 +27,7 @@ export default defineTemplate({
 import type { PropType } from "vue";
 
 export const styleProps = {
-  /** Icon style: \`default\`, \`gray\` or \`solid\` (template: \`icon-style="solid"\`). */
+  /** Icon style, e.g. \`default\`, \`gray\`, \`solid\`, \`papered\` or \`scratch\` (template: \`icon-style="solid"\`). */
   iconStyle: { type: String as PropType<Style>, default: "default" },
 } as const;
 `

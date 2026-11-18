@@ -1,6 +1,6 @@
 # filecon
 
-File-type icons for **703 formats** in three styles for Python – the SVGs of the [Filecon](https://filecon.dev)
+File-type icons for **703 formats** in eight styles for Python – the SVGs of the [Filecon](https://filecon.dev)
 icon pack as package data, plus the Filecon file-type resolver. No dependencies, fully typed.
 
 ```sh
@@ -34,7 +34,7 @@ len(filecon.names())                                   # 703
 | `is_icon_name(name) -> bool` | exact membership test |
 | `to_icon_name(name_or_extension) -> str` | `"PDF"`/`".pdf"` → `"pdf"`, unknown → `"empty"` |
 | `data_uri(svg) -> str` | `data:image/svg+xml,…` URI (percent-encoded like JavaScript's `encodeURIComponent`) |
-| `Style`, `Theme`, `STYLES`, `THEMES` | `"default"` (outline, colored label), `"gray"` (filled gray page), `"solid"` (filled colored page, identical in both themes); `"light"`, `"dark"` |
+| `Style`, `Theme`, `STYLES`, `THEMES` | `"default"` (outline, colored label), `"gray"` (filled gray page), `"solid"` (filled colored page, identical in both themes), `"papered"`, `"papered-flat"`, `"papered-craft"`, `"scratch"`, `"chalk"`; `"light"`, `"dark"` |
 
 The SVGs are the unmodified pack files: 40×40, `viewBox="0 0 40 40"`, label text as paths (no font needed), with a
 `<title>` containing the icon name. There is no `auto` theme – pick `"light"` or `"dark"` from your UI state.

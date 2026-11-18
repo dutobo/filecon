@@ -1,0 +1,18 @@
+---
+// Renders one icon from its data. Used by FileIcon and every single-icon component.
+import { type IconData, iconContent, type Style, svgAttributes } from "@filecon/shared";
+import { FIXED_STYLE } from "./generated/variant.js";
+import type { IconProps } from "./types.js";
+
+type Props = IconProps & { data: IconData };
+
+const { data, theme = "light", size = 40, title, ...rest } = Astro.props;
+const attributes: Record<string, unknown> = { ...rest };
+let style: Style = FIXED_STYLE ?? "default";
+if (FIXED_STYLE === null) {
+  style = (rest as { style?: Style }).style ?? "default";
+  delete attributes.style;
+}
+---
+
+<svg {...svgAttributes({ size, title })} {...attributes} set:html={iconContent(data, { style, theme, title })} />

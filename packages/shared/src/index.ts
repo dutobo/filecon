@@ -22,4 +22,4 @@ export {
 export { isIconName, resolveIcon, toIconName } from "./resolve";
 export { autoMarkup, darkMarkup, lightMarkup, THEME_TABLE } from "./theme";
 export type { ThemeRule, ThemeTable } from "./theme-core";
-export { type IconData, STYLES, type Style, THEMES, type Theme } from "./types";
+export { type IconData, isThemedStyle, STYLES, type Style, THEMELESS_STYLES, THEMES, type Theme } from "./types";

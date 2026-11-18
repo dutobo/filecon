@@ -1,9 +1,9 @@
 # @filecon/react-native
 
-[Filecon](https://filecon.dev) file icons for React Native and Expo – 703 file types, all three styles (default, gray, solid).
+[Filecon](https://filecon.dev) file icons for React Native and Expo – 703 file types, all eight styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk).
 Rendered with `react-native-svg`, tree-shakable.
 
-Part of the Filecon family: `@filecon/react-native`, `@filecon/react-native-default`, `@filecon/react-native-gray`, `@filecon/react-native-solid`.
+Part of the Filecon family: `@filecon/react-native`, `@filecon/react-native-default`, `@filecon/react-native-gray`, `@filecon/react-native-solid`, `@filecon/react-native-papered`, `@filecon/react-native-papered-flat`, `@filecon/react-native-papered-craft`, `@filecon/react-native-scratch`, `@filecon/react-native-chalk`.
 
 
 ```sh
@@ -29,7 +29,7 @@ import { PdfIcon, TsStreamIcon, Icon7z } from "@filecon/react-native/icons";
 |---|---|---|---|
 | `name` | `IconName \| string` | – | icon name or extension (exclusive with `file`) |
 | `file` | `string` | – | file name, resolved with `resolveIcon` (exclusive with `name`) |
-| `style` | `"default" \| "gray" \| "solid"` | `"default"` | icon style (not a view style) |
+| `style` | `Style`: `"default"`, `"gray"`, `"solid"`, `"papered"`, `"papered-flat"`, `"papered-craft"`, `"scratch"`, `"chalk"` | `"default"` | icon style (not a view style) |
 | `theme` | `"light" \| "dark" \| "auto"` | `"light"` | `auto` uses `useColorScheme()` |
 | `size` | `number \| string` | `40` | width and height |
 | `title` | `string` | – | `accessibilityLabel` + `<title>`; without it the icon is hidden from screen readers |

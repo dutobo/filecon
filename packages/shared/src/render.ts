@@ -1,5 +1,5 @@
 import { autoMarkup, darkMarkup, lightMarkup } from "./theme";
-import { type IconData, STYLES, type Style, type Theme } from "./types";
+import { type IconData, isThemedStyle, STYLES, type Style, type Theme } from "./types";
 
 export const SVG_NAMESPACE = "http://www.w3.org/2000/svg";
 export const VIEW_BOX = "0 0 40 40";
@@ -46,7 +46,7 @@ const cache = new Map<string, string>();
 export function iconMarkup(data: IconData, style: Style = "default", theme: Theme = "light"): string {
   const resolved = availableStyle(data, style);
   const markup = data[resolved] ?? "";
-  if (resolved === "solid") return markup;
+  if (!isThemedStyle(resolved)) return markup;
   const key = `${theme}\u0000${markup}`;
   let result = cache.get(key);
   if (result === undefined) {

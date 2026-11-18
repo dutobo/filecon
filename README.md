@@ -1,14 +1,17 @@
 # Filecon
 
-File-type icons for **703 formats** in three styles – for every framework. [filecon.dev](https://filecon.dev)
+File-type icons for **703 formats** in eight styles – for every framework. [filecon.dev](https://filecon.dev)
 
-- **3 styles**: `default` (outline, colored label), `gray` (filled gray page), `solid` (filled colored page)
+- **8 styles**: `default` (outline, colored label), `gray` (filled gray page), `solid` (filled colored page),
+  `papered` (realistic paper sheet), `papered-flat` (flat paper), `papered-craft` (cut paper),
+  `scratch` (pencil sketch on a note, handwritten label), `chalk` (whiteboard marker in light, blackboard chalk in dark)
 - **Light, dark and `auto`** (follows `prefers-color-scheme`, SSR-safe, no hydration mismatch)
 - **Smart resolver**: file name → magic bytes → extension (`Thumbs.db`, `Dockerfile`, SQLite vs. generic `.db`,
   MPEG-TS vs. TypeScript `.ts`, …)
 - **Tree-shakable** single icons (`PdfIcon`, `TsStreamIcon`, `Icon7z`, …) and single-style packages for small bundles
 - Accessible by default: `aria-hidden` without `title`, `role="img"` + `<title>` with it
-- Apache-2.0, no third-party logos, labels embedded as paths (no font needed)
+- Apache-2.0, no third-party logos, labels embedded as paths (no font needed; the handwriting of `scratch`/`chalk`
+  is Patrick Hand, OFL-1.1, converted to outlines)
 
 ## Packages
 
@@ -32,11 +35,12 @@ File-type icons for **703 formats** in three styles – for every framework. [fi
 | [`filecon`](crates/filecon) (crates.io) | Rust crate: embedded SVGs (`svg()`), `resolve()`, `names()` |
 | [`filecon-dioxus`](crates/filecon-dioxus) (crates.io) | Dioxus component `FileIcon` (web, desktop, mobile) |
 | [`tauri-plugin-filecon`](crates/tauri-plugin-filecon) (crates.io) | Tauri 2 plugin: resolve + SVG in Rust, `iconForPath` with magic bytes |
-| [`filecon-icons`](extensions/vscode) (VS Code) | File icon theme for VS Code / Open VSX (3 themes) – prepared |
+| [`filecon-icons`](extensions/vscode) (VS Code) | File icon theme for VS Code / Open VSX (8 themes) – prepared |
 | [`filecon`](ports/python) (PyPI) | Python: `svg()`, `resolve()`, `names()` – prepared |
 
-Every framework package (and `@filecon/elements`) exists in four flavors: `@filecon/<fw>` (all styles, `style`
-prop) and `@filecon/<fw>-default`, `-gray`, `-solid` (one style each, same API without `style`).
+Every framework package (and `@filecon/elements`) exists in nine flavors: `@filecon/<fw>` (all styles, `style`
+prop) and `@filecon/<fw>-default`, `-gray`, `-solid`, `-papered`, `-papered-flat`, `-papered-craft`, `-scratch`,
+`-chalk` (one style each, same API without `style`).
 "prepared" = built and tested in this repository, not yet published (see [`docs/publishing.md`](docs/publishing.md)).
 
 ## Quick start

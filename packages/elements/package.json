@@ -1,7 +1,7 @@
 {
   "name": "@filecon/elements",
-  "version": "0.1.0",
-  "description": "Filecon file icons as Web Components (<filecon-icon>) – all three styles (default, gray, solid). Works with any framework or plain HTML.",
+  "version": "0.2.0",
+  "description": "Filecon file icons as Web Components (<filecon-icon>) – all eight styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk). Works with any framework or plain HTML.",
   "keywords": [
     "filecon",
     "file-icons",

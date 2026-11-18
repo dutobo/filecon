@@ -1,6 +1,6 @@
 {
   "name": "@filecon/elements-gray",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Filecon file icons as Web Components (<filecon-icon>) – the gray style (filled gray page). Works with any framework or plain HTML.",
   "keywords": [
     "filecon",

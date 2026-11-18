@@ -1,6 +1,6 @@
 {
   "name": "@filecon/electron",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Filecon helpers for Electron: iconForPath() in the main process, IPC handlers and a typed preload bridge.",
   "keywords": [
     "filecon",

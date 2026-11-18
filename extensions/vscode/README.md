@@ -10,15 +10,20 @@ types** – source code, documents, images, audio, video, archives, databases, 3
 | **Filecon** | outline page with a colored label |
 | **Filecon Gray** | filled gray page with a gray label |
 | **Filecon Solid** | filled colored page with a white label |
+| **Filecon Papered** | realistic paper sheet with a soft shadow |
+| **Filecon Papered Flat** | flat warm paper sheet |
+| **Filecon Papered Craft** | cut paper: colored back sheet and a label strip |
+| **Filecon Scratch** | pencil sketch on a note with a handwritten label |
+| **Filecon Chalk** | marker on a whiteboard (light) or chalk on a blackboard (dark) |
 
-Filecon and Filecon Gray switch automatically between a light and a dark variant (including high-contrast
+All themes except Filecon Solid switch automatically between a light and a dark variant (including high-contrast
 themes) to match your color theme. Filecon Solid looks the same everywhere.
 
 ## Usage
 
 1. Install the extension.
 2. Open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`) and run **Preferences: File Icon Theme**.
-3. Pick **Filecon**, **Filecon Gray** or **Filecon Solid**.
+3. Pick one of the **Filecon** themes.
 
 Or set it in your `settings.json`:
 
@@ -28,7 +33,8 @@ Or set it in your `settings.json`:
 }
 ```
 
-Theme ids: `filecon`, `filecon-gray`, `filecon-solid`.
+Theme ids: `filecon`, `filecon-gray`, `filecon-solid`, `filecon-papered`, `filecon-papered-flat`,
+`filecon-papered-craft`, `filecon-scratch`, `filecon-chalk`.
 
 ## How files are matched
 

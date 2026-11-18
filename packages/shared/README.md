@@ -1,6 +1,6 @@
 # @filecon/shared
 
-Core of [Filecon](https://filecon.dev): the 703 file icon SVGs in three styles, the manifest, the TypeScript types
+Core of [Filecon](https://filecon.dev): the 703 file icon SVGs of the three pack styles (`default`, `gray`, `solid`), the manifest, the TypeScript types
 and the file-type resolver. All other `@filecon/*` packages build on it.
 
 ```sh

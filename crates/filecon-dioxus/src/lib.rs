@@ -1,7 +1,7 @@
 //! # filecon-dioxus
 //!
 //! [Dioxus](https://dioxuslabs.com) component for the [Filecon](https://filecon.dev) file-type icons: 703 formats
-//! in three styles, rendered as inline SVG. Works with every Dioxus renderer (web, desktop, mobile, SSR/fullstack)
+//! in eight styles, rendered as inline SVG. Works with every Dioxus renderer (web, desktop, mobile, SSR/fullstack)
 //! because the component only emits an `<svg>` element.
 //!
 //! ```
@@ -21,7 +21,8 @@
 //!
 //! ## Features
 //!
-//! `style-default`, `style-gray` and `style-solid` (all enabled by default) are forwarded to the
+//! The style features (`style-default`, `style-gray`, `style-solid`, `style-papered`, `style-papered-flat`,
+//! `style-papered-craft`, `style-scratch`, `style-chalk`; all enabled by default) are forwarded to the
 //! [`filecon`] crate and control which SVGs are embedded. If the requested style is disabled, the first enabled
 //! style is used instead.
 
@@ -90,8 +91,8 @@ pub fn icon_markup(name: &str, style: Style, theme: Theme) -> Option<&'static st
 /// Inner markup for `name`, falling back to the first enabled style if `style` is disabled. Empty if no style is
 /// enabled at all.
 fn markup_with_fallback(name: &str, style: Style, theme: Theme) -> &'static str {
-    [style, Style::Default, Style::Gray, Style::Solid]
-        .into_iter()
+    std::iter::once(style)
+        .chain(Style::ALL)
         .find_map(|candidate| icon_markup(name, candidate, theme))
         .unwrap_or("")
 }

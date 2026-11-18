@@ -3,21 +3,23 @@
 // pyproject.toml sets `ignore-vcs` so hatchling still ships them.
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { PACK_DIR, ROOT } from "./config";
+import { isThemedStyle } from "../../../packages/shared/src/types";
+import { PACK_DIR, ROOT, STYLES } from "./config";
 import { syncDirectory, writeIfChanged } from "./fsutil";
+import { LEGAL_FILES, legalFile } from "./legal";
 import type { Pack } from "./pack";
 import { svgPath } from "./pack";
 
 export const PYTHON_DIR = join(ROOT, "ports", "python");
 const PACKAGE_DIR = join(PYTHON_DIR, "src", "filecon");
 
-const TABLES = [
-  { style: "default", theme: "light", dir: "default/light" },
-  { style: "default", theme: "dark", dir: "default/dark" },
-  { style: "gray", theme: "light", dir: "gray/light" },
-  { style: "gray", theme: "dark", dir: "gray/dark" },
-  { style: "solid", theme: "light", dir: "solid" },
-] as const;
+const TABLES = STYLES.flatMap((style) =>
+  (isThemedStyle(style) ? (["light", "dark"] as const) : (["light"] as const)).map((theme) => ({
+    style,
+    theme,
+    dir: isThemedStyle(style) ? `${style}/${theme}` : style,
+  })),
+);
 
 export function generatePython(pack: Pack): void {
   if (!existsSync(join(PYTHON_DIR, "pyproject.toml"))) return;
@@ -42,7 +44,7 @@ export function generatePython(pack: Pack): void {
   // Byte-identical copy: the package builds on its `_sniff` (magic bytes / content rules).
   writeIfChanged(join(PACKAGE_DIR, "_reference_resolve.py"), readFileSync(join(PACK_DIR, "resolve_icon.py")));
 
-  for (const file of ["LICENSE", "NOTICE"]) writeIfChanged(join(PYTHON_DIR, file), readFileSync(join(PACK_DIR, file)));
+  for (const file of LEGAL_FILES) writeIfChanged(join(PYTHON_DIR, file), legalFile(file));
   writeIfChanged(
     join(PYTHON_DIR, "tests", "data", "resolve-cases.json"),
     readFileSync(join(PACK_DIR, "tests", "resolve-cases.json")),

@@ -1,7 +1,7 @@
 //! # tauri-plugin-filecon
 //!
 //! [Tauri 2](https://v2.tauri.app) plugin for the [Filecon](https://filecon.dev) file-type icons: 703 formats in
-//! three styles, resolved by file name, extension or magic bytes. Pure Rust (built on the
+//! eight styles, resolved by file name, extension or magic bytes. Pure Rust (built on the
 //! [`filecon`](https://docs.rs/filecon) crate), so it runs on Windows, macOS, Linux, iOS and Android without
 //! native code.
 //!
@@ -23,7 +23,7 @@
 //! | `plugin:filecon\|icon` | `{ name: string, style?: Style, theme?: Theme }` | SVG document (`string`) |
 //! | `plugin:filecon\|icon_for_path` | `{ path: string, style?: Style, theme?: Theme }` | `{ name: string, svg: string }` |
 //!
-//! `Style` is `"default" | "gray" | "solid"`, `Theme` is `"light" | "dark"`.
+//! `Style` is `"default" | "gray" | "solid" | "papered" | "papered-flat" | "papered-craft" | "scratch" | "chalk"`, `Theme` is `"light" | "dark"`.
 //!
 //! ## Permissions
 //!

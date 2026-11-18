@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-"""Filecon – file-type icons for 703 formats in three styles, plus a file-type resolver.
+"""Filecon – file-type icons for 703 formats in eight styles, plus a file-type resolver.
 
 >>> import filecon
 >>> filecon.resolve("report.final.pdf")
@@ -9,7 +9,7 @@ True
 >>> filecon.resolve("app.db", b"SQLite format 3\\x00")
 'db-sqlite'
 
-The SVGs are the unmodified files of the Filecon icon pack (40x40, ``viewBox="0 0 40 40"``, including a
+The SVGs are the unmodified files of the Filecon icon pack and its generated styles (40x40, ``viewBox="0 0 40 40"``, including a
 ``<title>`` with the icon name), shipped as package data.
 """
 
@@ -23,7 +23,7 @@ from urllib.parse import quote
 from ._names import NAMES
 from ._resolve import HEAD_LIMIT, resolve
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 __all__ = [
     "HEAD_LIMIT",
@@ -39,13 +39,24 @@ __all__ = [
     "to_icon_name",
 ]
 
-Style = Literal["default", "gray", "solid"]
-"""``default``: outline with a colored label, ``gray``: filled gray page, ``solid``: filled colored page."""
+Style = Literal["default", "gray", "solid", "papered", "papered-flat", "papered-craft", "scratch", "chalk"]
+"""``default``: outline with a colored label, ``gray``: filled gray page, ``solid``: filled colored page,
+``papered``: realistic paper sheet, ``papered-flat``: flat paper, ``papered-craft``: cut paper,
+``scratch``: pencil sketch on a note, ``chalk``: whiteboard marker (light) or blackboard chalk (dark)."""
 
 Theme = Literal["light", "dark"]
 """Color theme; ``solid`` looks the same in both themes."""
 
-STYLES: tuple[Style, ...] = ("default", "gray", "solid")
+STYLES: tuple[Style, ...] = (
+    "default",
+    "gray",
+    "solid",
+    "papered",
+    "papered-flat",
+    "papered-craft",
+    "scratch",
+    "chalk",
+)
 THEMES: tuple[Theme, ...] = ("light", "dark")
 
 _NAME_SET = frozenset(NAMES)
@@ -71,7 +82,7 @@ def svg(name: str, style: Style = "default", theme: Theme = "light") -> str:
     """The SVG document of an icon.
 
     :param name: icon name or extension (``"pdf"``, ``".PDF"``); unknown names give the ``empty`` icon.
-    :param style: ``"default"``, ``"gray"`` or ``"solid"``.
+    :param style: one of :data:`STYLES`, e.g. ``"default"``, ``"solid"`` or ``"scratch"``.
     :param theme: ``"light"`` or ``"dark"`` (ignored for ``"solid"``).
     :raises ValueError: for an unknown style or theme.
     """

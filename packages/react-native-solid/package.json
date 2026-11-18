@@ -1,6 +1,6 @@
 {
   "name": "@filecon/react-native-solid",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Filecon file icons for React Native – the solid style (filled colored page). Rendered with react-native-svg, tree-shakable.",
   "keywords": [
     "filecon",

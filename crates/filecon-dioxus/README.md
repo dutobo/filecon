@@ -1,14 +1,14 @@
 # filecon-dioxus
 
 [Dioxus](https://dioxuslabs.com) component for the [Filecon](https://filecon.dev) file-type icons:
-**703 formats** in three styles, rendered as inline SVG. Built on the [`filecon`](https://crates.io/crates/filecon)
+**703 formats** in eight styles, rendered as inline SVG. Built on the [`filecon`](https://crates.io/crates/filecon)
 crate (embedded SVGs + file-type resolver).
 
 ```toml
 [dependencies]
-filecon-dioxus = "0.1"
+filecon-dioxus = "0.2"
 # only one style (smaller binary):
-# filecon-dioxus = { version = "0.1", default-features = false, features = ["style-solid"] }
+# filecon-dioxus = { version = "0.2", default-features = false, features = ["style-solid"] }
 ```
 
 ## Usage
@@ -56,7 +56,7 @@ No assets, fonts or network requests are needed: the SVG markup is embedded in t
 |---|---|---|---|
 | `name` | `Option<String>` | – | icon name or extension (`"pdf"`, `".PDF"`, `"db-sqlite"`); wins over `file` |
 | `file` | `Option<String>` | – | file name or path, resolved with `filecon::resolve(file, None)` |
-| `style` | `Style` | `Style::Default` | `Default`, `Gray`, `Solid` |
+| `style` | `Style` | `Style::Default` | `Default`, `Gray`, `Solid`, `Papered`, `PaperedFlat`, `PaperedCraft`, `Scratch`, `Chalk` |
 | `theme` | `Theme` | `Theme::Light` | `Light`, `Dark` (ignored by `Solid`) |
 | `size` | `u32` | `40` | width and height in pixels |
 | `title` | `Option<String>` | – | accessible name: adds `role="img"` and an escaped `<title>` |
@@ -85,6 +85,11 @@ There is no `auto` theme: pick `Theme::Light` / `Theme::Dark` from your UI state
 | `style-default` | yes | `default/light`, `default/dark` |
 | `style-gray` | yes | `gray/light`, `gray/dark` |
 | `style-solid` | yes | `solid` |
+| `style-papered` | yes | `papered/light`, `papered/dark` |
+| `style-papered-flat` | yes | `papered-flat/light`, `papered-flat/dark` |
+| `style-papered-craft` | yes | `papered-craft/light`, `papered-craft/dark` |
+| `style-scratch` | yes | `scratch/light`, `scratch/dark` |
+| `style-chalk` | yes | `chalk/light`, `chalk/dark` |
 
 If the requested style is disabled, the first enabled style is rendered instead.
 

@@ -2,21 +2,26 @@
 // All outputs are gitignored; `include` in Cargo.toml ships them with `cargo package`.
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { CRATE_DIR, PACK_DIR } from "./config";
+import { isThemedStyle } from "../../../packages/shared/src/types";
+import { CRATE_DIR, PACK_DIR, STYLES } from "./config";
 import { syncDirectory, writeIfChanged } from "./fsutil";
+import { LEGAL_FILES, legalFile } from "./legal";
 import type { Pack } from "./pack";
 import { svgPath } from "./pack";
 
 /** Crates built on top of `filecon` (they only need the legal files). */
 const DEPENDENT_CRATES = ["filecon-dioxus", "tauri-plugin-filecon"] as const;
 
-const TABLES = [
-  { constant: "DEFAULT_LIGHT", feature: "style-default", style: "default", theme: "light", dir: "default/light" },
-  { constant: "DEFAULT_DARK", feature: "style-default", style: "default", theme: "dark", dir: "default/dark" },
-  { constant: "GRAY_LIGHT", feature: "style-gray", style: "gray", theme: "light", dir: "gray/light" },
-  { constant: "GRAY_DARK", feature: "style-gray", style: "gray", theme: "dark", dir: "gray/dark" },
-  { constant: "SOLID", feature: "style-solid", style: "solid", theme: "light", dir: "solid" },
-] as const;
+/** One `include_str!` table per style and theme (themeless styles have one table). */
+const TABLES = STYLES.flatMap((style) =>
+  (isThemedStyle(style) ? (["light", "dark"] as const) : (["light"] as const)).map((theme) => ({
+    constant: `${style.replace(/-/g, "_").toUpperCase()}${isThemedStyle(style) ? `_${theme.toUpperCase()}` : ""}`,
+    feature: `style-${style}`,
+    style,
+    theme,
+    dir: isThemedStyle(style) ? `${style}/${theme}` : style,
+  })),
+);
 
 export function generateCrate(pack: Pack): void {
   if (!existsSync(join(CRATE_DIR, "Cargo.toml"))) return;
@@ -49,7 +54,7 @@ export function generateCrate(pack: Pack): void {
 
   for (const crate of [CRATE_DIR, ...DEPENDENT_CRATES.map((name) => join(CRATE_DIR, "..", name))]) {
     if (!existsSync(join(crate, "Cargo.toml"))) continue;
-    for (const file of ["LICENSE", "NOTICE"]) writeIfChanged(join(crate, file), readFileSync(join(PACK_DIR, file)));
+    for (const file of LEGAL_FILES) writeIfChanged(join(crate, file), legalFile(file));
   }
   writeIfChanged(
     join(CRATE_DIR, "tests", "data", "resolve-cases.json"),

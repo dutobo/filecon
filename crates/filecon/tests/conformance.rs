@@ -66,10 +66,11 @@ fn pack_file(style: Style, theme: Theme, name: &str) -> String {
     // In the repository compare with the icon pack itself; in a packaged crate with the shipped copies.
     let manifest_dir = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
     let pack = manifest_dir.join("../../icon-pack");
-    let base = if pack.join("manifest.json").exists() {
-        pack
-    } else {
-        manifest_dir.join("icons")
+    let in_repo = pack.join("manifest.json").exists();
+    let base = match style {
+        Style::Default | Style::Gray | Style::Solid if in_repo => pack,
+        _ if in_repo => manifest_dir.join("../../icon-styles"),
+        _ => manifest_dir.join("icons"),
     };
     let path = match (style, theme) {
         (Style::Solid, _) => base.join("solid"),
@@ -77,6 +78,16 @@ fn pack_file(style: Style, theme: Theme, name: &str) -> String {
         (Style::Default, Theme::Dark) => base.join("default/dark"),
         (Style::Gray, Theme::Light) => base.join("gray/light"),
         (Style::Gray, Theme::Dark) => base.join("gray/dark"),
+        (Style::Papered, Theme::Light) => base.join("papered/light"),
+        (Style::Papered, Theme::Dark) => base.join("papered/dark"),
+        (Style::PaperedFlat, Theme::Light) => base.join("papered-flat/light"),
+        (Style::PaperedFlat, Theme::Dark) => base.join("papered-flat/dark"),
+        (Style::PaperedCraft, Theme::Light) => base.join("papered-craft/light"),
+        (Style::PaperedCraft, Theme::Dark) => base.join("papered-craft/dark"),
+        (Style::Scratch, Theme::Light) => base.join("scratch/light"),
+        (Style::Scratch, Theme::Dark) => base.join("scratch/dark"),
+        (Style::Chalk, Theme::Light) => base.join("chalk/light"),
+        (Style::Chalk, Theme::Dark) => base.join("chalk/dark"),
     };
     std::fs::read_to_string(path.join(format!("{name}.svg"))).unwrap()
 }
@@ -87,6 +98,11 @@ fn embedded_svgs_match_the_pack() {
         cfg!(feature = "style-default").then_some(Style::Default),
         cfg!(feature = "style-gray").then_some(Style::Gray),
         cfg!(feature = "style-solid").then_some(Style::Solid),
+        cfg!(feature = "style-papered").then_some(Style::Papered),
+        cfg!(feature = "style-papered-flat").then_some(Style::PaperedFlat),
+        cfg!(feature = "style-papered-craft").then_some(Style::PaperedCraft),
+        cfg!(feature = "style-scratch").then_some(Style::Scratch),
+        cfg!(feature = "style-chalk").then_some(Style::Chalk),
     ]
     .into_iter()
     .flatten()
@@ -120,5 +136,25 @@ fn disabled_styles_and_unknown_names_return_none() {
     assert_eq!(
         svg("pdf", Style::Solid, Theme::Dark).is_some(),
         cfg!(feature = "style-solid")
+    );
+    assert_eq!(
+        svg("pdf", Style::Papered, Theme::Dark).is_some(),
+        cfg!(feature = "style-papered")
+    );
+    assert_eq!(
+        svg("pdf", Style::PaperedFlat, Theme::Dark).is_some(),
+        cfg!(feature = "style-papered-flat")
+    );
+    assert_eq!(
+        svg("pdf", Style::PaperedCraft, Theme::Dark).is_some(),
+        cfg!(feature = "style-papered-craft")
+    );
+    assert_eq!(
+        svg("pdf", Style::Scratch, Theme::Dark).is_some(),
+        cfg!(feature = "style-scratch")
+    );
+    assert_eq!(
+        svg("pdf", Style::Chalk, Theme::Dark).is_some(),
+        cfg!(feature = "style-chalk")
     );
 }

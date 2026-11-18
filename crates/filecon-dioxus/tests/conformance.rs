@@ -6,7 +6,12 @@
 #![cfg(any(
     feature = "style-default",
     feature = "style-gray",
-    feature = "style-solid"
+    feature = "style-solid",
+    feature = "style-papered",
+    feature = "style-papered-flat",
+    feature = "style-papered-craft",
+    feature = "style-scratch",
+    feature = "style-chalk",
 ))]
 
 use dioxus::prelude::*;
@@ -57,13 +62,27 @@ fn without_title(mut svg: Svg, name: &str) -> Svg {
 }
 
 fn pack_file(style: Style, theme: Theme, name: &str) -> String {
-    let pack = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../../icon-pack");
+    let root = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../..");
+    let pack = match style {
+        Style::Default | Style::Gray | Style::Solid => root.join("icon-pack"),
+        _ => root.join("icon-styles"),
+    };
     let dir = match (style, theme) {
         (Style::Solid, _) => "solid",
         (Style::Default, Theme::Light) => "default/light",
         (Style::Default, Theme::Dark) => "default/dark",
         (Style::Gray, Theme::Light) => "gray/light",
         (Style::Gray, Theme::Dark) => "gray/dark",
+        (Style::Papered, Theme::Light) => "papered/light",
+        (Style::Papered, Theme::Dark) => "papered/dark",
+        (Style::PaperedFlat, Theme::Light) => "papered-flat/light",
+        (Style::PaperedFlat, Theme::Dark) => "papered-flat/dark",
+        (Style::PaperedCraft, Theme::Light) => "papered-craft/light",
+        (Style::PaperedCraft, Theme::Dark) => "papered-craft/dark",
+        (Style::Scratch, Theme::Light) => "scratch/light",
+        (Style::Scratch, Theme::Dark) => "scratch/dark",
+        (Style::Chalk, Theme::Light) => "chalk/light",
+        (Style::Chalk, Theme::Dark) => "chalk/dark",
     };
     std::fs::read_to_string(pack.join(dir).join(format!("{name}.svg"))).unwrap()
 }
@@ -91,6 +110,18 @@ fn variants() -> Vec<(Style, Theme)> {
     }
     if cfg!(feature = "style-solid") {
         variants.push((Style::Solid, Theme::Light));
+    }
+    let generated = [
+        (cfg!(feature = "style-papered"), Style::Papered),
+        (cfg!(feature = "style-papered-flat"), Style::PaperedFlat),
+        (cfg!(feature = "style-papered-craft"), Style::PaperedCraft),
+        (cfg!(feature = "style-scratch"), Style::Scratch),
+        (cfg!(feature = "style-chalk"), Style::Chalk),
+    ];
+    for (enabled, style) in generated {
+        if enabled {
+            variants.extend([(style, Theme::Light), (style, Theme::Dark)]);
+        }
     }
     variants
 }

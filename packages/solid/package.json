@@ -1,7 +1,7 @@
 {
   "name": "@filecon/solid",
-  "version": "0.1.0",
-  "description": "Filecon file icons for SolidJS – all three styles (default, gray, solid). SSR-safe, tree-shakable.",
+  "version": "0.2.0",
+  "description": "Filecon file icons for SolidJS – all eight styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk). SSR-safe, tree-shakable.",
   "keywords": [
     "filecon",
     "file-icons",

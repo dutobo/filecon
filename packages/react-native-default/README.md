@@ -3,7 +3,7 @@
 [Filecon](https://filecon.dev) file icons for React Native and Expo – 703 file types, the default style (outline, colored label).
 Rendered with `react-native-svg`, tree-shakable.
 
-Part of the Filecon family: `@filecon/react-native`, `@filecon/react-native-default`, `@filecon/react-native-gray`, `@filecon/react-native-solid`.
+Part of the Filecon family: `@filecon/react-native`, `@filecon/react-native-default`, `@filecon/react-native-gray`, `@filecon/react-native-solid`, `@filecon/react-native-papered`, `@filecon/react-native-papered-flat`, `@filecon/react-native-papered-craft`, `@filecon/react-native-scratch`, `@filecon/react-native-chalk`.
 This package only contains the `default` style, so it is smaller than `@filecon/react-native`; the API is identical except that there is no `style` prop (`style` is the regular view style here).
 
 ```sh

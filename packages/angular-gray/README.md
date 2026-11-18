@@ -3,7 +3,7 @@
 [Filecon](https://filecon.dev) file icons for Angular – 703 file types, the gray style (filled gray page).
 Standalone component `<filecon-icon>`, signal inputs, OnPush, SSR-safe.
 
-Part of the Filecon family: `@filecon/angular`, `@filecon/angular-default`, `@filecon/angular-gray`, `@filecon/angular-solid`.
+Part of the Filecon family: `@filecon/angular`, `@filecon/angular-default`, `@filecon/angular-gray`, `@filecon/angular-solid`, `@filecon/angular-papered`, `@filecon/angular-papered-flat`, `@filecon/angular-papered-craft`, `@filecon/angular-scratch`, `@filecon/angular-chalk`.
 This package only contains the `gray` style, so it is smaller than `@filecon/angular`; the API is identical except that there is no `iconStyle` input.
 
 ```sh

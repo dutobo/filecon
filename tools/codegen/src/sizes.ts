@@ -38,11 +38,17 @@ interface Row {
 /** Entry code for the bundle measurements, or `undefined` for packages compiled by the consumer (Svelte, Astro). */
 function bundleEntries(dir: string, name: string): { single: string; all: string } | undefined {
   const fw = dir.replace(/-(default|gray|solid)$/, "");
-  if (["svelte", "astro", "shared", "electron"].includes(fw)) return undefined;
+  if (["svelte", "astro", "shared", "electron", "iconify", "css", "tauri"].includes(fw)) return undefined;
   if (fw === "angular") {
     return {
       single: `import { PdfIcon, FileconIconComponent } from "${name}"; console.log(PdfIcon, FileconIconComponent);`,
       all: `import { FileconIconComponent } from "${name}"; console.log(FileconIconComponent);`,
+    };
+  }
+  if (fw === "elements") {
+    return {
+      single: `import { PdfIcon } from "${name}/icons"; console.log(PdfIcon);`,
+      all: `import { FileconIconElement } from "${name}"; console.log(FileconIconElement);`,
     };
   }
   if (fw === "js") {

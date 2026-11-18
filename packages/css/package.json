@@ -1,0 +1,73 @@
+{
+  "name": "@filecon/css",
+  "version": "0.1.0",
+  "description": "Filecon file icons as CSS classes (703 icons, data-URI backgrounds; default, gray and solid, light/dark/auto). No JavaScript needed.",
+  "keywords": [
+    "filecon",
+    "file-icons",
+    "icons",
+    "svg",
+    "file-type",
+    "css",
+    "css-icons",
+    "background-image",
+    "data-uri"
+  ],
+  "homepage": "https://filecon.dev",
+  "bugs": {
+    "url": "https://github.com/dutobo/filecon/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dutobo/filecon.git",
+    "directory": "packages/css"
+  },
+  "license": "Apache-2.0",
+  "author": {
+    "name": "dutobo",
+    "url": "https://github.com/dutobo"
+  },
+  "contributors": [
+    {
+      "name": "rafaelk-f",
+      "url": "https://github.com/rafaelk-f"
+    }
+  ],
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    ".": "./dist/default.css",
+    "./*.css": "./dist/*.css",
+    "./package.json": "./package.json"
+  },
+  "style": "./dist/default.css",
+  "files": [
+    "dist",
+    "NOTICE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@filecon/testkit": "workspace:*",
+    "@types/node": "^24.19.2",
+    "typescript": "~6.0.3",
+    "vitest": "^5.1.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true,
+    "exports": {
+      ".": "./dist/default.css",
+      "./*.css": "./dist/*.css",
+      "./package.json": "./package.json"
+    }
+  }
+}

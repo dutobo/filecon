@@ -5,16 +5,19 @@
 import { copyFileSync, existsSync, readdirSync, readFileSync } from "node:fs";
 import { join, relative } from "node:path";
 import { pathToFileURL } from "node:url";
+import { generateCss, generateIconify } from "./assets";
 import { PACK_DIR, PACKAGES_DIR, ROOT, SCOPE, STYLES, TEMPLATES_DIR, VARIANTS, type Variant } from "./config";
 import { variantModule } from "./data-module";
 import { listFiles, stats, syncDirectory, toPosix, writeIfChanged } from "./fsutil";
 import { renderTemplate } from "./mustache";
 import { loadPack, type Pack } from "./pack";
 import { composePackageJson } from "./package-json";
+import { generatePython } from "./python";
 import { generateCrate } from "./rust";
 import { standalonePackages } from "./standalone";
 import type { FrameworkTemplate, TemplateContext } from "./template-api";
 import { GENERATED_HEADER } from "./template-api";
+import { generateVscode } from "./vscode";
 
 const STYLE_LABEL: Record<Variant, string> = {
   all: "all three styles (default, gray, solid)",
@@ -158,7 +161,11 @@ async function main(): Promise<void> {
     }
   }
 
+  generateIconify(pack);
+  generateCss(pack);
   generateCrate(pack);
+  generateVscode(pack);
+  generatePython(pack);
   console.log(
     `codegen: ${pack.icons.length} icons, ${templates.length} templates -> ${stats.written} written, ` +
       `${stats.unchanged} unchanged, ${stats.removed} removed (${Date.now() - started} ms)`,

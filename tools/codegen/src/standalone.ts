@@ -51,5 +51,68 @@ export function standalonePackages(pack: Pack): StandalonePackage[] {
         scripts: { build: "tsup", typecheck: "tsc --noEmit", test: "vitest run" },
       },
     },
+    {
+      dirName: "tauri",
+      parts: {
+        description:
+          "Filecon for Tauri 2: JavaScript binding of tauri-plugin-filecon (iconForPath, getIcon, resolveIcon) for desktop, iOS and Android.",
+        keywords: ["tauri", "tauri-plugin", "desktop", "mobile"],
+        entries: ["index"],
+        peerDependencies: { "@tauri-apps/api": "^2.0.0" },
+        devDependencies: {
+          "@tauri-apps/api": "^2.12.5",
+          "@types/node": VERSIONS.nodeTypes,
+          jsdom: "^31.0.1",
+          tsup: VERSIONS.tsup,
+          vitest: VERSIONS.vitest,
+        },
+        scripts: { build: "tsup", typecheck: "tsc --noEmit", test: "vitest run" },
+      },
+    },
+    {
+      dirName: "iconify",
+      parts: {
+        description: `Filecon file icons as Iconify JSON icon sets (${pack.icons.length} icons; default, gray and solid, light and dark) for UnoCSS, unplugin-icons, Iconify and Tailwind.`,
+        keywords: ["iconify", "iconify-json", "unocss", "unplugin-icons", "tailwind"],
+        exports: {
+          ".": {
+            import: { types: "./dist/index.d.ts", default: "./dist/index.js" },
+            require: { types: "./dist/index.d.cts", default: "./dist/index.cjs" },
+          },
+          "./*.json": "./dist/*.json",
+          "./*": {
+            import: { types: "./dist/set.d.ts", default: "./dist/*.js" },
+            require: { types: "./dist/set.d.cts", default: "./dist/*.cjs" },
+          },
+          "./package.json": "./package.json",
+        },
+        scripts: { build: "node scripts/build.mjs", typecheck: "tsc --noEmit", test: "vitest run" },
+        devDependencies: {
+          "@filecon/testkit": "workspace:*",
+          "@iconify/utils": "^3.1.0",
+          "@types/node": VERSIONS.nodeTypes,
+          vitest: VERSIONS.vitest,
+        },
+      },
+    },
+    {
+      dirName: "css",
+      parts: {
+        description: `Filecon file icons as CSS classes (${pack.icons.length} icons, data-URI backgrounds; default, gray and solid, light/dark/auto). No JavaScript needed.`,
+        keywords: ["css", "css-icons", "background-image", "data-uri"],
+        exports: {
+          ".": "./dist/default.css",
+          "./*.css": "./dist/*.css",
+          "./package.json": "./package.json",
+        },
+        extra: { style: "./dist/default.css", sideEffects: ["*.css"] },
+        scripts: { build: "node scripts/build.mjs", typecheck: "tsc --noEmit", test: "vitest run" },
+        devDependencies: {
+          "@filecon/testkit": "workspace:*",
+          "@types/node": VERSIONS.nodeTypes,
+          vitest: VERSIONS.vitest,
+        },
+      },
+    },
   ];
 }

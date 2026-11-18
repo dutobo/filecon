@@ -1,0 +1,113 @@
+{
+  "name": "@filecon/iconify",
+  "version": "0.1.0",
+  "description": "Filecon file icons as Iconify JSON icon sets (703 icons; default, gray and solid, light and dark) for UnoCSS, unplugin-icons, Iconify and Tailwind.",
+  "keywords": [
+    "filecon",
+    "file-icons",
+    "icons",
+    "svg",
+    "file-type",
+    "iconify",
+    "iconify-json",
+    "unocss",
+    "unplugin-icons",
+    "tailwind"
+  ],
+  "homepage": "https://filecon.dev",
+  "bugs": {
+    "url": "https://github.com/dutobo/filecon/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dutobo/filecon.git",
+    "directory": "packages/iconify"
+  },
+  "license": "Apache-2.0",
+  "author": {
+    "name": "dutobo",
+    "url": "https://github.com/dutobo"
+  },
+  "contributors": [
+    {
+      "name": "rafaelk-f",
+      "url": "https://github.com/rafaelk-f"
+    }
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./*.json": "./dist/*.json",
+    "./*": {
+      "import": {
+        "types": "./dist/set.d.ts",
+        "default": "./dist/*.js"
+      },
+      "require": {
+        "types": "./dist/set.d.cts",
+        "default": "./dist/*.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "NOTICE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@filecon/testkit": "workspace:*",
+    "@iconify/utils": "^3.1.0",
+    "@types/node": "^24.19.2",
+    "typescript": "~6.0.3",
+    "vitest": "^5.1.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true,
+    "exports": {
+      ".": {
+        "import": {
+          "types": "./dist/index.d.ts",
+          "default": "./dist/index.js"
+        },
+        "require": {
+          "types": "./dist/index.d.cts",
+          "default": "./dist/index.cjs"
+        }
+      },
+      "./*.json": "./dist/*.json",
+      "./*": {
+        "import": {
+          "types": "./dist/set.d.ts",
+          "default": "./dist/*.js"
+        },
+        "require": {
+          "types": "./dist/set.d.cts",
+          "default": "./dist/*.cjs"
+        }
+      },
+      "./package.json": "./package.json"
+    }
+  }
+}

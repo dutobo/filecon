@@ -32,7 +32,14 @@ jobs:
           components: clippy, rustfmt
       - uses: Swatinem/rust-cache@v2
         with:
-          workspaces: crates/filecon
+          workspaces: |
+            crates/filecon
+            crates/filecon-dioxus
+            crates/tauri-plugin-filecon
+      - name: System libraries for Tauri
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libgtk-3-dev librsvg2-dev
       - name: Install
         run: pnpm install --frozen-lockfile
       - name: Lint
@@ -43,7 +50,7 @@ jobs:
         run: pnpm build
       - name: Scaffolded files are up to date
         run: git diff --exit-code -- packages tools
-      - name: Test (JS, tarballs, tree-shaking, Rust)
+      - name: Test (JS, tarballs, tree-shaking, Rust crates)
         run: pnpm test
       - name: Rust lint
         run: pnpm lint:rust
@@ -53,4 +60,39 @@ jobs:
             cargo test --manifest-path crates/filecon/Cargo.toml --no-default-features --features "$feature"
           done
       - name: Crate packages
-        run: cargo package --manifest-path crates/filecon/Cargo.toml --allow-dirty --no-verify
+        run: |
+          for crate in filecon filecon-dioxus tauri-plugin-filecon; do
+            cargo package --manifest-path "crates/$crate/Cargo.toml" --allow-dirty --no-verify
+          done
+
+  ports:
+    name: Python ${{ matrix.python }} + VS Code extension
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.9", "3.13"]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: pnpm
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install
+        run: pnpm install --frozen-lockfile
+      - name: Codegen
+        run: pnpm codegen
+      - name: Python tests and build
+        working-directory: ports/python
+        run: |
+          python -m pip install build twine pytest
+          python -m pytest
+          python -m build
+          python -m twine check dist/*
+      - name: VS Code extension package
+        working-directory: extensions/vscode
+        run: pnpm dlx @vscode/vsce package --no-dependencies

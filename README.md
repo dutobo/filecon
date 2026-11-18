@@ -24,11 +24,20 @@ File-type icons for **703 formats** in three styles – for every framework. [fi
 | [`@filecon/solid`](packages/solid) | SolidJS components |
 | [`@filecon/angular`](packages/angular) | Angular standalone component `<filecon-icon>` |
 | [`@filecon/astro`](packages/astro) | Astro components (zero client JS) |
+| [`@filecon/elements`](packages/elements) | Web Components: `<filecon-icon name="pdf">` for plain HTML and any framework |
 | [`@filecon/electron`](packages/electron) | Electron: `iconForPath()` in main, IPC handlers, typed preload bridge |
+| [`@filecon/tauri`](packages/tauri) | Tauri 2 JS binding for `tauri-plugin-filecon` (desktop, iOS, Android) |
+| [`@filecon/iconify`](packages/iconify) | Iconify JSON icon sets for UnoCSS, `unplugin-icons`, Tailwind, Iconify |
+| [`@filecon/css`](packages/css) | CSS classes (`.filecon.filecon-pdf`) with data-URI backgrounds, no JS |
 | [`filecon`](crates/filecon) (crates.io) | Rust crate: embedded SVGs (`svg()`), `resolve()`, `names()` |
+| [`filecon-dioxus`](crates/filecon-dioxus) (crates.io) | Dioxus component `FileIcon` (web, desktop, mobile) |
+| [`tauri-plugin-filecon`](crates/tauri-plugin-filecon) (crates.io) | Tauri 2 plugin: resolve + SVG in Rust, `iconForPath` with magic bytes |
+| [`filecon-icons`](extensions/vscode) (VS Code) | File icon theme for VS Code / Open VSX (3 themes) – prepared |
+| [`filecon`](ports/python) (PyPI) | Python: `svg()`, `resolve()`, `names()` – prepared |
 
-Every framework package exists in four flavors: `@filecon/<fw>` (all styles, `style` prop) and
-`@filecon/<fw>-default`, `-gray`, `-solid` (one style each, same API without `style`).
+Every framework package (and `@filecon/elements`) exists in four flavors: `@filecon/<fw>` (all styles, `style`
+prop) and `@filecon/<fw>-default`, `-gray`, `-solid` (one style each, same API without `style`).
+"prepared" = built and tested in this repository, not yet published (see [`docs/publishing.md`](docs/publishing.md)).
 
 ## Quick start
 

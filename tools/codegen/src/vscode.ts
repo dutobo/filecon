@@ -7,9 +7,12 @@
 //   `generic-ext` icon name (e.g. `Dockerfile` -> `dockerfile`), `Makefile` -> `mk` and `Thumbs.db` -> `db-thumbs`.
 //   Generic names (`code`, `image`, …) are not mapped as file names: as a bare file name they say nothing about
 //   the content.
+// - `languageIds`: VS Code language ids -> icon, for files whose extension/name is not mapped but whose language
+//   VS Code knows (e.g. `.bashrc` -> shellscript -> `sh`). `plaintext` is deliberately not mapped (it would replace
+//   the `empty` fallback for every unknown file).
 // - `file` (fallback): `empty`, the resolver's own fallback for unknown files.
-// - `variant` icons other than `db-thumbs` need content sniffing and are not mapped. No folder definitions (the
-//   pack has no folder icons), so VS Code shows folders without an icon, only with the twistie arrows.
+// - `folder`/`folderExpanded`/`rootFolder`/`rootFolderExpanded`: the pack's generic `folder` icon.
+// - `variant` icons other than `db-thumbs` need content sniffing and are not mapped.
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import type { Style } from "../../../packages/shared/src/types";
@@ -32,10 +35,134 @@ export const VSCODE_FALLBACK = "empty";
 /** Exact file names of the resolver that are not covered by the extension-less name rule. */
 const SPECIAL_FILE_NAMES: Readonly<Record<string, string>> = { makefile: "mk", "thumbs.db": "db-thumbs" };
 
+/** VS Code language id -> icon name (curated; every icon must exist in the pack). */
+const LANGUAGE_IDS: Readonly<Record<string, string>> = {
+  ada: "ada",
+  asciidoc: "adoc",
+  astro: "astro",
+  awk: "awk",
+  bat: "bat",
+  bazel: "bzl",
+  bibtex: "bib",
+  c: "c",
+  clojure: "clj",
+  cmake: "cmake",
+  cobol: "cob",
+  coffeescript: "coffee",
+  cpp: "cpp",
+  crystal: "cr",
+  csharp: "cs",
+  css: "css",
+  csv: "csv",
+  cue: "cue",
+  d: "d",
+  dart: "dart",
+  diff: "diff",
+  dockercompose: "yaml",
+  dockerfile: "dockerfile",
+  dotenv: "env",
+  editorconfig: "editorconfig",
+  elixir: "ex",
+  elm: "elm",
+  erlang: "erl",
+  fish: "fish",
+  fortran: "f90",
+  fsharp: "fs",
+  gdscript: "gd",
+  gleam: "gleam",
+  glsl: "glsl",
+  go: "go",
+  gradle: "gradle",
+  graphql: "graphql",
+  groovy: "groovy",
+  handlebars: "hbs",
+  haskell: "hs",
+  hcl: "hcl",
+  hlsl: "hlsl",
+  html: "html",
+  ignore: "gitignore",
+  ini: "ini",
+  jade: "pug",
+  java: "java",
+  javascript: "js",
+  javascriptreact: "jsx",
+  json: "json",
+  jsonc: "json",
+  jsonl: "jsonl",
+  jsonnet: "jsonnet",
+  julia: "jl",
+  kotlin: "kt",
+  latex: "tex",
+  less: "less",
+  lisp: "lisp",
+  log: "log",
+  lua: "lua",
+  makefile: "mk",
+  markdown: "md",
+  matlab: "m",
+  mdx: "mdx",
+  mojo: "mojo",
+  nim: "nim",
+  ninja: "ninja",
+  nix: "nix",
+  nushell: "nu",
+  "objective-c": "m",
+  "objective-cpp": "mm",
+  ocaml: "ml",
+  odin: "odin",
+  pascal: "pas",
+  perl: "pl",
+  php: "php",
+  powershell: "ps1",
+  prisma: "prisma",
+  properties: "properties",
+  proto: "proto",
+  proto3: "proto",
+  pug: "pug",
+  purescript: "purs",
+  python: "py",
+  r: "r",
+  racket: "rkt",
+  restructuredtext: "rst",
+  ruby: "rb",
+  rust: "rs",
+  sass: "sass",
+  scala: "scala",
+  scheme: "scm",
+  scss: "scss",
+  shellscript: "sh",
+  solidity: "sol",
+  sql: "sql",
+  starlark: "bzl",
+  svelte: "svelte",
+  swift: "swift",
+  systemverilog: "sv",
+  tcl: "tcl",
+  terraform: "tf",
+  tex: "tex",
+  toml: "toml",
+  tsv: "tsv",
+  typescript: "ts",
+  typescriptreact: "tsx",
+  vb: "vb",
+  vhdl: "vhdl",
+  vue: "vue",
+  wgsl: "wgsl",
+  xml: "xml",
+  xsl: "xsl",
+  yaml: "yaml",
+  zig: "zig",
+  zsh: "zsh",
+};
+
+export const VSCODE_FOLDER = "folder";
+
 export interface VscodeMapping {
   file: string;
+  folder: string;
   fileExtensions: Record<string, string>;
   fileNames: Record<string, string>;
+  languageIds: Record<string, string>;
 }
 
 export function vscodeMapping(pack: Pack): VscodeMapping {
@@ -53,7 +180,13 @@ export function vscodeMapping(pack: Pack): VscodeMapping {
     if (fileNames[fileName]) throw new Error(`vscode: file name "${fileName}" is already mapped`);
     fileNames[fileName] = name;
   }
-  const mapping: VscodeMapping = { file: VSCODE_FALLBACK, fileExtensions, fileNames: sortKeys(fileNames) };
+  const mapping: VscodeMapping = {
+    file: VSCODE_FALLBACK,
+    folder: VSCODE_FOLDER,
+    fileExtensions,
+    fileNames: sortKeys(fileNames),
+    languageIds: sortKeys({ ...LANGUAGE_IDS }),
+  };
   for (const name of usedIcons(mapping)) {
     if (!pack.manifest[name]) throw new Error(`vscode: mapped icon "${name}" is not in the pack`);
   }
@@ -65,7 +198,15 @@ function sortKeys(record: Record<string, string>): Record<string, string> {
 }
 
 const usedIcons = (mapping: VscodeMapping): string[] =>
-  [...new Set([mapping.file, ...Object.values(mapping.fileExtensions), ...Object.values(mapping.fileNames)])].sort();
+  [
+    ...new Set([
+      mapping.file,
+      mapping.folder,
+      ...Object.values(mapping.fileExtensions),
+      ...Object.values(mapping.fileNames),
+      ...Object.values(mapping.languageIds),
+    ]),
+  ].sort();
 
 /** Icon directory below `icons/` for a style and theme. */
 const iconDir = (style: Style, theme: "light" | "dark"): string => (style === "solid" ? "solid" : `${style}/${theme}`);
@@ -76,8 +217,13 @@ function associations(mapping: VscodeMapping, suffix: string) {
     Object.fromEntries(Object.entries(record).map(([key, name]) => [key, id(name)]));
   return {
     file: id(mapping.file),
+    folder: id(mapping.folder),
+    folderExpanded: id(mapping.folder),
+    rootFolder: id(mapping.folder),
+    rootFolderExpanded: id(mapping.folder),
     fileExtensions: remap(mapping.fileExtensions),
     fileNames: remap(mapping.fileNames),
+    languageIds: remap(mapping.languageIds),
   };
 }
 

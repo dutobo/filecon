@@ -35,11 +35,13 @@ Theme ids: `filecon`, `filecon-gray`, `filecon-solid`.
 - By extension, e.g. `report.final.pdf` → PDF, `.gitignore` → Git ignore.
 - By exact file name: an extension-less file named like a supported type (`Dockerfile`), plus `Makefile` and
   `Thumbs.db`.
+- By language: files whose name is not mapped but whose language VS Code knows (e.g. `.bashrc` → shell script,
+  a file with a `#!/bin/bash` line once it is opened) get the icon of that language (116 language ids).
 - Everything else gets the neutral `empty` page icon.
 
 Ambiguous extensions (`.db`, `.key`, `.m`, `.pl`, `.v`, `.pb`) get a generic icon for the extension; telling e.g.
-an SQLite database from a Berkeley DB file needs the file content, which icon themes cannot inspect. Folder icons
-are not part of the pack, so folders are shown without icons.
+an SQLite database from a Berkeley DB file needs the file content, which icon themes cannot inspect. All folders
+(open, closed and workspace roots) use the pack's `folder` icon.
 
 ## Links
 

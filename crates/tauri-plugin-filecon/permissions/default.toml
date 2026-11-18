@@ -1,0 +1,9 @@
+"$schema" = "schemas/schema.json"
+
+[default]
+description = """
+Allows resolving file names to icon names (`resolve`) and loading icon SVGs (`icon`).
+Reading files for magic-byte detection (`icon_for_path`) is not included; enable it with
+`filecon:allow-icon-for-path`.
+"""
+permissions = ["allow-resolve", "allow-icon"]

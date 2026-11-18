@@ -1,0 +1,47 @@
+[package]
+name = "tauri-plugin-filecon"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.90"
+description = "Tauri 2 plugin for the Filecon file-type icons: 703 formats in three styles, resolved by file name or magic bytes."
+license = "Apache-2.0"
+authors = ["dutobo (https://github.com/dutobo)", "rafaelk-f (https://github.com/rafaelk-f)"]
+homepage = "https://filecon.dev"
+repository = "https://github.com/dutobo/filecon"
+documentation = "https://docs.rs/tauri-plugin-filecon"
+readme = "README.md"
+keywords = ["tauri", "tauri-plugin", "icons", "svg", "file-type"]
+categories = ["gui", "filesystem", "multimedia::images"]
+# Required by Tauri: the build script exports the plugin's permission manifests to the app through `links`.
+links = "tauri-plugin-filecon"
+# LICENSE and NOTICE are gitignored and written by `pnpm codegen`; `include` makes sure `cargo package` ships them.
+include = [
+  "Cargo.toml",
+  "README.md",
+  "LICENSE",
+  "NOTICE",
+  "build.rs",
+  "src/**/*.rs",
+  "tests/**/*.rs",
+  "permissions/**/*",
+]
+
+[features]
+default = ["style-default", "style-gray", "style-solid"]
+style-default = ["filecon/style-default"]
+style-gray = ["filecon/style-gray"]
+style-solid = ["filecon/style-solid"]
+
+[dependencies]
+filecon = { version = "0.1.0", path = "../filecon", default-features = false }
+tauri = { version = "2.12.7", default-features = false }
+serde = { version = "1.0.229", features = ["derive"] }
+
+[build-dependencies]
+tauri-plugin = { version = "2.7.4", features = ["build"] }
+
+[dev-dependencies]
+serde_json = "1"
+tauri = { version = "2.12.7", default-features = false, features = ["test", "dynamic-acl"] }
+tauri-utils = "2.10.4"
+toml = "0.9"

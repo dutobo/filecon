@@ -7,6 +7,9 @@ import { syncDirectory, writeIfChanged } from "./fsutil";
 import type { Pack } from "./pack";
 import { svgPath } from "./pack";
 
+/** Crates built on top of `filecon` (they only need the legal files). */
+const DEPENDENT_CRATES = ["filecon-dioxus", "tauri-plugin-filecon"] as const;
+
 const TABLES = [
   { constant: "DEFAULT_LIGHT", feature: "style-default", style: "default", theme: "light", dir: "default/light" },
   { constant: "DEFAULT_DARK", feature: "style-default", style: "default", theme: "dark", dir: "default/dark" },
@@ -44,7 +47,10 @@ export function generateCrate(pack: Pack): void {
   }
   writeIfChanged(join(CRATE_DIR, "src", "generated.rs"), `${lines.join("\n")}\n`);
 
-  for (const file of ["LICENSE", "NOTICE"]) writeIfChanged(join(CRATE_DIR, file), readFileSync(join(PACK_DIR, file)));
+  for (const crate of [CRATE_DIR, ...DEPENDENT_CRATES.map((name) => join(CRATE_DIR, "..", name))]) {
+    if (!existsSync(join(crate, "Cargo.toml"))) continue;
+    for (const file of ["LICENSE", "NOTICE"]) writeIfChanged(join(crate, file), readFileSync(join(PACK_DIR, file)));
+  }
   writeIfChanged(
     join(CRATE_DIR, "tests", "data", "resolve-cases.json"),
     readFileSync(join(PACK_DIR, "tests", "resolve-cases.json")),

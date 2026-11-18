@@ -1,0 +1,8 @@
+# Only ship package.json, README.md, CHANGELOG.md, LICENSE, NOTICE, images/icon.png, icons/** and themes/**.
+**/*.vsix
+**/*.ts
+**/*.map
+**/.DS_Store
+node_modules/**
+.vscode/**
+.gitignore

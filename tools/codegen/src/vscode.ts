@@ -1,0 +1,134 @@
+// VS Code file icon themes (extensions/vscode): SVG copies, three icon theme JSONs, legal files.
+// All outputs are gitignored; package.json, README.md, CHANGELOG.md, .vscodeignore and images/ are hand-written.
+//
+// Mapping (mirrors packages/shared/src/resolve.ts without content sniffing):
+// - `fileExtensions`: every `ext` and `generic-ext` icon under its own (lowercase) name.
+// - `fileNames`: the resolver's exact-name rules – an extension-less file whose lowercase name is an `ext`/
+//   `generic-ext` icon name (e.g. `Dockerfile` -> `dockerfile`), `Makefile` -> `mk` and `Thumbs.db` -> `db-thumbs`.
+//   Generic names (`code`, `image`, …) are not mapped as file names: as a bare file name they say nothing about
+//   the content.
+// - `file` (fallback): `empty`, the resolver's own fallback for unknown files.
+// - `variant` icons other than `db-thumbs` need content sniffing and are not mapped. No folder definitions (the
+//   pack has no folder icons), so VS Code shows folders without an icon, only with the twistie arrows.
+import { existsSync, readFileSync } from "node:fs";
+import { join } from "node:path";
+import type { Style } from "../../../packages/shared/src/types";
+import { PACK_DIR, ROOT } from "./config";
+import { syncDirectory, writeIfChanged } from "./fsutil";
+import type { Pack } from "./pack";
+import { svgPath } from "./pack";
+
+export const VSCODE_DIR = join(ROOT, "extensions", "vscode");
+
+/** Theme id, label and JSON file per style; must match `contributes.iconThemes` in extensions/vscode/package.json. */
+export const VSCODE_THEMES = [
+  { id: "filecon", label: "Filecon", style: "default", file: "filecon-default.json" },
+  { id: "filecon-gray", label: "Filecon Gray", style: "gray", file: "filecon-gray.json" },
+  { id: "filecon-solid", label: "Filecon Solid", style: "solid", file: "filecon-solid.json" },
+] as const satisfies readonly { id: string; label: string; style: Style; file: string }[];
+
+export const VSCODE_FALLBACK = "empty";
+
+/** Exact file names of the resolver that are not covered by the extension-less name rule. */
+const SPECIAL_FILE_NAMES: Readonly<Record<string, string>> = { makefile: "mk", "thumbs.db": "db-thumbs" };
+
+export interface VscodeMapping {
+  file: string;
+  fileExtensions: Record<string, string>;
+  fileNames: Record<string, string>;
+}
+
+export function vscodeMapping(pack: Pack): VscodeMapping {
+  const fileExtensions: Record<string, string> = {};
+  const fileNames: Record<string, string> = {};
+  for (const icon of pack.icons) {
+    if (icon.meta.type !== "ext" && icon.meta.type !== "generic-ext") continue;
+    if (icon.name !== icon.name.toLowerCase() || icon.name.includes(".")) {
+      throw new Error(`vscode: unexpected extension icon name "${icon.name}"`);
+    }
+    fileExtensions[icon.name] = icon.name;
+    fileNames[icon.name] = icon.name;
+  }
+  for (const [fileName, name] of Object.entries(SPECIAL_FILE_NAMES)) {
+    if (fileNames[fileName]) throw new Error(`vscode: file name "${fileName}" is already mapped`);
+    fileNames[fileName] = name;
+  }
+  const mapping: VscodeMapping = { file: VSCODE_FALLBACK, fileExtensions, fileNames: sortKeys(fileNames) };
+  for (const name of usedIcons(mapping)) {
+    if (!pack.manifest[name]) throw new Error(`vscode: mapped icon "${name}" is not in the pack`);
+  }
+  return mapping;
+}
+
+function sortKeys(record: Record<string, string>): Record<string, string> {
+  return Object.fromEntries(Object.entries(record).sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0)));
+}
+
+const usedIcons = (mapping: VscodeMapping): string[] =>
+  [...new Set([mapping.file, ...Object.values(mapping.fileExtensions), ...Object.values(mapping.fileNames)])].sort();
+
+/** Icon directory below `icons/` for a style and theme. */
+const iconDir = (style: Style, theme: "light" | "dark"): string => (style === "solid" ? "solid" : `${style}/${theme}`);
+
+function associations(mapping: VscodeMapping, suffix: string) {
+  const id = (name: string): string => `${name}${suffix}`;
+  const remap = (record: Record<string, string>): Record<string, string> =>
+    Object.fromEntries(Object.entries(record).map(([key, name]) => [key, id(name)]));
+  return {
+    file: id(mapping.file),
+    fileExtensions: remap(mapping.fileExtensions),
+    fileNames: remap(mapping.fileNames),
+  };
+}
+
+function themeJson(style: Style, mapping: VscodeMapping, icons: readonly string[]): string {
+  const iconDefinitions: Record<string, { iconPath: string }> = {};
+  const define = (theme: "light" | "dark", suffix: string): void => {
+    for (const name of icons) {
+      iconDefinitions[`${name}${suffix}`] = { iconPath: `../icons/${iconDir(style, theme)}/${name}.svg` };
+    }
+  };
+  // Base definitions (dark SVGs) are used by dark and high-contrast dark color themes.
+  define("dark", "");
+  const theme: Record<string, unknown> = { iconDefinitions, ...associations(mapping, "") };
+  if (style !== "solid") {
+    // Light and high-contrast light color themes use the light SVGs; solid looks the same in both themes.
+    define("light", "_light");
+    const light = associations(mapping, "_light");
+    theme.light = light;
+    theme.highContrastLight = light;
+  }
+  return `${JSON.stringify(theme, null, 2)}\n`;
+}
+
+export function generateVscode(pack: Pack): void {
+  const packageJsonFile = join(VSCODE_DIR, "package.json");
+  if (!existsSync(packageJsonFile)) return;
+  const manifest = JSON.parse(readFileSync(packageJsonFile, "utf8")) as {
+    contributes?: { iconThemes?: { id: string; label: string; path: string }[] };
+  };
+  const declared = JSON.stringify(manifest.contributes?.iconThemes ?? []);
+  const expected = JSON.stringify(
+    VSCODE_THEMES.map(({ id, label, file }) => ({ id, label, path: `./themes/${file}` })),
+  );
+  if (declared !== expected) {
+    throw new Error(`vscode: contributes.iconThemes in ${packageJsonFile} must be ${expected}`);
+  }
+  const mapping = vscodeMapping(pack);
+  const icons = usedIcons(mapping);
+
+  const svgs: Record<string, Buffer> = {};
+  for (const { style } of VSCODE_THEMES) {
+    for (const theme of style === "solid" ? (["light"] as const) : (["light", "dark"] as const)) {
+      for (const name of icons)
+        svgs[`${iconDir(style, theme)}/${name}.svg`] = readFileSync(svgPath(style, theme, name));
+    }
+  }
+  syncDirectory(join(VSCODE_DIR, "icons"), svgs);
+
+  const themes: Record<string, string> = {};
+  for (const { style, file } of VSCODE_THEMES) themes[file] = themeJson(style, mapping, icons);
+  syncDirectory(join(VSCODE_DIR, "themes"), themes);
+
+  for (const file of ["LICENSE", "NOTICE"]) writeIfChanged(join(VSCODE_DIR, file), readFileSync(join(PACK_DIR, file)));
+}

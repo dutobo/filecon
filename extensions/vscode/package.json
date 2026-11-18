@@ -1,0 +1,66 @@
+{
+  "name": "filecon-icons",
+  "displayName": "Filecon Icons",
+  "description": "File icon themes with 650+ file-type icons from the Filecon icon pack – in three styles: Filecon, Filecon Gray and Filecon Solid.",
+  "version": "0.1.0",
+  "publisher": "dutobo",
+  "author": {
+    "name": "dutobo",
+    "url": "https://github.com/dutobo"
+  },
+  "contributors": [
+    {
+      "name": "rafaelk-f",
+      "url": "https://github.com/rafaelk-f"
+    }
+  ],
+  "license": "Apache-2.0",
+  "homepage": "https://filecon.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dutobo/filecon.git",
+    "directory": "extensions/vscode"
+  },
+  "bugs": {
+    "url": "https://github.com/dutobo/filecon/issues"
+  },
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#18181B",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "icons",
+    "icon theme",
+    "file icons",
+    "file-icons",
+    "filecon",
+    "file type",
+    "svg"
+  ],
+  "contributes": {
+    "iconThemes": [
+      {
+        "id": "filecon",
+        "label": "Filecon",
+        "path": "./themes/filecon-default.json"
+      },
+      {
+        "id": "filecon-gray",
+        "label": "Filecon Gray",
+        "path": "./themes/filecon-gray.json"
+      },
+      {
+        "id": "filecon-solid",
+        "label": "Filecon Solid",
+        "path": "./themes/filecon-solid.json"
+      }
+    ]
+  }
+}

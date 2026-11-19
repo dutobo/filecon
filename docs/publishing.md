@@ -13,9 +13,10 @@ Tokens never go into the repository. Locally they live in the gitignored `.env` 
 |---|---|---|
 | npm | `@filecon/*` (105 packages) | published 0.3.1 |
 | crates.io | `filecon`, `filecon-dioxus`, `tauri-plugin-filecon` | published 0.3.1 |
-| VS Code Marketplace + Open VSX | `dutobo.filecon-icons` | prepared (`extensions/vscode`) |
-| PyPI | `filecon` | prepared (`ports/python`) |
-| Go, Swift PM, Packagist (Composer) | – | not started: need a public repository (see below) |
+| Open VSX | `dutobo.filecon-icons` | published 0.3.1 |
+| VS Code Marketplace | `dutobo.filecon-icons` | manual upload of the `.vsix` (see below) |
+| PyPI | `filecon` | Trusted Publishing via `.github/workflows/pypi.yml` (tag `python-v<version>`) |
+| Go, Swift PM, Packagist (Composer) | – | not started: the ports do not exist yet (the repository is public now) |
 | NuGet, pub.dev (Flutter), RubyGems | – | not started: need the .NET SDK / Flutter / Ruby toolchains |
 | Figma Community | – | manual: import the SVGs from `icon-pack/` into a Figma file and publish it |
 
@@ -54,27 +55,43 @@ cargo publish --manifest-path crates/tauri-plugin-filecon/Cargo.toml --allow-dir
 
 ## VS Code Marketplace and Open VSX
 
-One-time setup:
-
-1. Marketplace: create the publisher `dutobo` at <https://marketplace.visualstudio.com/manage> and an Azure DevOps
-   personal access token with the scope **Marketplace → Manage** (organization: "All accessible organizations").
-2. Open VSX: log in at <https://open-vsx.org> with GitHub, sign the publisher agreement, create an access token, then
-   `pnpm dlx ovsx create-namespace dutobo -p "$OVSX_PAT"`.
-
-Release:
+Build the package (the `.vsix` is gitignored):
 
 ```sh
 pnpm codegen
 cd extensions/vscode
 pnpm dlx @vscode/vsce package --no-dependencies            # -> filecon-icons-<version>.vsix
-pnpm dlx @vscode/vsce publish --no-dependencies -p "$VSCE_PAT" --packagePath filecon-icons-*.vsix
-pnpm dlx ovsx publish filecon-icons-*.vsix -p "$OVSX_PAT"
 ```
+
+Marketplace (publisher `dutobo`, must match `publisher` in `package.json`): upload the `.vsix` by hand at
+<https://marketplace.visualstudio.com/manage/publishers/dutobo> → **New extension → Visual Studio Code** (first
+release) or **⋯ → Update** on the extension (later releases). With an Azure DevOps token (scope **Marketplace →
+Manage**) `pnpm dlx @vscode/vsce publish --no-dependencies -p "$VSCE_PAT" --packagePath filecon-icons-*.vsix` works
+as well.
+
+Open VSX (namespace `dutobo`, already created; needs a signed Eclipse publisher agreement and an access token):
+
+```sh
+OVSX_PAT=… pnpm dlx ovsx publish filecon-icons-*.vsix
+```
+
+New extensions are scanned before Open VSX lists them, which can take a while.
 
 ## PyPI
 
-One-time setup: a PyPI account with 2FA and an API token (after the first upload, restrict it to the `filecon`
-project or switch to a Trusted Publisher).
+Releases run on GitHub Actions with **Trusted Publishing** (no token). One-time setup on PyPI (account with 2FA →
+**Publishing** → add a pending publisher, tab GitHub): project name `filecon`, owner `dutobo`, repository `filecon`,
+workflow `pypi.yml`, environment `pypi`.
+
+Release: bump `ports/python/pyproject.toml` and `__version__`, push, then push a matching tag:
+
+```sh
+git tag python-v0.3.1
+git push origin python-v0.3.1
+```
+
+The workflow runs codegen, the tests, `build` and `twine check`, then uploads. Local alternative with an API token
+(<https://pypi.org/manage/account/token/>):
 
 ```sh
 pnpm codegen
@@ -90,7 +107,7 @@ TWINE_USERNAME=__token__ TWINE_PASSWORD="$PYPI_TOKEN" python -m twine upload dis
 
 These registries download straight from the Git repository, so they need:
 
-- a **public** `dutobo/filecon` repository (Packagist and the Go proxy cannot read private repositories), and
+- a **public** `dutobo/filecon` repository (it is public now), and
 - the icon assets **committed** in the module directory (or in a separate distribution repository / release branch),
   because the generated files are gitignored here.
 

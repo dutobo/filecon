@@ -3,6 +3,10 @@
 [Filecon](https://filecon.dev) file icons as plain CSS classes – 703 file types, no JavaScript. Every icon is an
 embedded SVG (data URI) background image.
 
+![The same file icons in all nine Filecon styles, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/styles.png)
+
+More previews (a grid and a category overview per style): [docs/previews](https://github.com/dutobo/filecon/tree/main/docs/previews#readme).
+
 ```sh
 npm install @filecon/css
 ```

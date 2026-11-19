@@ -23,7 +23,7 @@ from urllib.parse import quote
 from ._names import NAMES
 from ._resolve import HEAD_LIMIT, resolve
 
-__version__ = "0.3.0"
+__version__ = "0.3.1"
 
 __all__ = [
     "HEAD_LIMIT",

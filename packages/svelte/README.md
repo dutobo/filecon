@@ -6,6 +6,10 @@ SSR-safe (SvelteKit), tree-shakable.
 Part of the Filecon family: `@filecon/svelte`, `@filecon/svelte-default`, `@filecon/svelte-gray`, `@filecon/svelte-solid`, `@filecon/svelte-papered`, `@filecon/svelte-papered-flat`, `@filecon/svelte-papered-craft`, `@filecon/svelte-scratch`, `@filecon/svelte-chalk`, `@filecon/svelte-iconic`.
 
 
+![The same file icons in all nine Filecon styles, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/styles.png)
+
+More previews (a grid and a category overview per style): [docs/previews](https://github.com/dutobo/filecon/tree/main/docs/previews#readme).
+
 ```sh
 npm install @filecon/svelte
 ```

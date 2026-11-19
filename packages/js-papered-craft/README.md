@@ -5,6 +5,8 @@ Framework-free [Filecon](https://filecon.dev) file icons as SVG strings – 703 
 Part of the Filecon family: `@filecon/js`, `@filecon/js-default`, `@filecon/js-gray`, `@filecon/js-solid`, `@filecon/js-papered`, `@filecon/js-papered-flat`, `@filecon/js-papered-craft`, `@filecon/js-scratch`, `@filecon/js-chalk`, `@filecon/js-iconic`.
 This package only contains the `papered-craft` style, so it is smaller than `@filecon/js`; the API is identical except that there is no `style` option.
 
+![File icons in the Papered Craft style, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/style-papered-craft.png)
+
 ```sh
 npm install @filecon/js-papered-craft
 ```
@@ -45,6 +47,10 @@ document.body.innerHTML = PdfIcon({ theme: "auto", title: "PDF" });
 
 `@filecon/js-papered-craft/data` exports the raw icon data (`d_pdf`, …, `iconData`) used by the framework packages.
 Only the inner SVG markup is stored; the outer `<svg viewBox="0 0 40 40" fill="none">` is added at render time.
+
+## Preview by category
+
+![File icons in the Papered Craft style for every category, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/categories-papered-craft.png)
 
 ## License
 

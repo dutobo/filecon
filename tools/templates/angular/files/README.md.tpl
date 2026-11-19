@@ -6,6 +6,8 @@ Standalone component `<filecon-icon>`, signal inputs, OnPush, SSR-safe.
 Part of the Filecon family: {{siblings}}.
 {{#isSingle}}This package only contains the `{{fixedStyle}}` style, so it is smaller than `{{allPackage}}`; the API is identical except that there is no `iconStyle` input.{{/isSingle}}
 
+{{preview}}
+
 ```sh
 npm install {{packageName}}
 ```
@@ -58,6 +60,6 @@ Use exactly one of `name`, `file` and `icon`.
   `title` is escaped.
 - Built with `ng-packagr` (partial compilation, FESM2022) instead of `tsup`, as required for Angular libraries.
 
-## License
+{{previewCategories}}## License
 
 Apache-2.0 – see `LICENSE` and `NOTICE`. Label glyphs are outlines of Inter Bold (SIL OFL 1.1).

@@ -5,6 +5,10 @@ Framework-free [Filecon](https://filecon.dev) file icons as SVG strings – 703 
 Part of the Filecon family: `@filecon/js`, `@filecon/js-default`, `@filecon/js-gray`, `@filecon/js-solid`, `@filecon/js-papered`, `@filecon/js-papered-flat`, `@filecon/js-papered-craft`, `@filecon/js-scratch`, `@filecon/js-chalk`, `@filecon/js-iconic`.
 
 
+![The same file icons in all nine Filecon styles, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/styles.png)
+
+More previews (a grid and a category overview per style): [docs/previews](https://github.com/dutobo/filecon/tree/main/docs/previews#readme).
+
 ```sh
 npm install @filecon/js
 ```

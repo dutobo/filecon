@@ -6,6 +6,10 @@ Works in plain HTML and with any framework (Lit, Qwik, Ember, HTMX, Rails/Django
 Part of the Filecon family: `@filecon/elements`, `@filecon/elements-default`, `@filecon/elements-gray`, `@filecon/elements-solid`, `@filecon/elements-papered`, `@filecon/elements-papered-flat`, `@filecon/elements-papered-craft`, `@filecon/elements-scratch`, `@filecon/elements-chalk`, `@filecon/elements-iconic`.
 
 
+![The same file icons in all nine Filecon styles, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/styles.png)
+
+More previews (a grid and a category overview per style): [docs/previews](https://github.com/dutobo/filecon/tree/main/docs/previews#readme).
+
 ```sh
 npm install @filecon/elements
 ```

@@ -1,5 +1,14 @@
 # @filecon/react-native-default
 
+## 0.3.1
+
+### Patch Changes
+
+- The README shows preview images of the icons (light and dark). The images are linked from the GitHub repository and are not part of the package.
+- Updated dependencies
+  - @filecon/js-default@0.3.1
+  - @filecon/shared@0.3.1
+
 ## 0.3.0
 
 ### Minor Changes

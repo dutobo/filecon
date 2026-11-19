@@ -5,6 +5,8 @@ Framework-free [Filecon](https://filecon.dev) file icons as SVG strings – {{ic
 Part of the Filecon family: {{siblings}}.
 {{#isSingle}}This package only contains the `{{fixedStyle}}` style, so it is smaller than `{{allPackage}}`; the API is identical except that there is no `style` option.{{/isSingle}}
 
+{{preview}}
+
 ```sh
 npm install {{packageName}}
 ```
@@ -47,6 +49,6 @@ document.body.innerHTML = PdfIcon({ theme: "auto", title: "PDF" });
 `{{packageName}}/data` exports the raw icon data (`d_pdf`, …, `iconData`) used by the framework packages.
 Only the inner SVG markup is stored; the outer `<svg viewBox="0 0 40 40" fill="none">` is added at render time.
 
-## License
+{{previewCategories}}## License
 
 Apache-2.0 – see `LICENSE` and `NOTICE`. Label glyphs are outlines of Inter Bold (SIL OFL 1.1).

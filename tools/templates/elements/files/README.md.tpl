@@ -6,6 +6,8 @@ Works in plain HTML and with any framework (Lit, Qwik, Ember, HTMX, Rails/Django
 Part of the Filecon family: {{siblings}}.
 {{#isSingle}}This package only contains the `{{fixedStyle}}` style, so it is smaller than `{{allPackage}}`; the API is identical except that there is no `icon-style` attribute.{{/isSingle}}
 
+{{preview}}
+
 ```sh
 npm install {{packageName}}
 ```
@@ -62,6 +64,6 @@ defineIcons(PdfIcon, ZipIcon); // <filecon-pdf>, <filecon-zip>
 <filecon-pdf theme="dark" size="32"></filecon-pdf>
 ```
 
-## License
+{{previewCategories}}## License
 
 Apache-2.0 – see `LICENSE` and `NOTICE`. Label glyphs are outlines of Inter Bold (SIL OFL 1.1).

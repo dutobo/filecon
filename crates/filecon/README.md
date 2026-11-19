@@ -3,6 +3,10 @@
 File-type icons for **703 formats** in nine styles for Rust – the SVGs of the [Filecon](https://filecon.dev)
 icon pack embedded with `include_str!`, plus the Filecon file-type resolver.
 
+![The same file icons in all nine Filecon styles, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/styles.png)
+
+More previews (a grid and a category overview per style): [docs/previews](https://github.com/dutobo/filecon/tree/main/docs/previews#readme).
+
 ```toml
 [dependencies]
 filecon = "0.3"

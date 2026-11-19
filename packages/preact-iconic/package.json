@@ -1,6 +1,6 @@
 {
   "name": "@filecon/preact-iconic",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Filecon file icons for Preact – the iconic style (a standalone symbol per file type instead of a page shape). SSR-safe, tree-shakable.",
   "keywords": [
     "filecon",

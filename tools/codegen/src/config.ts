@@ -15,6 +15,8 @@ export const INITIAL_VERSION = "0.2.0";
 export const HOMEPAGE = "https://filecon.dev";
 /** GitHub repository (owner: dutobo). */
 export const REPOSITORY = "https://github.com/dutobo/filecon";
+/** Preview images live only in the repository; READMEs link to them, packages never contain them. */
+export const PREVIEWS = "https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews";
 export const AUTHOR = { name: "dutobo", url: "https://github.com/dutobo" } as const;
 export const CONTRIBUTORS = [{ name: "rafaelk-f", url: "https://github.com/rafaelk-f" }] as const;
 export const NODE_ENGINE = ">=20";

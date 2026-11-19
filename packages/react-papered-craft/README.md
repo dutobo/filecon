@@ -6,6 +6,8 @@ SSR-safe (also React Server Components), tree-shakable, no runtime dependencies 
 Part of the Filecon family: `@filecon/react`, `@filecon/react-default`, `@filecon/react-gray`, `@filecon/react-solid`, `@filecon/react-papered`, `@filecon/react-papered-flat`, `@filecon/react-papered-craft`, `@filecon/react-scratch`, `@filecon/react-chalk`, `@filecon/react-iconic`.
 This package only contains the `papered-craft` style, so it is smaller than `@filecon/react`; the API is identical except that there is no `style` prop (`style` is the regular inline-CSS prop here).
 
+![File icons in the Papered Craft style, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/style-papered-craft.png)
+
 ```sh
 npm install @filecon/react-papered-craft
 ```
@@ -47,6 +49,10 @@ Component names are PascalCase + `Icon` (`ts-stream` → `TsStreamIcon`); names 
 
 - Built with `tsup` (ESM + CJS + `.d.ts`). Components use `createElement`, no JSX runtime needed.
 - Icon data comes from `@filecon/js-papered-craft` (only the inner SVG markup is stored once).
+
+## Preview by category
+
+![File icons in the Papered Craft style for every category, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/categories-papered-craft.png)
 
 ## License
 

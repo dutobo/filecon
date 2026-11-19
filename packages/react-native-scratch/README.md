@@ -6,6 +6,8 @@ Rendered with `react-native-svg`, tree-shakable.
 Part of the Filecon family: `@filecon/react-native`, `@filecon/react-native-default`, `@filecon/react-native-gray`, `@filecon/react-native-solid`, `@filecon/react-native-papered`, `@filecon/react-native-papered-flat`, `@filecon/react-native-papered-craft`, `@filecon/react-native-scratch`, `@filecon/react-native-chalk`, `@filecon/react-native-iconic`.
 This package only contains the `scratch` style, so it is smaller than `@filecon/react-native`; the API is identical except that there is no `style` prop (`style` is the regular view style here).
 
+![File icons in the Scratch style, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/style-scratch.png)
+
 ```sh
 npm install @filecon/react-native-scratch react-native-svg
 ```
@@ -41,6 +43,10 @@ import { PdfIcon, TsStreamIcon, Icon7z } from "@filecon/react-native-scratch/ico
 - **Accessibility** uses React Native props (`accessible`, `accessibilityLabel`, `accessibilityRole="image"`,
   `importantForAccessibility`) in addition to `role`/`aria-hidden` in the SVG markup.
 - Peer dependencies: `react`, `react-native`, `react-native-svg` (≥ 13). Built with `tsup`.
+
+## Preview by category
+
+![File icons in the Scratch style for every category, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/categories-scratch.png)
 
 ## License
 

@@ -6,6 +6,8 @@ SSR-safe (Nuxt), tree-shakable, written with `defineComponent` + render function
 Part of the Filecon family: `@filecon/vue`, `@filecon/vue-default`, `@filecon/vue-gray`, `@filecon/vue-solid`, `@filecon/vue-papered`, `@filecon/vue-papered-flat`, `@filecon/vue-papered-craft`, `@filecon/vue-scratch`, `@filecon/vue-chalk`, `@filecon/vue-iconic`.
 This package only contains the `iconic` style, so it is smaller than `@filecon/vue`; the API is identical except that there is no `icon-style` prop.
 
+![File icons in the Iconic style, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/style-iconic.png)
+
 ```sh
 npm install @filecon/vue-iconic
 ```
@@ -45,6 +47,10 @@ import { PdfIcon } from "@filecon/vue-iconic/icons";
   inline CSS), so the style prop is called `iconStyle` / `icon-style`.
 - Components use `defineComponent` with render functions instead of `.vue` files, so the package is plain
   JavaScript built with `tsup` and needs no SFC compiler.
+
+## Preview by category
+
+![File icons in the Iconic style for every category, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/categories-iconic.png)
 
 ## License
 

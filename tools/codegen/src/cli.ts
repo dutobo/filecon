@@ -6,7 +6,18 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join, relative } from "node:path";
 import { pathToFileURL } from "node:url";
 import { generateCss, generateIconify } from "./assets";
-import { PACKAGES_DIR, ROOT, SCOPE, STYLES, TEMPLATES_DIR, VARIANTS, type Variant } from "./config";
+import {
+  PACKAGES_DIR,
+  PREVIEWS,
+  REPOSITORY,
+  ROOT,
+  SCOPE,
+  STYLE_TITLES,
+  STYLES,
+  TEMPLATES_DIR,
+  VARIANTS,
+  type Variant,
+} from "./config";
 import { variantModule } from "./data-module";
 import { listFiles, stats, syncDirectory, toPosix, writeIfChanged } from "./fsutil";
 import { LEGAL_FILES, legalFile } from "./legal";
@@ -32,6 +43,31 @@ const STYLE_LABEL: Record<Variant, string> = {
   chalk: "the chalk style (chalk on a blackboard, marker on a whiteboard)",
   iconic: "the iconic style (a standalone symbol per file type instead of a page shape)",
 };
+
+/** README preview images (light and dark in one image), linked from the repository; see tools/previews. */
+function previewMarkdown(variant: Variant): { preview: string; previewCategories: string } {
+  if (variant === "all") {
+    return {
+      preview:
+        `![The same file icons in all nine Filecon styles, light and dark](${PREVIEWS}/styles.png)
+
+` +
+        `More previews (a grid and a category overview per style): [docs/previews](${REPOSITORY}/tree/main/docs/previews#readme).`,
+      previewCategories: "",
+    };
+  }
+  const title = STYLE_TITLES[variant];
+  return {
+    preview: `![File icons in the ${title} style, light and dark](${PREVIEWS}/style-${variant}.png)`,
+    previewCategories:
+      `## Preview by category
+
+` +
+      `![File icons in the ${title} style for every category, light and dark](${PREVIEWS}/categories-${variant}.png)
+
+`,
+  };
+}
 
 /** Template order: `js` first because every other package takes its data from the js packages. */
 async function loadTemplates(): Promise<FrameworkTemplate[]> {
@@ -84,6 +120,7 @@ function contextFor(template: FrameworkTemplate, variant: Variant, pack: Pack): 
       dataPackage,
       iconCount: String(pack.icons.length),
       siblings: VARIANTS.map((v) => `\`${allPackage}${v === "all" ? "" : `-${v}`}\``).join(", "),
+      ...previewMarkdown(variant),
     },
   };
 }

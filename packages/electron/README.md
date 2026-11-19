@@ -4,6 +4,10 @@
 (reading at most 1 KB for magic-byte detection), IPC handlers and a typed `contextBridge` preload API.
 Render icons in the renderer with `@filecon/js` or a framework package.
 
+![The same file icons in all nine Filecon styles, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/styles.png)
+
+More previews (a grid and a category overview per style): [docs/previews](https://github.com/dutobo/filecon/tree/main/docs/previews#readme).
+
 ```sh
 npm install @filecon/electron
 ```

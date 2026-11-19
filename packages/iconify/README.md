@@ -4,6 +4,10 @@
 Use them with UnoCSS, `unplugin-icons` (Vite, Nuxt, Astro, …), the Iconify runtime or any tool that reads
 Iconify JSON.
 
+![The same file icons in all nine Filecon styles, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/styles.png)
+
+More previews (a grid and a category overview per style): [docs/previews](https://github.com/dutobo/filecon/tree/main/docs/previews#readme).
+
 ```sh
 npm install -D @filecon/iconify
 ```

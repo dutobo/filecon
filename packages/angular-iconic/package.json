@@ -1,6 +1,6 @@
 {
   "name": "@filecon/angular-iconic",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Filecon file icons for Angular – the iconic style (a standalone symbol per file type instead of a page shape). Standalone component, SSR-safe.",
   "keywords": [
     "filecon",

@@ -340,11 +340,11 @@ dependencies = [
 
 [[package]]
 name = "filecon"
-version = "0.3.0"
+version = "0.3.1"
 
 [[package]]
 name = "filecon-dioxus"
-version = "0.3.0"
+version = "0.3.1"
 dependencies = [
  "dioxus",
  "dioxus-ssr",

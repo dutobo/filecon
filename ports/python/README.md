@@ -3,6 +3,10 @@
 File-type icons for **703 formats** in nine styles for Python – the SVGs of the [Filecon](https://filecon.dev)
 icon pack as package data, plus the Filecon file-type resolver. No dependencies, fully typed.
 
+![The same file icons in all nine Filecon styles, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/styles.png)
+
+More previews (a grid and a category overview per style): [docs/previews](https://github.com/dutobo/filecon/tree/main/docs/previews#readme).
+
 ```sh
 pip install filecon
 ```

@@ -1,6 +1,6 @@
 {
   "name": "@filecon/react-native-papered-flat",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Filecon file icons for React Native – the papered-flat style (flat, warm paper). Rendered with react-native-svg, tree-shakable.",
   "keywords": [
     "filecon",

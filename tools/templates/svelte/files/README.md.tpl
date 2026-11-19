@@ -6,6 +6,8 @@ SSR-safe (SvelteKit), tree-shakable.
 Part of the Filecon family: {{siblings}}.
 {{#isSingle}}This package only contains the `{{fixedStyle}}` style, so it is smaller than `{{allPackage}}`; the API is identical except that there is no `style` prop (`style` is the regular inline-CSS attribute here).{{/isSingle}}
 
+{{preview}}
+
 ```sh
 npm install {{packageName}}
 ```
@@ -44,6 +46,6 @@ npm install {{packageName}}
 - Built with `svelte-package`: the package ships `.svelte` components (compiled by your app) plus `.d.ts` files.
 - Requires Svelte 5 (runes).
 
-## License
+{{previewCategories}}## License
 
 Apache-2.0 – see `LICENSE` and `NOTICE`. Label glyphs are outlines of Inter Bold (SIL OFL 1.1).

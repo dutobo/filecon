@@ -6,6 +6,8 @@ Works in plain HTML and with any framework (Lit, Qwik, Ember, HTMX, Rails/Django
 Part of the Filecon family: `@filecon/elements`, `@filecon/elements-default`, `@filecon/elements-gray`, `@filecon/elements-solid`, `@filecon/elements-papered`, `@filecon/elements-papered-flat`, `@filecon/elements-papered-craft`, `@filecon/elements-scratch`, `@filecon/elements-chalk`, `@filecon/elements-iconic`.
 This package only contains the `papered` style, so it is smaller than `@filecon/elements`; the API is identical except that there is no `icon-style` attribute.
 
+![File icons in the Papered style, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/style-papered.png)
+
 ```sh
 npm install @filecon/elements-papered
 ```
@@ -60,6 +62,10 @@ defineIcons(PdfIcon, ZipIcon); // <filecon-pdf>, <filecon-zip>
 ```html
 <filecon-pdf theme="dark" size="32"></filecon-pdf>
 ```
+
+## Preview by category
+
+![File icons in the Papered style for every category, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/categories-papered.png)
 
 ## License
 

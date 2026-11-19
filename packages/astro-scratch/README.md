@@ -6,6 +6,8 @@ Rendered at build/request time as inline SVG – zero client-side JavaScript.
 Part of the Filecon family: `@filecon/astro`, `@filecon/astro-default`, `@filecon/astro-gray`, `@filecon/astro-solid`, `@filecon/astro-papered`, `@filecon/astro-papered-flat`, `@filecon/astro-papered-craft`, `@filecon/astro-scratch`, `@filecon/astro-chalk`, `@filecon/astro-iconic`.
 This package only contains the `scratch` style, so it is smaller than `@filecon/astro`; the API is identical except that there is no `style` prop (`style` is the regular inline-CSS attribute here).
 
+![File icons in the Scratch style, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/style-scratch.png)
+
 ```sh
 npm install @filecon/astro-scratch
 ```
@@ -41,6 +43,10 @@ import { PdfIcon, TsStreamIcon, Icon7z } from "@filecon/astro-scratch/icons";
 - Astro components are distributed as `.astro` source files and compiled by your project (standard for Astro
   libraries). The TypeScript helpers are precompiled with `tsc`; there is no bundler step.
 - Single icons are one small `.astro` file each; only the ones you import end up in your build.
+
+## Preview by category
+
+![File icons in the Scratch style for every category, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/categories-scratch.png)
 
 ## License
 

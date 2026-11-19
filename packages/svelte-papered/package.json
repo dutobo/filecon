@@ -1,6 +1,6 @@
 {
   "name": "@filecon/svelte-papered",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Filecon file icons for Svelte 5 – the papered style (realistic sheet of paper). SSR-safe, tree-shakable.",
   "keywords": [
     "filecon",

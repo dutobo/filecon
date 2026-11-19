@@ -3,6 +3,10 @@
 Core of [Filecon](https://filecon.dev): the 703 file icon SVGs of the three pack styles (`default`, `gray`, `solid`), the manifest, the TypeScript types
 and the file-type resolver. All other `@filecon/*` packages build on it.
 
+![File icons in the default style, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/style-default.png)
+
+The gray and solid styles and all other styles: [docs/previews](https://github.com/dutobo/filecon/tree/main/docs/previews#readme).
+
 ```sh
 npm install @filecon/shared
 ```

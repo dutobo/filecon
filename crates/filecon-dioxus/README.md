@@ -4,6 +4,10 @@
 **703 formats** in nine styles, rendered as inline SVG. Built on the [`filecon`](https://crates.io/crates/filecon)
 crate (embedded SVGs + file-type resolver).
 
+![The same file icons in all nine Filecon styles, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/styles.png)
+
+More previews (a grid and a category overview per style): [docs/previews](https://github.com/dutobo/filecon/tree/main/docs/previews#readme).
+
 ```toml
 [dependencies]
 filecon-dioxus = "0.3"

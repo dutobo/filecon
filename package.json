@@ -18,6 +18,7 @@
     "test:rust": "cargo test --manifest-path crates/filecon/Cargo.toml && cargo test --manifest-path crates/filecon-dioxus/Cargo.toml && cargo test --manifest-path crates/tauri-plugin-filecon/Cargo.toml",
     "pack:check": "tsx tools/codegen/src/pack-check.ts",
     "sizes": "tsx tools/codegen/src/sizes.ts",
+    "previews": "python tools/previews/render.py",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "lint:rust": "node tools/codegen/src/lint-rust.mjs"

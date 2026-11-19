@@ -6,6 +6,8 @@ Rendered with `react-native-svg`, tree-shakable.
 Part of the Filecon family: {{siblings}}.
 {{#isSingle}}This package only contains the `{{fixedStyle}}` style, so it is smaller than `{{allPackage}}`; the API is identical except that there is no `style` prop (`style` is the regular view style here).{{/isSingle}}
 
+{{preview}}
+
 ```sh
 npm install {{packageName}} react-native-svg
 ```
@@ -43,6 +45,6 @@ import { PdfIcon, TsStreamIcon, Icon7z } from "{{packageName}}/icons";
   `importantForAccessibility`) in addition to `role`/`aria-hidden` in the SVG markup.
 - Peer dependencies: `react`, `react-native`, `react-native-svg` (≥ 13). Built with `tsup`.
 
-## License
+{{previewCategories}}## License
 
 Apache-2.0 – see `LICENSE` and `NOTICE`. Label glyphs are outlines of Inter Bold (SIL OFL 1.1).

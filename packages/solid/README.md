@@ -6,6 +6,10 @@ Works with client rendering, SSR (SolidStart) and hydration; tree-shakable.
 Part of the Filecon family: `@filecon/solid`, `@filecon/solid-default`, `@filecon/solid-gray`, `@filecon/solid-solid`, `@filecon/solid-papered`, `@filecon/solid-papered-flat`, `@filecon/solid-papered-craft`, `@filecon/solid-scratch`, `@filecon/solid-chalk`, `@filecon/solid-iconic`.
 
 
+![The same file icons in all nine Filecon styles, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/styles.png)
+
+More previews (a grid and a category overview per style): [docs/previews](https://github.com/dutobo/filecon/tree/main/docs/previews#readme).
+
 ```sh
 npm install @filecon/solid
 ```

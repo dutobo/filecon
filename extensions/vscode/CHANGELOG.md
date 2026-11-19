@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1
+
+- The README shows a screenshot of every theme (light and dark).
+
 ## 0.3.0
 
 - New icon theme: Filecon Iconic, with a standalone, self-drawn symbol per file type instead of a page shape

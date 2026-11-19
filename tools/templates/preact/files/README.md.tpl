@@ -6,6 +6,8 @@ SSR-safe (preact-render-to-string), tree-shakable, no runtime dependencies besid
 Part of the Filecon family: {{siblings}}.
 {{#isSingle}}This package only contains the `{{fixedStyle}}` style, so it is smaller than `{{allPackage}}`; the API is identical except that there is no `style` prop (`style` is the regular inline-CSS prop here).{{/isSingle}}
 
+{{preview}}
+
 ```sh
 npm install {{packageName}}
 ```
@@ -49,6 +51,6 @@ Component names are PascalCase + `Icon` (`ts-stream` → `TsStreamIcon`); names 
 - Built with `tsup` (ESM + CJS + `.d.ts`). Components use `h`, no JSX runtime needed. Peer: Preact 10.19+ or 11.
 - Icon data comes from `{{dataPackage}}` (only the inner SVG markup is stored once).
 
-## License
+{{previewCategories}}## License
 
 Apache-2.0 – see `LICENSE` and `NOTICE`. Label glyphs are outlines of Inter Bold (SIL OFL 1.1).

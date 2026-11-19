@@ -1,6 +1,6 @@
 {
   "name": "@filecon/angular-solid",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Filecon file icons for Angular – the solid style (filled colored page). Standalone component, SSR-safe.",
   "keywords": [
     "filecon",

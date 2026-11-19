@@ -6,6 +6,8 @@ Works with client rendering, SSR (SolidStart) and hydration; tree-shakable.
 Part of the Filecon family: `@filecon/solid`, `@filecon/solid-default`, `@filecon/solid-gray`, `@filecon/solid-solid`, `@filecon/solid-papered`, `@filecon/solid-papered-flat`, `@filecon/solid-papered-craft`, `@filecon/solid-scratch`, `@filecon/solid-chalk`, `@filecon/solid-iconic`.
 This package only contains the `solid` style, so it is smaller than `@filecon/solid`; the API is identical except that there is no `style` prop (`style` is the regular inline-CSS prop here).
 
+![File icons in the Solid style, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/style-solid.png)
+
 ```sh
 npm install @filecon/solid-solid
 ```
@@ -41,6 +43,10 @@ All props are reactive.
 Solid libraries usually ship JSX compiled with `babel-preset-solid` (separate DOM and SSR builds). These components
 render `<svg>` through `Dynamic` from `solid-js/web` instead, so the package is plain JavaScript built with `tsup`;
 `solid-js/web` picks its DOM or server implementation through the normal export conditions.
+
+## Preview by category
+
+![File icons in the Solid style for every category, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/categories-solid.png)
 
 ## License
 

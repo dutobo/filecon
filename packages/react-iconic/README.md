@@ -6,6 +6,8 @@ SSR-safe (also React Server Components), tree-shakable, no runtime dependencies 
 Part of the Filecon family: `@filecon/react`, `@filecon/react-default`, `@filecon/react-gray`, `@filecon/react-solid`, `@filecon/react-papered`, `@filecon/react-papered-flat`, `@filecon/react-papered-craft`, `@filecon/react-scratch`, `@filecon/react-chalk`, `@filecon/react-iconic`.
 This package only contains the `iconic` style, so it is smaller than `@filecon/react`; the API is identical except that there is no `style` prop (`style` is the regular inline-CSS prop here).
 
+![File icons in the Iconic style, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/style-iconic.png)
+
 ```sh
 npm install @filecon/react-iconic
 ```
@@ -47,6 +49,10 @@ Component names are PascalCase + `Icon` (`ts-stream` → `TsStreamIcon`); names 
 
 - Built with `tsup` (ESM + CJS + `.d.ts`). Components use `createElement`, no JSX runtime needed.
 - Icon data comes from `@filecon/js-iconic` (only the inner SVG markup is stored once).
+
+## Preview by category
+
+![File icons in the Iconic style for every category, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/categories-iconic.png)
 
 ## License
 

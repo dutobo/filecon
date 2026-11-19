@@ -6,6 +6,8 @@ Standalone component `<filecon-icon>`, signal inputs, OnPush, SSR-safe.
 Part of the Filecon family: `@filecon/angular`, `@filecon/angular-default`, `@filecon/angular-gray`, `@filecon/angular-solid`, `@filecon/angular-papered`, `@filecon/angular-papered-flat`, `@filecon/angular-papered-craft`, `@filecon/angular-scratch`, `@filecon/angular-chalk`, `@filecon/angular-iconic`.
 This package only contains the `papered-craft` style, so it is smaller than `@filecon/angular`; the API is identical except that there is no `iconStyle` input.
 
+![File icons in the Papered Craft style, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/style-papered-craft.png)
+
 ```sh
 npm install @filecon/angular-papered-craft
 ```
@@ -56,6 +58,10 @@ Use exactly one of `name`, `file` and `icon`.
 - The SVG is inserted with `bypassSecurityTrustHtml`. This is safe because the markup is static package content and
   `title` is escaped.
 - Built with `ng-packagr` (partial compilation, FESM2022) instead of `tsup`, as required for Angular libraries.
+
+## Preview by category
+
+![File icons in the Papered Craft style for every category, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/categories-papered-craft.png)
 
 ## License
 

@@ -1,6 +1,6 @@
 {
   "name": "@filecon/iconify",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Filecon file icons as Iconify JSON icon sets (703 icons; default, gray and solid, light and dark) for UnoCSS, unplugin-icons, Iconify and Tailwind.",
   "keywords": [
     "filecon",

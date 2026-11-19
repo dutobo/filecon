@@ -20,6 +20,44 @@ types** – source code, documents, images, audio, video, archives, databases, 3
 All themes except Filecon Solid switch automatically between a light and a dark variant (including high-contrast
 themes) to match your color theme. Filecon Solid looks the same everywhere.
 
+## Screenshots
+
+**Filecon**
+
+![VS Code explorer with the Filecon icon theme, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/vscode-default.png)
+
+**Filecon Gray**
+
+![VS Code explorer with the Filecon Gray icon theme, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/vscode-gray.png)
+
+**Filecon Solid**
+
+![VS Code explorer with the Filecon Solid icon theme, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/vscode-solid.png)
+
+**Filecon Papered**
+
+![VS Code explorer with the Filecon Papered icon theme, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/vscode-papered.png)
+
+**Filecon Papered Flat**
+
+![VS Code explorer with the Filecon Papered Flat icon theme, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/vscode-papered-flat.png)
+
+**Filecon Papered Craft**
+
+![VS Code explorer with the Filecon Papered Craft icon theme, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/vscode-papered-craft.png)
+
+**Filecon Scratch**
+
+![VS Code explorer with the Filecon Scratch icon theme, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/vscode-scratch.png)
+
+**Filecon Chalk**
+
+![VS Code explorer with the Filecon Chalk icon theme, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/vscode-chalk.png)
+
+**Filecon Iconic**
+
+![VS Code explorer with the Filecon Iconic icon theme, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/vscode-iconic.png)
+
 ## Usage
 
 1. Install the extension.

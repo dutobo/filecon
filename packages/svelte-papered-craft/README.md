@@ -6,6 +6,8 @@ SSR-safe (SvelteKit), tree-shakable.
 Part of the Filecon family: `@filecon/svelte`, `@filecon/svelte-default`, `@filecon/svelte-gray`, `@filecon/svelte-solid`, `@filecon/svelte-papered`, `@filecon/svelte-papered-flat`, `@filecon/svelte-papered-craft`, `@filecon/svelte-scratch`, `@filecon/svelte-chalk`, `@filecon/svelte-iconic`.
 This package only contains the `papered-craft` style, so it is smaller than `@filecon/svelte`; the API is identical except that there is no `style` prop (`style` is the regular inline-CSS attribute here).
 
+![File icons in the Papered Craft style, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/style-papered-craft.png)
+
 ```sh
 npm install @filecon/svelte-papered-craft
 ```
@@ -42,6 +44,10 @@ npm install @filecon/svelte-papered-craft
 
 - Built with `svelte-package`: the package ships `.svelte` components (compiled by your app) plus `.d.ts` files.
 - Requires Svelte 5 (runes).
+
+## Preview by category
+
+![File icons in the Papered Craft style for every category, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/categories-papered-craft.png)
 
 ## License
 

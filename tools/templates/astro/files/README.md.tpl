@@ -6,6 +6,8 @@ Rendered at build/request time as inline SVG – zero client-side JavaScript.
 Part of the Filecon family: {{siblings}}.
 {{#isSingle}}This package only contains the `{{fixedStyle}}` style, so it is smaller than `{{allPackage}}`; the API is identical except that there is no `style` prop (`style` is the regular inline-CSS attribute here).{{/isSingle}}
 
+{{preview}}
+
 ```sh
 npm install {{packageName}}
 ```
@@ -43,6 +45,6 @@ import { PdfIcon, TsStreamIcon, Icon7z } from "{{packageName}}/icons";
   libraries). The TypeScript helpers are precompiled with `tsc`; there is no bundler step.
 - Single icons are one small `.astro` file each; only the ones you import end up in your build.
 
-## License
+{{previewCategories}}## License
 
 Apache-2.0 – see `LICENSE` and `NOTICE`. Label glyphs are outlines of Inter Bold (SIL OFL 1.1).

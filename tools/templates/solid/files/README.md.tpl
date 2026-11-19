@@ -6,6 +6,8 @@ Works with client rendering, SSR (SolidStart) and hydration; tree-shakable.
 Part of the Filecon family: {{siblings}}.
 {{#isSingle}}This package only contains the `{{fixedStyle}}` style, so it is smaller than `{{allPackage}}`; the API is identical except that there is no `style` prop (`style` is the regular inline-CSS prop here).{{/isSingle}}
 
+{{preview}}
+
 ```sh
 npm install {{packageName}}
 ```
@@ -43,6 +45,6 @@ Solid libraries usually ship JSX compiled with `babel-preset-solid` (separate DO
 render `<svg>` through `Dynamic` from `solid-js/web` instead, so the package is plain JavaScript built with `tsup`;
 `solid-js/web` picks its DOM or server implementation through the normal export conditions.
 
-## License
+{{previewCategories}}## License
 
 Apache-2.0 – see `LICENSE` and `NOTICE`. Label glyphs are outlines of Inter Bold (SIL OFL 1.1).

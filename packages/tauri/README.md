@@ -4,6 +4,10 @@ JavaScript binding of [`tauri-plugin-filecon`](https://crates.io/crates/tauri-pl
 file icons (703 file types) for Tauri 2 apps on desktop, iOS and Android. The Rust side resolves the icon (file
 name, magic bytes of the first 1 KB, extension) and returns the SVG; the WebView only renders it.
 
+![The same file icons in all nine Filecon styles, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/styles.png)
+
+More previews (a grid and a category overview per style): [docs/previews](https://github.com/dutobo/filecon/tree/main/docs/previews#readme).
+
 ```sh
 npm install @filecon/tauri
 cargo add tauri-plugin-filecon   # in src-tauri/

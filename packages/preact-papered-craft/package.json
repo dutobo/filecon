@@ -1,6 +1,6 @@
 {
   "name": "@filecon/preact-papered-craft",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Filecon file icons for Preact – the papered-craft style (cut paper layers). SSR-safe, tree-shakable.",
   "keywords": [
     "filecon",

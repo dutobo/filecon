@@ -1,6 +1,6 @@
 {
   "name": "@filecon/react-native-chalk",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Filecon file icons for React Native – the chalk style (chalk on a blackboard, marker on a whiteboard). Rendered with react-native-svg, tree-shakable.",
   "keywords": [
     "filecon",

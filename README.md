@@ -11,8 +11,16 @@ File-type icons for **703 formats** in nine styles – for every framework. [fil
   MPEG-TS vs. TypeScript `.ts`, …)
 - **Tree-shakable** single icons (`PdfIcon`, `TsStreamIcon`, `Icon7z`, …) and single-style packages for small bundles
 - Accessible by default: `aria-hidden` without `title`, `role="img"` + `<title>` with it
-- Apache-2.0, no third-party logos, labels embedded as paths (no font needed; the handwriting of `scratch`/`chalk`
-  is Patrick Hand, OFL-1.1, converted to outlines)
+- Apache-2.0, labels embedded as paths (no font needed; the handwriting of `scratch`/`chalk` is Patrick Hand,
+  OFL-1.1, converted to outlines); no third-party logos except the redrawn brand marks of `iconic` (see `NOTICE`)
+
+## Preview
+
+![The same file icons in all nine Filecon styles, light and dark](docs/previews/styles.png)
+
+Each style in detail – a grid, a category overview and the VS Code icon theme, light and dark: [docs/previews](docs/previews#readme).
+
+![File icons in the Iconic style for every category, light and dark](docs/previews/categories-iconic.png)
 
 ## Packages
 

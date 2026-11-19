@@ -6,6 +6,10 @@ SSR-safe (Nuxt), tree-shakable, written with `defineComponent` + render function
 Part of the Filecon family: `@filecon/vue`, `@filecon/vue-default`, `@filecon/vue-gray`, `@filecon/vue-solid`, `@filecon/vue-papered`, `@filecon/vue-papered-flat`, `@filecon/vue-papered-craft`, `@filecon/vue-scratch`, `@filecon/vue-chalk`, `@filecon/vue-iconic`.
 
 
+![The same file icons in all nine Filecon styles, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/styles.png)
+
+More previews (a grid and a category overview per style): [docs/previews](https://github.com/dutobo/filecon/tree/main/docs/previews#readme).
+
 ```sh
 npm install @filecon/vue
 ```

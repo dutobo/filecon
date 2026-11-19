@@ -1,6 +1,6 @@
 {
   "name": "@filecon/elements-papered",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Filecon file icons as Web Components (<filecon-icon>) – the papered style (realistic sheet of paper). Works with any framework or plain HTML.",
   "keywords": [
     "filecon",

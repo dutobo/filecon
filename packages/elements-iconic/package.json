@@ -1,6 +1,6 @@
 {
   "name": "@filecon/elements-iconic",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Filecon file icons as Web Components (<filecon-icon>) – the iconic style (a standalone symbol per file type instead of a page shape). Works with any framework or plain HTML.",
   "keywords": [
     "filecon",

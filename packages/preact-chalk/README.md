@@ -6,6 +6,8 @@ SSR-safe (preact-render-to-string), tree-shakable, no runtime dependencies besid
 Part of the Filecon family: `@filecon/preact`, `@filecon/preact-default`, `@filecon/preact-gray`, `@filecon/preact-solid`, `@filecon/preact-papered`, `@filecon/preact-papered-flat`, `@filecon/preact-papered-craft`, `@filecon/preact-scratch`, `@filecon/preact-chalk`, `@filecon/preact-iconic`.
 This package only contains the `chalk` style, so it is smaller than `@filecon/preact`; the API is identical except that there is no `style` prop (`style` is the regular inline-CSS prop here).
 
+![File icons in the Chalk style, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/style-chalk.png)
+
 ```sh
 npm install @filecon/preact-chalk
 ```
@@ -47,6 +49,10 @@ Component names are PascalCase + `Icon` (`ts-stream` → `TsStreamIcon`); names 
 
 - Built with `tsup` (ESM + CJS + `.d.ts`). Components use `h`, no JSX runtime needed. Peer: Preact 10.19+ or 11.
 - Icon data comes from `@filecon/js-chalk` (only the inner SVG markup is stored once).
+
+## Preview by category
+
+![File icons in the Chalk style for every category, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/categories-chalk.png)
 
 ## License
 

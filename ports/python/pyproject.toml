@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "filecon"
-version = "0.3.0"
+version = "0.3.1"
 description = "File-type icons for 703 formats in nine styles (SVG) plus a file-type resolver."
 readme = "README.md"
 requires-python = ">=3.9"

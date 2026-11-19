@@ -1,6 +1,6 @@
 {
   "name": "@filecon/astro-papered-craft",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Filecon file icons for Astro – the papered-craft style (cut paper layers). Zero client JS.",
   "keywords": [
     "filecon",

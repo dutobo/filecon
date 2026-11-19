@@ -1,6 +1,6 @@
 [package]
 name = "tauri-plugin-filecon"
-version = "0.3.0"
+version = "0.3.1"
 edition = "2021"
 rust-version = "1.90"
 description = "Tauri 2 plugin for the Filecon file-type icons: 703 formats in nine styles, resolved by file name or magic bytes."
@@ -39,7 +39,7 @@ style-chalk = ["filecon/style-chalk"]
 style-iconic = ["filecon/style-iconic"]
 
 [dependencies]
-filecon = { version = "0.3.0", path = "../filecon", default-features = false }
+filecon = { version = "0.3.1", path = "../filecon", default-features = false }
 tauri = { version = "2.12.7", default-features = false }
 serde = { version = "1.0.229", features = ["derive"] }
 

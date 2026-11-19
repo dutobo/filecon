@@ -6,6 +6,10 @@ nine styles, picked by file name, extension or magic bytes. The SVGs are embedde
 
 Pure Rust, no native code: works on Windows, macOS, Linux, iOS and Android.
 
+![The same file icons in all nine Filecon styles, light and dark](https://raw.githubusercontent.com/dutobo/filecon/main/docs/previews/styles.png)
+
+More previews (a grid and a category overview per style): [docs/previews](https://github.com/dutobo/filecon/tree/main/docs/previews#readme).
+
 ## Install
 
 ```sh

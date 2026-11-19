@@ -6,6 +6,8 @@ SSR-safe (Nuxt), tree-shakable, written with `defineComponent` + render function
 Part of the Filecon family: {{siblings}}.
 {{#isSingle}}This package only contains the `{{fixedStyle}}` style, so it is smaller than `{{allPackage}}`; the API is identical except that there is no `icon-style` prop.{{/isSingle}}
 
+{{preview}}
+
 ```sh
 npm install {{packageName}}
 ```
@@ -47,6 +49,6 @@ import { PdfIcon } from "{{packageName}}/icons";
 - Components use `defineComponent` with render functions instead of `.vue` files, so the package is plain
   JavaScript built with `tsup` and needs no SFC compiler.
 
-## License
+{{previewCategories}}## License
 
 Apache-2.0 – see `LICENSE` and `NOTICE`. Label glyphs are outlines of Inter Bold (SIL OFL 1.1).

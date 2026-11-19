@@ -1,6 +1,6 @@
 {
   "name": "@filecon/shared",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Filecon core: 703 file icon SVGs in three styles, manifest, types and the file-type resolver.",
   "keywords": [
     "filecon",

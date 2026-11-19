@@ -3,7 +3,7 @@
 [Filecon](https://filecon.dev) file icons for React – 703 file types, the chalk style (chalk on a blackboard, marker on a whiteboard).
 SSR-safe (also React Server Components), tree-shakable, no runtime dependencies besides React.
 
-Part of the Filecon family: `@filecon/react`, `@filecon/react-default`, `@filecon/react-gray`, `@filecon/react-solid`, `@filecon/react-papered`, `@filecon/react-papered-flat`, `@filecon/react-papered-craft`, `@filecon/react-scratch`, `@filecon/react-chalk`.
+Part of the Filecon family: `@filecon/react`, `@filecon/react-default`, `@filecon/react-gray`, `@filecon/react-solid`, `@filecon/react-papered`, `@filecon/react-papered-flat`, `@filecon/react-papered-craft`, `@filecon/react-scratch`, `@filecon/react-chalk`, `@filecon/react-iconic`.
 This package only contains the `chalk` style, so it is smaller than `@filecon/react`; the API is identical except that there is no `style` prop (`style` is the regular inline-CSS prop here).
 
 ```sh

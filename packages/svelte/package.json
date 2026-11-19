@@ -1,7 +1,7 @@
 {
   "name": "@filecon/svelte",
-  "version": "0.2.0",
-  "description": "Filecon file icons for Svelte 5 – all eight styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk). SSR-safe, tree-shakable.",
+  "version": "0.3.0",
+  "description": "Filecon file icons for Svelte 5 – all nine styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk, iconic). SSR-safe, tree-shakable.",
   "keywords": [
     "filecon",
     "file-icons",

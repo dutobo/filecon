@@ -1,6 +1,6 @@
 {
   "name": "@filecon/vue-papered-craft",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Filecon file icons for Vue 3 – the papered-craft style (cut paper layers). SSR-safe, tree-shakable, no SFC build step.",
   "keywords": [
     "filecon",

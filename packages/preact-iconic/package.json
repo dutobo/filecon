@@ -1,0 +1,119 @@
+{
+  "name": "@filecon/preact-iconic",
+  "version": "0.3.0",
+  "description": "Filecon file icons for Preact – the iconic style (a standalone symbol per file type instead of a page shape). SSR-safe, tree-shakable.",
+  "keywords": [
+    "filecon",
+    "file-icons",
+    "icons",
+    "svg",
+    "file-type",
+    "preact",
+    "preact-component"
+  ],
+  "homepage": "https://filecon.dev",
+  "bugs": {
+    "url": "https://github.com/dutobo/filecon/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dutobo/filecon.git",
+    "directory": "packages/preact-iconic"
+  },
+  "license": "Apache-2.0",
+  "author": {
+    "name": "dutobo",
+    "url": "https://github.com/dutobo"
+  },
+  "contributors": [
+    {
+      "name": "rafaelk-f",
+      "url": "https://github.com/rafaelk-f"
+    }
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "@filecon/source": "./src/index.ts",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./icons": {
+      "@filecon/source": "./src/icons.ts",
+      "import": {
+        "types": "./dist/icons.d.ts",
+        "default": "./dist/icons.js"
+      },
+      "require": {
+        "types": "./dist/icons.d.cts",
+        "default": "./dist/icons.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "NOTICE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@filecon/js-iconic": "workspace:^",
+    "@filecon/shared": "workspace:^"
+  },
+  "peerDependencies": {
+    "preact": "^10.19.0 || ^11.0.0"
+  },
+  "devDependencies": {
+    "@filecon/testkit": "workspace:*",
+    "@types/node": "^24.19.2",
+    "preact": "^11.2.0",
+    "preact-render-to-string": "^6.8.3",
+    "tsup": "^9.0.0",
+    "typescript": "~6.0.3",
+    "vitest": "^5.1.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true,
+    "exports": {
+      ".": {
+        "import": {
+          "types": "./dist/index.d.ts",
+          "default": "./dist/index.js"
+        },
+        "require": {
+          "types": "./dist/index.d.cts",
+          "default": "./dist/index.cjs"
+        }
+      },
+      "./icons": {
+        "import": {
+          "types": "./dist/icons.d.ts",
+          "default": "./dist/icons.js"
+        },
+        "require": {
+          "types": "./dist/icons.d.cts",
+          "default": "./dist/icons.cjs"
+        }
+      },
+      "./package.json": "./package.json"
+    }
+  }
+}

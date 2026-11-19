@@ -1,9 +1,9 @@
 # @filecon/svelte
 
-[Filecon](https://filecon.dev) file icons for Svelte 5 – 703 file types, all eight styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk).
+[Filecon](https://filecon.dev) file icons for Svelte 5 – 703 file types, all nine styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk, iconic).
 SSR-safe (SvelteKit), tree-shakable.
 
-Part of the Filecon family: `@filecon/svelte`, `@filecon/svelte-default`, `@filecon/svelte-gray`, `@filecon/svelte-solid`, `@filecon/svelte-papered`, `@filecon/svelte-papered-flat`, `@filecon/svelte-papered-craft`, `@filecon/svelte-scratch`, `@filecon/svelte-chalk`.
+Part of the Filecon family: `@filecon/svelte`, `@filecon/svelte-default`, `@filecon/svelte-gray`, `@filecon/svelte-solid`, `@filecon/svelte-papered`, `@filecon/svelte-papered-flat`, `@filecon/svelte-papered-craft`, `@filecon/svelte-scratch`, `@filecon/svelte-chalk`, `@filecon/svelte-iconic`.
 
 
 ```sh
@@ -31,7 +31,7 @@ npm install @filecon/svelte
 |---|---|---|---|
 | `name` | `IconName \| string` | – | icon name or extension (exclusive with `file`) |
 | `file` | `string` | – | file name, resolved with `resolveIcon` (exclusive with `name`) |
-| `style` | `Style`: `"default"`, `"gray"`, `"solid"`, `"papered"`, `"papered-flat"`, `"papered-craft"`, `"scratch"`, `"chalk"` | `"default"` | icon style (not inline CSS) |
+| `style` | `Style`: `"default"`, `"gray"`, `"solid"`, `"papered"`, `"papered-flat"`, `"papered-craft"`, `"scratch"`, `"chalk"`, `"iconic"` | `"default"` | icon style (not inline CSS) |
 | `theme` | `"light" \| "dark" \| "auto"` | `"light"` | `auto` embeds a `prefers-color-scheme` stylesheet – no hydration mismatch |
 | `size` | `number \| string` | `40` | width and height |
 | `title` | `string` | – | adds `<title>` and `role="img"`; without it the SVG is `aria-hidden="true"` |

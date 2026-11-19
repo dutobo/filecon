@@ -3,7 +3,7 @@
 [Filecon](https://filecon.dev) file icons for Svelte 5 – 703 file types, the default style (outline, colored label).
 SSR-safe (SvelteKit), tree-shakable.
 
-Part of the Filecon family: `@filecon/svelte`, `@filecon/svelte-default`, `@filecon/svelte-gray`, `@filecon/svelte-solid`, `@filecon/svelte-papered`, `@filecon/svelte-papered-flat`, `@filecon/svelte-papered-craft`, `@filecon/svelte-scratch`, `@filecon/svelte-chalk`.
+Part of the Filecon family: `@filecon/svelte`, `@filecon/svelte-default`, `@filecon/svelte-gray`, `@filecon/svelte-solid`, `@filecon/svelte-papered`, `@filecon/svelte-papered-flat`, `@filecon/svelte-papered-craft`, `@filecon/svelte-scratch`, `@filecon/svelte-chalk`, `@filecon/svelte-iconic`.
 This package only contains the `default` style, so it is smaller than `@filecon/svelte`; the API is identical except that there is no `style` prop (`style` is the regular inline-CSS attribute here).
 
 ```sh

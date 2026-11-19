@@ -3,7 +3,7 @@
 [Filecon](https://filecon.dev) file icons as Web Components – 703 file types, the default style (outline, colored label).
 Works in plain HTML and with any framework (Lit, Qwik, Ember, HTMX, Rails/Django templates, …).
 
-Part of the Filecon family: `@filecon/elements`, `@filecon/elements-default`, `@filecon/elements-gray`, `@filecon/elements-solid`, `@filecon/elements-papered`, `@filecon/elements-papered-flat`, `@filecon/elements-papered-craft`, `@filecon/elements-scratch`, `@filecon/elements-chalk`.
+Part of the Filecon family: `@filecon/elements`, `@filecon/elements-default`, `@filecon/elements-gray`, `@filecon/elements-solid`, `@filecon/elements-papered`, `@filecon/elements-papered-flat`, `@filecon/elements-papered-craft`, `@filecon/elements-scratch`, `@filecon/elements-chalk`, `@filecon/elements-iconic`.
 This package only contains the `default` style, so it is smaller than `@filecon/elements`; the API is identical except that there is no `icon-style` attribute.
 
 ```sh

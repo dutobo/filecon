@@ -1,7 +1,7 @@
 //! # filecon-dioxus
 //!
 //! [Dioxus](https://dioxuslabs.com) component for the [Filecon](https://filecon.dev) file-type icons: 703 formats
-//! in eight styles, rendered as inline SVG. Works with every Dioxus renderer (web, desktop, mobile, SSR/fullstack)
+//! in nine styles, rendered as inline SVG. Works with every Dioxus renderer (web, desktop, mobile, SSR/fullstack)
 //! because the component only emits an `<svg>` element.
 //!
 //! ```
@@ -22,9 +22,9 @@
 //! ## Features
 //!
 //! The style features (`style-default`, `style-gray`, `style-solid`, `style-papered`, `style-papered-flat`,
-//! `style-papered-craft`, `style-scratch`, `style-chalk`; all enabled by default) are forwarded to the
-//! [`filecon`] crate and control which SVGs are embedded. If the requested style is disabled, the first enabled
-//! style is used instead.
+//! `style-papered-craft`, `style-scratch`, `style-chalk`, `style-iconic`; all enabled by default) are forwarded to
+//! the [`filecon`] crate and control which SVGs are embedded. If the requested style is disabled, the first
+//! enabled style is used instead.
 
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]

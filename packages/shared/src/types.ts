@@ -11,6 +11,7 @@ export const STYLES = [
   "papered-craft",
   "scratch",
   "chalk",
+  "iconic",
 ] as const;
 
 /** Visual style of an icon. */

@@ -1,6 +1,6 @@
 {
   "name": "@filecon/astro-scratch",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Filecon file icons for Astro – the scratch style (pencil sketch on a note sheet). Zero client JS.",
   "keywords": [
     "filecon",

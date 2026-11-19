@@ -1,6 +1,6 @@
 {
   "name": "@filecon/js-default",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Filecon file icons as SVG strings – the default style (outline, colored label). Framework-free, tree-shakable.",
   "keywords": [
     "filecon",

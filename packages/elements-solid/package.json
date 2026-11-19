@@ -1,6 +1,6 @@
 {
   "name": "@filecon/elements-solid",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Filecon file icons as Web Components (<filecon-icon>) – the solid style (filled colored page). Works with any framework or plain HTML.",
   "keywords": [
     "filecon",

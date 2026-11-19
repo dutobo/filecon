@@ -1,6 +1,6 @@
 {
   "name": "@filecon/solid-solid",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Filecon file icons for SolidJS – the solid style (filled colored page). SSR-safe, tree-shakable.",
   "keywords": [
     "filecon",

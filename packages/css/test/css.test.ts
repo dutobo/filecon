@@ -47,7 +47,15 @@ describe("@filecon/css", () => {
   });
 
   it("defines the base class and only uses safe characters inside url()", () => {
-    for (const file of ["default.css", "gray-dark.css", "solid.css", "papered.css", "scratch-dark.css", "chalk.css"]) {
+    for (const file of [
+      "default.css",
+      "gray-dark.css",
+      "solid.css",
+      "papered.css",
+      "scratch-dark.css",
+      "chalk.css",
+      "iconic-dark.css",
+    ]) {
       const css = read(file);
       expect(css).toContain(".filecon{display:inline-block;width:40px;height:40px;");
       for (const match of css.matchAll(RULE)) expect(match[2]).not.toMatch(/["<>#\n]/);

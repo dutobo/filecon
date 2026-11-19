@@ -1,6 +1,6 @@
 {
   "name": "@filecon/astro-default",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Filecon file icons for Astro – the default style (outline, colored label). Zero client JS.",
   "keywords": [
     "filecon",

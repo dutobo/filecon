@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-"""Filecon – file-type icons for 703 formats in eight styles, plus a file-type resolver.
+"""Filecon – file-type icons for 703 formats in nine styles, plus a file-type resolver.
 
 >>> import filecon
 >>> filecon.resolve("report.final.pdf")
@@ -23,7 +23,7 @@ from urllib.parse import quote
 from ._names import NAMES
 from ._resolve import HEAD_LIMIT, resolve
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 
 __all__ = [
     "HEAD_LIMIT",
@@ -39,10 +39,11 @@ __all__ = [
     "to_icon_name",
 ]
 
-Style = Literal["default", "gray", "solid", "papered", "papered-flat", "papered-craft", "scratch", "chalk"]
+Style = Literal["default", "gray", "solid", "papered", "papered-flat", "papered-craft", "scratch", "chalk", "iconic"]
 """``default``: outline with a colored label, ``gray``: filled gray page, ``solid``: filled colored page,
 ``papered``: realistic paper sheet, ``papered-flat``: flat paper, ``papered-craft``: cut paper,
-``scratch``: pencil sketch on a note, ``chalk``: whiteboard marker (light) or blackboard chalk (dark)."""
+``scratch``: pencil sketch on a note, ``chalk``: whiteboard marker (light) or blackboard chalk (dark),
+``iconic``: a standalone, self-drawn symbol per file type instead of a page shape."""
 
 Theme = Literal["light", "dark"]
 """Color theme; ``solid`` looks the same in both themes."""
@@ -56,6 +57,7 @@ STYLES: tuple[Style, ...] = (
     "papered-craft",
     "scratch",
     "chalk",
+    "iconic",
 )
 THEMES: tuple[Theme, ...] = ("light", "dark")
 

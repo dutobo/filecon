@@ -1,6 +1,6 @@
 {
   "name": "@filecon/astro-papered",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Filecon file icons for Astro – the papered style (realistic sheet of paper). Zero client JS.",
   "keywords": [
     "filecon",

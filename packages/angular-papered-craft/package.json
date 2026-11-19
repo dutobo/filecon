@@ -1,6 +1,6 @@
 {
   "name": "@filecon/angular-papered-craft",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Filecon file icons for Angular – the papered-craft style (cut paper layers). Standalone component, SSR-safe.",
   "keywords": [
     "filecon",

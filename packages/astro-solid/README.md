@@ -3,7 +3,7 @@
 [Filecon](https://filecon.dev) file icons for Astro – 703 file types, the solid style (filled colored page).
 Rendered at build/request time as inline SVG – zero client-side JavaScript.
 
-Part of the Filecon family: `@filecon/astro`, `@filecon/astro-default`, `@filecon/astro-gray`, `@filecon/astro-solid`, `@filecon/astro-papered`, `@filecon/astro-papered-flat`, `@filecon/astro-papered-craft`, `@filecon/astro-scratch`, `@filecon/astro-chalk`.
+Part of the Filecon family: `@filecon/astro`, `@filecon/astro-default`, `@filecon/astro-gray`, `@filecon/astro-solid`, `@filecon/astro-papered`, `@filecon/astro-papered-flat`, `@filecon/astro-papered-craft`, `@filecon/astro-scratch`, `@filecon/astro-chalk`, `@filecon/astro-iconic`.
 This package only contains the `solid` style, so it is smaller than `@filecon/astro`; the API is identical except that there is no `style` prop (`style` is the regular inline-CSS attribute here).
 
 ```sh

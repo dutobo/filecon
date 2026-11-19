@@ -21,7 +21,7 @@ import { GENERATED_HEADER } from "./template-api";
 import { generateVscode } from "./vscode";
 
 const STYLE_LABEL: Record<Variant, string> = {
-  all: "all eight styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk)",
+  all: "all nine styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk, iconic)",
   default: "the default style (outline, colored label)",
   gray: "the gray style (filled gray page)",
   solid: "the solid style (filled colored page)",
@@ -30,6 +30,7 @@ const STYLE_LABEL: Record<Variant, string> = {
   "papered-craft": "the papered-craft style (cut paper layers)",
   scratch: "the scratch style (pencil sketch on a note sheet)",
   chalk: "the chalk style (chalk on a blackboard, marker on a whiteboard)",
+  iconic: "the iconic style (a standalone symbol per file type instead of a page shape)",
 };
 
 /** Template order: `js` first because every other package takes its data from the js packages. */

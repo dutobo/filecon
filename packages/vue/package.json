@@ -1,7 +1,7 @@
 {
   "name": "@filecon/vue",
-  "version": "0.2.0",
-  "description": "Filecon file icons for Vue 3 – all eight styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk). SSR-safe, tree-shakable, no SFC build step.",
+  "version": "0.3.0",
+  "description": "Filecon file icons for Vue 3 – all nine styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk, iconic). SSR-safe, tree-shakable, no SFC build step.",
   "keywords": [
     "filecon",
     "file-icons",

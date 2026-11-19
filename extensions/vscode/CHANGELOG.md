@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.0
+
+- New icon theme: Filecon Iconic, with a standalone, self-drawn symbol per file type instead of a page shape
+  (redrawn marks for brand formats), in light and dark variants.
+
 ## 0.2.0
 
 - Five new icon themes: Filecon Papered, Filecon Papered Flat, Filecon Papered Craft, Filecon Scratch and

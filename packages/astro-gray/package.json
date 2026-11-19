@@ -1,6 +1,6 @@
 {
   "name": "@filecon/astro-gray",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Filecon file icons for Astro – the gray style (filled gray page). Zero client JS.",
   "keywords": [
     "filecon",

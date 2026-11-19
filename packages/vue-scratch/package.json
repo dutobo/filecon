@@ -1,6 +1,6 @@
 {
   "name": "@filecon/vue-scratch",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Filecon file icons for Vue 3 – the scratch style (pencil sketch on a note sheet). SSR-safe, tree-shakable, no SFC build step.",
   "keywords": [
     "filecon",

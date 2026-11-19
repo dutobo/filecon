@@ -35,6 +35,8 @@ npm install @filecon/css
 | `@filecon/css/scratch-light.css`, `scratch-dark.css` | scratch | fixed |
 | `@filecon/css/chalk.css` | chalk (whiteboard marker / blackboard chalk) | auto |
 | `@filecon/css/chalk-light.css`, `chalk-dark.css` | chalk | fixed |
+| `@filecon/css/iconic.css` | iconic (standalone symbol per file type, no page shape) | auto |
+| `@filecon/css/iconic-light.css`, `iconic-dark.css` | iconic | fixed |
 
 Without a bundler, link the file from a CDN:
 

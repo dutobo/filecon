@@ -1,8 +1,8 @@
 # @filecon/js
 
-Framework-free [Filecon](https://filecon.dev) file icons as SVG strings – 703 file types, all eight styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk).
+Framework-free [Filecon](https://filecon.dev) file icons as SVG strings – 703 file types, all nine styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk, iconic).
 
-Part of the Filecon family: `@filecon/js`, `@filecon/js-default`, `@filecon/js-gray`, `@filecon/js-solid`, `@filecon/js-papered`, `@filecon/js-papered-flat`, `@filecon/js-papered-craft`, `@filecon/js-scratch`, `@filecon/js-chalk`.
+Part of the Filecon family: `@filecon/js`, `@filecon/js-default`, `@filecon/js-gray`, `@filecon/js-solid`, `@filecon/js-papered`, `@filecon/js-papered-flat`, `@filecon/js-papered-craft`, `@filecon/js-scratch`, `@filecon/js-chalk`, `@filecon/js-iconic`.
 
 
 ```sh
@@ -35,7 +35,7 @@ document.body.innerHTML = PdfIcon({ theme: "auto", title: "PDF" });
 
 | Option | Type | Default | |
 |---|---|---|---|
-| `style` | `Style`: `"default"`, `"gray"`, `"solid"`, `"papered"`, `"papered-flat"`, `"papered-craft"`, `"scratch"`, `"chalk"` | `"default"` | |
+| `style` | `Style`: `"default"`, `"gray"`, `"solid"`, `"papered"`, `"papered-flat"`, `"papered-craft"`, `"scratch"`, `"chalk"`, `"iconic"` | `"default"` | |
 | `theme` | `"light" \| "dark" \| "auto"` | `"light"` | `auto` embeds a `prefers-color-scheme` stylesheet (SSR-safe). `solid` ignores the theme. |
 | `size` | `number \| string` | `40` | width and height |
 | `title` | `string` | – | adds `<title>` and `role="img"`; without it the SVG is `aria-hidden="true"` |

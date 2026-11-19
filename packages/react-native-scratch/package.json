@@ -1,6 +1,6 @@
 {
   "name": "@filecon/react-native-scratch",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Filecon file icons for React Native – the scratch style (pencil sketch on a note sheet). Rendered with react-native-svg, tree-shakable.",
   "keywords": [
     "filecon",

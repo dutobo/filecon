@@ -1,6 +1,6 @@
 {
   "name": "@filecon/preact-papered",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Filecon file icons for Preact – the papered style (realistic sheet of paper). SSR-safe, tree-shakable.",
   "keywords": [
     "filecon",

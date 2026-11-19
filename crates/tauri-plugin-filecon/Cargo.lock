@@ -609,7 +609,7 @@ dependencies = [
 
 [[package]]
 name = "filecon"
-version = "0.2.0"
+version = "0.3.0"
 
 [[package]]
 name = "find-msvc-tools"
@@ -2650,7 +2650,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-filecon"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "filecon",
  "serde",

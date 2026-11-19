@@ -1,9 +1,9 @@
 [package]
 name = "tauri-plugin-filecon"
-version = "0.2.0"
+version = "0.3.0"
 edition = "2021"
 rust-version = "1.90"
-description = "Tauri 2 plugin for the Filecon file-type icons: 703 formats in eight styles, resolved by file name or magic bytes."
+description = "Tauri 2 plugin for the Filecon file-type icons: 703 formats in nine styles, resolved by file name or magic bytes."
 license = "Apache-2.0"
 authors = ["dutobo (https://github.com/dutobo)", "rafaelk-f (https://github.com/rafaelk-f)"]
 homepage = "https://filecon.dev"
@@ -27,7 +27,7 @@ include = [
 ]
 
 [features]
-default = ["style-default", "style-gray", "style-solid", "style-papered", "style-papered-flat", "style-papered-craft", "style-scratch", "style-chalk"]
+default = ["style-default", "style-gray", "style-solid", "style-papered", "style-papered-flat", "style-papered-craft", "style-scratch", "style-chalk", "style-iconic"]
 style-default = ["filecon/style-default"]
 style-gray = ["filecon/style-gray"]
 style-solid = ["filecon/style-solid"]
@@ -36,9 +36,10 @@ style-papered-flat = ["filecon/style-papered-flat"]
 style-papered-craft = ["filecon/style-papered-craft"]
 style-scratch = ["filecon/style-scratch"]
 style-chalk = ["filecon/style-chalk"]
+style-iconic = ["filecon/style-iconic"]
 
 [dependencies]
-filecon = { version = "0.2.0", path = "../filecon", default-features = false }
+filecon = { version = "0.3.0", path = "../filecon", default-features = false }
 tauri = { version = "2.12.7", default-features = false }
 serde = { version = "1.0.229", features = ["derive"] }
 

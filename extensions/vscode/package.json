@@ -1,8 +1,8 @@
 {
   "name": "filecon-icons",
   "displayName": "Filecon Icons",
-  "description": "File icon themes with 650+ file-type icons from the Filecon icon pack – in eight styles: Filecon, Gray, Solid, Papered, Papered Flat, Papered Craft, Scratch and Chalk.",
-  "version": "0.2.0",
+  "description": "File icon themes with 650+ file-type icons from the Filecon icon pack – in nine styles: Filecon, Gray, Solid, Papered, Papered Flat, Papered Craft, Scratch, Chalk and Iconic.",
+  "version": "0.3.0",
   "publisher": "dutobo",
   "author": {
     "name": "dutobo",
@@ -85,6 +85,11 @@
         "id": "filecon-chalk",
         "label": "Filecon Chalk",
         "path": "./themes/filecon-chalk.json"
+      },
+      {
+        "id": "filecon-iconic",
+        "label": "Filecon Iconic",
+        "path": "./themes/filecon-iconic.json"
       }
     ]
   }

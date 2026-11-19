@@ -1,13 +1,13 @@
 # filecon
 
-File-type icons for **703 formats** in eight styles for Rust – the SVGs of the [Filecon](https://filecon.dev)
+File-type icons for **703 formats** in nine styles for Rust – the SVGs of the [Filecon](https://filecon.dev)
 icon pack embedded with `include_str!`, plus the Filecon file-type resolver.
 
 ```toml
 [dependencies]
-filecon = "0.2"
+filecon = "0.3"
 # only one style (smaller binary):
-# filecon = { version = "0.2", default-features = false, features = ["style-solid"] }
+# filecon = { version = "0.3", default-features = false, features = ["style-solid"] }
 ```
 
 ```rust
@@ -31,7 +31,7 @@ assert_eq!(names().len(), 703);
 | `resolve(file_name, head: Option<&[u8]>) -> &'static str` | file name → magic bytes (first 1 KB) → extension → `"empty"` |
 | `names() -> &'static [&'static str]` | all icon names, sorted |
 | `is_icon_name(name)` | membership test |
-| `Style::{Default, Gray, Solid, Papered, PaperedFlat, PaperedCraft, Scratch, Chalk}` (also `Style::ALL`), `Theme::{Light, Dark}` | `Solid` is identical in both themes |
+| `Style::{Default, Gray, Solid, Papered, PaperedFlat, PaperedCraft, Scratch, Chalk, Iconic}` (also `Style::ALL`), `Theme::{Light, Dark}` | `Solid` is identical in both themes |
 
 The SVGs are the unmodified pack files: 40×40, `viewBox="0 0 40 40"`, label text as paths (no font needed),
 with a `<title>` containing the icon name. Unlike the JavaScript packages there is no `auto` theme (pick
@@ -49,6 +49,7 @@ with a `<title>` containing the icon name. Unlike the JavaScript packages there 
 | `style-papered-craft` | yes | `papered-craft/light`, `papered-craft/dark` |
 | `style-scratch` | yes | `scratch/light`, `scratch/dark` |
 | `style-chalk` | yes | `chalk/light`, `chalk/dark` |
+| `style-iconic` | yes | `iconic/light`, `iconic/dark` |
 
 The resolver is a port of `icon-pack/resolve_icon.py` and is tested against the pack's `resolve-cases.json`.
 No dependencies, `#![forbid(unsafe_code)]`.

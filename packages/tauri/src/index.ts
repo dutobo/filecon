@@ -2,12 +2,21 @@
 import { invoke } from "@tauri-apps/api/core";
 
 /** Icon style. */
-export type Style = "default" | "gray" | "solid" | "papered" | "papered-flat" | "papered-craft" | "scratch" | "chalk";
+export type Style =
+  | "default"
+  | "gray"
+  | "solid"
+  | "papered"
+  | "papered-flat"
+  | "papered-craft"
+  | "scratch"
+  | "chalk"
+  | "iconic";
 /** Color theme (`solid` looks the same in both). */
 export type Theme = "light" | "dark";
 
 export interface IconOptions {
-  /** `default` (outline, colored label), `gray`, `solid`, `papered`, `papered-flat`, `papered-craft`, `scratch` or `chalk`. Default `default`. */
+  /** `default` (outline, colored label), `gray`, `solid`, `papered`, `papered-flat`, `papered-craft`, `scratch`, `chalk` or `iconic`. Default `default`. */
   style?: Style | undefined;
   /** `light` (default) or `dark`. */
   theme?: Theme | undefined;

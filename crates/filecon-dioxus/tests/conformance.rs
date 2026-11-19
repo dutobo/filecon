@@ -12,6 +12,7 @@
     feature = "style-papered-craft",
     feature = "style-scratch",
     feature = "style-chalk",
+    feature = "style-iconic",
 ))]
 
 use dioxus::prelude::*;
@@ -83,6 +84,8 @@ fn pack_file(style: Style, theme: Theme, name: &str) -> String {
         (Style::Scratch, Theme::Dark) => "scratch/dark",
         (Style::Chalk, Theme::Light) => "chalk/light",
         (Style::Chalk, Theme::Dark) => "chalk/dark",
+        (Style::Iconic, Theme::Light) => "iconic/light",
+        (Style::Iconic, Theme::Dark) => "iconic/dark",
     };
     std::fs::read_to_string(pack.join(dir).join(format!("{name}.svg"))).unwrap()
 }
@@ -117,6 +120,7 @@ fn variants() -> Vec<(Style, Theme)> {
         (cfg!(feature = "style-papered-craft"), Style::PaperedCraft),
         (cfg!(feature = "style-scratch"), Style::Scratch),
         (cfg!(feature = "style-chalk"), Style::Chalk),
+        (cfg!(feature = "style-iconic"), Style::Iconic),
     ];
     for (enabled, style) in generated {
         if enabled {

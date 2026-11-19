@@ -36,6 +36,8 @@ COMBINATIONS = [
     ("scratch", "dark", "scratch/dark"),
     ("chalk", "light", "chalk/light"),
     ("chalk", "dark", "chalk/dark"),
+    ("iconic", "light", "iconic/light"),
+    ("iconic", "dark", "iconic/dark"),
 ]
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@filecon/react-papered",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Filecon file icons for React – the papered style (realistic sheet of paper). SSR-safe, tree-shakable.",
   "keywords": [
     "filecon",

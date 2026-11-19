@@ -45,7 +45,7 @@ element.innerHTML = icon;
 | `getIcon(name, { style, theme })` | `plugin:filecon\|icon` | `filecon:default` |
 | `iconForPath(path, { style, theme })` | `plugin:filecon\|icon_for_path` | `filecon:allow-icon-for-path` |
 
-`style`: `default` (outline, colored label), `gray`, `solid`, `papered`, `papered-flat`, `papered-craft`, `scratch`, `chalk`; `theme`: `light`, `dark`. The SVGs are the unmodified
+`style`: `default` (outline, colored label), `gray`, `solid`, `papered`, `papered-flat`, `papered-craft`, `scratch`, `chalk`, `iconic`; `theme`: `light`, `dark`. The SVGs are the unmodified
 pack files (40×40, with `<title>`). For framework components in the WebView you can also use the regular packages
 (`@filecon/react`, `@filecon/vue`, …) and only call `resolveIcon`/`iconForPath` for the file detection.
 

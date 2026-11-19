@@ -38,7 +38,7 @@ Component names are PascalCase + `Icon` (`ts-stream` → `TsStreamIcon`); names 
 |---|---|---|---|
 | `name` | `IconName \| string` | – | icon name or extension (exclusive with `file`) |
 | `file` | `string` | – | file name, resolved with `resolveIcon` (exclusive with `name`) |
-{{#isAll}}| `style` | `Style`: `"default"`, `"gray"`, `"solid"`, `"papered"`, `"papered-flat"`, `"papered-craft"`, `"scratch"`, `"chalk"` | `"default"` | icon style (not inline CSS) |
+{{#isAll}}| `style` | `Style`: `"default"`, `"gray"`, `"solid"`, `"papered"`, `"papered-flat"`, `"papered-craft"`, `"scratch"`, `"chalk"`, `"iconic"` | `"default"` | icon style (not inline CSS) |
 {{/isAll}}| `theme` | `"light" \| "dark" \| "auto"` | `"light"` | `auto` embeds a `prefers-color-scheme` stylesheet – identical markup on server and client, no hydration mismatch |
 | `size` | `number \| string` | `40` | width and height |
 | `title` | `string` | – | adds `<title>` and `role="img"`; without it the SVG is `aria-hidden="true"` |

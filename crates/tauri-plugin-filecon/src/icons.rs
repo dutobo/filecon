@@ -8,7 +8,7 @@ use std::path::Path;
 pub const HEAD_LIMIT: u64 = 1024;
 
 /// Visual style of an icon; serialized in kebab case: `"default"`, `"gray"`, `"solid"`, `"papered"`,
-/// `"papered-flat"`, `"papered-craft"`, `"scratch"` or `"chalk"`.
+/// `"papered-flat"`, `"papered-craft"`, `"scratch"`, `"chalk"` or `"iconic"`.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Default, Serialize, Deserialize)]
 #[serde(rename_all = "kebab-case")]
 pub enum Style {
@@ -29,6 +29,8 @@ pub enum Style {
     Scratch,
     /// Colored marker on a whiteboard (light) or chalk on a blackboard (dark), handwritten label.
     Chalk,
+    /// Standalone, self-drawn symbol per file type instead of a page shape; redrawn marks for brand formats.
+    Iconic,
 }
 
 /// Color theme; serialized as `"light"` or `"dark"`. [`Style::Solid`] ignores it.
@@ -53,6 +55,7 @@ impl From<Style> for filecon::Style {
             Style::PaperedCraft => filecon::Style::PaperedCraft,
             Style::Scratch => filecon::Style::Scratch,
             Style::Chalk => filecon::Style::Chalk,
+            Style::Iconic => filecon::Style::Iconic,
         }
     }
 }
@@ -68,6 +71,7 @@ impl From<filecon::Style> for Style {
             filecon::Style::PaperedCraft => Style::PaperedCraft,
             filecon::Style::Scratch => Style::Scratch,
             filecon::Style::Chalk => Style::Chalk,
+            filecon::Style::Iconic => Style::Iconic,
         }
     }
 }
@@ -232,6 +236,7 @@ mod tests {
         feature = "style-papered-craft",
         feature = "style-scratch",
         feature = "style-chalk",
+        feature = "style-iconic",
     ))]
     fn icon_normalizes_names_and_falls_back_to_empty() {
         assert_eq!(icon(".PDF", None, None), icon("pdf", None, None));
@@ -305,6 +310,7 @@ mod tests {
             ("\"papered-craft\"", Style::PaperedCraft),
             ("\"scratch\"", Style::Scratch),
             ("\"chalk\"", Style::Chalk),
+            ("\"iconic\"", Style::Iconic),
         ] {
             assert_eq!(serde_json::from_str::<Style>(json).unwrap(), style);
             assert_eq!(serde_json::to_string(&style).unwrap(), json);
@@ -338,6 +344,7 @@ mod tests {
             Style::PaperedCraft,
             Style::Scratch,
             Style::Chalk,
+            Style::Iconic,
         ] {
             assert_eq!(Style::from(filecon::Style::from(style)), style);
         }

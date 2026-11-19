@@ -11,7 +11,7 @@ Tokens never go into the repository. Locally they live in the gitignored `.env` 
 
 | Channel | Package(s) | Status |
 |---|---|---|
-| npm | `@filecon/*` (95 packages) | published 0.2.0 |
+| npm | `@filecon/*` (105 packages) | published 0.2.0 |
 | crates.io | `filecon`, `filecon-dioxus`, `tauri-plugin-filecon` | published 0.2.0 |
 | VS Code Marketplace + Open VSX | `dutobo.filecon-icons` | prepared (`extensions/vscode`) |
 | PyPI | `filecon` | prepared (`ports/python`) |

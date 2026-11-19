@@ -25,6 +25,8 @@ npm install -D @filecon/iconify
 | `filecon-scratch-dark` | scratch | dark |
 | `filecon-chalk` | whiteboard marker / blackboard chalk | light |
 | `filecon-chalk-dark` | chalk | dark |
+| `filecon-iconic` | standalone symbol per file type, no page shape | light |
+| `filecon-iconic-dark` | iconic | dark |
 
 Icons are multicolor (`palette: true`), 40×40. Icon names are the Filecon names (`pdf`, `db-sqlite`, `7z`, …).
 

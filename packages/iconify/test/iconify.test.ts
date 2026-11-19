@@ -22,7 +22,7 @@ const SETS: IconSet[] = TEST_STYLES.flatMap((style): IconSet[] => {
 });
 
 it("has a set for every style and theme", () => {
-  expect(SETS).toHaveLength(15);
+  expect(SETS).toHaveLength(17);
 });
 
 const dist = join(import.meta.dirname, "..", "dist");

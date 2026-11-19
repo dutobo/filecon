@@ -1,6 +1,6 @@
 {
   "name": "@filecon/vue-chalk",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Filecon file icons for Vue 3 – the chalk style (chalk on a blackboard, marker on a whiteboard). SSR-safe, tree-shakable, no SFC build step.",
   "keywords": [
     "filecon",

@@ -88,6 +88,8 @@ fn pack_file(style: Style, theme: Theme, name: &str) -> String {
         (Style::Scratch, Theme::Dark) => base.join("scratch/dark"),
         (Style::Chalk, Theme::Light) => base.join("chalk/light"),
         (Style::Chalk, Theme::Dark) => base.join("chalk/dark"),
+        (Style::Iconic, Theme::Light) => base.join("iconic/light"),
+        (Style::Iconic, Theme::Dark) => base.join("iconic/dark"),
     };
     std::fs::read_to_string(path.join(format!("{name}.svg"))).unwrap()
 }
@@ -103,6 +105,7 @@ fn embedded_svgs_match_the_pack() {
         cfg!(feature = "style-papered-craft").then_some(Style::PaperedCraft),
         cfg!(feature = "style-scratch").then_some(Style::Scratch),
         cfg!(feature = "style-chalk").then_some(Style::Chalk),
+        cfg!(feature = "style-iconic").then_some(Style::Iconic),
     ]
     .into_iter()
     .flatten()
@@ -156,5 +159,9 @@ fn disabled_styles_and_unknown_names_return_none() {
     assert_eq!(
         svg("pdf", Style::Chalk, Theme::Dark).is_some(),
         cfg!(feature = "style-chalk")
+    );
+    assert_eq!(
+        svg("pdf", Style::Iconic, Theme::Dark).is_some(),
+        cfg!(feature = "style-iconic")
     );
 }

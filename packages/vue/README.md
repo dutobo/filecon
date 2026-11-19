@@ -1,9 +1,9 @@
 # @filecon/vue
 
-[Filecon](https://filecon.dev) file icons for Vue 3 – 703 file types, all eight styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk).
+[Filecon](https://filecon.dev) file icons for Vue 3 – 703 file types, all nine styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk, iconic).
 SSR-safe (Nuxt), tree-shakable, written with `defineComponent` + render functions (no SFC build step needed).
 
-Part of the Filecon family: `@filecon/vue`, `@filecon/vue-default`, `@filecon/vue-gray`, `@filecon/vue-solid`, `@filecon/vue-papered`, `@filecon/vue-papered-flat`, `@filecon/vue-papered-craft`, `@filecon/vue-scratch`, `@filecon/vue-chalk`.
+Part of the Filecon family: `@filecon/vue`, `@filecon/vue-default`, `@filecon/vue-gray`, `@filecon/vue-solid`, `@filecon/vue-papered`, `@filecon/vue-papered-flat`, `@filecon/vue-papered-craft`, `@filecon/vue-scratch`, `@filecon/vue-chalk`, `@filecon/vue-iconic`.
 
 
 ```sh
@@ -33,7 +33,7 @@ import { PdfIcon } from "@filecon/vue/icons";
 |---|---|---|---|
 | `name` | `IconName \| string` | – | icon name or extension (exclusive with `file`) |
 | `file` | `string` | – | file name, resolved with `resolveIcon` (exclusive with `name`) |
-| `icon-style` | `Style`: `"default"`, `"gray"`, `"solid"`, `"papered"`, `"papered-flat"`, `"papered-craft"`, `"scratch"`, `"chalk"` | `"default"` | icon style |
+| `icon-style` | `Style`: `"default"`, `"gray"`, `"solid"`, `"papered"`, `"papered-flat"`, `"papered-craft"`, `"scratch"`, `"chalk"`, `"iconic"` | `"default"` | icon style |
 | `theme` | `"light" \| "dark" \| "auto"` | `"light"` | `auto` embeds a `prefers-color-scheme` stylesheet – no hydration mismatch |
 | `size` | `number \| string` | `40` | width and height |
 | `title` | `string` | – | adds `<title>` and `role="img"`; without it the SVG is `aria-hidden="true"` |

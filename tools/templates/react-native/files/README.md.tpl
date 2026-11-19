@@ -29,7 +29,7 @@ import { PdfIcon, TsStreamIcon, Icon7z } from "{{packageName}}/icons";
 |---|---|---|---|
 | `name` | `IconName \| string` | – | icon name or extension (exclusive with `file`) |
 | `file` | `string` | – | file name, resolved with `resolveIcon` (exclusive with `name`) |
-{{#isAll}}| `style` | `Style`: `"default"`, `"gray"`, `"solid"`, `"papered"`, `"papered-flat"`, `"papered-craft"`, `"scratch"`, `"chalk"` | `"default"` | icon style (not a view style) |
+{{#isAll}}| `style` | `Style`: `"default"`, `"gray"`, `"solid"`, `"papered"`, `"papered-flat"`, `"papered-craft"`, `"scratch"`, `"chalk"`, `"iconic"` | `"default"` | icon style (not a view style) |
 {{/isAll}}| `theme` | `"light" \| "dark" \| "auto"` | `"light"` | `auto` uses `useColorScheme()` |
 | `size` | `number \| string` | `40` | width and height |
 | `title` | `string` | – | `accessibilityLabel` + `<title>`; without it the icon is hidden from screen readers |

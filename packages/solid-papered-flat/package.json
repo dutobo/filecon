@@ -1,6 +1,6 @@
 {
   "name": "@filecon/solid-papered-flat",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Filecon file icons for SolidJS – the papered-flat style (flat, warm paper). SSR-safe, tree-shakable.",
   "keywords": [
     "filecon",

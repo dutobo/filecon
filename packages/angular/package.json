@@ -1,7 +1,7 @@
 {
   "name": "@filecon/angular",
-  "version": "0.2.0",
-  "description": "Filecon file icons for Angular – all eight styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk). Standalone component, SSR-safe.",
+  "version": "0.3.0",
+  "description": "Filecon file icons for Angular – all nine styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk, iconic). Standalone component, SSR-safe.",
   "keywords": [
     "filecon",
     "file-icons",

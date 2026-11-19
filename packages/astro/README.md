@@ -1,9 +1,9 @@
 # @filecon/astro
 
-[Filecon](https://filecon.dev) file icons for Astro – 703 file types, all eight styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk).
+[Filecon](https://filecon.dev) file icons for Astro – 703 file types, all nine styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk, iconic).
 Rendered at build/request time as inline SVG – zero client-side JavaScript.
 
-Part of the Filecon family: `@filecon/astro`, `@filecon/astro-default`, `@filecon/astro-gray`, `@filecon/astro-solid`, `@filecon/astro-papered`, `@filecon/astro-papered-flat`, `@filecon/astro-papered-craft`, `@filecon/astro-scratch`, `@filecon/astro-chalk`.
+Part of the Filecon family: `@filecon/astro`, `@filecon/astro-default`, `@filecon/astro-gray`, `@filecon/astro-solid`, `@filecon/astro-papered`, `@filecon/astro-papered-flat`, `@filecon/astro-papered-craft`, `@filecon/astro-scratch`, `@filecon/astro-chalk`, `@filecon/astro-iconic`.
 
 
 ```sh
@@ -31,7 +31,7 @@ import { PdfIcon, TsStreamIcon, Icon7z } from "@filecon/astro/icons";
 |---|---|---|---|
 | `name` | `IconName \| string` | – | icon name or extension (exclusive with `file`) |
 | `file` | `string` | – | file name, resolved with `resolveIcon` (exclusive with `name`) |
-| `style` | `Style`: `"default"`, `"gray"`, `"solid"`, `"papered"`, `"papered-flat"`, `"papered-craft"`, `"scratch"`, `"chalk"` | `"default"` | icon style (not inline CSS) |
+| `style` | `Style`: `"default"`, `"gray"`, `"solid"`, `"papered"`, `"papered-flat"`, `"papered-craft"`, `"scratch"`, `"chalk"`, `"iconic"` | `"default"` | icon style (not inline CSS) |
 | `theme` | `"light" \| "dark" \| "auto"` | `"light"` | `auto` embeds a `prefers-color-scheme` stylesheet |
 | `size` | `number \| string` | `40` | width and height |
 | `title` | `string` | – | adds `<title>` and `role="img"`; without it the SVG is `aria-hidden="true"` |

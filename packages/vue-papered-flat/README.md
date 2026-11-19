@@ -3,7 +3,7 @@
 [Filecon](https://filecon.dev) file icons for Vue 3 – 703 file types, the papered-flat style (flat, warm paper).
 SSR-safe (Nuxt), tree-shakable, written with `defineComponent` + render functions (no SFC build step needed).
 
-Part of the Filecon family: `@filecon/vue`, `@filecon/vue-default`, `@filecon/vue-gray`, `@filecon/vue-solid`, `@filecon/vue-papered`, `@filecon/vue-papered-flat`, `@filecon/vue-papered-craft`, `@filecon/vue-scratch`, `@filecon/vue-chalk`.
+Part of the Filecon family: `@filecon/vue`, `@filecon/vue-default`, `@filecon/vue-gray`, `@filecon/vue-solid`, `@filecon/vue-papered`, `@filecon/vue-papered-flat`, `@filecon/vue-papered-craft`, `@filecon/vue-scratch`, `@filecon/vue-chalk`, `@filecon/vue-iconic`.
 This package only contains the `papered-flat` style, so it is smaller than `@filecon/vue`; the API is identical except that there is no `icon-style` prop.
 
 ```sh

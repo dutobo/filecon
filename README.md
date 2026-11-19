@@ -1,10 +1,11 @@
 # Filecon
 
-File-type icons for **703 formats** in eight styles – for every framework. [filecon.dev](https://filecon.dev)
+File-type icons for **703 formats** in nine styles – for every framework. [filecon.dev](https://filecon.dev)
 
-- **8 styles**: `default` (outline, colored label), `gray` (filled gray page), `solid` (filled colored page),
+- **9 styles**: `default` (outline, colored label), `gray` (filled gray page), `solid` (filled colored page),
   `papered` (realistic paper sheet), `papered-flat` (flat paper), `papered-craft` (cut paper),
-  `scratch` (pencil sketch on a note, handwritten label), `chalk` (whiteboard marker in light, blackboard chalk in dark)
+  `scratch` (pencil sketch on a note, handwritten label), `chalk` (whiteboard marker in light, blackboard chalk in dark),
+  `iconic` (a standalone, self-drawn symbol per file type instead of a page shape; redrawn marks for brand formats; light and dark)
 - **Light, dark and `auto`** (follows `prefers-color-scheme`, SSR-safe, no hydration mismatch)
 - **Smart resolver**: file name → magic bytes → extension (`Thumbs.db`, `Dockerfile`, SQLite vs. generic `.db`,
   MPEG-TS vs. TypeScript `.ts`, …)
@@ -35,12 +36,12 @@ File-type icons for **703 formats** in eight styles – for every framework. [fi
 | [`filecon`](crates/filecon) (crates.io) | Rust crate: embedded SVGs (`svg()`), `resolve()`, `names()` |
 | [`filecon-dioxus`](crates/filecon-dioxus) (crates.io) | Dioxus component `FileIcon` (web, desktop, mobile) |
 | [`tauri-plugin-filecon`](crates/tauri-plugin-filecon) (crates.io) | Tauri 2 plugin: resolve + SVG in Rust, `iconForPath` with magic bytes |
-| [`filecon-icons`](extensions/vscode) (VS Code) | File icon theme for VS Code / Open VSX (8 themes) – prepared |
+| [`filecon-icons`](extensions/vscode) (VS Code) | File icon theme for VS Code / Open VSX (9 themes) – prepared |
 | [`filecon`](ports/python) (PyPI) | Python: `svg()`, `resolve()`, `names()` – prepared |
 
-Every framework package (and `@filecon/elements`) exists in nine flavors: `@filecon/<fw>` (all styles, `style`
+Every framework package (and `@filecon/elements`) exists in ten flavors: `@filecon/<fw>` (all styles, `style`
 prop) and `@filecon/<fw>-default`, `-gray`, `-solid`, `-papered`, `-papered-flat`, `-papered-craft`, `-scratch`,
-`-chalk` (one style each, same API without `style`).
+`-chalk`, `-iconic` (one style each, same API without `style`).
 "prepared" = built and tested in this repository, not yet published (see [`docs/publishing.md`](docs/publishing.md)).
 
 ## Quick start

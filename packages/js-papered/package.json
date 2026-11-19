@@ -1,6 +1,6 @@
 {
   "name": "@filecon/js-papered",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Filecon file icons as SVG strings – the papered style (realistic sheet of paper). Framework-free, tree-shakable.",
   "keywords": [
     "filecon",

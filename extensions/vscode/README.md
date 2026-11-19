@@ -15,6 +15,7 @@ types** – source code, documents, images, audio, video, archives, databases, 3
 | **Filecon Papered Craft** | cut paper: colored back sheet and a label strip |
 | **Filecon Scratch** | pencil sketch on a note with a handwritten label |
 | **Filecon Chalk** | marker on a whiteboard (light) or chalk on a blackboard (dark) |
+| **Filecon Iconic** | a standalone, self-drawn symbol per file type instead of a page shape; redrawn marks for brand formats |
 
 All themes except Filecon Solid switch automatically between a light and a dark variant (including high-contrast
 themes) to match your color theme. Filecon Solid looks the same everywhere.
@@ -34,7 +35,7 @@ Or set it in your `settings.json`:
 ```
 
 Theme ids: `filecon`, `filecon-gray`, `filecon-solid`, `filecon-papered`, `filecon-papered-flat`,
-`filecon-papered-craft`, `filecon-scratch`, `filecon-chalk`.
+`filecon-papered-craft`, `filecon-scratch`, `filecon-chalk`, `filecon-iconic`.
 
 ## How files are matched
 

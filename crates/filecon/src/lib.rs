@@ -1,6 +1,6 @@
 //! # filecon
 //!
-//! File-type icons for 703 formats in eight styles, embedded as SVG strings, plus the Filecon file-type resolver
+//! File-type icons for 703 formats in nine styles, embedded as SVG strings, plus the Filecon file-type resolver
 //! (file name → magic bytes → extension → `empty`).
 //!
 //! ```
@@ -19,8 +19,8 @@
 //! ## Features
 //!
 //! One feature per style controls which SVGs are embedded: `style-default`, `style-gray`, `style-solid`,
-//! `style-papered`, `style-papered-flat`, `style-papered-craft`, `style-scratch` and `style-chalk` (all enabled by
-//! default; use `default-features = false` and pick the styles you need to keep the binary small).
+//! `style-papered`, `style-papered-flat`, `style-papered-craft`, `style-scratch`, `style-chalk` and `style-iconic`
+//! (all enabled by default; use `default-features = false` and pick the styles you need to keep the binary small).
 //! [`svg`] returns `None` for a style whose feature is disabled.
 //!
 //! The SVGs are the unmodified files of the Filecon icon pack and of the generated styles (40×40,
@@ -54,11 +54,14 @@ pub enum Style {
     Scratch,
     /// Colored marker on a whiteboard (light) or chalk on a blackboard (dark), handwritten label (feature `style-chalk`).
     Chalk,
+    /// Standalone, self-drawn symbol per file type instead of a page shape; redrawn marks for brand formats
+    /// (feature `style-iconic`).
+    Iconic,
 }
 
 impl Style {
     /// All styles, in the order of the features.
-    pub const ALL: [Style; 8] = [
+    pub const ALL: [Style; 9] = [
         Style::Default,
         Style::Gray,
         Style::Solid,
@@ -67,6 +70,7 @@ impl Style {
         Style::PaperedCraft,
         Style::Scratch,
         Style::Chalk,
+        Style::Iconic,
     ];
 }
 
@@ -129,6 +133,10 @@ pub fn svg(name: &str, style: Style, theme: Theme) -> Option<&'static str> {
         (Style::Chalk, Theme::Light) => Some(&generated::CHALK_LIGHT),
         #[cfg(feature = "style-chalk")]
         (Style::Chalk, Theme::Dark) => Some(&generated::CHALK_DARK),
+        #[cfg(feature = "style-iconic")]
+        (Style::Iconic, Theme::Light) => Some(&generated::ICONIC_LIGHT),
+        #[cfg(feature = "style-iconic")]
+        (Style::Iconic, Theme::Dark) => Some(&generated::ICONIC_DARK),
         #[allow(unreachable_patterns)]
         _ => None,
     };

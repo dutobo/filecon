@@ -32,6 +32,7 @@ export const STYLE_TITLES: Readonly<Record<Style, string>> = {
   "papered-craft": "Papered Craft",
   scratch: "Scratch",
   chalk: "Chalk",
+  iconic: "Iconic",
 };
 
 /** Styles that come from the icon pack (the others come from icon-styles/). */

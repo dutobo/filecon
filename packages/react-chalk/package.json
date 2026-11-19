@@ -1,6 +1,6 @@
 {
   "name": "@filecon/react-chalk",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Filecon file icons for React – the chalk style (chalk on a blackboard, marker on a whiteboard). SSR-safe, tree-shakable.",
   "keywords": [
     "filecon",

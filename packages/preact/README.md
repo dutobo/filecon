@@ -1,9 +1,9 @@
 # @filecon/preact
 
-[Filecon](https://filecon.dev) file icons for Preact – 703 file types, all eight styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk).
+[Filecon](https://filecon.dev) file icons for Preact – 703 file types, all nine styles (default, gray, solid, papered, papered-flat, papered-craft, scratch, chalk, iconic).
 SSR-safe (preact-render-to-string), tree-shakable, no runtime dependencies besides Preact.
 
-Part of the Filecon family: `@filecon/preact`, `@filecon/preact-default`, `@filecon/preact-gray`, `@filecon/preact-solid`, `@filecon/preact-papered`, `@filecon/preact-papered-flat`, `@filecon/preact-papered-craft`, `@filecon/preact-scratch`, `@filecon/preact-chalk`.
+Part of the Filecon family: `@filecon/preact`, `@filecon/preact-default`, `@filecon/preact-gray`, `@filecon/preact-solid`, `@filecon/preact-papered`, `@filecon/preact-papered-flat`, `@filecon/preact-papered-craft`, `@filecon/preact-scratch`, `@filecon/preact-chalk`, `@filecon/preact-iconic`.
 
 
 ```sh
@@ -38,7 +38,7 @@ Component names are PascalCase + `Icon` (`ts-stream` → `TsStreamIcon`); names 
 |---|---|---|---|
 | `name` | `IconName \| string` | – | icon name or extension (exclusive with `file`) |
 | `file` | `string` | – | file name, resolved with `resolveIcon` (exclusive with `name`) |
-| `style` | `Style`: `"default"`, `"gray"`, `"solid"`, `"papered"`, `"papered-flat"`, `"papered-craft"`, `"scratch"`, `"chalk"` | `"default"` | icon style (not inline CSS) |
+| `style` | `Style`: `"default"`, `"gray"`, `"solid"`, `"papered"`, `"papered-flat"`, `"papered-craft"`, `"scratch"`, `"chalk"`, `"iconic"` | `"default"` | icon style (not inline CSS) |
 | `theme` | `"light" \| "dark" \| "auto"` | `"light"` | `auto` embeds a `prefers-color-scheme` stylesheet – identical markup on server and client, no hydration mismatch |
 | `size` | `number \| string` | `40` | width and height |
 | `title` | `string` | – | adds `<title>` and `role="img"`; without it the SVG is `aria-hidden="true"` |

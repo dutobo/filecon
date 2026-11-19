@@ -37,7 +37,7 @@ defineFileconIcon("file-icon");   // <file-icon>
 |---|---|---|---|
 | `name` | `name` | – | icon name or extension (`pdf`, `.PDF`, `db-sqlite`); unknown names render `empty` |
 | `file` | `file` | – | file name, resolved via the Filecon resolver (ignored when `name` is set) |
-{{#isAll}}| `icon-style` | – | `default` | `default`, `gray`, `solid`, `papered`, `papered-flat`, `papered-craft`, `scratch` or `chalk` |
+{{#isAll}}| `icon-style` | – | `default` | `default`, `gray`, `solid`, `papered`, `papered-flat`, `papered-craft`, `scratch`, `chalk` or `iconic` |
 {{/isAll}}| `theme` | `theme` | `light` | `light`, `dark` or `auto` (embedded `prefers-color-scheme` stylesheet) |
 | `size` | `size` | `40` | width and height of the `<svg>` |
 | `label` | `label` | – | accessible name: adds `<title>` and `role="img"`; without it the SVG is `aria-hidden="true"` |

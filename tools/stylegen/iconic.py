@@ -340,6 +340,8 @@ def badge(d: Draw, glyph: str) -> None:
     elif glyph == "note":
         d.path("M32.4 34V27.2c1 .9 2.4 1.4 2.6 3", stroke="tint", width=1.5)
         d.circle(30.4, 33.8, 2, fill="tint")
+    elif glyph.startswith("text-"):
+        text_badge(d, glyph[len("text-") :])
     elif glyph.startswith("letter-"):
         letter = glyph[len("letter-") :]
         if letter == "O":
@@ -1778,6 +1780,983 @@ ICONS.update(
         "bdf": ("pixel-font", None),
         "pcf": ("pixel-font", "binary"),
         "pfb": ("glyph-outline", None),
+    }
+)
+
+
+# ------------------------------------------------------------------ block 4a: programming languages
+
+# Minimal stroke font in a 4x6 box (absolute M/L/H/V/Q/Z only), for letter marks and letter badges.
+FONT = {
+    "A": "M0 6L2 0L4 6M0.7 4H3.3",
+    "B": "M0 3H2.3Q3.7 3 3.7 1.5Q3.7 0 2.3 0H0V6H2.5Q4 6 4 4.5Q4 3 2.5 3",
+    "C": "M4 0.9Q3.3 0 2.1 0Q0 0 0 3Q0 6 2.1 6Q3.3 6 4 5.1",
+    "D": "M0 0V6H1.7Q4 6 4 3Q4 0 1.7 0Z",
+    "E": "M4 0H0V6H4M0 3H3",
+    "F": "M4 0H0V6M0 3H3",
+    "G": "M4 0.9Q3.3 0 2.1 0Q0 0 0 3Q0 6 2.1 6Q4 6 4 3.6H2.2",
+    "H": "M0 0V6M4 0V6M0 3H4",
+    "I": "M0.9 0H3.1M2 0V6M0.9 6H3.1",
+    "J": "M1 0H4V4.2Q4 6 2.1 6Q0.6 6 0 4.9",
+    "L": "M0 0V6H4",
+    "M": "M0 6V0L2 3.6L4 0V6",
+    "P": "M0 6V0H2.3Q4 0 4 1.75Q4 3.5 2.3 3.5H0",
+    "R": "M0 6V0H2.3Q4 0 4 1.75Q4 3.5 2.3 3.5H0M2.2 3.5L4 6",
+    "S": "M3.9 0.9Q3.2 0 2 0Q0.2 0 0.2 1.6Q0.2 3 2 3Q3.8 3 3.8 4.4Q3.8 6 2 6Q0.7 6 0 5.1",
+    "T": "M0 0H4M2 0V6",
+    "V": "M0 0L2 6L4 0",
+    "W": "M0 0L1 6L2 2.4L3 6L4 0",
+    "+": "M2 1.2V4.8M0.2 3H3.8",
+    "#": "M1.4 0.4L0.9 5.6M3.1 0.4L2.6 5.6M0 2H4M0 4H4",
+    "0": "M2 0Q0 0 0 3Q0 6 2 6Q4 6 4 3Q4 0 2 0Z",
+    "1": "M0.8 1.2L2.4 0V6",
+}
+
+
+def map_path(path: str, fx, fy) -> str:
+    """Maps an absolute path (M/L/H/V/Q/C/Z) through axis-aligned functions fx and fy."""
+    out = []
+    for cmd, args in re.findall(r"([MLHVQCZ])([^MLHVQCZ]*)", path):
+        nums = [float(n) for n in re.findall(r"-?\d*\.?\d+", args)]
+        if cmd == "H":
+            vals = [fx(n) for n in nums]
+        elif cmd == "V":
+            vals = [fy(n) for n in nums]
+        else:
+            vals = [fx(n) if i % 2 == 0 else fy(n) for i, n in enumerate(nums)]
+        out.append(cmd + " ".join(f"{v:.2f}".rstrip("0").rstrip(".") for v in vals))
+    return "".join(out)
+
+
+def text_path(text: str, cx: float, cy: float, h: float, gap: float = 1.5) -> str:
+    s = h / 6
+    width = (len(text) * 4 + (len(text) - 1) * gap) * s
+    x0, y0 = cx - width / 2, cy - h / 2
+    parts = []
+    for i, ch in enumerate(text):
+        ox = x0 + i * (4 + gap) * s
+        parts.append(map_path(FONT[ch], lambda x, ox=ox: ox + x * s, lambda y: y0 + y * s))
+    return "".join(parts)
+
+
+def text(d: Draw, value: str, cx: float, cy: float, h: float, role: str, width: float) -> None:
+    d.path(text_path(value, cx, cy, h), stroke=role, width=width)
+
+
+def text_badge(d: Draw, value: str) -> None:
+    h = 6 if len(value) == 1 else 4.4
+    d.path(text_path(value, BADGE_C, BADGE_C, h, gap=1.2), stroke="tint", width=1.6)
+
+
+def tile(d: Draw, rx: float = 5) -> None:
+    d.rect(4.5, 4.5, 31, 31, rx, fill="main")
+
+
+def letter_tile(value: str):
+    def draw(d: Draw) -> None:
+        tile(d)
+        h = {1: 15, 2: 12, 3: 9}[len(value)]
+        text(d, value, 20, 20, h, "tint", 3 if len(value) < 3 else 2.6)
+
+    return draw
+
+
+def s_js_tile(d: Draw) -> None:
+    tile(d, 4)
+    text(d, "JS", 19.5, 25.5, 10, "tint", 2.6)
+
+
+def s_ts_tile(d: Draw) -> None:
+    tile(d, 4)
+    text(d, "TS", 19.5, 25.5, 10, "tint", 2.6)
+
+
+def s_react_atom(d: Draw) -> None:
+    arcs = []
+    for deg in (0, 60, 120):
+        a = math.radians(deg)
+        px, py = 20 + 15.5 * math.cos(a), 20 + 15.5 * math.sin(a)
+        qx, qy = 40 - px, 40 - py
+        arcs.append(f"M{px:.2f} {py:.2f}A15.5 6 {deg} 1 0 {qx:.2f} {qy:.2f}A15.5 6 {deg} 1 0 {px:.2f} {py:.2f}")
+    d.path("".join(arcs), stroke="main", width=2.2)
+    d.circle(20, 20, 3.2, fill="main")
+
+
+def s_vue(d: Draw) -> None:
+    d.path("M3.5 7h7.2L20 23l9.3-16h7.2L20 35z", fill="main", stroke="main", width=1.4)
+    d.path("M10.7 7H16l4 6.9L24 7h5.3L20 23z", fill="mid")
+
+
+def s_svelte(d: Draw) -> None:
+    d.path(rotated([(-8.5, -13), (8.5, -13), (8.5, 13), (-8.5, 13)], 30, 20, 20), fill="main", stroke="main", width=5)
+    d.path("M24.5 13.5c-2.6-2.2-7-1.6-8 1-1 2.6 1.2 4.2 3.6 5.2s4.6 2.6 3.6 5.2c-1 2.6-5.4 3.2-8 1",
+           stroke="tint", width=2.6)
+
+
+def s_astro(d: Draw) -> None:
+    d.path("M12.5 27.5L18 5.5h4l5.5 22c-2.2-1.6-4.7-2.4-7.5-2.4s-5.3.8-7.5 2.4z", fill="main", stroke="main", width=1.4)
+    d.path("M15.5 29.5c.2 3 2 5 4.5 6.5 2.5-1.5 4.3-3.5 4.5-6.5-1.3.9-2.8 1.4-4.5 1.4s-3.2-.5-4.5-1.4z", fill="mid")
+
+
+def s_paper_cup(d: Draw) -> None:
+    d.rect(12, 4.5, 16, 4, 1.5, fill="main")
+    d.path("M8.5 9h23l-.8 4.5H9.3z", fill="main", stroke="main", width=1.4)
+    d.path("M10.5 13.5h19L27 35.5H13z", fill="tint", stroke="main")
+    d.path("M11.6 20h16.8l-.8 7.5H12.4z", fill="mid")
+
+
+def s_ejs(d: Draw) -> None:
+    d.path("M14.5 9.5L5.5 20l9 10.5", stroke="main", width=3.2)
+    d.circle(22.5, 13.5, 3, stroke="main", width=2.2)
+    d.circle(31.5, 26.5, 3, stroke="main", width=2.2)
+    d.path("M33.5 9.5l-13 21", stroke="mid", width=2.6)
+
+
+def s_njk(d: Draw) -> None:
+    d.path(BRACES, stroke="main", width=2.4)
+    d.circle(17.2, 15.6, 2, stroke="main", width=1.8)
+    d.circle(22.8, 24.4, 2, stroke="main", width=1.8)
+    d.path("M24 13l-8 14", stroke="mid", width=2.2)
+
+
+def s_mustache(d: Draw) -> None:
+    d.path(
+        "M20 20.5c-2.5-4-6.5-5.5-10-3.5-2.5 1.5-3 4.5-1.2 6-2.4.4-4.3-.8-5.3-2.5 0 5 4.5 8 9.5 7 3.5-.7 5.5-3 7-7"
+        " 1.5 4 3.5 6.3 7 7 5 1 9.5-2 9.5-7-1 1.7-2.9 2.9-5.3 2.5 1.8-1.5 1.3-4.5-1.2-6-3.5-2-7.5-.5-10 3.5z",
+        fill="main",
+    )
+
+
+def s_pug_dog(d: Draw) -> None:
+    d.path("M9 11.5c-3.2-.2-5.4 3-4.4 7.4l5-2.2zM31 11.5c3.2-.2 5.4 3 4.4 7.4l-5-2.2z", fill="main")
+    d.circle(20, 21, 13, fill="mid")
+    d.ellipse(20, 27, 8.5, 7, fill="main")
+    d.circle(13.8, 18, 2.8, fill="main")
+    d.circle(26.2, 18, 2.8, fill="main")
+    d.circle(14.3, 17.4, 0.9, fill="tint")
+    d.circle(26.7, 17.4, 0.9, fill="tint")
+    d.ellipse(20, 24.2, 3.2, 2.1, fill="tint")
+    d.path("M16.8 29c1.8 1.6 4.6 1.6 6.4 0", stroke="tint", width=1.6)
+
+
+SNAKE = (
+    "M20 4.5C13.5 4.5 11 7 11 11V15H20V16.5H8.5C5 16.5 4 19.5 4 23C4 26.5 5.5 29.5 9 29.5H12V25"
+    "C12 21.5 14.7 19 18 19H25.5C28.5 19 30.5 16.5 30.5 13.5V11C30.5 7.4 26.7 4.5 20 4.5Z"
+)
+
+
+def s_python(d: Draw) -> None:
+    d.path(SNAKE, fill="main")
+    d.path(map_path(SNAKE, lambda x: 40 - x, lambda y: 40 - y), fill="mid")
+    d.circle(15.3, 8.6, 1.5, fill="tint")
+    d.circle(24.7, 31.4, 1.5, fill="tint")
+
+
+def s_jupyter(d: Draw) -> None:
+    d.path("M7 15.5c4.6-7.5 21.4-7.5 26 0", stroke="main", width=3.4)
+    d.path("M7 24.5c4.6 7.5 21.4 7.5 26 0", stroke="main", width=3.4)
+    d.circle(31.5, 6.5, 2.4, fill="mid")
+    d.circle(8, 7.5, 1.7, fill="mid")
+    d.circle(9, 33, 2.8, fill="mid")
+
+
+def s_java_cup(d: Draw) -> None:
+    d.path("M16.5 4c-2 2.5 2 4.5 0 7.5M22.5 4c-2 2.5 2 4.5 0 7.5", stroke="mid", width=2)
+    d.path("M30 17.5h1.8a3.6 3.6 0 0 1 0 7.2H29", stroke="main", width=2.4)
+    d.path("M8 15h22v6a9.5 9.5 0 0 1-9.5 9.5h-3A9.5 9.5 0 0 1 8 21z", fill="main")
+    d.path("M5 34h28", stroke="main", width=2.6)
+
+
+def s_kotlin(d: Draw) -> None:
+    d.path("M5 5h30L20 20l15 15H5z", fill="main")
+    d.path("M5 5h15L5 20z", fill="mid")
+
+
+def s_scala(d: Draw) -> None:
+    for i, y in enumerate((10, 20, 30)):
+        role = "main" if i % 2 == 0 else "mid"
+        d.path(rotated([(-11, -2.4), (11, -2.4), (11, 2.4), (-11, 2.4)], -12, 20, y), fill=role, stroke=role, width=2.4)
+
+
+def s_groovy(d: Draw) -> None:
+    d.path("M4.5 29c9 6.5 23 4 30.5-13", stroke="mid", width=2.6)
+    d.path(star_path(18, 18, 11, 4.8, 5), fill="main", stroke="main", width=1.6)
+
+
+def s_elephant(d: Draw) -> None:
+    d.path("M9 19l-4 4", stroke="main", width=2.2)
+    d.rect(8, 13, 22, 14, 7, fill="main")
+    d.rect(10, 23, 5, 11, 1.8, fill="main")
+    d.rect(22, 23, 5, 11, 1.8, fill="main")
+    d.path("M33.5 17c2.4 3.4 2.4 8-1 10.5", stroke="main", width=3.2)
+    d.circle(29, 15, 6.2, fill="main")
+    d.ellipse(25.8, 15.4, 3.2, 4.2, fill="mid")
+    d.circle(31.5, 12.8, 1.1, fill="tint")
+
+
+HEXAGON = "M20 4L33.86 12V28L20 36L6.14 28V12Z"
+
+
+def hex_mark(value: str, h: float):
+    def draw(d: Draw) -> None:
+        d.path(HEXAGON, fill="main", stroke="main", width=1.6)
+        text(d, value, 20, 20, h, "tint", 2.8 if len(value) < 3 else 2.4)
+
+    return draw
+
+
+def s_objc(d: Draw) -> None:
+    d.path("M11 7H6v26h5M29 7h5v26h-5", stroke="main", width=3)
+    d.circle(20, 20, 3.4, stroke="mid", width=2.4)
+    d.path("M23.4 20v1.4c0 2.6 3.6 2.6 3.6-1.4a7 7 0 1 0-3 5.8", stroke="mid", width=2.4)
+
+
+def s_rust(d: Draw) -> None:
+    d.path(gear_path(20, 20, 16, 13.2, 16), fill="main", stroke="main", width=1.2)
+    d.circle(20, 20, 10, fill="tint")
+    text(d, "R", 20.4, 20, 10.5, "main", 2.8)
+
+
+def s_gopher(d: Draw) -> None:
+    d.circle(9.5, 9.5, 3.4, fill="main")
+    d.circle(30.5, 9.5, 3.4, fill="main")
+    d.path("M7 22c0-9 5.5-14.5 13-14.5S33 13 33 22v13.5H7z", fill="main")
+    d.circle(14, 16.5, 4.6, fill="tint")
+    d.circle(26, 16.5, 4.6, fill="tint")
+    d.circle(15.2, 17, 1.9, fill="main")
+    d.circle(27.2, 17, 1.9, fill="main")
+    d.ellipse(20, 24.5, 5, 3.6, fill="mid")
+    d.ellipse(20, 22.6, 2.4, 1.6, fill="main")
+    d.rect(18.3, 27.6, 3.4, 3.2, 0.6, fill="tint")
+
+
+def s_zig(d: Draw) -> None:
+    d.path("M7 8.5h21L12 31.5h21", stroke="main", width=4.6)
+    d.path("M3.5 31.5h4.5M32 8.5h4.5", stroke="mid", width=4.6)
+
+
+def s_dlang(d: Draw) -> None:
+    text(d, "D", 16.5, 21, 22, "main", 4)
+    d.circle(31.5, 9, 3.6, fill="mid")
+    d.circle(33.5, 18, 2.2, fill="mid")
+
+
+def s_crown(d: Draw) -> None:
+    d.path("M5 29V11.5l7.5 7.5L20 7.5l7.5 11.5L35 11.5V29z", fill="main", stroke="main", width=1.6)
+    d.rect(5, 29, 30, 5, 1.2, fill="mid")
+    for x in (12.5, 20, 27.5):
+        d.circle(x, 24.5, 1.8, fill="tint")
+
+
+def s_crystal(d: Draw) -> None:
+    d.path("M20 4l12 9v14L20 36 8 27V13z", fill="main", stroke="main", width=1.6)
+    d.path("M8 13l12 6.5L32 13M20 19.5V36", stroke="tint", width=1.6)
+    d.path("M20 4v15.5L8 13z", fill="mid")
+
+
+def s_dip_chip(d: Draw) -> None:
+    legs = "".join(f"M7.5 {y:g}h4.5M28 {y:g}h4.5" for y in (9, 15, 21, 27, 33))
+    d.path(legs, stroke="main", width=2.2)
+    d.rect(11.5, 4.5, 17, 31, 2.5, fill="main")
+    d.circle(20, 4.5, 2.6, fill="tint")
+    d.path("M15.5 14h9M15.5 19h6M15.5 24h9M15.5 29h5", stroke="mid", width=1.8)
+
+
+def s_eye(d: Draw) -> None:
+    d.path("M3.5 20c4-7 10-10.5 16.5-10.5S32.5 13 36.5 20c-4 7-10 10.5-16.5 10.5S7.5 27 3.5 20z", fill="tint", stroke="main")
+    d.circle(20, 20, 6.4, fill="main")
+    d.circle(20, 20, 2.2, fill="tint")
+    d.path("M27 6l-4 4M13 6l4 4M20 4v5", stroke="mid", width=2)
+
+
+def s_haskell(d: Draw) -> None:
+    d.path("M4.5 33.5L13.5 20 4.5 6.5h6.8l9 13.5-9 13.5z", fill="main")
+    d.path("M13.5 33.5l9-13.5-9-13.5h6.8l18 27h-6.8l-5.6-8.4-5.6 8.4z", fill="mid")
+    d.path("M28.2 14.6h7.8M31 21.2h5", stroke="main", width=3)
+
+
+def s_camel(d: Draw) -> None:
+    tile(d)
+    d.path(
+        "M31.5 31v-6c0-3-1.4-5.8-3.6-5.8-1.6 0-2.5 1.4-3.3 2.9-1-2.5-2.4-4.4-4.3-4.4s-3.4 2-4.4 4.4l-2.2-.9-1.6-6.3"
+        "c-.3-1.3-1.2-2-2.4-2H8l-.3 1.5 2.3.5 2 8.5c.4 1.9 1.4 3.3 3.2 4.2V31h2.3v-5.6h8.8V31h2.3v-5.5l1.4-1.4V31z",
+        fill="tint",
+    )
+
+
+def s_fsharp(d: Draw) -> None:
+    d.path("M19 5L4 20l15 15v-7.5L11.5 20 19 12.5z", fill="main")
+    d.path("M22 11.5L30.5 20 22 28.5z", fill="mid")
+    d.path("M24.5 5L36 20 24.5 35", stroke="main", width=2.2)
+
+
+def s_elixir(d: Draw) -> None:
+    d.path("M20 4c-5 6-10.5 13-10.5 20.5a10.5 10.5 0 0 0 21 0C30.5 17 25 10 20 4z", fill="main")
+    d.path("M15 25c0-3.2 1.4-6.4 3-9", stroke="mid", width=2.4)
+
+
+def s_erlang(d: Draw) -> None:
+    tile(d)
+    d.path("M11.5 20.5h17c0-5.2-3.6-8.8-8.4-8.8S11.5 15.5 11.5 20.6s3.8 8.8 8.9 8.8c2.7 0 4.8-.9 6.6-2.7",
+           stroke="tint", width=3)
+
+
+LAMBDA = "M11 8c4 0 6 1.4 8 5.8L29 34M18.4 17.2L10.5 34"
+
+
+def s_clojure(d: Draw) -> None:
+    d.circle(20, 20, 15.5, fill="main")
+    d.path("M20 4.5a15.5 15.5 0 0 0 0 31z", fill="mid")
+    d.path(LAMBDA, stroke="tint", width=3)
+
+
+def s_edn(d: Draw) -> None:
+    d.path(BRACES, stroke="main", width=2.4)
+    text(d, "#", 20, 20, 10, "mid", 2.2)
+
+
+def s_elm(d: Draw) -> None:
+    d.path("M20 3.5L36.5 20 20 36.5 3.5 20z", fill="main")
+    d.path("M20 3.5L28.25 11.75 20 20 11.75 11.75z", fill="mid")
+    d.path("M20 20l8.25 8.25L20 36.5z", fill="mid")
+    d.path("M3.5 20h33M20 3.5v33M11.75 11.75L28.25 28.25", stroke="tint", width=1.6)
+
+
+def s_purescript(d: Draw) -> None:
+    for y in (11, 20, 29):
+        d.path(f"M4.5 {y - 2.2:g}h11l3 2.2-3 2.2h-11z", fill="main")
+        d.path(f"M35.5 {y - 2.2:g}h-11l-3 2.2 3 2.2h11z", fill="mid")
+
+
+def s_gleam(d: Draw) -> None:
+    d.path(star_path(20, 21, 15.5, 7.5, 5), fill="main", stroke="main", width=2)
+    d.circle(16.6, 20.5, 1.6, fill="tint")
+    d.circle(23.4, 20.5, 1.6, fill="tint")
+    d.path("M17.6 25c1.4 1 3.4 1 4.8 0", stroke="tint", width=1.4)
+
+
+def s_lambda(d: Draw) -> None:
+    d.path(LAMBDA, stroke="main", width=3.8)
+
+
+def s_racket(d: Draw) -> None:
+    d.circle(20, 20, 15.5, fill="main")
+    d.path("M4.5 20a15.5 15.5 0 0 0 15.5 15.5V20z", fill="mid")
+    d.path(LAMBDA, stroke="tint", width=3)
+
+
+def s_parens(d: Draw) -> None:
+    d.path("M13 5.5c-5.5 4.5-5.5 24.5 0 29M27 5.5c5.5 4.5 5.5 24.5 0 29", stroke="main", width=3.2)
+    d.path("M18.5 12c-2.6 2.6-2.6 13.4 0 16M21.5 12c2.6 2.6 2.6 13.4 0 16", stroke="mid", width=2.4)
+
+
+def s_emacs(d: Draw) -> None:
+    d.circle(20, 20, 15.5, fill="main")
+    d.path("M27.5 10.5c-5-1.2-13.5-.4-13.5 2.4s11.4 2.2 11.4 5.4-13.4 1.6-13.4 5.4 9.6 4.6 16 3.4",
+           stroke="tint", width=2.6)
+
+
+def s_forall(d: Draw) -> None:
+    d.path("M7 7l13 27L33 7M12 17.5h16", stroke="main", width=3.6)
+
+
+def s_pi(d: Draw) -> None:
+    d.path("M7 9h26M13.5 9v24M26.5 9v20.5c0 2.2 1 3.5 3.5 3.5", stroke="main", width=3.6)
+
+
+def s_turnstile(d: Draw) -> None:
+    d.path("M10 6v28M10 20h21", stroke="main", width=3.6)
+    d.path("M26 13.5l6.5 6.5-6.5 6.5", stroke="mid", width=2.6)
+
+
+def s_ruby(d: Draw) -> None:
+    d.path("M11 6h18l7 9-16 20L4 15z", fill="main", stroke="main", width=1.6)
+    d.path("M4 15h32M11 6l4 9 5-9 5 9 4-9M15 15l5 20 5-20", stroke="tint", width=1.4)
+
+
+def s_rake_tool(d: Draw) -> None:
+    d.path("M33 7L15.5 24.5", stroke="mid", width=3)
+    d.path("M7 17.5l15.5 15.5", stroke="main", width=3)
+    tines = []
+    for i in range(5):
+        x, y = 7 + i * 3.875, 17.5 + i * 3.875
+        tines.append(f"M{x:.2f} {y:.2f}l-3 3")
+    d.path("".join(tines), stroke="main", width=2.2)
+
+
+def s_php(d: Draw) -> None:
+    d.ellipse(20, 20, 16, 10.5, fill="main")
+    text(d, "PHP", 20, 20, 8, "tint", 2.2)
+
+
+def s_onion(d: Draw) -> None:
+    d.path("M20 4.5c0 3-11 8-11 18a11 11 0 0 0 22 0c0-10-11-15-11-18z", fill="main")
+    d.path("M20 9.5c-3.8 4-5.6 8.6-5.6 13.4s1.8 8.8 5.6 10.6M20 9.5c3.8 4 5.6 8.6 5.6 13.4s-1.8 8.8-5.6 10.6",
+           stroke="tint", width=1.6)
+
+
+def s_owl(d: Draw) -> None:
+    d.path("M8.5 15L7 5.5l6.5 4.5M31.5 15L33 5.5l-6.5 4.5", fill="main", stroke="main", width=1.6)
+    d.path("M8 15c0-5 5-8 12-8s12 3 12 8v9.5c0 7-5 11-12 11S8 31.5 8 24.5z", fill="main")
+    d.circle(14.5, 16.5, 4.6, fill="tint")
+    d.circle(25.5, 16.5, 4.6, fill="tint")
+    d.circle(14.5, 16.5, 2, fill="main")
+    d.circle(25.5, 16.5, 2, fill="main")
+    d.path("M18.4 21l1.6 3 1.6-3z", fill="mid")
+    d.path("M14.5 28.5c1.4 1 3.6 1 5 0 1.4 1 3.6 1 5 0", stroke="mid", width=1.6)
+
+
+def s_lua(d: Draw) -> None:
+    d.path("M30 4.5a12 12 0 0 1 5.5 10", stroke="mid", width=1.6)
+    d.circle(18, 22, 13, fill="main")
+    d.circle(24, 16, 3.8, fill="tint")
+    d.circle(32.5, 7.5, 3.6, fill="main")
+
+
+def s_rlang(d: Draw) -> None:
+    d.ellipse(18.5, 17, 14, 10, stroke="mid", width=3.6)
+    text(d, "R", 23, 23.5, 16, "main", 3.6)
+
+
+def s_julia(d: Draw) -> None:
+    d.circle(20, 11, 6.5, fill="main")
+    d.circle(11, 27, 6.5, fill="mid")
+    d.circle(29, 27, 6.5, fill="main")
+
+
+def s_awk(d: Draw) -> None:
+    d.path("M5 31L11 9M12.5 31l6-22", stroke="main", width=2.8)
+    d.path("M27 9c-2 0-3 1-3 3v4l-2 4 2 4v4c0 2 1 3 3 3M31 9c2 0 3 1 3 3v4l2 4-2 4v4c0 2-1 3-3 3", stroke="mid", width=2.2)
+
+
+def s_scroll(d: Draw) -> None:
+    d.path("M10 8.5A3.5 3.5 0 0 1 13.5 5H31a3.5 3.5 0 0 1 3.5 3.5V11H29v20a4.5 4.5 0 0 1-4.5 4.5H10a4.5 4.5 0 0 1-4.5-4.5"
+           "v-2.5H10z", fill="tint", stroke="main")
+    d.path("M14.5 13h10M14.5 18h10M14.5 23h7", stroke="mid", width=1.8)
+
+
+def s_swift(d: Draw) -> None:
+    tile(d, 7)
+    d.path(
+        "M27.5 9.5c3 4.6 3.6 10 1.2 14.2 1.8 2.4 2.2 4.6 1.8 5.6-1.4-1.8-3.8-2.2-5.6-1.4-5.8 2.8-12.4.6-17.4-4.6"
+        " 4.2 2.8 9.4 3.2 12.8 1.4C14.6 21 10.4 16.8 8 13.4c3 2.6 7.6 6.2 10.8 8-2.8-2.8-5.6-6.4-7-9.2 4.2 4.2"
+        " 9 8 12.4 9.4 2.6-3.6 2.8-8 3.3-12.1z",
+        fill="tint",
+    )
+
+
+def s_dart(d: Draw) -> None:
+    d.path("M9 14L21 5.2c1-.7 2.4-.7 3.4.1L35 14.5V28H23l-8.5 7.5L9 30z", fill="main", stroke="main", width=1.6)
+    d.path("M9 14l14 14h12", stroke="tint", width=1.8)
+    d.path("M9 14l6 21.5L23 28z", fill="mid")
+
+
+def s_flame(d: Draw) -> None:
+    d.path("M20 4c1 6 9.5 9 9.5 18.5a9.5 9.5 0 0 1-19 0c0-4.2 2-7.4 4.6-9.4 0 3 1 5.2 3 6.2-1-5.2 0-10.4 1.9-15.3z",
+           fill="main")
+    d.path("M20 35c-3 0-5-2.2-5-5 0-2.5 1.6-4.4 3.5-5.5 0 1.8.8 3 2 3.6-.3-2.2.5-4 2-5.4 1.5 2 2.5 4 2.5 7.3"
+           " 0 2.8-2.2 5-5 5z", fill="mid")
+
+
+def s_basic(d: Draw) -> None:
+    d.rect(4.5, 5.5, 31, 23, 3, fill="main")
+    d.rect(8, 9, 24, 16, 1.5, fill="tint")
+    text(d, "10", 14.5, 14.5, 5, "main", 1.6)
+    d.rect(11.5, 19.5, 5, 2.4, 0.4, fill="mid")
+    d.path("M14 34h12M20 28.5V34", stroke="main", width=2.6)
+
+
+def s_punch_card(d: Draw) -> None:
+    d.path("M10.5 5H35.5V35H4.5V11z", fill="tint", stroke="main")
+    holes = [(9, 15), (13, 23), (17, 11), (17, 27), (21, 19), (25, 9), (25, 31), (29, 15), (29, 23), (13, 31), (21, 9),
+             (9, 27)]
+    for x, y in holes:
+        d.rect(x, y, 2.4, 3.6, 0.4, fill="main")
+
+
+def s_pascal_triangle(d: Draw) -> None:
+    for row in range(5):
+        for k in range(row + 1):
+            x = 20 + (k - row / 2) * 7
+            role = "main" if k in (0, row) else "mid"
+            d.circle(round(x, 2), 6.5 + row * 6.8, 2.6, fill=role)
+
+
+def s_temple(d: Draw) -> None:
+    d.path("M5 12.5L20 5l15 7.5z", fill="main", stroke="main", width=1.6)
+    d.rect(6, 13, 28, 3, 0.6, fill="mid")
+    d.path("M9.5 17v13M16.5 17v13M23.5 17v13M30.5 17v13", stroke="main", width=2.8)
+    d.rect(5, 31, 30, 4, 1, fill="main")
+
+
+def s_solidity(d: Draw) -> None:
+    d.path("M20 4l9 14-9 5.5-9-5.5z", fill="main")
+    d.path("M20 4v19.5l9-5.5z", fill="mid")
+    d.path("M20 25.5l9-5.5-9 15.5-9-15.5z", fill="mid")
+    d.path("M20 25.5v10l9-15.5z", fill="main")
+
+
+def s_vyper(d: Draw) -> None:
+    d.path("M4 7h32L20 35z", fill="main")
+    d.path("M12 7h16l-8 14z", fill="mid")
+    d.path("M4 7l8 0 8 14 8-14h8", stroke="tint", width=1.4)
+
+
+def s_move_arrow(d: Draw) -> None:
+    tile(d, 7)
+    d.path("M11 20h17M21.5 13l7 7-7 7", stroke="tint", width=3.2)
+
+
+def s_and_gate(d: Draw) -> None:
+    d.path("M3.5 15h4.5M3.5 25h4.5M29 20h7.5", stroke="main")
+    d.path("M8 9h10a11 11 0 0 1 0 22H8z", fill="tint", stroke="main")
+
+
+OR_GATE = "M8 9h8c6 0 11 4 15 11-4 7-9 11-15 11H8c2.5-3 3.5-7 3.5-11S10.5 12 8 9z"
+
+
+def s_or_gate(d: Draw) -> None:
+    d.path("M3.5 15h7M3.5 25h7M31 20h5.5", stroke="main")
+    d.path(OR_GATE, fill="tint", stroke="main")
+
+
+def s_xor_gate(d: Draw) -> None:
+    d.path("M3.5 15h7M3.5 25h7M31 20h5.5", stroke="main")
+    d.path(OR_GATE, fill="tint", stroke="main")
+    d.path("M4.5 9c2.5 3 3.5 7 3.5 11s-1 8-3.5 11", stroke="main")
+
+
+def s_shader(d: Draw) -> None:
+    d.path("M20 6L34 31H6z", fill="mid", stroke="main", width=2)
+    d.circle(20, 6, 3.2, fill="main")
+    d.circle(34, 31, 3.2, fill="main")
+    d.circle(6, 31, 3.2, fill="main")
+
+
+def s_vertex_mesh(d: Draw) -> None:
+    pts = [(20, 5.5), (34.5, 31), (5.5, 31), (20, 22)]
+    d.path("M20 5.5L34.5 31H5.5z", fill="tint", stroke="main", width=2)
+    d.path("M20 5.5V22M34.5 31L20 22 5.5 31", stroke="mid", width=1.8)
+    for x, y in pts:
+        d.circle(x, y, 3, fill="main")
+
+
+def s_fragment(d: Draw) -> None:
+    d.path("M20 5L35 32H5z", fill="tint", stroke="main", width=2)
+    step = 4.6
+    for r in range(6):
+        for c in range(7):
+            x, y = 6.2 + c * step, 9 + r * step
+            cx, cy = x + step / 2, y + step / 2
+            if cy > 5 and abs(cx - 20) < (cy - 5) * 15 / 27 - 1.2 and cy < 30:
+                d.rect(round(x + 0.3, 2), round(y + 0.3, 2), 3.8, 3.8, 0.5, fill="main" if (r + c) % 2 else "mid")
+
+
+def s_ingot(d: Draw) -> None:
+    d.path("M11 10h18l4 8H7z", fill="mid", stroke="main", width=1.8)
+    d.path("M7 18h26l2.5 13h-31z", fill="main", stroke="main", width=1.8)
+    d.path("M11 24h6", stroke="tint", width=2)
+
+
+def s_arduino(d: Draw) -> None:
+    d.path("M20 20c-3-5-5.5-7.2-9-7.2a7.2 7.2 0 0 0 0 14.4c3.5 0 6-2.2 9-7.2s5.5-7.2 9-7.2a7.2 7.2 0 0 1 0 14.4"
+           "c-3.5 0-6-2.2-9-7.2z", stroke="main", width=3.4)
+    d.path("M8.4 20h5.2M26.4 20h5.2M29 17.4v5.2", stroke="mid", width=2)
+
+
+def s_godot(d: Draw) -> None:
+    d.path("M7.5 16c0-2 1-3.4 2.2-4.4l-1-4.2 4.2-1.2 2 3.4c1.6-.6 3.4-1 5.1-1s3.5.4 5.1 1l2-3.4 4.2 1.2-1 4.2"
+           "c1.2 1 2.2 2.4 2.2 4.4v14.5c0 3-2.2 5-5 5h-15c-2.8 0-5-2-5-5z", fill="main")
+    d.circle(14.2, 21, 4.2, fill="tint")
+    d.circle(25.8, 21, 4.2, fill="tint")
+    d.circle(14.8, 21.2, 1.8, fill="main")
+    d.circle(25.2, 21.2, 1.8, fill="main")
+    d.path("M15 30h10", stroke="tint", width=2.2)
+
+
+def s_schema(d: Draw) -> None:
+    d.rect(5, 5, 30, 30, 3.5, fill="tint", stroke="main")
+    d.path("M5 8.5A3.5 3.5 0 0 1 8.5 5h23A3.5 3.5 0 0 1 35 8.5V12H5z", fill="main", stroke="main")
+    for y in (18, 24, 30):
+        d.circle(10.5, y, 1.8, fill="main")
+        d.path(f"M15 {y:g}h15", stroke="mid", width=2)
+
+
+def s_graphql(d: Draw) -> None:
+    pts = [(20 + 14 * math.cos(math.radians(-90 + 60 * k)), 20 + 14 * math.sin(math.radians(-90 + 60 * k)))
+           for k in range(6)]
+    hexagon = "M" + "L".join(f"{x:.2f} {y:.2f}" for x, y in pts) + "z"
+    tri = "M" + "L".join(f"{pts[k][0]:.2f} {pts[k][1]:.2f}" for k in (0, 2, 4)) + "z"
+    d.path(hexagon, stroke="main", width=1.8)
+    d.path(tri, stroke="main", width=1.8)
+    for x, y in pts:
+        d.circle(round(x, 2), round(y, 2), 2.8, fill="main")
+
+
+def s_prisma(d: Draw) -> None:
+    d.path("M18.5 4L34 30.5 15 36 6 27.5z", fill="main", stroke="main", width=1.8)
+    d.path("M18.5 4L15 36", stroke="tint", width=1.8)
+    d.path("M18.5 4L6 27.5 15 36z", fill="mid")
+
+
+def s_terraform(d: Draw) -> None:
+    d.path("M5 4.5l8 4.6v9.2L5 13.7z", fill="main")
+    d.path("M14.5 10l8 4.6v9.2l-8-4.6z", fill="main")
+    d.path("M24 14.6l8-4.6v9.2l-8 4.6z", fill="mid")
+    d.path("M14.5 20.8l8 4.6v9.2l-8-4.6z", fill="main")
+
+
+def s_hcl(d: Draw) -> None:
+    d.path(BRACES, stroke="main", width=2.4)
+    d.path("M15 17h10M15 23h10", stroke="mid", width=2.6)
+
+
+def s_nix(d: Draw) -> None:
+    for k in range(6):
+        a = math.radians(-90 + 60 * k)
+        b = math.radians(-90 + 60 * k + 110)
+        p = (20 + 15 * math.cos(a), 20 + 15 * math.sin(a))
+        q = (20 + 6 * math.cos(b), 20 + 6 * math.sin(b))
+        d.path(f"M{p[0]:.2f} {p[1]:.2f}L{q[0]:.2f} {q[1]:.2f}", stroke="main" if k % 2 == 0 else "mid", width=3.6)
+
+
+def s_cmake(d: Draw) -> None:
+    d.path("M20 4L4 34h14z", fill="main")
+    d.path("M20 4l16 30-16-11.5z", fill="mid")
+    d.path("M20 23.5L36 34H18z", fill="main")
+
+
+def s_docker(d: Draw) -> None:
+    for x, y in ((9, 15), (14, 15), (19, 15), (24, 15), (14, 10), (19, 10), (19, 5)):
+        d.rect(x, y, 4.4, 4.4, 0.6, fill="mid")
+    d.path("M4.5 20.5h29.5c1 0 1.6-1 3-1.2-1 2-2.6 3-4.2 3.2-2 7-8 12.5-17 12.5-7.2 0-11-4-11.3-14.5z", fill="main")
+    d.circle(11, 25.5, 1.2, fill="tint")
+
+
+def s_hammer(d: Draw) -> None:
+    d.path("M24.5 15.5L8 32", stroke="mid", width=3.8)
+    d.path(rotated([(-9.5, -3.6), (9.5, -3.6), (9.5, 3.6), (-9.5, 3.6)], 45, 26, 13), fill="main", stroke="main",
+           width=1.6)
+
+
+def s_bazel(d: Draw) -> None:
+    def rhomb(cx: float, cy: float) -> str:
+        return f"M{cx:g} {cy - 7:g}l6.5 7-6.5 7-6.5-7z"
+
+    d.path(rhomb(20, 11), fill="mid")
+    d.path(rhomb(13, 19) + rhomb(27, 19), fill="main")
+    d.path(rhomb(20, 27.5), fill="main")
+
+
+def s_shuriken(d: Draw) -> None:
+    d.path(star_path(20, 20, 16, 5, 4), fill="main", stroke="main", width=1.4)
+    d.circle(20, 20, 2.4, fill="tint")
+
+
+def s_shield_check(d: Draw) -> None:
+    d.path("M20 4l13 5v9c0 8-5.5 14-13 17.5C12.5 32 7 26 7 18V9z", fill="main")
+    d.path("M14 19.5l4.5 4.5 8-8.5", stroke="tint", width=3)
+
+
+def s_cue(d: Draw) -> None:
+    d.path(BRACES, stroke="main", width=2.4)
+    d.path("M15 20.5l3.5 3.5 6.5-7", stroke="mid", width=2.6)
+
+
+def s_dhall(d: Draw) -> None:
+    d.path(HEXAGON, fill="tint", stroke="main")
+    d.path("M14 11c2.6 0 4 1 5.4 4l6.6 14M18.8 17.4L13.6 29", stroke="main", width=2.8)
+
+
+def s_jsonnet(d: Draw) -> None:
+    d.path(BRACES, stroke="main", width=2.4)
+    d.path("M20 15v10M15 20h10", stroke="mid", width=2.6)
+
+
+def s_wasm(d: Draw) -> None:
+    d.path("M4.5 7.5a3 3 0 0 1 3-3h7a5.5 5.5 0 0 0 11 0h7a3 3 0 0 1 3 3v25a3 3 0 0 1-3 3h-25a3 3 0 0 1-3-3z", fill="main")
+    text(d, "WA", 20, 25, 9, "tint", 2.6)
+
+
+def s_vlang(d: Draw) -> None:
+    tile(d, 7)
+    d.path("M11 11l9 18 9-18", stroke="tint", width=4)
+
+
+def s_membrane(d: Draw) -> None:
+    d.path("M4 25l9-5.5 4.5 2.5 6-15 5.5 10 7 3.5-12 9.5z", fill="main", stroke="main", width=1.6)
+    d.path("M23.5 7l-2 22.5L4 25l9-5.5 4.5 2.5z", fill="mid")
+
+
+def s_rooster(d: Draw) -> None:
+    d.path("M11 14.5c-1.6-3.6 1.4-6.2 3.8-4.2.2-3 4.2-4 5.2-1 1.2-2 5-.8 4 2.2-.8 1.6-3 3.2-6 3.4z", fill="mid")
+    d.path("M8 33.5c0-4 1.5-7 4-9.5-1.6-1.6-2.5-3.6-2.5-6 0-4.4 3.6-7.5 8-7.5s8 3.1 8 7.5c0 2.6-1.2 5-3.2 6.4"
+           "C24 26 25 29.5 25 33.5z", fill="main")
+    d.path("M25.4 16.5l6 2-6 2z", fill="mid")
+    d.ellipse(23.6, 23.5, 1.8, 3.2, fill="mid")
+    d.circle(20.5, 16.5, 1.4, fill="tint")
+
+
+BLOCK4A_TILES = {"M": "M", "ADA": "ADA", "H": "H", "VB": "VB", "F": "F", "SAS": "SAS"}
+for _value in BLOCK4A_TILES.values():
+    SYMBOLS[f"tile-{_value}"] = letter_tile(_value)
+
+SYMBOLS.update(
+    {
+        "js-tile": s_js_tile,
+        "ts-tile": s_ts_tile,
+        "react-atom": s_react_atom,
+        "vue-mark": s_vue,
+        "svelte-mark": s_svelte,
+        "astro-mark": s_astro,
+        "paper-cup": s_paper_cup,
+        "ejs-mark": s_ejs,
+        "njk-mark": s_njk,
+        "mustache": s_mustache,
+        "pug-dog": s_pug_dog,
+        "python-snakes": s_python,
+        "jupyter-mark": s_jupyter,
+        "java-cup": s_java_cup,
+        "kotlin-mark": s_kotlin,
+        "scala-mark": s_scala,
+        "groovy-mark": s_groovy,
+        "elephant": s_elephant,
+        "hex-c": hex_mark("C", 14),
+        "hex-cpp": hex_mark("C++", 9),
+        "hex-cs": hex_mark("C#", 11),
+        "objc-mark": s_objc,
+        "rust-gear": s_rust,
+        "gopher": s_gopher,
+        "zig-mark": s_zig,
+        "d-mark": s_dlang,
+        "crown": s_crown,
+        "crystal-mark": s_crystal,
+        "dip-chip": s_dip_chip,
+        "eye": s_eye,
+        "haskell-mark": s_haskell,
+        "camel": s_camel,
+        "fsharp-mark": s_fsharp,
+        "elixir-drop": s_elixir,
+        "erlang-mark": s_erlang,
+        "clojure-mark": s_clojure,
+        "edn-mark": s_edn,
+        "elm-tangram": s_elm,
+        "purescript-mark": s_purescript,
+        "gleam-star": s_gleam,
+        "lambda": s_lambda,
+        "racket-mark": s_racket,
+        "parens": s_parens,
+        "emacs-mark": s_emacs,
+        "forall": s_forall,
+        "pi-mark": s_pi,
+        "turnstile": s_turnstile,
+        "ruby-gem": s_ruby,
+        "rake-tool": s_rake_tool,
+        "php-mark": s_php,
+        "onion": s_onion,
+        "prolog-owl": s_owl,
+        "lua-mark": s_lua,
+        "r-mark": s_rlang,
+        "julia-dots": s_julia,
+        "awk-mark": s_awk,
+        "script-scroll": s_scroll,
+        "swift-bird": s_swift,
+        "dart-mark": s_dart,
+        "flame": s_flame,
+        "basic-crt": s_basic,
+        "punch-card": s_punch_card,
+        "pascal-triangle": s_pascal_triangle,
+        "temple": s_temple,
+        "solidity-mark": s_solidity,
+        "vyper-mark": s_vyper,
+        "move-arrow": s_move_arrow,
+        "and-gate": s_and_gate,
+        "or-gate": s_or_gate,
+        "xor-gate": s_xor_gate,
+        "shader-triangle": s_shader,
+        "vertex-mesh": s_vertex_mesh,
+        "fragment-pixels": s_fragment,
+        "ingot": s_ingot,
+        "arduino-mark": s_arduino,
+        "godot-mark": s_godot,
+        "schema": s_schema,
+        "graphql-mark": s_graphql,
+        "prisma-mark": s_prisma,
+        "terraform-mark": s_terraform,
+        "hcl-mark": s_hcl,
+        "nix-snowflake": s_nix,
+        "cmake-mark": s_cmake,
+        "docker-whale": s_docker,
+        "hammer": s_hammer,
+        "bazel-mark": s_bazel,
+        "shuriken": s_shuriken,
+        "shield-check": s_shield_check,
+        "cue-mark": s_cue,
+        "dhall-mark": s_dhall,
+        "jsonnet-mark": s_jsonnet,
+        "wasm-mark": s_wasm,
+        "vlang-mark": s_vlang,
+        "membrane": s_membrane,
+        "rooster": s_rooster,
+    }
+)
+
+ICONS.update(
+    {
+        "v": ("vlang-mark", None),
+        "v-vlang": ("vlang-mark", None),
+        "v-verilog": ("or-gate", None),
+        "v-coq": ("rooster", None),
+        "m": ("tile-M", None),
+        "m-objc": ("objc-mark", None),
+        "m-matlab": ("membrane", None),
+        "pl": ("onion", None),
+        "pl-perl": ("onion", None),
+        "pl-prolog": ("prolog-owl", None),
+        "pm": ("onion", "text-M"),
+        "js": ("js-tile", None),
+        "mjs": ("js-tile", "text-M"),
+        "cjs": ("js-tile", "text-C"),
+        "jsx": ("react-atom", None),
+        "ts": ("ts-tile", None),
+        "mts": ("ts-tile", "text-M"),
+        "cts": ("ts-tile", "text-C"),
+        "tsx": ("react-atom", None),
+        "vue": ("vue-mark", None),
+        "svelte": ("svelte-mark", None),
+        "astro": ("astro-mark", None),
+        "coffee": ("paper-cup", None),
+        "ejs": ("ejs-mark", None),
+        "hbs": ("mustache", None),
+        "pug": ("pug-dog", None),
+        "njk": ("njk-mark", None),
+        "py": ("python-snakes", None),
+        "pyw": ("python-snakes", "text-W"),
+        "pyi": ("python-snakes", "text-I"),
+        "pyx": ("python-snakes", "text-C"),
+        "pyc": ("python-snakes", "binary"),
+        "pyd": ("python-snakes", "text-D"),
+        "ipynb": ("jupyter-mark", None),
+        "java": ("java-cup", None),
+        "kt": ("kotlin-mark", None),
+        "kts": ("kotlin-mark", "text-S"),
+        "scala": ("scala-mark", None),
+        "groovy": ("groovy-mark", None),
+        "gradle": ("elephant", None),
+        "c": ("hex-c", None),
+        "h": ("hex-c", "text-H"),
+        "cpp": ("hex-cpp", None),
+        "cc": ("hex-cpp", None),
+        "cxx": ("hex-cpp", None),
+        "hpp": ("hex-cpp", "text-H"),
+        "hxx": ("hex-cpp", "text-H"),
+        "hh": ("hex-cpp", "text-H"),
+        "cs": ("hex-cs", None),
+        "csx": ("hex-cs", "text-S"),
+        "cu": ("gpu-chip", "text-C"),
+        "cuh": ("gpu-chip", "text-H"),
+        "mm": ("objc-mark", "plus"),
+        "rs": ("rust-gear", None),
+        "go": ("gopher", None),
+        "zig": ("zig-mark", None),
+        "d": ("d-mark", None),
+        "nim": ("crown", None),
+        "cr": ("crystal-mark", None),
+        "asm": ("dip-chip", None),
+        "s": ("dip-chip", None),
+        "odin": ("eye", None),
+        "ada": ("tile-ADA", None),
+        "adb": ("tile-ADA", None),
+        "ads": ("tile-ADA", "text-H"),
+        "hs": ("haskell-mark", None),
+        "lhs": ("haskell-mark", "text-L"),
+        "ml": ("camel", None),
+        "mli": ("camel", "text-H"),
+        "fs": ("fsharp-mark", None),
+        "fsx": ("fsharp-mark", "text-S"),
+        "fsi": ("fsharp-mark", "text-H"),
+        "ex": ("elixir-drop", None),
+        "exs": ("elixir-drop", "text-S"),
+        "erl": ("erlang-mark", None),
+        "hrl": ("erlang-mark", "text-H"),
+        "clj": ("clojure-mark", None),
+        "cljs": ("clojure-mark", "text-S"),
+        "cljc": ("clojure-mark", "text-C"),
+        "edn": ("edn-mark", None),
+        "elm": ("elm-tangram", None),
+        "purs": ("purescript-mark", None),
+        "gleam": ("gleam-star", None),
+        "scm": ("lambda", None),
+        "rkt": ("racket-mark", None),
+        "lisp": ("parens", None),
+        "el": ("emacs-mark", None),
+        "lean": ("forall", None),
+        "agda": ("pi-mark", None),
+        "idr": ("turnstile", None),
+        "rb": ("ruby-gem", None),
+        "rake": ("rake-tool", None),
+        "gemspec": ("ruby-gem", "template"),
+        "php": ("php-mark", None),
+        "lua": ("lua-mark", None),
+        "r": ("r-mark", None),
+        "rmd": ("r-mark", "text-M"),
+        "jl": ("julia-dots", None),
+        "tcl": ("quill", None),
+        "awk": ("awk-mark", None),
+        "ahk": ("tile-H", None),
+        "applescript": ("script-scroll", None),
+        "scpt": ("script-scroll", "binary"),
+        "swift": ("swift-bird", None),
+        "dart": ("dart-mark", None),
+        "mojo": ("flame", None),
+        "vb": ("tile-VB", None),
+        "vbs": ("tile-VB", "text-S"),
+        "bas": ("basic-crt", None),
+        "cob": ("punch-card", None),
+        "cbl": ("punch-card", None),
+        "pas": ("pascal-triangle", None),
+        "dpr": ("temple", None),
+        "f": ("tile-F", None),
+        "for": ("tile-F", None),
+        "f90": ("tile-F", None),
+        "f95": ("tile-F", None),
+        "sas": ("tile-SAS", None),
+        "sol": ("solidity-mark", None),
+        "vy": ("vyper-mark", None),
+        "move": ("move-arrow", None),
+        "vhdl": ("and-gate", None),
+        "vhd-vhdl": ("and-gate", None),
+        "sv": ("xor-gate", None),
+        "svh": ("xor-gate", "text-H"),
+        "glsl": ("shader-triangle", None),
+        "vert": ("vertex-mesh", None),
+        "frag": ("fragment-pixels", None),
+        "hlsl": ("shader-triangle", "text-D"),
+        "wgsl": ("shader-triangle", "web"),
+        "metal": ("ingot", None),
+        "gdshader": ("shader-triangle", "text-G"),
+        "ino": ("arduino-mark", None),
+        "gd": ("godot-mark", None),
+        "proto": ("schema", None),
+        "pb-protobuf": ("schema", "binary"),
+        "graphql": ("graphql-mark", None),
+        "gql": ("graphql-mark", None),
+        "prisma": ("prisma-mark", None),
+        "tf": ("terraform-mark", None),
+        "tfvars": ("terraform-mark", "text-V"),
+        "hcl": ("hcl-mark", None),
+        "nix": ("nix-snowflake", None),
+        "cmake": ("cmake-mark", None),
+        "dockerfile": ("docker-whale", None),
+        "mk": ("hammer", None),
+        "bzl": ("bazel-mark", None),
+        "ninja": ("shuriken", None),
+        "rego": ("shield-check", None),
+        "cue": ("cue-mark", None),
+        "dhall": ("dhall-mark", None),
+        "jsonnet": ("jsonnet-mark", None),
+        "wasm": ("wasm-mark", None),
+        "wat": ("wasm-mark", "text-T"),
     }
 )
 

@@ -9,8 +9,12 @@ Duotone language shared by every symbol:
 - tint: a light wash (dark wash in the dark theme) for body fills.
 Strokes are 2.2 px with round caps and joins; symbols fill roughly 31x31 px of the 40x40 box.
 
-Light and dark differ only in color values (same structure), like the other styles. Symbols are added block by block
-(category by category) after review; the current block is listed in SYMBOLS.
+Light and dark differ only in color values (same structure), like the other styles. SYMBOLS holds the drawings,
+ICONS maps every manifest name to a symbol plus an optional badge (aliases share a symbol; format variants such as
+headers, macros, templates or binaries add a small badge at the bottom right). Some symbols are simplified redrawings
+of brand marks; see tools/stylegen/NOTICE.
+
+The output is deterministic and committed under icon-styles/iconic/; never edit those files by hand.
 
 Usage: python tools/stylegen/iconic.py [--out DIR] [--names a,b]
 """
@@ -342,6 +346,18 @@ def badge(d: Draw, glyph: str) -> None:
         d.circle(30.4, 33.8, 2, fill="tint")
     elif glyph.startswith("text-"):
         text_badge(d, glyph[len("text-") :])
+    elif glyph == "box":
+        d.rect(27.2, 28.6, 7.6, 6, 0.8, fill="tint")
+        d.path("M27.2 30.6h7.6", stroke="main", width=1)
+        d.path("M27.6 28.4l1.4-2.2h4l1.4 2.2", stroke="tint", width=1.2)
+    elif glyph == "pin":
+        d.path("M31 35.4s3.4-3.1 3.4-5.8a3.4 3.4 0 0 0-6.8 0c0 2.7 3.4 5.8 3.4 5.8z", fill="tint")
+        d.circle(31, 29.6, 1.1, fill="main")
+    elif glyph == "code":
+        d.path("M29 28l-2.6 3 2.6 3M33 28l2.6 3-2.6 3", stroke="tint", width=1.5)
+    elif glyph == "drive":
+        d.rect(26.8, 28.4, 8.4, 5.2, 1.2, fill="tint")
+        d.circle(33, 31, 0.8, fill="main")
     elif glyph == "comment":
         d.path("M28.4 34.6l2.6-7.2M31.8 34.6l2.6-7.2", stroke="tint", width=1.6)
     elif glyph == "link":
@@ -3583,6 +3599,1025 @@ ICONS.update(
 )
 
 
+# ------------------------------------------------------------------ block 5: apps and systems
+
+
+def window_frame(d: Draw) -> None:
+    d.rect(4.5, 6, 31, 28, 3, fill="tint", stroke="main")
+    d.path("M4.5 9a3 3 0 0 1 3-3h25a3 3 0 0 1 3 3v3h-31z", fill="main", stroke="main")
+
+
+def s_app_window(d: Draw) -> None:
+    window_frame(d)
+    d.path("M16.5 17v11.5l9.5-5.75z", fill="main", stroke="main", width=1.6)
+
+
+def s_plug(d: Draw) -> None:
+    d.path("M15.5 4.5v8M24.5 4.5v8", stroke="main", width=3)
+    d.rect(10.5, 12, 19, 12, 3, fill="main")
+    d.path("M20 24v4.5c0 3.5-2.5 6.5-6.5 6.5", stroke="main", width=2.8)
+    d.path("M14.5 18h11", stroke="tint", width=1.8)
+
+
+def brick(d: Draw, x: float, y: float, w: float, h: float, role: str) -> None:
+    studs = int(round(w / 9))
+    gap = w / studs
+    for i in range(studs):
+        d.rect(round(x + i * gap + gap / 2 - 3, 2), y - 3.6, 6, 4.2, 1.2, fill=role)
+    d.rect(x, y, w, h, 2, fill=role)
+
+
+def s_brick(d: Draw) -> None:
+    brick(d, 4.5, 15, 31, 15, "main")
+    d.path("M9 22.5h22", stroke="tint", width=1.4)
+
+
+def s_brick_stack(d: Draw) -> None:
+    brick(d, 4.5, 24, 31, 11, "mid")
+    brick(d, 4.5, 10.5, 22, 10.5, "main")
+
+
+def s_bookshelf(d: Draw) -> None:
+    d.rect(6, 10, 5.5, 23, 1, fill="main")
+    d.rect(12.5, 13, 5.5, 20, 1, fill="mid")
+    d.rect(19, 7.5, 5.5, 25.5, 1, fill="main")
+    d.path(rotated([(-2.75, -11), (2.75, -11), (2.75, 11), (-2.75, 11)], 18, 29.6, 22), fill="mid")
+    d.path("M4 34.5h32", stroke="main", width=2.6)
+
+
+def s_elf_hat(d: Draw) -> None:
+    d.path("M9 29C11 19 15 10 21 5c3.4 6.4 7.4 10.4 12 12-5.4.8-8.6 3-10.5 12z", fill="main")
+    d.rect(6, 27.5, 20, 6.5, 2, fill="mid")
+    d.circle(33.5, 17.5, 2.8, fill="mid")
+
+
+def s_box_out(d: Draw) -> None:
+    d.rect(5, 13.5, 22, 21.5, 2.5, fill="tint", stroke="main")
+    d.path("M17 23L33 7M24 7h9v9", stroke="main", width=2.8)
+
+
+def s_floppy(d: Draw) -> None:
+    d.path("M6 7.5A2.5 2.5 0 0 1 8.5 5H29l6 6v21.5a2.5 2.5 0 0 1-2.5 2.5h-24A2.5 2.5 0 0 1 6 32.5z", fill="main")
+    d.rect(12, 5, 15, 9, 1, fill="tint")
+    d.rect(22, 6.6, 3, 5.8, 0.6, fill="main")
+    d.rect(10.5, 20.5, 19, 12, 1.5, fill="tint")
+    d.path("M14 25h12M14 29h8", stroke="mid", width=1.6)
+
+
+def s_monitor_stars(d: Draw) -> None:
+    d.rect(4.5, 5.5, 31, 22, 3, fill="main")
+    d.circle(14.5, 15.5, 5, fill="tint")
+    d.circle(17.2, 13.6, 4.2, fill="main")
+    for x, y, r in ((25.5, 11, 2.2), (29, 19.5, 1.6), (21.5, 21, 1.4)):
+        d.path(star_path(x, y, r, r * 0.42, 4), fill="tint")
+    d.path("M20 27.5v5M13 34.5h14", stroke="main")
+
+
+def s_steering(d: Draw) -> None:
+    d.circle(20, 20, 14.5, stroke="main", width=3.6)
+    d.path("M6 18h10M24 18h10M20 24v11", stroke="main", width=3.2)
+    d.circle(20, 19.5, 4.5, fill="main")
+
+
+def s_power(d: Draw) -> None:
+    d.path("M12.5 11a12 12 0 1 0 15 0", stroke="main", width=3.6)
+    d.path("M20 5v14", stroke="mid", width=3.6)
+
+
+def s_android(d: Draw) -> None:
+    d.path("M12.5 9.5l-2.5-4.5M27.5 9.5l2.5-4.5", stroke="main", width=2.2)
+    d.path("M7 21.5a13 13 0 0 1 26 0z", fill="main")
+    d.circle(14.5, 15.5, 1.8, fill="tint")
+    d.circle(25.5, 15.5, 1.8, fill="tint")
+    d.rect(7, 23.5, 26, 12, 3, fill="mid")
+
+
+def s_cartridge(d: Draw) -> None:
+    d.path("M7 5h26v22l-3 3v5.5H10V30l-3-3z", fill="main")
+    d.rect(11, 9, 18, 13, 1.5, fill="tint")
+    d.path("M14 31v3.5M18 31v3.5M22 31v3.5M26 31v3.5", stroke="tint", width=1.6)
+    d.path("M14.5 13.5h11M14.5 17.5h7", stroke="mid", width=1.8)
+
+
+def s_hex_ff(d: Draw) -> None:
+    d.path(HEXAGON, fill="main", stroke="main", width=1.6)
+    text(d, "FF", 20, 20, 10, "tint", 2.6)
+
+
+def s_usb(d: Draw) -> None:
+    d.path("M20 8v23M20 25.5l-8-5.5v-5M20 21l8-5v-3", stroke="main", width=2.4)
+    d.path("M16 9.5L20 4l4 5.5z", fill="main")
+    d.circle(12, 13, 2.6, fill="main")
+    d.rect(25.4, 9, 5.2, 5.2, 0.6, fill="main")
+    d.circle(20, 32, 3.5, fill="main")
+
+
+def s_fpga(d: Draw) -> None:
+    d.rect(5, 5, 30, 30, 3, fill="tint", stroke="main")
+    d.path("M14 11.5h4M22 11.5h4M14 20h4M22 20h4M14 28.5h4M22 28.5h4M11.5 14v4M20 14v4M28.5 14v4M11.5 22.5v4M20 22.5v4"
+           "M28.5 22.5v4", stroke="mid", width=1.6)
+    for r in range(3):
+        for c in range(3):
+            d.rect(9 + c * 8.5, 9 + r * 8.5, 5, 5, 1, fill="main")
+
+
+def s_bug(d: Draw) -> None:
+    d.path("M12 18l-6-3M12 24H5M12.5 30l-6 3.5M28 18l6-3M28 24h7M27.5 30l6 3.5M17.5 7l-3-3.5M22.5 7l3-3.5",
+           stroke="main", width=2.2)
+    d.ellipse(20, 23.5, 8, 10.5, fill="main")
+    d.circle(20, 10.5, 4.6, fill="main")
+    d.path("M20 14.5v18.5", stroke="tint", width=1.6)
+
+
+def s_crash_window(d: Draw) -> None:
+    window_frame(d)
+    d.path("M21 13.5l-4.5 7.5 6 3-4.5 9", stroke="main", width=2.4)
+    d.path("M9 18l4 2M27 28l4 1.5", stroke="mid", width=1.8)
+
+
+def s_apple_core(d: Draw) -> None:
+    d.path("M20 5.5V3", stroke="mid", width=2)
+    d.path("M14.5 10.5c2 4 2 15 0 19h11c-2-4-2-15 0-19z", fill="mid")
+    d.path("M11 9c0-3 4-4 9-4s9 1 9 4c0 1.6-4 2.6-9 2.6S11 10.6 11 9z", fill="main")
+    d.path("M11 31c0 3 4 4.5 9 4.5s9-1.5 9-4.5c0-1.6-4-2.6-9-2.6S11 29.4 11 31z", fill="main")
+    d.ellipse(18.5, 18, 1.2, 2, fill="main")
+    d.ellipse(21.5, 22, 1.2, 2, fill="main")
+
+
+def s_debian(d: Draw) -> None:
+    d.path("M24 6.5a13.5 13.5 0 1 0 9.5 17 10 10 0 0 1-12.5 6.5 7.5 7.5 0 0 1-4-12 5 5 0 0 1 7 .5", stroke="main",
+           width=3.4)
+
+
+def s_fedora_hat(d: Draw) -> None:
+    d.path("M10 22c0-7 3-13 10-13s10 6 10 13z", fill="main")
+    d.path("M15.5 10.5c2.6 2.2 6.4 2.2 9 0", stroke="tint", width=1.6)
+    d.rect(10, 19, 20, 3.8, 0.6, fill="mid")
+    d.path("M4 23c4 3 10 4 16 4s12-1 16-4c0 4.6-7 8.5-16 8.5S4 27.6 4 23z", fill="main")
+
+
+def s_ios_apps(d: Draw) -> None:
+    phone(d)
+    for x, y, role in ((14, 10.5, "main"), (21, 10.5, "mid"), (14, 17.5, "mid"), (21, 17.5, "main"), (14, 24.5, "main")):
+        d.rect(x, y, 5, 5, 1.4, fill=role)
+
+
+def s_installer(d: Draw) -> None:
+    d.rect(6, 19, 28, 16, 3, fill="tint", stroke="main")
+    d.path("M6 24.5h28", stroke="main")
+    d.path("M20 4v13M15 12l5 5 5-5", stroke="main", width=2.8)
+
+
+def s_java_jar(d: Draw) -> None:
+    d.path("M16.5 3.5c-1.5 2 1.5 3.5 0 5.5M23 3.5c-1.5 2 1.5 3.5 0 5.5", stroke="mid", width=1.8)
+    d.rect(9, 14.5, 22, 21, 5, fill="tint", stroke="main")
+    d.rect(11, 10, 18, 5, 1.5, fill="main")
+    d.rect(13, 21, 14, 8, 1.5, fill="mid")
+
+
+def s_wheel(d: Draw) -> None:
+    spokes = "".join(
+        f"M{20 + 3.5 * math.cos(a):.2f} {20 + 3.5 * math.sin(a):.2f}L{20 + 13 * math.cos(a):.2f} {20 + 13 * math.sin(a):.2f}"
+        for a in (math.pi * k / 4 for k in range(8))
+    )
+    d.path(spokes, stroke="mid", width=2)
+    d.circle(20, 20, 14.5, stroke="main", width=3.6)
+    d.circle(20, 20, 3.8, fill="main")
+
+
+def s_egg_shape(d: Draw) -> None:
+    d.path("M20 4.5c-7 0-12 10-12 18a12 12 0 0 0 24 0c0-8-5-18-12-18z", fill="main")
+    d.ellipse(15.5, 17, 2.4, 4, fill="tint")
+    d.circle(24, 26, 1.8, fill="mid")
+    d.circle(19, 30, 1.2, fill="mid")
+
+
+def s_nuget(d: Draw) -> None:
+    d.circle(10, 10, 5, fill="mid")
+    d.rect(14, 14, 21.5, 21.5, 7, fill="main")
+    d.circle(27.5, 27.5, 4.4, fill="tint")
+
+
+def s_win_package(d: Draw) -> None:
+    d.path("M5 14l4-8h22l4 8", fill="mid", stroke="main")
+    d.rect(5, 14, 30, 21, 3, fill="tint", stroke="main")
+    for x, y, role in ((13.5, 18, "main"), (20.5, 18, "main"), (13.5, 25, "main"), (20.5, 25, "mid")):
+        d.rect(x, y, 6, 6, 0.8, fill=role)
+
+
+def s_snap(d: Draw) -> None:
+    d.path("M6 5.5L34 13H20z", fill="main", stroke="main", width=1.6)
+    d.path("M6 5.5L20 13v22z", fill="mid", stroke="mid", width=1.6)
+    d.path("M22 16h12L22 30z", fill="main", stroke="main", width=1.6)
+
+
+def s_puzzle(d: Draw) -> None:
+    d.path("M8 13h7.5a4.5 4.5 0 0 1 9 0H32v7.5a4.5 4.5 0 0 1 0 9V35H8z", fill="main")
+    d.path("M8 24h4.5", stroke="tint", width=1.6)
+
+
+def s_unity(d: Draw) -> None:
+    d.path("M20 4L34 12v16L20 36 6 28V12z", fill="main", stroke="main", width=1.6)
+    d.path("M20 20v13M20 20L8.5 13.5M20 20l11.5-6.5", stroke="tint", width=2.6)
+
+
+def s_certificate(d: Draw) -> None:
+    d.rect(4.5, 6, 31, 22, 2.5, fill="tint", stroke="main")
+    d.path("M9 12h18M9 16.5h13", stroke="mid", width=1.8)
+    d.path("M23 29.5l-1.5 6.5 4.5-2.5 4.5 2.5-1.5-6.5", fill="main", stroke="main", width=1.4)
+    d.circle(26, 25.5, 5.5, fill="main", stroke="tint", width=1.6)
+
+
+def s_keyring(d: Draw) -> None:
+    d.circle(12.5, 12, 7, stroke="main", width=2.6)
+    d.path("M17 17l13 13M24.5 24.5l3-3M28 28l2.5-2.5", stroke="main", width=3)
+    d.path("M12.5 19v15.5M12.5 27h4M12.5 31.5h3", stroke="mid", width=3)
+
+
+def s_signature(d: Draw) -> None:
+    d.path("M5 25c3-8 6-12 8-10s-2 10 1 9 4-9 7-8-1 7 2 7 4-4 6-4 3 2 6 1", stroke="main", width=2.4)
+    d.path("M5 32h30", stroke="mid", width=2)
+    d.path("M5 7.5l4 4M9 7.5l-4 4", stroke="mid", width=1.8)
+
+
+def s_hdd(d: Draw) -> None:
+    d.rect(4.5, 9, 31, 22, 3, fill="main")
+    d.circle(15, 20, 7, fill="tint")
+    d.circle(15, 20, 1.8, fill="main")
+    d.path("M15 20l9.5-6.5", stroke="mid", width=2)
+    d.circle(30, 26, 1.6, fill="tint")
+
+
+def s_vm_monitor(d: Draw) -> None:
+    d.rect(4.5, 5.5, 31, 22, 3, fill="main")
+    d.rect(8.5, 9, 23, 15, 1.5, fill="tint")
+    d.rect(13.5, 12, 13, 8.5, 1, fill="mid")
+    d.path("M20 20.5v2.5", stroke="mid", width=1.6)
+    d.path("M20 27.5v5M13 34.5h14", stroke="main")
+
+
+def s_vbox_cube(d: Draw) -> None:
+    cube_faces(d, 20, 20, 15)
+
+
+def s_cow(d: Draw) -> None:
+    d.path("M13 8l-2-4M27 8l2-4", stroke="mid", width=2.4)
+    d.ellipse(7, 13.5, 4.4, 2.6, fill="mid")
+    d.ellipse(33, 13.5, 4.4, 2.6, fill="mid")
+    d.path("M11 12c0-3 4-5 9-5s9 2 9 5v9c0 6-4 12.5-9 12.5S11 27 11 21z", fill="main")
+    d.path("M22 7.5c2 2 4.5 2.5 6.5 1.5", stroke="tint", width=1.4)
+    d.circle(15.5, 16, 1.8, fill="tint")
+    d.circle(24.5, 16, 1.8, fill="tint")
+    d.ellipse(20, 27, 7, 5, fill="tint")
+    d.circle(17.5, 27, 1.3, fill="main")
+    d.circle(22.5, 27, 1.3, fill="main")
+
+
+def s_squash(d: Draw) -> None:
+    d.path("M20 4v8M16.5 8.5L20 12l3.5-3.5", stroke="main", width=2.4)
+    d.path("M20 15L35 20 20 25 5 20z", fill="mid", stroke="main", width=1.4)
+    d.path("M5 20l15 5v6L5 26z", fill="tint", stroke="main", width=1.4)
+    d.path("M35 20v6l-15 5v-6z", fill="main", stroke="main", width=1.4)
+
+
+def s_copy_io(d: Draw) -> None:
+    d.rect(12, 12, 16, 16, 2.5, fill="tint", stroke="main")
+    d.path("M3.5 16h8M8.5 13l3 3-3 3", stroke="main", width=2.2)
+    d.path("M28 24h8.5M33.5 21l3 3-3 3", stroke="mid", width=2.2)
+
+
+def s_openvpn(d: Draw) -> None:
+    d.circle(20, 18, 14, fill="main")
+    d.circle(20, 15, 4.2, fill="tint")
+    d.path("M17.6 17.5l-2.2 14.5h9.2l-2.2-14.5z", fill="tint")
+
+
+def s_tunnel(d: Draw) -> None:
+    d.path("M4.5 34V20a15.5 15.5 0 0 1 31 0v14z", fill="main")
+    d.path("M10.5 34V21a9.5 9.5 0 0 1 19 0v13z", fill="tint")
+    d.path("M13.5 27.5h11.5M21.5 24l3.5 3.5-3.5 3.5", stroke="main", width=2.4)
+
+
+def s_shark_fin(d: Draw) -> None:
+    d.path("M4 31c3-2.5 5-2.5 8 0s5 2.5 8 0 5-2.5 8 0 5 2.5 8 0", stroke="mid", width=2.4)
+    d.path("M9 27.5c4-10 12-18 21-22.5-2 7-2 15.5 1 22.5z", fill="main")
+
+
+def s_event_log(d: Draw) -> None:
+    d.rect(7, 6, 26, 29.5, 3, fill="tint", stroke="main")
+    d.rect(14, 3.5, 12, 5, 1.5, fill="main")
+    d.path("M20 12.5l7.5 13H12.5z", fill="main", stroke="main", width=1.6)
+    d.path("M20 16.5v4.5", stroke="tint", width=2)
+    d.circle(20, 23.3, 1.1, fill="tint")
+    d.path("M12 30.5h16", stroke="mid", width=2)
+
+
+def s_trace(d: Draw) -> None:
+    window_frame(d)
+    d.path("M8.5 28l5-6.5 4 3.5 5-9 4 5.5 5-6", stroke="main", width=2.4)
+
+
+def s_magnet(d: Draw) -> None:
+    d.path("M7.5 6v14a12.5 12.5 0 0 0 25 0V6h-7.5v14a5 5 0 0 1-10 0V6z", fill="main")
+    d.rect(7.5, 6, 7.5, 5.5, 0.6, fill="tint")
+    d.rect(25, 6, 7.5, 5.5, 0.6, fill="tint")
+
+
+def s_shortcut(d: Draw) -> None:
+    d.rect(4.5, 4.5, 31, 31, 5, fill="tint", stroke="main")
+    d.path("M12.5 28c0-8.5 5-12.5 14-12.5M21.5 10.5l5 5-5 5", stroke="main", width=3)
+
+
+def s_chain(d: Draw) -> None:
+    for (x0, y0, x1, y1) in ((9.5, 30.5, 18.5, 21.5), (21.5, 18.5, 30.5, 9.5)):
+        d.path(f"M{x0:g} {y0:g}L{x1:g} {y1:g}", stroke="main", width=10)
+        d.path(f"M{x0:g} {y0:g}L{x1:g} {y1:g}", stroke="tint", width=4.4)
+    d.path("M15 25l10-10", stroke="mid", width=3)
+
+
+def s_desktop_launcher(d: Draw) -> None:
+    d.rect(4.5, 5.5, 31, 22, 3, fill="main")
+    d.rect(8, 9, 24, 15, 1.5, fill="tint")
+    for x, y, role in ((11, 11.5, "main"), (17.5, 11.5, "mid"), (11, 17.5, "mid"), (17.5, 17.5, "main")):
+        d.rect(x, y, 4.5, 4.5, 1.2, fill=role)
+    d.path("M20 27.5v5M13 34.5h14", stroke="main")
+
+
+def s_hourglass(d: Draw) -> None:
+    d.path("M14 11h12c-1 3-4 5-6 6-2-1-5-3-6-6zM12.6 33c1-4 4.4-6 7.4-7 3 1 6.4 3 7.4 7z", fill="mid")
+    d.path("M11 5c0 7 9 10 9 15s-9 8-9 15M29 5c0 7-9 10-9 15s9 8 9 15", stroke="main", width=2.4)
+    d.path("M8.5 5h23M8.5 35h23", stroke="main", width=3)
+
+
+def s_swap(d: Draw) -> None:
+    d.path("M7.5 14h22M24.5 9l5 5-5 5", stroke="main", width=3)
+    d.path("M32.5 26h-22M15.5 21l-5 5 5 5", stroke="mid", width=3)
+
+
+def s_hash_circle(d: Draw) -> None:
+    d.circle(20, 20, 15.5, fill="main")
+    text(d, "#", 20, 20, 14, "tint", 2.8)
+
+
+def s_paper_tape(d: Draw) -> None:
+    d.rect(8, 4, 24, 32, 2, fill="tint", stroke="main")
+    rows = [(0, 1, 0, 1), (1, 1, 0, 0), (0, 0, 1, 1), (1, 0, 1, 0), (0, 1, 1, 1), (1, 0, 0, 1)]
+    for r, bits in enumerate(rows):
+        y = 8.5 + r * 4.6
+        d.circle(20, y, 0.9, fill="mid")
+        for bit, x in zip(bits, (11.5, 15.5, 24.5, 28.5)):
+            if bit:
+                d.circle(x, y, 1.6, fill="main")
+
+
+# ------------------------------------------------------------------ block 6: design, 3D, CAD, GIS, games, ML
+
+
+def s_gimp(d: Draw) -> None:
+    d.path("M8 14L5 4.5l8.5 5M32 14l3-9.5-8.5 5", fill="main", stroke="main", width=1.6)
+    d.ellipse(20, 20, 13, 12, fill="main")
+    d.circle(14.5, 17, 4, fill="tint")
+    d.circle(25.5, 17, 4, fill="tint")
+    d.circle(15.5, 17.5, 1.8, fill="main")
+    d.circle(24.5, 17.5, 1.8, fill="main")
+    d.ellipse(20, 25.5, 4, 2.6, fill="mid")
+    d.path("M23 27.5l11 8", stroke="mid", width=2.4)
+
+
+def s_palette(d: Draw) -> None:
+    d.path("M20 5C11 5 4.5 11 4.5 19c0 8.5 6.5 16 14.5 16 3 0 4-2 3-4.5s0-5 3-5H29c4 0 6.5-3 6.5-6.5C35.5 11 28.5 5 20 5z",
+           fill="tint", stroke="main")
+    for x, y, role in ((11.5, 18, "main"), (15.5, 11.5, "mid"), (23.5, 10.5, "main"), (29, 17, "mid")):
+        d.circle(x, y, 2.8, fill=role)
+
+
+def s_sheets(d: Draw) -> None:
+    d.rect(14, 4.5, 21, 21, 2.5, fill="tint", stroke="main", width=1.8)
+    d.rect(9.5, 9.5, 21, 21, 2.5, fill="mid", stroke="main", width=1.8)
+    d.rect(5, 14.5, 21, 21, 2.5, fill="main")
+
+
+def s_tablet(d: Draw) -> None:
+    d.rect(4.5, 8, 26, 22, 3, fill="main")
+    d.rect(8, 11.5, 19, 15, 1.5, fill="tint")
+    d.path("M10.5 23c3-5 6-1 9-5", stroke="mid", width=1.8)
+    d.path("M23 27L35 12", stroke="mid", width=3.2)
+    d.path("M23 27l-1.6 3.6 3.4-1.8z", fill="main")
+
+
+def s_eps_frame(d: Draw) -> None:
+    d.rect(5, 5, 30, 30, 3, fill="tint", stroke="main")
+    d.path("M10 28C11 15 29 25 30 12", stroke="main", width=2.4)
+    d.rect(8, 26, 4, 4, 0.6, fill="main")
+    d.rect(28, 10, 4, 4, 0.6, fill="main")
+
+
+def s_balloon(d: Draw) -> None:
+    d.path("M16 29.5l1 2.5M24 29.5l-1 2.5", stroke="main", width=1.4)
+    d.path("M20 4c-7.5 0-13 5.5-13 12.5 0 6 5 10.5 9 13h8c4-2.5 9-7 9-13C33 9.5 27.5 4 20 4z", fill="main")
+    d.path("M20 4c-3 3-4.5 7.5-4.5 12.5s1.5 9.5 3 13M20 4c3 3 4.5 7.5 4.5 12.5s-1.5 9.5-3 13", stroke="tint",
+           width=1.6)
+    d.rect(16.5, 32, 7, 4, 1, fill="mid")
+
+
+def s_figma(d: Draw) -> None:
+    d.path("M14 4.5h6v9h-6a4.5 4.5 0 0 1 0-9z", fill="main")
+    d.path("M20 4.5h6a4.5 4.5 0 0 1 0 9h-6z", fill="mid")
+    d.path("M14 13.5h6v9h-6a4.5 4.5 0 0 1 0-9z", fill="mid")
+    d.circle(24.5, 18, 4.5, fill="main")
+    d.path("M14 22.5h6V27a4.5 4.5 0 1 1-6-4.5z", fill="main")
+
+
+def s_sketch_gem(d: Draw) -> None:
+    d.path("M11 7h18l7 9-16 18L4 16z", fill="mid", stroke="main", width=1.4)
+    d.path("M11 7h18l7 9H4z", fill="main", stroke="main", width=1.4)
+    d.path("M11 7l3 9 6-9 6 9 3-9M14 16l6 18 6-18", stroke="tint", width=1.2)
+
+
+def s_affinity(d: Draw) -> None:
+    d.path("M20 5.5L35 32H5z", fill="main", stroke="main", width=2.4)
+    d.path("M20 14l8 14H12z", fill="mid")
+
+
+def ellipse_poly(cx: float, cy: float, rx: float, ry: float, angle: float, n: int = 24) -> str:
+    pts = [(rx * math.cos(t), ry * math.sin(t)) for t in (2 * math.pi * k / n for k in range(n))]
+    return rotated(pts, angle, cx, cy)
+
+
+def s_petals(d: Draw) -> None:
+    for k, role in enumerate(("main", "mid", "main")):
+        a = -90 + 120 * k
+        cx = 20 + 7.5 * math.cos(math.radians(a))
+        cy = 21 + 7.5 * math.sin(math.radians(a))
+        d.path(ellipse_poly(cx, cy, 9.5, 5.6, a), fill=role)
+
+
+def s_casino_chip(d: Draw) -> None:
+    d.circle(20, 20, 15.5, fill="main")
+    for k in range(8):
+        a = math.radians(22.5 + 45 * k)
+        d.path(rotated([(-1.8, -2.6), (1.8, -2.6), (1.8, 2.6), (-1.8, 2.6)], 45 * k + 22.5 + 90,
+                       20 + 13.2 * math.cos(a), 20 + 13.2 * math.sin(a)), fill="tint")
+    d.circle(20, 20, 8.6, fill="tint")
+    text(d, "V", 20, 20, 8, "main", 2.4)
+
+
+def s_wire_cube(d: Draw) -> None:
+    pts = [(20, 4.5), (34, 12), (34, 28), (20, 35.5), (6, 28), (6, 12), (20, 20)]
+    d.path("M20 4.5L34 12v16L20 35.5 6 28V12zM20 20v15.5M20 20L6 12M20 20l14-8", stroke="main", width=1.8)
+    for x, y in pts:
+        d.circle(x, y, 2.4, fill="main")
+
+
+def s_printer3d(d: Draw) -> None:
+    d.path("M6.5 34V6h27v28", stroke="main", width=2.4)
+    d.path("M6.5 11.5h27", stroke="main", width=2.4)
+    d.path("M17 11.5h6v4l-3 3-3-3z", fill="main")
+    d.path("M12.5 34l2.5-10h10l2.5 10z", fill="mid")
+    d.path("M14 29h12M15 25.5h10", stroke="tint", width=1.2)
+    d.path("M4 34.5h32", stroke="main", width=2.6)
+
+
+def s_blender(d: Draw) -> None:
+    d.path("M4.5 15.5h14M9 22.5h9M13.5 7.5l9 7.5M13 33l9-10", stroke="main", width=3.4)
+    d.circle(24, 22, 10, fill="main")
+    d.circle(24, 22, 5.6, fill="tint")
+    d.circle(24, 22, 3, fill="mid")
+
+
+def s_maya(d: Draw) -> None:
+    d.path("M4.5 33V8l8 10L20 6l7.5 12 8-10v25", stroke="main", width=3.8)
+    d.path("M12.5 33V24M27.5 33V24", stroke="mid", width=3)
+
+
+def s_point_cloud(d: Draw) -> None:
+    for lat in (-60, -30, 0, 30, 60):
+        ring = 15 * math.cos(math.radians(lat))
+        y = 20 + 15 * math.sin(math.radians(lat))
+        count = max(3, int(ring / 2.2))
+        for k in range(count):
+            lon = math.radians(360 * k / count + lat)
+            x = 20 + ring * math.sin(lon)
+            front = math.cos(lon) > 0
+            d.circle(round(x, 2), round(y, 2), 1.6 if front else 1.1, fill="main" if front else "mid")
+
+
+def s_usd_layers(d: Draw) -> None:
+    for y, fill in ((20, "tint"), (13, "mid"), (6, "main")):
+        d.path(f"M20 {y:g}l15 7-15 7-15-7z", fill=fill, stroke="main", width=1.6)
+
+
+def s_alembic(d: Draw) -> None:
+    d.path("M18.5 17l12-9", stroke="main", width=3)
+    d.path("M31 8l2.5 6", stroke="main", width=2.2)
+    d.circle(33.5, 17, 1.6, fill="mid")
+    d.circle(15, 25, 10, fill="tint", stroke="main")
+    d.path("M5.6 27a9.4 9.4 0 0 0 18.8 0z", fill="mid")
+
+
+def s_c4d(d: Draw) -> None:
+    d.circle(20, 20, 15.5, fill="main")
+    d.path("M5.5 15c9 4 20 4 29 0M5 22.5c9 4 21 4 30 0", stroke="tint", width=1.6)
+    d.circle(14, 11.5, 3, fill="mid")
+
+
+def s_material_ball(d: Draw) -> None:
+    d.ellipse(20, 35.5, 10, 1.6, fill="mid")
+    d.circle(20, 20, 14, fill="main")
+    d.ellipse(14.5, 14.5, 4.2, 3, fill="tint")
+    d.path("M10 26c4 4.4 16 4.4 20 0", stroke="mid", width=1.6)
+
+
+def s_bracket(d: Draw) -> None:
+    d.path("M6 13l5-4h8l-5 4zM14 28l5-4h16l-5 4z", fill="mid", stroke="main", width=1.4)
+    d.path("M19 9v15M35 24v7l-5 4", fill="main", stroke="main", width=1.4)
+    d.path("M6 13h8v15h16v7H6z", fill="main", stroke="main", width=1.4)
+    d.circle(10, 31.5, 1.8, fill="tint")
+    d.circle(10, 18, 1.8, fill="tint")
+
+
+def s_surface(d: Draw) -> None:
+    d.path("M5 20c9-6 17-6 30-12v18c-13 6-21 6-30 12z", fill="mid", stroke="main", width=1.8)
+    d.path("M5 26c9-6 17-6 30-12M5 32c9-6 17-6 30-12M15 15.5v18M25 11.5v18", stroke="main", width=1.2)
+
+
+def s_freecad(d: Draw) -> None:
+    d.path(gear_path(20, 20, 16, 12.5, 10), fill="main", stroke="main", width=1.2)
+    text(d, "F", 20, 20, 13, "tint", 3.2)
+
+
+def s_building(d: Draw) -> None:
+    d.rect(9, 5, 22, 30.5, 1.5, fill="main")
+    for r in range(4):
+        for c in range(3):
+            d.rect(12.5 + c * 5.5, 8.5 + r * 5, 3.4, 3, 0.4, fill="tint")
+    d.rect(17, 29, 6, 6.5, 0.6, fill="mid")
+    d.path("M5 35.5h30", stroke="main", width=2)
+
+
+
+def s_toolpath(d: Draw) -> None:
+    d.path("M6 31h28V25H6v-6h28v-6H6", stroke="mid", width=2)
+    d.path("M3.5 9.5h5v4l-2.5 3-2.5-3z", fill="main")
+    d.path("M6 4.5v5", stroke="main", width=2)
+
+
+def s_skp_box(d: Draw) -> None:
+    d.path("M20 5l14 7-14 7-14-7z", fill="mid")
+    d.path("M6 12l14-7 14 7v15.5l-14 8-14-8zM6 12l14 7 14-7M20 19v16.5", stroke="main", width=2.2)
+
+
+def s_shapes_map(d: Draw) -> None:
+    d.path("M6 10l9-4 6 5 9-2 4 9-6 6 2 8-10 2-6-6-8 1-2-9z", fill="mid", stroke="main", width=1.8)
+    d.path("M15 6l2 10 9 4M17 16l-6 9", stroke="main", width=1.4)
+
+
+def s_projection(d: Draw) -> None:
+    d.ellipse(20, 20, 16, 10.5, fill="tint", stroke="main")
+    d.ellipse(20, 20, 10.5, 10.5, stroke="main", width=1.2)
+    d.ellipse(20, 20, 5, 10.5, stroke="main", width=1.2)
+    d.path("M5.5 16.5h29M5.5 23.5h29", stroke="main", width=1.2)
+
+
+def s_pushpin(d: Draw) -> None:
+    d.path("M20 21v14", stroke="main", width=2.4)
+    d.circle(20, 13, 8.5, fill="main")
+    d.circle(17.2, 10.2, 2.2, fill="tint")
+
+
+def s_gps_track(d: Draw) -> None:
+    d.path("M8 30c2-8 8-10 12-6s10 2 12-8", stroke="mid", width=2.6)
+    d.circle(8, 30, 3.2, fill="main")
+    d.path("M32 17V5l5.5 3-5.5 3", fill="main", stroke="main", width=1.8)
+
+
+def s_map_tiles(d: Draw) -> None:
+    d.rect(5, 5, 30, 30, 3, fill="tint", stroke="main")
+    d.path("M15 5v30M25 5v30M5 15h30M5 25h30", stroke="main", width=1.2)
+    d.path("M5 29c8-2 10-10 18-12s9-6 12-8", stroke="mid", width=2.8)
+
+
+def s_unreal(d: Draw) -> None:
+    d.circle(20, 20, 15.5, fill="main")
+    d.circle(20, 20, 12, stroke="tint", width=1.4)
+    text(d, "U", 20, 20, 12, "tint", 3)
+
+
+def s_chest(d: Draw) -> None:
+    d.path("M5 16c0-6 4-10 9-10h12c5 0 9 4 9 10z", fill="main")
+    d.rect(5, 16, 30, 18.5, 2, fill="mid", stroke="main")
+    d.path("M5 21h30", stroke="main", width=2)
+    d.rect(16.5, 17, 7, 8, 1.4, fill="tint", stroke="main", width=1.4)
+    d.circle(20, 21, 1.2, fill="main")
+
+
+def s_lambda_circle(d: Draw) -> None:
+    d.circle(20, 20, 15, stroke="main", width=3)
+    d.path("M12.5 10c3.4 0 5 1.2 6.6 4.8L27.5 31M18.6 18.6L12.8 31", stroke="main", width=3.2)
+
+
+def s_skull(d: Draw) -> None:
+    d.path("M20 4.5c-8 0-13.5 5.5-13.5 13 0 4.5 2 7.5 5 9.5v5.5h17V27c3-2 5-5 5-9.5 0-7.5-5.5-13-13.5-13z", fill="main")
+    d.circle(14.5, 18, 3.4, fill="tint")
+    d.circle(25.5, 18, 3.4, fill="tint")
+    d.path("M20 21.5l-1.6 3h3.2z", fill="tint")
+    d.path("M16 29v3.5M20 29v3.5M24 29v3.5", stroke="tint", width=1.4)
+
+
+def s_grass_block(d: Draw) -> None:
+    d.path("M6 12l14 7.5v16L6 28z", fill="mid", stroke="main", width=1.2)
+    d.path("M34 12v16l-14 7.5v-16z", fill="mid", stroke="main", width=1.2)
+    d.path("M6 12l14 7.5v4L6 16z", fill="main")
+    d.path("M34 12v4l-14 7.5v-4z", fill="main")
+    d.path("M20 4.5L34 12 20 19.5 6 12z", fill="main", stroke="main", width=1.2)
+    for x, y in ((10, 22), (15, 27), (25, 26), (29, 21)):
+        d.rect(x, y, 2, 2, fill="tint")
+
+
+def s_tilemap(d: Draw) -> None:
+    d.rect(5, 5, 30, 30, 3, fill="tint", stroke="main")
+    pattern = ["....", ".m..", "mmm.", "mmmm"]
+    for r, line in enumerate(pattern):
+        for c, ch in enumerate(line):
+            role = "main" if ch == "m" else ("mid" if (r, c) in ((0, 2), (1, 3)) else None)
+            if role:
+                d.rect(7 + c * 6.6, 7 + r * 6.6, 6, 6, 0.8, fill=role)
+
+
+def s_platformer(d: Draw) -> None:
+    for x in (4.5, 11.5, 18.5, 25.5, 32.5 - 3):
+        d.rect(x, 29, 6.4, 6.4, 0.8, fill="main")
+    d.rect(18, 17, 17, 5, 1, fill="mid")
+    d.rect(8, 19.5, 6.5, 9, 1.2, fill="main")
+    d.circle(10, 22.5, 0.9, fill="tint")
+    d.circle(12.6, 22.5, 0.9, fill="tint")
+    d.circle(26.5, 10.5, 2.8, fill="mid")
+
+
+def s_pixel_heart(d: Draw) -> None:
+    rows = [".XX.XX.", "XXXXXXX", "XXXXXXX", ".XXXXX.", "..XXX..", "...X..."]
+    for r, line in enumerate(rows):
+        for c, ch in enumerate(line):
+            if ch == "X":
+                role = "mid" if (r, c) in ((1, 1), (1, 2), (2, 1)) else "main"
+                d.rect(round(5 + c * 4.3, 2), round(7.5 + r * 4.3, 2), 4.1, 4.1, 0.4, fill=role)
+
+
+def s_tensorflow(d: Draw) -> None:
+    d.path("M5.5 12L18 5v30l-5-3V17.5L5.5 22z", fill="main")
+    d.path("M22 5l12.5 7v8L22 13zM22 17.5l7.5 4.2v7.8l-7.5-4.2z", fill="mid")
+
+
+def s_pytorch(d: Draw) -> None:
+    d.path("M20 5l-7.5 7.5a10.6 10.6 0 1 0 15 0", stroke="main", width=3.4)
+    d.circle(25.5, 9.5, 2.2, fill="main")
+
+
+def s_flag(d: Draw) -> None:
+    d.path("M9 4.5v31", stroke="main", width=2.6)
+    d.path("M9 6h21l-4.5 6.5L30 19H9z", fill="mid", stroke="main", width=1.6)
+
+
+def s_safetensors(d: Draw) -> None:
+    d.path("M20 4l13 5v9c0 8-5.5 14-13 17.5C12.5 32 7 26 7 18V9z", fill="tint", stroke="main")
+    for r in range(3):
+        for c in range(3):
+            d.circle(14 + c * 6, 13 + r * 6, 1.8, fill="main" if (r + c) % 2 == 0 else "mid")
+
+
+def s_onnx(d: Draw) -> None:
+    d.circle(20, 20, 15, stroke="main", width=3)
+    d.path("M12 16h15M23 12l4 4-4 4", stroke="main", width=2.4)
+    d.path("M28 24H13M17 20l-4 4 4 4", stroke="mid", width=2.4)
+
+
+def s_llama(d: Draw) -> None:
+    d.path("M13.5 4.5l1.8 7M26.5 4.5l-1.8 7", stroke="main", width=3)
+    d.rect(14.5, 18, 11, 17.5, 4, fill="main")
+    d.ellipse(20, 15, 7.5, 7, fill="main")
+    d.circle(16.6, 13.5, 1.4, fill="tint")
+    d.circle(23.4, 13.5, 1.4, fill="tint")
+    d.ellipse(20, 19.5, 4, 2.8, fill="mid")
+
+
+for _value in ("PS", "AI", "ID", "AE", "PR", "XD", "3DS", "3DM", "MAX", "A", "SW", "I", "F3D", "CA", "K", "VM"):
+    SYMBOLS[f"tile-{_value}"] = letter_tile(_value)
+
+SYMBOLS.update(
+    {
+        "app-window": s_app_window,
+        "plug": s_plug,
+        "brick": s_brick,
+        "brick-stack": s_brick_stack,
+        "bookshelf": s_bookshelf,
+        "elf-hat": s_elf_hat,
+        "box-out": s_box_out,
+        "floppy": s_floppy,
+        "monitor-stars": s_monitor_stars,
+        "steering": s_steering,
+        "power": s_power,
+        "android-head": s_android,
+        "cartridge": s_cartridge,
+        "hex-ff": s_hex_ff,
+        "usb": s_usb,
+        "fpga": s_fpga,
+        "bug": s_bug,
+        "crash-window": s_crash_window,
+        "apple-core": s_apple_core,
+        "debian-swirl": s_debian,
+        "fedora-hat": s_fedora_hat,
+        "ios-apps": s_ios_apps,
+        "installer": s_installer,
+        "java-jar": s_java_jar,
+        "wheel": s_wheel,
+        "egg-shape": s_egg_shape,
+        "nuget-mark": s_nuget,
+        "win-package": s_win_package,
+        "snap-mark": s_snap,
+        "puzzle": s_puzzle,
+        "unity-mark": s_unity,
+        "certificate": s_certificate,
+        "keyring": s_keyring,
+        "signature": s_signature,
+        "hdd": s_hdd,
+        "vm-monitor": s_vm_monitor,
+        "vbox-cube": s_vbox_cube,
+        "cow": s_cow,
+        "squash": s_squash,
+        "copy-io": s_copy_io,
+        "openvpn-mark": s_openvpn,
+        "tunnel": s_tunnel,
+        "shark-fin": s_shark_fin,
+        "event-log": s_event_log,
+        "trace": s_trace,
+        "magnet": s_magnet,
+        "shortcut": s_shortcut,
+        "chain": s_chain,
+        "desktop-launcher": s_desktop_launcher,
+        "hourglass": s_hourglass,
+        "swap-arrows": s_swap,
+        "hash-circle": s_hash_circle,
+        "paper-tape": s_paper_tape,
+        "gimp-head": s_gimp,
+        "palette": s_palette,
+        "sheets": s_sheets,
+        "tablet": s_tablet,
+        "eps-frame": s_eps_frame,
+        "balloon": s_balloon,
+        "figma-mark": s_figma,
+        "sketch-gem": s_sketch_gem,
+        "affinity": s_affinity,
+        "petals": s_petals,
+        "casino-chip": s_casino_chip,
+        "wire-cube": s_wire_cube,
+        "printer3d": s_printer3d,
+        "blender-mark": s_blender,
+        "maya-mark": s_maya,
+        "point-cloud": s_point_cloud,
+        "usd-layers": s_usd_layers,
+        "alembic": s_alembic,
+        "c4d-sphere": s_c4d,
+        "material-ball": s_material_ball,
+        "bracket": s_bracket,
+        "surface": s_surface,
+        "freecad-gear": s_freecad,
+        "building": s_building,
+        "toolpath": s_toolpath,
+        "skp-box": s_skp_box,
+        "shapes-map": s_shapes_map,
+        "projection": s_projection,
+        "pushpin": s_pushpin,
+        "gps-track": s_gps_track,
+        "map-tiles": s_map_tiles,
+        "unreal-mark": s_unreal,
+        "chest": s_chest,
+        "lambda-circle": s_lambda_circle,
+        "skull": s_skull,
+        "grass-block": s_grass_block,
+        "tilemap": s_tilemap,
+        "platformer": s_platformer,
+        "pixel-heart": s_pixel_heart,
+        "tensorflow-mark": s_tensorflow,
+        "pytorch-mark": s_pytorch,
+        "flag": s_flag,
+        "safetensors-mark": s_safetensors,
+        "onnx-mark": s_onnx,
+        "llama": s_llama,
+    }
+)
+
+ICONS.update(
+    {
+        # exec
+        "exe": ("app-window", None),
+        "dll": ("plug", None),
+        "so": ("plug", "text-L"),
+        "dylib": ("plug", "text-M"),
+        "ocx": ("plug", "text-X"),
+        "bin": ("binary", None),
+        "class": ("java-cup", "binary"),
+        "o": ("brick", None),
+        "obj-object": ("brick", None),
+        "a": ("brick-stack", None),
+        "lib": ("bookshelf", None),
+        "ko": ("brick", "text-K"),
+        "elf": ("elf-hat", None),
+        "out": ("box-out", None),
+        "com": ("floppy", None),
+        "sys": ("dip-chip", "gear"),
+        "drv": ("steering", None),
+        "scr": ("monitor-stars", None),
+        "efi": ("power", None),
+        "dex": ("android-head", "binary"),
+        "rom": ("cartridge", None),
+        "hex": ("hex-ff", None),
+        "uf2": ("usb", None),
+        "axf": ("dip-chip", "text-A"),
+        "bit": ("fpga", None),
+        "pdb": ("bug", None),
+        "mdmp": ("crash-window", None),
+        "core": ("apple-core", None),
+        # pkg
+        "deb": ("debian-swirl", None),
+        "rpm": ("fedora-hat", None),
+        "apk": ("android-head", None),
+        "aab": ("android-head", "box"),
+        "xapk": ("android-head", "plus"),
+        "ipa": ("ios-apps", None),
+        "msi": ("installer", None),
+        "pkg": ("package", None),
+        "jar": ("java-jar", None),
+        "war": ("java-jar", "web"),
+        "ear": ("java-jar", "text-E"),
+        "whl": ("wheel", None),
+        "egg": ("egg-shape", None),
+        "gem": ("ruby-gem", "box"),
+        "nupkg": ("nuget-mark", None),
+        "msix": ("win-package", None),
+        "appx": ("win-package", None),
+        "snap": ("snap-mark", None),
+        "appimage": ("package", "play"),
+        "xpi": ("puzzle", "text-F"),
+        "crx": ("puzzle", "web"),
+        "vsix": ("puzzle", "text-V"),
+        "unitypackage": ("unity-mark", "box"),
+        # cert
+        "key": ("secret-key", None),
+        "key-private": ("secret-key", "lock"),
+        "pub-key": ("secret-key", "web"),
+        "pem": ("certificate", "text-P"),
+        "crt": ("certificate", None),
+        "cer": ("certificate", None),
+        "der": ("certificate", "binary"),
+        "p12": ("certificate", "key"),
+        "pfx": ("certificate", "key"),
+        "csr": ("certificate", "arrow"),
+        "jks": ("keyring", "text-J"),
+        "keystore": ("keyring", None),
+        "sig": ("signature", None),
+        "asc": ("signature", "text-A"),
+        "ppk": ("secret-key", "text-P"),
+        "gpg": ("padlock", "key"),
+        # disk
+        "iso": ("disc", None),
+        "img-disk": ("hdd", None),
+        "dmg": ("hdd", "text-M"),
+        "vhd": ("hdd", "text-V"),
+        "vhdx": ("hdd", "text-X"),
+        "wim": ("hdd", "text-W"),
+        "vmdk": ("tile-VM", "drive"),
+        "vmx": ("tile-VM", "gear"),
+        "vdi": ("vbox-cube", "drive"),
+        "vbox": ("vbox-cube", "gear"),
+        "qcow2": ("cow", None),
+        "ova": ("vm-monitor", "box"),
+        "ovf": ("vm-monitor", "template"),
+        "squashfs": ("squash", None),
+        "cpio": ("copy-io", None),
+        # net
+        "ovpn": ("openvpn-mark", None),
+        "wg": ("tunnel", None),
+        "pcap": ("shark-fin", None),
+        "pcapng": ("shark-fin", "plus"),
+        "evtx": ("event-log", None),
+        "etl": ("trace", None),
+        # misc
+        "torrent": ("magnet", None),
+        "lnk": ("shortcut", None),
+        "url": ("chain", None),
+        "desktop": ("desktop-launcher", None),
+        "tmp": ("hourglass", None),
+        "swp": ("swap-arrows", None),
+        "pid": ("hash-circle", None),
+        "dat": ("paper-tape", None),
+        # design
+        "psd": ("tile-PS", None),
+        "psb": ("tile-PS", "plus"),
+        "xcf": ("gimp-head", None),
+        "kra": ("palette", None),
+        "ora": ("sheets", None),
+        "clip": ("tablet", None),
+        "ai": ("tile-AI", None),
+        "eps": ("eps-frame", None),
+        "cdr": ("balloon", None),
+        "indd": ("tile-ID", None),
+        "fig": ("figma-mark", None),
+        "sketch": ("sketch-gem", None),
+        "xd": ("tile-XD", None),
+        "afdesign": ("affinity", "text-D"),
+        "afphoto": ("affinity", "text-P"),
+        "aep": ("tile-AE", None),
+        "prproj": ("tile-PR", None),
+        "drp": ("petals", None),
+        "fcpxml": ("clapper", "code"),
+        "veg": ("casino-chip", None),
+        # 3d
+        "obj": ("wire-cube", None),
+        "fbx": ("3d", "text-F"),
+        "stl": ("printer3d", None),
+        "3mf": ("printer3d", "box"),
+        "amf": ("printer3d", "text-A"),
+        "gltf": ("3d", "braces"),
+        "glb": ("3d", "binary"),
+        "blend": ("blender-mark", None),
+        "3ds": ("tile-3DS", None),
+        "max": ("tile-MAX", None),
+        "dae": ("3d", "text-D"),
+        "ply": ("point-cloud", None),
+        "usd": ("usd-layers", None),
+        "usda": ("usd-layers", "comment"),
+        "usdc": ("usd-layers", "binary"),
+        "usdz": ("usd-layers", "box"),
+        "abc": ("alembic", None),
+        "ma": ("maya-mark", None),
+        "mb": ("maya-mark", "binary"),
+        "c4d": ("c4d-sphere", None),
+        "x3d": ("3d", "web"),
+        "wrl": ("3d", "text-V"),
+        "mtl": ("material-ball", None),
+        # cad
+        "dwg": ("tile-A", None),
+        "dxf": ("tile-A", "code"),
+        "step": ("bracket", None),
+        "stp": ("bracket", None),
+        "iges": ("surface", None),
+        "igs": ("surface", None),
+        "sldprt": ("tile-SW", None),
+        "sldasm": ("tile-SW", "plus"),
+        "ipt": ("tile-I", None),
+        "f3d": ("tile-F3D", None),
+        "catpart": ("tile-CA", None),
+        "fcstd": ("freecad-gear", None),
+        "scad": ("3d", "code"),
+        "rvt": ("building", None),
+        "ifc": ("building", "code"),
+        "3dm": ("tile-3DM", None),
+        "gcode": ("toolpath", None),
+        "skp": ("skp-box", None),
+        # gis
+        "shp": ("shapes-map", None),
+        "shx": ("shapes-map", "text-I"),
+        "topojson": ("shapes-map", "braces"),
+        "prj": ("projection", None),
+        "gpkg": ("package", "pin"),
+        "kml": ("pushpin", None),
+        "kmz": ("pushpin", "box"),
+        "gpx": ("gps-track", None),
+        "osm": ("folded-map", "search"),
+        "pbf": ("folded-map", "binary"),
+        "mbtiles": ("map-tiles", None),
+        "geojson": ("map-pin", "braces"),
+        # game
+        "unity": ("unity-mark", None),
+        "prefab": ("unity-mark", "template"),
+        "uasset": ("unreal-mark", None),
+        "umap": ("unreal-mark", "pin"),
+        "pak": ("chest", None),
+        "tscn": ("godot-mark", "text-S"),
+        "tres": ("godot-mark", "text-R"),
+        "vpk": ("lambda-circle", None),
+        "wad": ("skull", None),
+        "nbt": ("grass-block", None),
+        "tmx": ("tilemap", None),
+        "ldtk": ("platformer", None),
+        "aseprite": ("pixel-heart", None),
+        # ml
+        "pb": ("tensorflow-mark", None),
+        "pb-tf": ("tensorflow-mark", None),
+        "tflite": ("tensorflow-mark", "text-L"),
+        "tfrecord": ("tensorflow-mark", "database"),
+        "pt": ("pytorch-mark", None),
+        "pth": ("pytorch-mark", None),
+        "ckpt": ("flag", None),
+        "safetensors": ("safetensors-mark", None),
+        "onnx": ("onnx-mark", None),
+        "gguf": ("llama", None),
+        "keras": ("tile-K", None),
+        "mlmodel": ("neural", "text-M"),
+    }
+)
+
+
 def render(name: str, color: str, theme: str) -> str:
     d = Draw(palette(color, theme))
     symbol, glyph = ICONS.get(name, (name, None))
@@ -3606,7 +4641,7 @@ def main() -> None:
     parser.add_argument("--names", help="comma-separated subset")
     args = parser.parse_args()
     manifest = json.loads((PACK / "manifest.json").read_text(encoding="utf-8"))
-    names = args.names.split(",") if args.names else sorted(n for n in manifest if n in ICONS or n in SYMBOLS)
+    names = args.names.split(",") if args.names else sorted(manifest)
     out = Path(args.out)
     for name in names:
         color = manifest[name]["color"]
